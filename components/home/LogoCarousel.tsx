@@ -1,0 +1,255 @@
+export default function LogoCarousel() {
+  return (
+    <section>
+      <div className="carousel-container" class={"carousel-container"}>
+        <div
+          class={"logo-container"}
+          style={{
+            "-webkit-transform":
+              "translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+          }}
+          // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+          className="logo-container"
+        >
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="link-block-16 w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-10.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-9.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-8.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/airflow"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 100vw, 131.0546875px"
+              height="50"
+              alt=""
+              src="images/airflow.png"
+              loading="lazy"
+              srcset="images/airflow-p-500.png 500w, images/airflow-p-800.png 800w, images/airflow.png 1038w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/hop"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-6.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/postgres"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 100vw, (max-width: 1439px) 48.421875px, (max-width: 1919px) 3vw, 48.421875px"
+              height="50"
+              alt=""
+              src="images/Layer-31.png"
+              loading="lazy"
+              srcset="images/Layer-31-p-500.png 500w, images/Layer-31-p-800.png 800w, images/Layer-31.png 1046w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/neo4j"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-3.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/mssqlserver"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 0px, 100vw"
+              height="50"
+              alt=""
+              src="images/Layer-26.png"
+              loading="lazy"
+              srcset="images/Layer-26-p-500.png 500w, images/Layer-26-p-800.png 800w, images/Layer-26.png 1056w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/mysql"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 0px, 100vw"
+              height="50"
+              alt=""
+              src="images/Layer-32.png"
+              loading="lazy"
+              srcset="images/Layer-32-p-500.png 500w, images/Layer-32-p-800.png 800w, images/Layer-32.png 1044w"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div
+          style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+          class="logo-container"
+        >
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="link-block-16 w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-10.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-9.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates#supported-deployments"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-8.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/airflow"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 100vw, 131.0546875px"
+              height="50"
+              alt=""
+              src="images/airflow.png"
+              loading="lazy"
+              srcset="images/airflow-p-500.png 500w, images/airflow-p-800.png 800w, images/airflow.png 1038w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/hop"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-6.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/postgres"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 100vw, (max-width: 1439px) 48.421875px, (max-width: 1919px) 3vw, 48.421875px"
+              height="50"
+              alt=""
+              src="images/Layer-31.png"
+              loading="lazy"
+              srcset="images/Layer-31-p-500.png 500w, images/Layer-31-p-800.png 800w, images/Layer-31.png 1046w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/neo4j"
+            class="w-inline-block"
+          >
+            <img
+              loading="lazy"
+              height="50"
+              alt=""
+              src="images/Layer-3.svg"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/mssqlserver"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 0px, 100vw"
+              height="50"
+              alt=""
+              src="images/Layer-26.png"
+              loading="lazy"
+              srcset="images/Layer-26-p-500.png 500w, images/Layer-26-p-800.png 800w, images/Layer-26.png 1056w"
+              class="logo-img"
+            />
+          </a>
+          <a
+            href="https://www.cndi.dev/templates/mysql"
+            class="w-inline-block"
+          >
+            <img
+              sizes="(max-width: 479px) 0px, 100vw"
+              height="50"
+              alt=""
+              src="images/Layer-32.png"
+              loading="lazy"
+              srcset="images/Layer-32-p-500.png 500w, images/Layer-32-p-800.png 800w, images/Layer-32.png 1044w"
+              class="logo-img"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
