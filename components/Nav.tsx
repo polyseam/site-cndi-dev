@@ -117,7 +117,7 @@ export default function Nav(props: NavProps) {
               utm_content="nav_github"
               utm_source={props.url.toString()}
               utm_id={8000}
-              utm_campaign={`site_cndidev@${navVersion}`}
+              contentVersion={`site_cndidev@${navVersion}`}
             >
               <img
                 src="/images/GitHub.png"
