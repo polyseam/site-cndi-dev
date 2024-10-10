@@ -1,4 +1,5 @@
-export default function CookieManager() {
+export default function CookieManager({ disabled }: { disabled?: boolean }) {
+  if (disabled) return null;
   return (
     <div>
       <div fs-cc="manager" class="fs-cc-manager_component-2">

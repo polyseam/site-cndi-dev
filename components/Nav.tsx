@@ -1,4 +1,11 @@
-export default function Nav() {
+import LinkOut from "components/LinkOut.tsx";
+type NavProps = {
+  url: URL;
+};
+
+export default function Nav(props: NavProps) {
+  const navVersion = "v1.0.0";
+
   return (
     <div
       data-animation="default"
@@ -11,7 +18,7 @@ export default function Nav() {
     >
       <div class="uui-navbar07_container">
         <a
-          href="index.html"
+          href="/"
           aria-current="page"
           class="uui-navbar07_logo-link w-nav-brand w--current"
         >
@@ -95,25 +102,22 @@ export default function Nav() {
                 </div>
               </nav>
             </div>
-            <a
-              href="/templates"
-              class="uui-navbar07_link bug-fix w-nav-link"
-            >
+            <a href="/templates" class="uui-navbar07_link bug-fix w-nav-link">
               Templates
             </a>
-            <a
-              href="/community"
-              class="uui-navbar07_link bug-fix w-nav-link"
-            >
+            <a href="/community" class="uui-navbar07_link bug-fix w-nav-link">
               Community
             </a>
             <a href="/blog" class="uui-navbar07_link test w-nav-link">
               Blogs
             </a>
-            <a
-              href="https://cndi.run/gh?utm_content=nav_github&amp;utm_campaign=cndi_dev&amp;utm_source=https://www.cndi.dev/&amp;utm_medium=website&amp;utm_id=8000"
-              target="_blank"
-              class="link-block-7 w-inline-block"
+            <LinkOut
+              className="link-block-7 w-inline-block"
+              pathname="/gh"
+              utm_content="nav_github"
+              utm_source={props.url.toString()}
+              utm_id={8000}
+              utm_campaign={`site_cndidev@${navVersion}`}
             >
               <img
                 src="/images/GitHub.png"
@@ -122,7 +126,7 @@ export default function Nav() {
                 alt="Github"
                 class="image-38"
               />
-            </a>
+            </LinkOut>
           </div>
         </nav>
         <div class="uui-navbar07_menu-button w-nav-button">

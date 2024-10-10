@@ -1,17 +1,19 @@
 import { Head } from "$fresh/runtime.ts";
+import { PageProps } from "$fresh/server.ts";
 
-// home components
-import CLIAnimationHero from "../components/home/CLIAnimationHero.tsx";
-import LogoCarousel from "../components/home/LogoCarousel.tsx";
-import WhatIsCNDI from "../components/home/WhatIsCNDI.tsx";
-import YoutubeVideoDemoEmbed from "../components/home/YoutubeVideoDemoEmbed.tsx";
-import SelfHostSection from "../components/home/SelfHostSection.tsx";
-import UseInteractiveCNDITemplates from "../components/home/UseInteractiveCNDITemplates.tsx";
-import CNDIFeatures from "../components/home/CNDIFeatures.tsx";
+// Home Page Sections
+import CLIAnimationHeroSection from "components/sections/CLIAnimationHeroSection.tsx";
+import LogoTickerSection from "components/sections/LogoTickerSection.tsx";
+import WhatIsCNDISection from "components/sections/WhatIsCNDISection.tsx";
+import YoutubeVideoDemoEmbedSection from "components/sections/YoutubeVideoDemoEmbedSection.tsx";
+import SelfHostSection from "components/sections/SelfHostSection.tsx";
+import CNDIBenefitCardsSection from "components/sections/CNDIBenifitCardsSection.tsx";
+import UseInteractiveCNDITemplatesSection from "components/sections/UseInteractiveCNDITemplatesSection.tsx";
+import CNDIFeaturesSection from "components/sections/CNDIFeaturesSection.tsx";
+import TemplateCardListSection from "components/sections/TemplateCardListSection.tsx";
 
-import CookieManager from "../components/CookieManager.tsx";
-
-export default function Home() {
+export default function HomePage(props: PageProps) {
+  const homePageVersion = "v1.0.0";
   return (
     <>
       <Head>
@@ -40,15 +42,20 @@ export default function Home() {
         />
       </Head>
       <div id="main">
-        <CLIAnimationHero />
-        <LogoCarousel />
-        <WhatIsCNDI />
-        <YoutubeVideoDemoEmbed />
+        <CLIAnimationHeroSection />
+        <LogoTickerSection />
+        <WhatIsCNDISection />
+        <YoutubeVideoDemoEmbedSection />
         <SelfHostSection />
-        <UseInteractiveCNDITemplates />
-        <CNDIFeatures />
-        <CookieManager />
-        <script src="js/webflow.js" type="text/javascript"></script>
+        <UseInteractiveCNDITemplatesSection />
+        <CNDIBenefitCardsSection />
+        <CNDIFeaturesSection />
+        <TemplateCardListSection
+          url={props.url}
+          pageVersion={homePageVersion}
+        />
+
+        <script src="/js/webflow.js" type="text/javascript"></script>
       </div>
     </>
   );

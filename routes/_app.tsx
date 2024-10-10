@@ -2,7 +2,7 @@ import { type PageProps } from "$fresh/server.ts";
 import Nav from "../components/Nav.tsx";
 import Footer from "../components/Footer.tsx";
 
-export default function App({ Component }: PageProps) {
+export default function App({ Component, url }: PageProps) {
   return (
     <html>
       <head>
@@ -44,10 +44,10 @@ export default function App({ Component }: PageProps) {
         />
         <link href="/images/webclip.png" rel="apple-touch-icon"></link>
       </head>
-      <body className="body_homepage">
-        <Nav />
+      <body class="body wf-17859gj wf-vl64f">
+        <Nav url={url} />
         <Component />
-        <Footer />
+        <Footer url={url} />
       </body>
     </html>
   );

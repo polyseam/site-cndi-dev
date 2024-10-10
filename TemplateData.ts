@@ -2,13 +2,30 @@ type TemplateData = Array<{
   name: string;
   title?: string;
   type: string;
-  whatIsIt: string;
-  whoIsItFor: string;
-  linkToProject: string;
-  linkToOfficialReference?: string;
+  // whatIsIt: string;
+  // whoIsItFor: string;
+  // linkToProject: string;
+  // linkToOfficialReference?: string;
+  // threePoints: [string, string, string];
+  // providerInfo: {
+  //   aws: {
+  //     global: string;
+  //   };
+  //   azure: {
+  //     global: string;
+  //   };
+  //   gcp: {
+  //     global: string;
+  //   };
+  //   dev:{
+  //     global: string;
+  //   }
+  // };
+  // templateId: string; // 000, 001, 002, etc.
 }>;
 
 export const data: TemplateData = [
+  // {name: 'basic', templateId: 001},
   {
     name: "airflow",
     type: "Orchestration",
@@ -19,6 +36,30 @@ export const data: TemplateData = [
     linkToProject: "https://airflow.apache.org",
     linkToOfficialReference:
       "https://airflow.apache.org/ecosystem/#other-deployments-methods",
+    threePoints: [
+      "Automatically Synchronize your DAGs from Git",
+      "Manage your Kubernetes cluster with GitOps",
+      "Scale your workloads with the Kubernetes Executor",
+    ],
+    providerInfo: {
+      aws: {
+        global:
+          `Running a production Airflow cluster doesn’t need to be expensive. CNDI provides the simplest and most affordable alternative to MWAA and Astronomer. Running your own cluster is a breeze. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+      gcp: {
+        global:
+          `Running a production Airflow cluster doesn’t need to be expensive. CNDI provides the simplest and most affordable alternative to Cloud Composer and Astronomer. Running your own cluster is a breeze. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+      azure: {
+        global:
+          `Running a production Airflow cluster doesn’t need to be expensive. CNDI provides the simplest and most affordable alternative to ADF and Astronomer. Running your own cluster is a breeze. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+      dev: {
+        global:
+          `Deploying Airflow on your local development environment offers a convenient and efficient way to experiment with this powerful workflow automation platform. Whether you're a data engineer, data scientist, or developer, running Airflow locally allows you to test and iterate on DAGs (Directed Acyclic Graphs) before deploying them to production. It also helps you develop and debug workflows with ease, ensuring everything works flawlessly. Gain a deeper understanding of Airflow's functionalities in a controlled environment, while minimizing risks associated with deploying untested workflows to production.`,
+      },
+    },
+    templateId: "002",
   },
   {
     name: "postgres",
@@ -28,6 +69,26 @@ export const data: TemplateData = [
     whoIsItFor:
       "PostgreSQL, or Postgres, is a versatile and open-source relational database management system designed for a wide range of users. It caters to developers, data engineers, and organizations seeking a powerful and reliable database solution. Whether you are a small startup, a medium-sized business, or a large enterprise, PostgreSQL offers a robust foundation to handle your data storage and management needs efficiently and securely.",
     linkToProject: "https://cloudnative-pg.io",
+    templateId: "003",
+    threePoints: [
+      "Reliable and fault tolerant",
+      "Easily maintained",
+      "Flexible to your needs",
+    ],
+    providerInfo: {
+      aws: {
+        global:
+          `CNDI provides the simplest and most affordable alternative to PostgreSQL on RDS. Running your own database cluster couldn’t be easier. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+      gcp: {
+        global:
+          `CNDI provides the simplest and most affordable alternative to PostgreSQL on CloudSQL. Running your own database cluster couldn’t be easier. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+      azure: {
+        global:
+          `CNDI provides the simplest and most affordable alternative to Azure Database for PostgreSQL. Running your own database cluster couldn’t be easier. CNDI Clusters are managed from Git, all you need to do is initialize a new cluster repo and push it up to trigger your automation!`,
+      },
+    },
   },
   {
     name: "hop",
@@ -37,6 +98,13 @@ export const data: TemplateData = [
     whoIsItFor:
       "The Hop Orchestration Platform, or Apache Hop, caters to data integration developers, data engineers, and administrators who require a comprehensive and flexible platform for data and metadata orchestration. Whether you are a seasoned developer or new to data integration, Hop's visual development environment simplifies the process and boosts productivity.",
     linkToProject: "https://hop.apache.org",
+    providerInfo: {
+      aws: { global: `` },
+      azure: { global: `` },
+      gcp: { global: `` },
+      dev: { global: `` },
+    },
+    templateId: "004",
   },
   {
     type: "Database",
@@ -47,6 +115,7 @@ export const data: TemplateData = [
     whoIsItFor:
       "MySQL is a widely used open-source relational database management system suitable for developers, data engineers, and businesses of all sizes. It caters to those who require a reliable, scalable, and easy-to-use database solution for storing, organizing, and retrieving structured data. Whether you are building a small-scale website, developing enterprise-level applications, or managing complex data systems, MySQL's powerful SQL querying capabilities and compatibility with various programming languages make it an ideal choice for a broad range of projects.",
     linkToProject: "https://www.mysql.com",
+    templateId: "005",
   },
   {
     name: "neo4j",
@@ -57,17 +126,18 @@ export const data: TemplateData = [
     whoIsItFor:
       "Neo4j is tailored for developers, data scientists, and organizations working with connected data and complex relationships. It is ideal for domains such as social networks, recommendation engines, knowledge graphs, and network analysis. Whether you need to model intricate relationships, perform graph-based analysis, or build intelligent systems, Neo4j empowers you to unlock valuable insights from your connected data and create innovative solutions in the graph database domain.",
     linkToProject: "https://neo4j.com",
+    templateId: "006",
   },
   {
     name: "mssqlserver",
     type: "Database",
     title: "MS SQL Server",
-
     whatIsIt:
       "Microsoft SQL Server, commonly referred to as MS SQL Server, is a powerful relational database management system developed by Microsoft. MS SQL Server is the database of choice for many companies, it is reliable, performant, and Microsoft has been maintaining it for decades. The consistency delivered from Microsoft, coupled with all of its integrations and tooling put SQL Server in a league of its own for companies in the Microsoft ecosystem.",
     whoIsItFor:
       "MS SQL Server is tailored to a broad spectrum of users, ranging from small businesses to large enterprises with complex data requirements. Database administrators, software developers, and data analysts can benefit from the flexibility and comprehensive functionality offered by MS SQL Server. Small to medium-sized businesses seeking an efficient and scalable database solution for their applications will find MS SQL Server user-friendly and easy to integrate. At the same time, large enterprises with complex data ecosystems can leverage its advanced features to ensure performance, scalability, security, and traceability.",
     linkToProject: "https://www.microsoft.com/sql-server",
+    templateId: "007",
   },
   {
     name: "kafka",
@@ -75,6 +145,7 @@ export const data: TemplateData = [
     whatIsIt: "",
     whoIsItFor: "",
     linkToProject: "",
+    templateId: "008",
   },
   {
     name: "mongodb",
@@ -83,6 +154,7 @@ export const data: TemplateData = [
     whatIsIt: "",
     whoIsItFor: "",
     linkToProject: "",
+    templateId: "008",
   },
   {
     name: "redis",
@@ -90,6 +162,7 @@ export const data: TemplateData = [
     whatIsIt: "",
     whoIsItFor: "",
     linkToProject: "",
+    templateId: "009",
   },
   {
     name: "gpu-operator",
@@ -98,5 +171,6 @@ export const data: TemplateData = [
     whatIsIt: "",
     whoIsItFor: "",
     linkToProject: "",
+    templateId: "010",
   },
 ];

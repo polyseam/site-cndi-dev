@@ -19,7 +19,9 @@
   },
   "exclude": [
     "**/_fresh/*",
-    "webflow/**"
+    "webflow/**",
+    "node_modules/**",
+    "static/**"
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.2/",
@@ -32,7 +34,9 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "$std/": "https://deno.land/std@0.216.0/",
     "template-details": "./TemplateData.ts",
-    "utils": "./utils.ts"
+    "utils": "./utils.ts",
+    "components/": "./components/",
+    "islands/": "./islands/"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

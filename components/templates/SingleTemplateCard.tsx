@@ -18,7 +18,7 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
       <div class="div-block-87">
         <a href={`templates/${name}`} class="link-block-9 w-inline-block">
           <img
-            src={`images/template-icons/${name}.png`}
+            src={`images/template-icons/${name}/logo.png`}
             loading="lazy"
             width="40"
             sizes="40px"

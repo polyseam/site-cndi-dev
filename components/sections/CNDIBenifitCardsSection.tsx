@@ -1,0 +1,86 @@
+import { ComponentChild } from "preact";
+
+const Title = ({ children }: { children: ComponentChild }) => (
+  <div class="homecard_top">
+    <div>
+      <h1 class="cndi_card_heading">{children}</h1>
+      <div class="div-block-84"></div>
+    </div>
+  </div>
+);
+
+const Description = ({ children }: { children: ComponentChild }) => (
+  <div class="home_cards_div">
+    <div class="cndi_card_text">{children}</div>
+  </div>
+);
+
+type BenefitCardProps = {
+  children: [ComponentChild, ComponentChild];
+};
+
+const BenefitCard = (props: BenefitCardProps) => (
+  <div
+    id="w-node-d24c5821-8291-5d15-b148-5b87d5c1b58e-f6848bac"
+    class="w-layout-cell cndi_card_cell"
+  >
+    {props.children[0]}
+    {props.children[1]}
+  </div>
+);
+
+export default function UseInteractiveCNDITemplatesSection() {
+  return (
+    <section class="home_section_cndi_cards">
+      <div class="w-layout-blockcontainer container-1474 w-container">
+        <div
+          id="w-node-_8da0fe8c-da81-a70f-efc5-7077e1b079f9-f6848bac"
+          class="w-layout-layout quick-stack-16 wf-layout-layout"
+        >
+          <BenefitCard>
+            <Title>Simplified K8s</Title>
+            <Description>
+              Reducing the complexity and learning curve through automation and
+              sensible defaults.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Security and Auditability</Title>
+            <Description>
+              Ensure secure systems, with all cluster changes made and traced
+              through Git.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Reduce Costs</Title>
+            <Description>
+              Pay for compute, not fluff -  avoid the PaaS or SaaS tax by
+              enjoying self-hosting made easy.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Ejectability</Title>
+            <Description>
+              Seamlessly transition to managing your cluster completely on your
+              own.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Infrastructure as Code</Title>
+            <Description>
+              Represent your infrastructure as code to optimize cost and
+              resource allocation for each application cluster.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Uncompromised Self-Hosting</Title>
+            <Description>
+              Deploy workloads across any cloud or on-prem infrastructure. Get
+              all the scalability and flexibility you need without constraints.
+            </Description>
+          </BenefitCard>
+        </div>
+      </div>
+    </section>
+  );
+}
