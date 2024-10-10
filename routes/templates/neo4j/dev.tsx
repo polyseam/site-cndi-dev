@@ -53,10 +53,14 @@ export default function TemplateNeo4jDevPage(props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <Neo4jOnDevSection>
-        Running Neo4j on your local development environment offers a convenient
-        and efficient way to experiment with your data and dial in your
-        requirements. Run your CloudNativePG cluster locally and prove it’s
-        ready to go live.
+        Simplify Neo4j deployment on your local development environment with
+        CNDI. Our efficient process and robust tools make setting up and
+        managing Neo4j databases a breeze, allowing you to focus on your
+        development tasks without the complexities. CNDI provides seamless
+        support for Neo4j deployment, and its intuitive CLI and templates ensure
+        a smooth experience. Experience the flexibility of running Neo4j locally
+        and harness the power of graph databases in your development workflow
+        with CNDI.
       </Neo4jOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
@@ -69,9 +73,9 @@ export default function TemplateNeo4jDevPage(props: PageProps) {
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Up and running in minutes",
-          "Just like production",
-          "Develop and debug with ease",
+          "Experiment and evolve your graph model",
+          "Prepare for production deployment",
+          "Explore your data safely locally",
         ]}
       />
       <Neo4jWhatAndWhoForSection />

@@ -55,20 +55,21 @@ export default function TemplateNeo4jAWSPage(props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <Neo4jOnAWSSection>
-        CNDI provides the simplest and most affordable alternative to Neo4jQL on
-        RDS. Running your own Neo4jQL cluster couldn’t be easier thanks to the
-        CloudNativePG project. CNDI Clusters are managed from Git, all you need
-        to do is initialize a new cluster repo and push it up to trigger your
-        automation!
+        Deploying Neo4j on AWS with CNDI provides a powerful and efficient
+        solution for managing your Neo4j graph database in your AWS cloud. With
+        CNDI the infrastructure running your cluster and the configuration of
+        Neo4j is all managed through GitOps. Scaling and maintaining your own
+        graph database has never been easier. CNDI is the best free alternative
+        to Neo4j Aura, managed directly from Git.
       </Neo4jOnAWSSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Reliable and fault tolerant",
-          "Easily maintained with GitOps",
-          "Flexible to your needs",
+          "Intuitive schema and queries",
+          "Performant graph traversals and analysis",
+          "Secured admin panel secure in browser",
         ]}
       />
       <Neo4jWhatAndWhoForSection />

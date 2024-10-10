@@ -68,9 +68,9 @@ export default function TemplateNeo4jAzurePage(props: PageProps) {
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Reliable and fault tolerant",
-          "Easily maintained with GitOps",
-          "Flexible to your needs",
+          "Intuitive schema and queries",
+          "Performant graph traversals and analysis",
+          "Secured admin panel secure in browser",
         ]}
       />
       <Neo4jWhatAndWhoForSection />
