@@ -3,23 +3,22 @@ import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import AirflowWhatAndWhoForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
+import MysqlWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import AirflowOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MysqlOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
   Subheading,
 } from "components/TemplateHero.tsx";
-import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateAirflowDevPage(props: PageProps) {
+export default function TemplateMysqlDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "airflow";
-  const title = "Airflow";
-  const type = "Orchestration";
+  const templateName = "mysql";
+  const title = "Mysql";
+  const type = "Database";
 
   const utm_source = props.url.toString();
 
@@ -32,18 +31,8 @@ export default function TemplateAirflowDevPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
-          heroImgAlt="Airflow and Laptop Connection Online"
+          heroImgAlt="Mysql and Laptop Connection Online"
           templateName={templateName}
-          officialDeploymentMethod={
-            <OfficialDeploymentMethod
-              title={title}
-              templateName={templateName}
-              utm_id={8055}
-              utm_source={utm_source}
-              pathname="/ae"
-              contentVersion={pageVersion}
-            />
-          }
         >
           <Heading>
             Easily Run {title} in your dev environment with CNDI
@@ -53,9 +42,9 @@ export default function TemplateAirflowDevPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="airflow_dev_get_started"
+              utm_content="mysql_dev_get_started"
               utm_source={utm_source}
-              utm_id={8026}
+              utm_id={8042}
               contentVersion={pageVersion}
             >
               Get Started
@@ -63,18 +52,16 @@ export default function TemplateAirflowDevPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <AirflowOnDevSection>
-        Deploying Airflow on your local development environment offers a
-        convenient and efficient way to experiment with this powerful workflow
-        automation platform. Whether you&#x27;re a data engineer, data
-        scientist, or developer, running Airflow locally allows you to test and
-        iterate on DAGs (Directed Acyclic Graphs) before deploying them to
-        production. It also helps you develop and debug workflows with ease,
-        ensuring everything works flawlessly. Gain a deeper understanding of
-        Airflow&#x27;s functionalities in a controlled environment, while
-        minimizing risks associated with deploying untested workflows to
-        production.
-      </AirflowOnDevSection>
+      <MysqlOnDevSection>
+        Simplify Mysql deployment on your local development environment with
+        CNDI. Our efficient process and robust tools make setting up and
+        managing Mysql databases a breeze, allowing you to focus on your
+        development tasks without the complexities. CNDI provides seamless
+        support for Mysql deployment, and its intuitive CLI and templates ensure
+        a smooth experience. Experience the flexibility of running Mysql locally
+        and harness the power of graph databases in your development workflow
+        with CNDI.
+      </MysqlOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
           Deploying {title}{" "}
@@ -86,12 +73,12 @@ export default function TemplateAirflowDevPage(props: PageProps) {
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Automatically Synchronize your DAGs from Git",
-          "Experiment with your Kubernetes cluster using GitOps",
-          "Test your workloads with the Kubernetes Executor",
+          "Experiment and evolve your graph model",
+          "Prepare for production deployment",
+          "Explore your data safely locally",
         ]}
       />
-      <AirflowWhatAndWhoForSection />
+      <MysqlWhatAndWhoForSection />
     </>
   );
 }

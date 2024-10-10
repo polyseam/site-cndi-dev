@@ -20,7 +20,7 @@ export const data: TemplateData = [
   {
     type: "Database",
     name: "mysql",
-    title: "My SQL",
+    title: "MySQL",
   },
   {
     name: "neo4j",

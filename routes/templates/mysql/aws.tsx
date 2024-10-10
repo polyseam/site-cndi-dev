@@ -4,9 +4,9 @@ import AKSDistributionCard from "components/templates/distributions/aws/EKSDistr
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import Neo4jWhatAndWhoForSection from "components/sections/neo4j/WhatAndWhoForSection.tsx";
+import MySQLWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import Neo4jOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MysqlOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,10 +14,10 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateNeo4jAWSPage(props: PageProps) {
+export default function TemplateMysqlAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "neo4j";
-  const title = "Neo4j";
+  const templateName = "mysql";
+  const title = "MySQL";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -31,7 +31,7 @@ export default function TemplateNeo4jAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Neo4j and AWS Connection Online"
+          heroImgAlt="MySQL and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -44,9 +44,9 @@ export default function TemplateNeo4jAWSPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="neo4j_aws_get_started"
+              utm_content="mysql_aws_get_started"
               utm_source={utm_source}
-              utm_id={8035}
+              utm_id={8039}
               contentVersion={pageVersion}
             >
               Get Started
@@ -54,25 +54,25 @@ export default function TemplateNeo4jAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <Neo4jOnAWSSection>
-        Deploying Neo4j on AWS with CNDI provides a powerful and efficient
-        solution for managing your Neo4j graph database in your AWS cloud. With
-        CNDI the infrastructure running your cluster and the configuration of
-        Neo4j is all managed through GitOps. Scaling and maintaining your own
-        graph database has never been easier. CNDI is the best free alternative
-        to Neo4j Aura, managed directly from Git.
-      </Neo4jOnAWSSection>
+      <MysqlOnAWSSection>
+        Deploying MySQL on AWS with CNDI offers a seamless and efficient
+        solution for managing your MySQL database in the cloud. Tune your MySQL
+        cluster for your performance and reliability requirements. With
+        infrastructure and configuration as code, CNDI brings a free alternative
+        to AWS’s RDS for MySQL, for no cost. Changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
+      </MysqlOnAWSSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Intuitive schema and queries",
-          "Performant graph traversals and analysis",
-          "Secured admin panel secure in browser",
+          "Cost effective",
+          "Performant and Easily Scaled",
+          "Infrastructure and Config as Code",
         ]}
       />
-      <Neo4jWhatAndWhoForSection />
+      <MySQLWhatAndWhoForSection />
     </>
   );
 }

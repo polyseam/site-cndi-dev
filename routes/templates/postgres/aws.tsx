@@ -46,7 +46,7 @@ export default function TemplatePostgresAWSPage(props: PageProps) {
               pathname="/gh"
               utm_content="postgres_aws_get_started"
               utm_source={utm_source}
-              utm_id={8025}
+              utm_id={8027}
               contentVersion={pageVersion}
             >
               Get Started

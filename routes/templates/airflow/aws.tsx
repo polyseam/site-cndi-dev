@@ -57,7 +57,7 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
               pathname="/gh"
               utm_content="airflow_aws_get_started"
               utm_source={utm_source}
-              utm_id={8025}
+              utm_id={8023}
               contentVersion={pageVersion}
             >
               Get Started

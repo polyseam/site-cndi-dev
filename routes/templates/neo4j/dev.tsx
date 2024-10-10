@@ -44,7 +44,7 @@ export default function TemplateNeo4jDevPage(props: PageProps) {
               pathname="/gh"
               utm_content="neo4j_dev_get_started"
               utm_source={utm_source}
-              utm_id={8023}
+              utm_id={8038}
               contentVersion={pageVersion}
             >
               Get Started
@@ -64,7 +64,7 @@ export default function TemplateNeo4jDevPage(props: PageProps) {
       </Neo4jOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
-          Deploying {title}{" "}
+          Deploying {title}
           on your local development environment is easy with CNDI's intuitive
           workflow. CNDI leverages Multipass to provide a seamless experience
           similar to deploying in the cloud, right on your Mac, Linux, or

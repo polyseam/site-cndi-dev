@@ -3,8 +3,8 @@ import { Head } from "$fresh/runtime.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import Neo4jWhatAndWhoForSection from "components/sections/neo4j/WhatAndWhoForSection.tsx";
-import Neo4jOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MysqlWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
+import MysqlOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import TemplateHero, {
   CallToAction,
@@ -15,10 +15,10 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateNeo4jGCPPage(props: PageProps) {
+export default function TemplateMysqlGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "neo4j";
-  const title = "Neo4j";
+  const templateName = "mysql";
+  const title = "Mysql";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -32,7 +32,7 @@ export default function TemplateNeo4jGCPPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
-          heroImgAlt="Neo4j and GCP Connection Online"
+          heroImgAlt="Mysql and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -47,9 +47,9 @@ export default function TemplateNeo4jGCPPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="neo4j_gcp_get_started"
+              utm_content="mysql_gcp_get_started"
               utm_source={utm_source}
-              utm_id={8036}
+              utm_id={8040}
               contentVersion={pageVersion}
             >
               Get Started
@@ -57,24 +57,24 @@ export default function TemplateNeo4jGCPPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <Neo4jOnGCPSection>
-        CNDI provides the simplest and most affordable alternative to Neo4jQL on
+      <MysqlOnGCPSection>
+        CNDI provides the simplest and most affordable alternative to MysqlQL on
         CloudSQL. Running your own database cluster couldn’t be easier thanks to
         the CloudNativePG project. CNDI Clusters are managed from Git, all you
         need to do is initialize a new cluster repo and push it up to trigger
         your automation!
-      </Neo4jOnGCPSection>
+      </MysqlOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Intuitive schema and queries",
-          "Performant graph traversals and analysis",
-          "Secured admin panel secure in browser",
+          "Cost effective",
+          "Performant and Easily Scaled",
+          "Infrastructure and Config as Code",
         ]}
       />
-      <Neo4jWhatAndWhoForSection />
+      <MysqlWhatAndWhoForSection />
     </>
   );
 }

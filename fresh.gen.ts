@@ -11,6 +11,11 @@ import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
 import * as $templates_airflow_gcp from "./routes/templates/airflow/gcp.tsx";
 import * as $templates_airflow_index from "./routes/templates/airflow/index.tsx";
 import * as $templates_index from "./routes/templates/index.tsx";
+import * as $templates_mysql_aws from "./routes/templates/mysql/aws.tsx";
+import * as $templates_mysql_azure from "./routes/templates/mysql/azure.tsx";
+import * as $templates_mysql_dev from "./routes/templates/mysql/dev.tsx";
+import * as $templates_mysql_gcp from "./routes/templates/mysql/gcp.tsx";
+import * as $templates_mysql_index from "./routes/templates/mysql/index.tsx";
 import * as $templates_neo4j_aws from "./routes/templates/neo4j/aws.tsx";
 import * as $templates_neo4j_azure from "./routes/templates/neo4j/azure.tsx";
 import * as $templates_neo4j_dev from "./routes/templates/neo4j/dev.tsx";
@@ -36,6 +41,11 @@ const manifest = {
     "./routes/templates/airflow/gcp.tsx": $templates_airflow_gcp,
     "./routes/templates/airflow/index.tsx": $templates_airflow_index,
     "./routes/templates/index.tsx": $templates_index,
+    "./routes/templates/mysql/aws.tsx": $templates_mysql_aws,
+    "./routes/templates/mysql/azure.tsx": $templates_mysql_azure,
+    "./routes/templates/mysql/dev.tsx": $templates_mysql_dev,
+    "./routes/templates/mysql/gcp.tsx": $templates_mysql_gcp,
+    "./routes/templates/mysql/index.tsx": $templates_mysql_index,
     "./routes/templates/neo4j/aws.tsx": $templates_neo4j_aws,
     "./routes/templates/neo4j/azure.tsx": $templates_neo4j_azure,
     "./routes/templates/neo4j/dev.tsx": $templates_neo4j_dev,
