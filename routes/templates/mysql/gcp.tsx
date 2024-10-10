@@ -3,8 +3,8 @@ import { Head } from "$fresh/runtime.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import MysqlWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
-import MysqlOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MySQLWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
+import MySQLOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import TemplateHero, {
   CallToAction,
@@ -15,10 +15,10 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateMysqlGCPPage(props: PageProps) {
+export default function TemplateMySQLGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "mysql";
-  const title = "Mysql";
+  const title = "MySQL";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -32,7 +32,7 @@ export default function TemplateMysqlGCPPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
-          heroImgAlt="Mysql and GCP Connection Online"
+          heroImgAlt="MySQL and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -57,13 +57,14 @@ export default function TemplateMysqlGCPPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <MysqlOnGCPSection>
-        CNDI provides the simplest and most affordable alternative to MysqlQL on
-        CloudSQL. Running your own database cluster couldn’t be easier thanks to
-        the CloudNativePG project. CNDI Clusters are managed from Git, all you
-        need to do is initialize a new cluster repo and push it up to trigger
-        your automation!
-      </MysqlOnGCPSection>
+      <MySQLOnGCPSection>
+        Deploying MySQL on GCP with CNDI offers a seamless and efficient
+        solution for managing your MySQL database in the cloud. Tune your MySQL
+        cluster for your performance and reliability requirements. With
+        infrastructure and configuration as code, CNDI brings a free alternative
+        to GCP’s CloudSQL for MySQL. Changing your cluster infrastructure or
+        config is as simple as making a Pull Request.
+      </MySQLOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />
       </DistributionCardSection>
@@ -74,7 +75,7 @@ export default function TemplateMysqlGCPPage(props: PageProps) {
           "Infrastructure and Config as Code",
         ]}
       />
-      <MysqlWhatAndWhoForSection />
+      <MySQLWhatAndWhoForSection />
     </>
   );
 }
