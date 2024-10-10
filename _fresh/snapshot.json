@@ -1,0 +1,34 @@
+{
+  "build_id": "6520252c757171ed771113dea7212f46bf81742c",
+  "files": {
+    "main.js": [
+      "chunk-S3UPPUKF.js",
+      "chunk-YXFWN52L.js"
+    ],
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-WAIVBOVI.js",
+      "chunk-YXFWN52L.js"
+    ],
+    "island-counter.js": [
+      "chunk-S3UPPUKF.js",
+      "chunk-OKFTCS7B.js",
+      "chunk-WAIVBOVI.js",
+      "chunk-YXFWN52L.js"
+    ],
+    "chunk-S3UPPUKF.js": [],
+    "island-logoticker.js": [
+      "chunk-OKFTCS7B.js",
+      "chunk-WAIVBOVI.js",
+      "chunk-YXFWN52L.js"
+    ],
+    "chunk-OKFTCS7B.js": [
+      "chunk-YXFWN52L.js"
+    ],
+    "chunk-WAIVBOVI.js": [
+      "chunk-YXFWN52L.js"
+    ],
+    "chunk-YXFWN52L.js": [],
+    "metafile.json": []
+  }
+}
