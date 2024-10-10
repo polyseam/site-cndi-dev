@@ -45,6 +45,7 @@ export const data: TemplateData = [
   },
   {
     name: "gpu-operator",
+    title: "GPU Operator",
     type: "Hardware Acceleration",
   },
 ];

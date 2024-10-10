@@ -1,7 +1,10 @@
-# Fresh project
+# cndi.dev
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+[cndi.dev](https://cndi.dev) was originally built on Webflow and is being
+rewritten in Deno using the
+[Fresh framework](https://fresh.deno.dev/docs/getting-started).
+
+The `main` branch is hosted at [cndi-dev.deno.dev](https://cndi-dev.deno.dev).
 
 ### Usage
 

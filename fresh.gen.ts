@@ -4,8 +4,6 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $templates_airflow_aws from "./routes/templates/airflow/aws.tsx";
 import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx";
@@ -31,8 +29,6 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/templates/airflow/aws.tsx": $templates_airflow_aws,
     "./routes/templates/airflow/azure.tsx": $templates_airflow_azure,
