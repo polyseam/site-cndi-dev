@@ -5,6 +5,7 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $privacy_policy from "./routes/privacy-policy.tsx";
 import * as $templates_airflow_aws from "./routes/templates/airflow/aws.tsx";
 import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx";
 import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
@@ -46,6 +47,7 @@ import * as $templates_postgres_azure from "./routes/templates/postgres/azure.ts
 import * as $templates_postgres_dev from "./routes/templates/postgres/dev.tsx";
 import * as $templates_postgres_gcp from "./routes/templates/postgres/gcp.tsx";
 import * as $templates_postgres_index from "./routes/templates/postgres/index.tsx";
+import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -55,6 +57,7 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/index.tsx": $index,
+    "./routes/privacy-policy.tsx": $privacy_policy,
     "./routes/templates/airflow/aws.tsx": $templates_airflow_aws,
     "./routes/templates/airflow/azure.tsx": $templates_airflow_azure,
     "./routes/templates/airflow/dev.tsx": $templates_airflow_dev,
@@ -96,6 +99,7 @@ const manifest = {
     "./routes/templates/postgres/dev.tsx": $templates_postgres_dev,
     "./routes/templates/postgres/gcp.tsx": $templates_postgres_gcp,
     "./routes/templates/postgres/index.tsx": $templates_postgres_index,
+    "./routes/terms-of-use.tsx": $terms_of_use,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
