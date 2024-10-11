@@ -59,10 +59,10 @@ export default function TemplatePostgresGCPPage(props: PageProps) {
       </HeroSection>
       <PostgresOnGCPSection>
         CNDI provides the simplest and most affordable alternative to PostgreSQL
-        on CloudSQL. Running your own database cluster couldn’t be easier thanks
-        to the CloudNativePG project. CNDI Clusters are managed from Git, all
-        you need to do is initialize a new cluster repo and push it up to
-        trigger your automation!
+        on CloudSQL. Built with the CloudNativePG project, CNDI enables you to
+        run your PostgreSQL cluster more easily than ever before. Thanks to
+        GitOps, changing your cluster infrastructure or config is as simple as
+        making a Pull Request.
       </PostgresOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />

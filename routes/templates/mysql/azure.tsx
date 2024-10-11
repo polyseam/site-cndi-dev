@@ -61,8 +61,8 @@ export default function TemplateMySQLAzurePage(props: PageProps) {
         solution for managing your MySQL database in the cloud. Tune your MySQL
         cluster for your performance and reliability requirements. With
         infrastructure and configuration as code, CNDI brings a free alternative
-        to Azure Database for MySQL. Changing your cluster infrastructure or
-        config is as simple as making a Pull Request.
+        to Azure Database for MySQL. Thanks to GitOps, changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
       </MySQLOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />

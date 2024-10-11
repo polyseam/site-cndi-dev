@@ -18,8 +18,8 @@ export default function CLIAnimationHeroSection() {
               Applications in Minutes
             </h1>
             <div class="text-block-74">
-              An open-source framework for self-serve <br />
-              cluster deployment and maintenance
+              a framework for self-hosting<br />
+              open-source applications
             </div>
             <div>
               <a

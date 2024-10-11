@@ -62,8 +62,8 @@ export default function TemplateMySQLGCPPage(props: PageProps) {
         solution for managing your MySQL database in the cloud. Tune your MySQL
         cluster for your performance and reliability requirements. With
         infrastructure and configuration as code, CNDI brings a free alternative
-        to GCP’s CloudSQL for MySQL. Changing your cluster infrastructure or
-        config is as simple as making a Pull Request.
+        to GCP’s CloudSQL for MySQL. Thanks to GitOps, changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
       </MySQLOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />

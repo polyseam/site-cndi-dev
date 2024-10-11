@@ -59,8 +59,8 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
         solution for managing your MySQL database in the cloud. Tune your MySQL
         cluster for your performance and reliability requirements. With
         infrastructure and configuration as code, CNDI brings a free alternative
-        to AWS’s RDS for MySQL, for no cost. Changing your cluster
-        infrastructure or config is as simple as making a Pull Request.
+        to AWS’s RDS for MySQL, for no cost. Thanks to GitOps, changing your
+        cluster infrastructure or config is as simple as making a Pull Request.
       </MySQLOnAWSSection>
       <DistributionCardSection>
         <EKSDistributionCard title={title} />

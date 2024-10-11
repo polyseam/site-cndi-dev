@@ -71,8 +71,8 @@ export default function TemplateAirflowAzurePage(props: PageProps) {
         Running a production Airflow cluster doesn’t need to be expensive. CNDI
         provides the simplest and most affordable alternative to Azure Data
         Factory Managed Airflow and Astronomer. Running your own cluster is a
-        breeze. CNDI Clusters are managed from Git, all you need to do is
-        initialize a new cluster repo and push it up to trigger your automation!
+        breeze. Thanks to GitOps, changing your cluster infrastructure or config
+        is as simple as making a Pull Request.
       </AirflowOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />

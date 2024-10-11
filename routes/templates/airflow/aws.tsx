@@ -68,9 +68,9 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
       <AirflowOnAWSSection>
         Running a production Airflow cluster doesn’t need to be expensive. CNDI
         provides the simplest and most affordable alternative to MWAA and
-        Astronomer. Running your own cluster is a breeze. CNDI Clusters are
-        managed from Git, all you need to do is initialize a new cluster repo
-        and push it up to trigger your automation!
+        Astronomer. Running your own cluster is a breeze. Thanks to GitOps,
+        changing your cluster infrastructure or config is as simple as making a
+        Pull Request.
       </AirflowOnAWSSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />

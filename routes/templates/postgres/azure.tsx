@@ -58,10 +58,10 @@ export default function TemplatePostgresAzurePage(props: PageProps) {
       </HeroSection>
       <PostgresOnAzureSection>
         CNDI provides the simplest and most affordable alternative to Azure
-        Database for PostgreSQL. Running your own database cluster couldn’t be
-        easier thanks to the CloudNativePG project. CNDI Clusters are managed
-        from Git, all you need to do is initialize a new cluster repo and push
-        it up to trigger your automation!
+        Database for PostgreSQL. Built with the CloudNativePG project, CNDI
+        enables you to run your PostgreSQL cluster more easily than ever before.
+        Thanks to GitOps, changing your cluster infrastructure or config is as
+        simple as making a Pull Request.
       </PostgresOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />

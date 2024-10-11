@@ -58,11 +58,12 @@ export default function TemplateNeo4jGCPPage(props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <Neo4jOnGCPSection>
-        CNDI provides the simplest and most affordable alternative to Neo4jQL on
-        CloudSQL. Running your own database cluster couldn’t be easier thanks to
-        the CloudNativePG project. CNDI Clusters are managed from Git, all you
-        need to do is initialize a new cluster repo and push it up to trigger
-        your automation!
+        Deploying Neo4j on GCP with CNDI provides a powerful and efficient
+        solution for managing your Neo4j graph database in your AWS cloud.
+        Scaling and maintaining your own graph database has never been easier.
+        CNDI is the best alternative to Neo4j Aura and there's no license fees.
+        Thanks to GitOps, changing your cluster infrastructure or config is as
+        simple as making a Pull Request.
       </Neo4jOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />

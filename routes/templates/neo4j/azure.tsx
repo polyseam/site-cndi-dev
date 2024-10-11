@@ -57,11 +57,12 @@ export default function TemplateNeo4jAzurePage(props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <Neo4jOnAzureSection>
-        CNDI provides the simplest and most affordable alternative to Azure
-        Database for Neo4jQL. Running your own database cluster couldn’t be
-        easier thanks to the CloudNativePG project. CNDI Clusters are managed
-        from Git, all you need to do is initialize a new cluster repo and push
-        it up to trigger your automation!
+        Deploying Neo4j on Azure with CNDI provides a powerful and efficient
+        solution for managing your Neo4j graph database in your AWS cloud.
+        Scaling and maintaining your own graph database has never been easier.
+        CNDI is the best alternative to Neo4j Aura and there's no license fees.
+        Thanks to GitOps, changing your cluster infrastructure or config is as
+        simple as making a Pull Request.
       </Neo4jOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />

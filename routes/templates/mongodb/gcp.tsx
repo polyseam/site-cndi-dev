@@ -63,7 +63,8 @@ export default function TemplateMongodbGCPPage(props: PageProps) {
         automated infrastructure provisioning, you can quickly deploy scalable
         MongoDB clusters that cater to your data storage needs. Running MongoDB
         clusters with CNDI on GCP is more cost-effective than MongoDB Atlas
-        while also being more flexible.
+        while also being more flexible. Thanks to GitOps, changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
       </MongodbOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />

@@ -62,7 +62,9 @@ export default function TemplateMongodbAzurePage(props: PageProps) {
         automated infrastructure provisioning, you can quickly deploy scalable
         MongoDB clusters that cater to your data storage needs. Running MongoDB
         clusters with CNDI on AKS is more cost-effective than Azure Cosmos and
-        MongoDB Atlas while also being more flexible.
+        MongoDB Atlas while also being more flexible. Thanks to GitOps, changing
+        your cluster infrastructure or config is as simple as making a Pull
+        Request.
       </MongoDBOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
