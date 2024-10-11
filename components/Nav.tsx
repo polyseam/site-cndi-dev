@@ -108,9 +108,11 @@ export default function Nav(props: NavProps) {
             <a href="/community" class="uui-navbar07_link bug-fix w-nav-link">
               Community
             </a>
-            <a href="/blog" class="uui-navbar07_link test w-nav-link">
+            {
+              /* <a href="/blog" class="uui-navbar07_link test w-nav-link">
               Blogs
-            </a>
+            </a> */
+            }
             <LinkOut
               className="link-block-7 w-inline-block"
               pathname="/gh"
