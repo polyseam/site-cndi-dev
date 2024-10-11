@@ -16,6 +16,11 @@ import * as $templates_hop_dev from "./routes/templates/hop/dev.tsx";
 import * as $templates_hop_gcp from "./routes/templates/hop/gcp.tsx";
 import * as $templates_hop_index from "./routes/templates/hop/index.tsx";
 import * as $templates_index from "./routes/templates/index.tsx";
+import * as $templates_kafka_aws from "./routes/templates/kafka/aws.tsx";
+import * as $templates_kafka_azure from "./routes/templates/kafka/azure.tsx";
+import * as $templates_kafka_dev from "./routes/templates/kafka/dev.tsx";
+import * as $templates_kafka_gcp from "./routes/templates/kafka/gcp.tsx";
+import * as $templates_kafka_index from "./routes/templates/kafka/index.tsx";
 import * as $templates_mongodb_aws from "./routes/templates/mongodb/aws.tsx";
 import * as $templates_mongodb_azure from "./routes/templates/mongodb/azure.tsx";
 import * as $templates_mongodb_dev from "./routes/templates/mongodb/dev.tsx";
@@ -61,6 +66,11 @@ const manifest = {
     "./routes/templates/hop/gcp.tsx": $templates_hop_gcp,
     "./routes/templates/hop/index.tsx": $templates_hop_index,
     "./routes/templates/index.tsx": $templates_index,
+    "./routes/templates/kafka/aws.tsx": $templates_kafka_aws,
+    "./routes/templates/kafka/azure.tsx": $templates_kafka_azure,
+    "./routes/templates/kafka/dev.tsx": $templates_kafka_dev,
+    "./routes/templates/kafka/gcp.tsx": $templates_kafka_gcp,
+    "./routes/templates/kafka/index.tsx": $templates_kafka_index,
     "./routes/templates/mongodb/aws.tsx": $templates_mongodb_aws,
     "./routes/templates/mongodb/azure.tsx": $templates_mongodb_azure,
     "./routes/templates/mongodb/dev.tsx": $templates_mongodb_dev,

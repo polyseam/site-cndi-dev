@@ -37,15 +37,16 @@ export const data: TemplateData = [
   },
   {
     name: "mongodb",
+    title: "MongoDB",
     type: "Database",
   },
-  {
-    name: "redis",
-    type: "Cache",
-  },
-  {
-    name: "gpu-operator",
-    title: "GPU Operator",
-    type: "Hardware Acceleration",
-  },
+  // {
+  //   name: "redis",
+  //   type: "Cache",
+  // },
+  // {
+  //   name: "gpu-operator",
+  //   title: "GPU Operator",
+  //   type: "Hardware Acceleration",
+  // },
 ];

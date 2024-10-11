@@ -3,8 +3,8 @@ import { Head } from "$fresh/runtime.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
-import HopOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import KafkaWhatAndWhoForSection from "components/sections/kafka/WhatAndWhoForSection.tsx";
+import KafkaOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import TemplateHero, {
   CallToAction,
@@ -15,11 +15,11 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateHopGCPPage(props: PageProps) {
+export default function TemplateKafkaGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "hop";
-  const title = "Hop";
-  const type = "Visual Orchestration";
+  const templateName = "kafka";
+  const title = "Kafka";
+  const type = "Messaging";
 
   const utm_source = props.url.toString();
 
@@ -32,7 +32,7 @@ export default function TemplateHopGCPPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
-          heroImgAlt="Hop and GCP Connection Online"
+          heroImgAlt="Kafka and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -47,9 +47,9 @@ export default function TemplateHopGCPPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="hop_gcp_get_started"
+              utm_content="kafka_gcp_get_started"
               utm_source={utm_source}
-              utm_id={8032}
+              utm_id={8048}
               contentVersion={pageVersion}
             >
               Get Started
@@ -57,23 +57,25 @@ export default function TemplateHopGCPPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <HopOnGCPSection>
-        Deploying Apache Hop on GCP with CNDI gives you a cloud hosted visual
-        data integration engine accessible securely through the browser. Thanks
-        to GitOps, changing your cluster infrastructure or config is as simple
-        as making a Pull Request.
-      </HopOnGCPSection>
+      <KafkaOnGCPSection>
+        Deploying Kafka with CNDI on GCP is the most flexible way to run your
+        cluster. Managing your Kafka cluster through CNDI gives you more control
+        over your system. With CNDI and Strimzi you won't be locked out of
+        features of performance, unlike Confluent Cloud or Google Cloud Managed
+        Service for Apache Kafka. Thanks to GitOps, changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
+      </KafkaOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Up and running in minutes",
-          "Drag and drop editing experience",
-          "Deep integration with nearly every source and target",
+          "Radically simple to deploy",
+          "Easily maintained with GitOps",
+          "Flexible to your needs",
         ]}
       />
-      <HopWhatAndWhoForSection />
+      <KafkaWhatAndWhoForSection />
     </>
   );
 }

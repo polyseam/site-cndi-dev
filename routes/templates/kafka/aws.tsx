@@ -4,9 +4,9 @@ import AKSDistributionCard from "components/templates/distributions/aws/EKSDistr
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
+import KafkaWhatAndWhoForSection from "components/sections/kafka/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import HopOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import KafkaOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,11 +14,11 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateHopAWSPage(props: PageProps) {
+export default function TemplateKafkaAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "hop";
-  const title = "Hop";
-  const type = "Visual Orchestration";
+  const templateName = "kafka";
+  const title = "Kafka";
+  const type = "Messaging";
 
   const utm_source = props.url.toString();
 
@@ -31,7 +31,7 @@ export default function TemplateHopAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Hop and AWS Connection Online"
+          heroImgAlt="Kafka and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -40,16 +40,17 @@ export default function TemplateHopAWSPage(props: PageProps) {
             on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web<br />
+            Easily Deploy {title} on Amazon Web
+            <br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="hop_aws_get_started"
+              utm_content="kafka_aws_get_started"
               utm_source={utm_source}
-              utm_id={8031}
+              utm_id={8047}
               contentVersion={pageVersion}
             >
               Get Started
@@ -57,23 +58,25 @@ export default function TemplateHopAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <HopOnAWSSection>
-        Deploying Apache Hop on AWS with CNDI gives you a cloud hosted visual
-        data integration engine accessible securely through the browser. Thanks
-        to GitOps, changing your cluster infrastructure or config is as simple
-        as making a Pull Request.
-      </HopOnAWSSection>
+      <KafkaOnAWSSection>
+        Deploying Kafka with CNDI on AWS is the most flexible way to run your
+        cluster. Managing your Kafka cluster through CNDI gives you more control
+        over your system. With CNDI and Strimzi you won't be locked out of
+        features of performance, unlike Confluent Cloud or Amazon Managed
+        Streaming for Apache Kafka. Thanks to GitOps, changing your cluster
+        infrastructure or config is as simple as making a Pull Request.
+      </KafkaOnAWSSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Up and running in minutes",
-          "Drag and drop editing experience",
-          "Deep integration with nearly every source and target",
+          "Radically simple to deploy",
+          "Easily maintained with GitOps",
+          "Flexible to your needs",
         ]}
       />
-      <HopWhatAndWhoForSection />
+      <KafkaWhatAndWhoForSection />
     </>
   );
 }

@@ -4,9 +4,9 @@ import AKSDistributionCard from "components/templates/distributions/azure/AKSDis
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
+import KafkaWhatAndWhoForSection from "components/sections/kafka/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import HopOnAzureSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import KafkaOnAzureSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,11 +14,11 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateHopAzurePage(props: PageProps) {
+export default function TemplateKafkaAzurePage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "hop";
-  const title = "Hop";
-  const type = "Visual Orchestration";
+  const templateName = "kafka";
+  const title = "Kafka";
+  const type = "Messaging";
 
   const utm_source = props.url.toString();
 
@@ -31,7 +31,7 @@ export default function TemplateHopAzurePage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
-          heroImgAlt="Hop and Azure Connection Online"
+          heroImgAlt="Kafka and Azure Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -46,9 +46,9 @@ export default function TemplateHopAzurePage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="hop_azure_get_started"
+              utm_content="kafka_azure_get_started"
               utm_source={utm_source}
-              utm_id={8033}
+              utm_id={8049}
               contentVersion={pageVersion}
             >
               Get Started
@@ -56,23 +56,25 @@ export default function TemplateHopAzurePage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <HopOnAzureSection>
-        Deploying Apache Hop on Azure with CNDI gives you a cloud hosted visual
-        data integration engine accessible securely through the browser. Thanks
-        to GitOps, changing your cluster infrastructure or config is as simple
-        as making a Pull Request.
-      </HopOnAzureSection>
+      <KafkaOnAzureSection>
+        Deploying Kafka with CNDI on AWS is the most flexible way to run your
+        cluster. Managing your Kafka cluster through CNDI gives you more control
+        over your system. With CNDI and Strimzi you won't be locked out of
+        features of performance, unlike Confluent Cloud. Thanks to GitOps,
+        changing your cluster infrastructure or config is as simple as making a
+        Pull Request.
+      </KafkaOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Up and running in minutes",
-          "Drag and drop editing experience",
-          "Deep integration with nearly every source and target",
+          "Radically simple to deploy",
+          "Easily maintained with GitOps",
+          "Flexible to your needs",
         ]}
       />
-      <HopWhatAndWhoForSection />
+      <KafkaWhatAndWhoForSection />
     </>
   );
 }
