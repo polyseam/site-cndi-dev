@@ -19,15 +19,15 @@ export default function Footer(props: FooterProps) {
               pathname="/pio"
               utm_content="nav_github"
               utm_id={8000}
-              contentVersion={`site_cndidev@${footerVersion}`}
+              contentVersion={footerVersion}
             >
               <img
-                src="/images/Polyseam-Logo--With-white-Text.png"
+                src="/images/logo/polyseam.png"
                 loading="lazy"
                 width="211"
                 sizes="(max-width: 479px) 100vw, 211px"
                 alt="Polyseam Logo"
-                srcset="/images/Polyseam-Logo--With-white-Text-p-500.png 500w, images/Polyseam-Logo--With-white-Text-p-800.png 800w, images/Polyseam-Logo--With-white-Text-p-1080.png 1080w, images/Polyseam-Logo--With-white-Text-p-1600.png 1600w, images/Polyseam-Logo--With-white-Text-p-2000.png 2000w, images/Polyseam-Logo--With-white-Text-p-2600.png 2600w, images/Polyseam-Logo--With-white-Text-p-3200.png 3200w"
+                srcset="/images/logo/polyseam-p-500.png 500w, /images/logo/polyseam-p-800.png 800w, /images/logo/polyseam-p-1080.png 1080w, /images/logo/polyseam-p-1600.png 1600w, /images/logo/polyseam-p-2000.png 2000w, /images/logo/polyseam-p-2600.png 2600w, /images/logo/polyseam-p-3200.png 3200w"
               />
             </LinkOut>
             <div class="footer-content">
@@ -93,9 +93,6 @@ export default function Footer(props: FooterProps) {
                 class="footer-block"
               >
                 <div class="title-small">About</div>
-                <a href="/community" class="footer-link-2">
-                  Community
-                </a>
                 <a href="/terms-of-use" target="_blank" class="footer-link-2">
                   Terms of Use
                 </a>
@@ -108,7 +105,7 @@ export default function Footer(props: FooterProps) {
         </div>
         <div class="footer-copyright-center">
           Copyright © {new Date().getFullYear()}{" "}
-          <a href="index.html" aria-current="page" class="link w--current">
+          <a href="/" aria-current="page" class="link w--current">
             Polyseam
           </a>
         </div>

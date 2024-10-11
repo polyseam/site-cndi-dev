@@ -15,6 +15,7 @@ import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
 import TemplateHead from "../../../components/TemplateHead.tsx";
+import YoutubeVideoDemoEmbedSection from "components/sections/YoutubeVideoDemoEmbedSection.tsx";
 
 export default function TemplateAirflowAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -72,6 +73,10 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
+      <YoutubeVideoDemoEmbedSection
+        videoId="a8kk4gTJrPU"
+        title="How to Deploy Apache Airflow on AWS with CNDI"
+      />
       <AirflowOnAWSSection>
         Running a production Airflow cluster doesn’t need to be expensive. CNDI
         provides the simplest and most affordable alternative to MWAA and

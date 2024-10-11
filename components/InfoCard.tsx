@@ -28,7 +28,7 @@ export default function InfoCard(props: Props) {
           >
             <div class="text-block-73">{cta.text}</div>
             <img
-              src="/images/system/link-out-icon.png"
+              src="/images/system/link_out_icon.png"
               loading="lazy"
               width="16"
               alt="outbound link icon"

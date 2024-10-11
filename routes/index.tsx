@@ -20,24 +20,15 @@ export default function HomePage(props: PageProps) {
     <>
       <Head>
         <title>{title}</title>
-        <meta
-          content={description}
-          name="description"
-        />
+        <meta content={description} name="description" />
         <meta content={title} property="og:title" />
-        <meta
-          content={description}
-          property="og:description"
-        />
+        <meta content={description} property="og:description" />
         <meta
           content="https://cndi.dev/images/meta/meta_home.jpg"
           property="og:image"
         />
         <meta content={title} property="twitter:title" />
-        <meta
-          content={description}
-          property="twitter:description"
-        />
+        <meta content={description} property="twitter:description" />
         <meta
           content="https://cndi.dev/images/meta/meta_home.jpg"
           property="twitter:image"
@@ -47,7 +38,10 @@ export default function HomePage(props: PageProps) {
         <CLIAnimationHeroSection />
         <LogoTickerSection />
         <WhatIsCNDISection />
-        <YoutubeVideoDemoEmbedSection />
+        <YoutubeVideoDemoEmbedSection
+          videoId="a8kk4gTJrPU"
+          title="How to Deploy Apache Airflow on AWS with CNDI"
+        />
         <SelfHostSection />
         <UseInteractiveCNDITemplatesSection />
         <CNDIBenefitCardsSection />

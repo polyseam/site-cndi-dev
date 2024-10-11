@@ -32,7 +32,7 @@
 }
 
 .w-embed-youtubevideo {
-  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg');
+  background-image: url('/images/system/youtube-placeholder.svg');
   background-position: 50%;
   background-size: cover;
   width: 100%;
@@ -3632,7 +3632,6 @@ a:hover {
 
 .body_templates {
   background-color: var(--dark-purp);
-  background-image: url('../images/background_v3.jpg');
   background-position: 50% 0;
   background-size: cover;
   font-family: Roboto, sans-serif;
@@ -4382,7 +4381,7 @@ a:hover {
 
 .self-host-section {
   opacity: 1;
-  background-image: url('../images/background-gradient.png');
+  background-image: url('/images/system/background-gradient.png');
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;

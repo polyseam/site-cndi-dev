@@ -34,12 +34,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -47,12 +47,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -66,12 +66,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -79,12 +79,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
         <div
@@ -98,12 +98,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -111,12 +111,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
         <div
@@ -130,12 +130,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -143,12 +143,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
         <div
@@ -162,12 +162,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -175,12 +175,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
         <div
@@ -194,12 +194,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -207,12 +207,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
         <div
@@ -226,12 +226,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check"
         >
           <img
-            src="images/check_2.png"
+            src="/images/system/checkmark_circle_green.png"
             loading="lazy"
             width="40"
             sizes="40px"
             alt=""
-            srcset="images/check_2-p-500.png 500w, images/check_2-p-800.png 800w, images/check_2.png 1006w"
+            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
         <div
@@ -239,12 +239,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell self-hosting-grid-check-copy"
         >
           <img
-            src="images/X_1.png"
+            src="/images/system/x_circle_red.png"
             loading="lazy"
             width="34"
             sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
             alt=""
-            srcset="images/X_1-p-500.png 500w, images/X_1.png 800w"
+            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
       </div>

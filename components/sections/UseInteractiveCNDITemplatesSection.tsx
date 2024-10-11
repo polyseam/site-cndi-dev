@@ -23,7 +23,7 @@ export default function UseInteractiveCNDITemplatesSection() {
               a data stack, built on top of ArgoCD, Helm Charts, and Terraform.
               Check out all our supported templates below.
             </div>
-            <a href="templates.html" class="button_templates_home w-button">
+            <a href="/templates" class="button_templates_home w-button">
               Templates
             </a>
           </div>
@@ -38,7 +38,7 @@ export default function UseInteractiveCNDITemplatesSection() {
                 <div class="x"></div>
               </div>
               <img
-                src="images/cndi_templates.gif"
+                src="/images/vhs-animations/cndi-init-i.gif"
                 loading="lazy"
                 width="667"
                 alt="CNDI Templates Gif"

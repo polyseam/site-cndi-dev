@@ -33,12 +33,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell cell-53"
         >
           <img
-            src="images/Managed_from_git.png"
+            src="/images/content/self-hosting/managed_from_git.png"
             loading="lazy"
             width="308"
             sizes="(max-width: 479px) 100vw, 308px"
             alt=""
-            srcset="images/Managed_from_git-p-500.png 500w, images/Managed_from_git-p-800.png 800w, images/Managed_from_git-p-1080.png 1080w, images/Managed_from_git.png 1320w"
+            srcset="/images/content/self-hosting/managed_from_git-p-500.png 500w, /images/content/self-hosting/managed_from_git-p-800.png 800w, /images/content/self-hosting/managed_from_git-p-1080.png 1080w, /images/content/self-hosting/managed_from_git.png 1320w"
           />
         </div>
         <div
@@ -46,12 +46,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell cell-41"
         >
           <img
-            src="images/Cluster_Customization.png"
+            src="/images/content/self-hosting/cluster_customization.png"
             loading="lazy"
             width="253"
             sizes="(max-width: 479px) 100vw, 253px"
             alt=""
-            srcset="images/Cluster_Customization-p-500.png 500w, images/Cluster_Customization-p-800.png 800w, images/Cluster_Customization.png 857w"
+            srcset="/images/content/self-hosting/cluster_customization-p-500.png 500w, /images/content/self-hosting/cluster_customization-p-800.png 800w, /images/content/self-hosting/cluster_customization.png 857w"
           />
         </div>
         <div
@@ -88,12 +88,12 @@ export default function WhySelfHostCopy() {
           class="w-layout-cell cell-54"
         >
           <img
-            src="images/Operational-Cost.png"
+            src="/images/content/self-hosting/operational_cost.png"
             loading="lazy"
             width="307"
             sizes="(max-width: 479px) 100vw, 307px"
             alt=""
-            srcset="images/Operational-Cost-p-500.png 500w, images/Operational-Cost-p-800.png 800w, images/Operational-Cost.png 998w"
+            srcset="/images/content/self-hosting/operational_cost-p-500.png 500w, /images/content/self-hosting/operational_cost-p-800.png 800w, /images/content/self-hosting/operational_cost.png 998w"
           />
         </div>
       </div>

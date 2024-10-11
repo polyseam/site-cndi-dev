@@ -16,9 +16,9 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
       class="w-layout-cell templatecard"
     >
       <div class="div-block-87">
-        <a href={`templates/${name}`} class="link-block-9 w-inline-block">
+        <a href={`/templates/${name}`} class="link-block-9 w-inline-block">
           <img
-            src={`images/template-icons/${name}/logo.png`}
+            src={`/images/template-icons/${name}/logo.png`}
             loading="lazy"
             width="40"
             sizes="40px"
@@ -51,12 +51,12 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
                 class="link_target w-inline-block"
               >
                 <img
-                  src="images/AWS-2.png"
+                  src="/images/provider-icons/aws.png"
                   loading="lazy"
                   width="32"
                   sizes="(max-width: 1439px) 32px, (max-width: 1919px) 2vw, 32px"
                   alt="Amazon Web Services Logo"
-                  srcset="images/AWS-2-p-500.png 500w, images/AWS-2.png 782w"
+                  // srcset="/images/provider-icons/aws-p-500.png 500w, /images/provider-icons/aws.png 782w"
                   class="image-46"
                 />
               </a>
@@ -70,7 +70,7 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
                 class="link_target w-inline-block"
               >
                 <img
-                  src="images/gcp-logo-cloud.webp"
+                  src="/images/provider-icons/gcp.webp"
                   loading="lazy"
                   width="32"
                   alt="GCP Logo"
@@ -86,12 +86,12 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
                 class="link_target w-inline-block"
               >
                 <img
-                  src="images/Microsoft_Azure.svg.png"
+                  src="/images/provider-icons/azure.png"
                   loading="lazy"
                   width="29"
                   sizes="(max-width: 1439px) 29px, (max-width: 1919px) 2vw, 29px"
                   alt="Microsoft Azure Logo"
-                  srcset="images/Microsoft_Azure.svg-p-500.png 500w, images/Microsoft_Azure.svg-p-800.png 800w, images/Microsoft_Azure.svg-p-1080.png 1080w, images/Microsoft_Azure.svg.png 1200w"
+                  // srcset="/images/provider-icons/azure-p-500.png 500w, /images/provider-icons/azure-p-800.png 800w, /images/provider-icons/azure-p-1080.png 1080w, /images/provider-icons/azure.png 1200w"
                 />
               </a>
             </div>

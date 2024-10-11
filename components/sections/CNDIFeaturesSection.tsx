@@ -27,12 +27,12 @@ export default function CNDIFeaturesSection() {
             class="w-layout-cell cell-11"
           >
             <img
-              src="images/turnkey_k8s.png"
+              src="/images/content/features/turnkey_k8s.png"
               loading="lazy"
               width="368"
               sizes="(max-width: 479px) 100vw, 368px"
               alt="Turnkey Kubernetes Infrastructure and Applications"
-              srcset="images/turnkey_k8s-p-500.png 500w, images/turnkey_k8s.png 683w"
+              srcset="/images/content/features/turnkey_k8s-p-500.png 500w, /images/content/features/turnkey_k8s.png 683w"
               class="image-59"
             />
           </div>
@@ -41,12 +41,12 @@ export default function CNDIFeaturesSection() {
             class="w-layout-cell cell-13"
           >
             <img
-              src="images/complete_framework.png"
+              src="/images/content/features/complete_framework.png"
               loading="lazy"
               width="434"
               sizes="(max-width: 479px) 100vw, 434px"
               alt="CNDI provides a holistic approach to Kubernetes cluster management"
-              srcset="images/complete_framework-p-500.png 500w, images/complete_framework-p-800.png 800w, images/complete_framework-p-1080.png 1080w, images/complete_framework.png 1373w"
+              srcset="/images/content/features/complete_framework-p-500.png 500w, /images/content/features/complete_framework-p-800.png 800w, /images/content/features/complete_framework-p-1080.png 1080w, /images/content/features/complete_framework.png 1373w"
             />
           </div>
           <div
@@ -82,10 +82,10 @@ export default function CNDIFeaturesSection() {
           >
             <a href="/templates">
               <img
-                src="images/template_home_img.png"
+                src="/images/content/features/template_home_screenshot.png"
                 loading="lazy"
                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 992px"
-                srcset="images/template_home_img-p-500.png 500w, images/template_home_img-p-800.png 800w, images/template_home_img.png 992w"
+                srcset="/images/content/features/template_home_screenshot-p-500.png 500w, /images/content/features/template_home_screenshot-p-800.png 800w, /images/content/features/template_home_screenshot.png 992w"
                 alt="CNDI Templates"
                 class="image-89"
               />
