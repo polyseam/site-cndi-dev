@@ -14,6 +14,7 @@ import TemplateHero, {
 import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
+import TemplateHead from "components/TemplateHead.tsx";
 
 export default function TemplateMySQLGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -25,9 +26,11 @@ export default function TemplateMySQLGCPPage(props: PageProps) {
 
   return (
     <>
-      <Head>
-        <title>Templates | {title} on GCP</title>
-      </Head>
+      <TemplateHead
+        templateTitle={title}
+        templateName={templateName}
+        provider="GCP"
+      />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero

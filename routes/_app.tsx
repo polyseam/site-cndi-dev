@@ -48,6 +48,20 @@ export default function App({ Component, url }: PageProps) {
         <Nav url={url} />
         <Component />
         <Footer url={url} />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7REFQVSM9L"
+        >
+        </script>
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7REFQVSM9L');
+          `}
+        </script>
       </body>
     </html>
   );

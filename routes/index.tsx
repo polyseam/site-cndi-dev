@@ -28,7 +28,7 @@ export default function HomePage(props: PageProps) {
           property="og:description"
         />
         <meta
-          content="https://uploads-ssl.webflow.com/63068f0fdc776c637b848bab/64c2e12278167dd32eee75ac_open_graph_img.jpg"
+          content="https://cndi.dev/images/meta/meta_home.jpg"
           property="og:image"
         />
         <meta content="CNDI | Home" property="twitter:title" />
@@ -37,7 +37,7 @@ export default function HomePage(props: PageProps) {
           property="twitter:description"
         />
         <meta
-          content="https://uploads-ssl.webflow.com/63068f0fdc776c637b848bab/64c2e12278167dd32eee75ac_open_graph_img.jpg"
+          content="https://cndi.dev/images/meta/meta_home.jpg"
           property="twitter:image"
         />
       </Head>

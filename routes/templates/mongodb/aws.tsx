@@ -1,5 +1,4 @@
 import { PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
 import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
@@ -13,6 +12,7 @@ import TemplateHero, {
   Subheading,
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
+import TemplateHead from "components/TemplateHead.tsx";
 
 export default function TemplateMongodbAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -24,9 +24,11 @@ export default function TemplateMongodbAWSPage(props: PageProps) {
 
   return (
     <>
-      <Head>
-        <title>Templates | {title} on AWS</title>
-      </Head>
+      <TemplateHead
+        templateTitle={title}
+        templateName={templateName}
+        provider="AWS"
+      />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero

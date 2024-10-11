@@ -23,10 +23,29 @@ export default function TemplateAirflowDevPage(props: PageProps) {
 
   const utm_source = props.url.toString();
 
+  const pageTitle = `Templates | ${title} on Dev`;
+  const description = `Running ${title} on Kubernetes Locally using CNDI.`;
+
   return (
     <>
       <Head>
-        <title>Templates | {title} on Dev</title>
+        <title>{pageTitle}</title>
+        <meta content={description} name="description" />
+        <meta content={pageTitle} property="og:title" />
+        <meta content={description} property="og:description" />
+        <meta
+          content="https://cndi.dev/images/meta/meta_airflow_dev.jpg"
+          property="og:image"
+        />
+        <meta content={pageTitle} property="twitter:title" />
+        <meta content={description} property="twitter:description" />
+        <meta
+          content="https://cndi.dev/images/meta/meta_airflow_dev.jpg"
+          property="twitter:image"
+        />
+        <meta property="og:type" content="website" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <HeroSection>
         <HRule topText={type} />

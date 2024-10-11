@@ -1,8 +1,6 @@
-import { ComponentChildren } from "preact";
 import CookieManager from "components/CookieManager.tsx";
 import LinkOut from "components/LinkOut.tsx";
 type FooterProps = {
-  children: ComponentChildren;
   url: URL;
 };
 

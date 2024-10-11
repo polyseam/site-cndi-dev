@@ -15,6 +15,8 @@ import TemplateHero, {
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
+import TemplateHead from "../../../components/TemplateHead.tsx";
+
 export default function TemplateAirflowAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "airflow";
@@ -25,9 +27,11 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
 
   return (
     <>
-      <Head>
-        <title>Templates | {title} on AWS</title>
-      </Head>
+      <TemplateHead
+        templateTitle={title}
+        templateName={templateName}
+        provider="AWS"
+      />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero
@@ -51,7 +55,8 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
             on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web<br />
+            Easily Deploy {title} on Amazon Web
+            <br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
