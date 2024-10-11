@@ -48,7 +48,6 @@ import * as $templates_postgres_dev from "./routes/templates/postgres/dev.tsx";
 import * as $templates_postgres_gcp from "./routes/templates/postgres/gcp.tsx";
 import * as $templates_postgres_index from "./routes/templates/postgres/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
-import * as $Counter from "./islands/Counter.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -102,7 +101,6 @@ const manifest = {
     "./routes/terms-of-use.tsx": $terms_of_use,
   },
   islands: {
-    "./islands/Counter.tsx": $Counter,
     "./islands/LogoTicker.tsx": $LogoTicker,
   },
   baseUrl: import.meta.url,
