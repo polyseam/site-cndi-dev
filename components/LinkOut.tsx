@@ -25,7 +25,7 @@ export default function LinkOut(props: Props) {
   const utm_medium = props?.utm_medium || "website";
   const utm_campaign = `${UTM_CAMPAIGN_PREFIX}${props.contentVersion}`;
   let href =
-    `https://cndi.run${pathname}?utm_content=${props.utm_content}&utm_campaign=${utm_campaign}&utm_source=${props.utm_source}&utm_medium=${utm_medium}&utm_id=${query.utm_id}`;
+    `https://cndi.run${pathname}?utm_content=${props.utm_content}&utm_campaign=${utm_campaign}&utm_source=${props.utm_source}&utm_medium=${utm_medium}&utm_id=${props.utm_id}`;
   for (const key in query) {
     href += `&${key}=${query[key]}`;
   }
