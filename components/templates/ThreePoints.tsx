@@ -10,7 +10,7 @@ export default function ThreePoints(props: ThreePointsProps) {
           {props.statements.map((statement, index) => (
             <div class="div-block-83" key={"threeStatementsI" + index}>
               <img
-                src="/images/system/checkmark-circle.png"
+                src="/images/system/checkmark_circle.png"
                 loading="lazy"
                 width="33"
                 alt=""
