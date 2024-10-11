@@ -41,7 +41,7 @@ export default function TemplatePostgresAWSPage(props: PageProps) {
           </Heading>
           <Subheading>
             {" "}
-            Easily Deploy {title} on Amazon Web <br />
+            Easily Deploy {title} on Amazon Web<br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>

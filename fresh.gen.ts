@@ -21,6 +21,11 @@ import * as $templates_mongodb_azure from "./routes/templates/mongodb/azure.tsx"
 import * as $templates_mongodb_dev from "./routes/templates/mongodb/dev.tsx";
 import * as $templates_mongodb_gcp from "./routes/templates/mongodb/gcp.tsx";
 import * as $templates_mongodb_index from "./routes/templates/mongodb/index.tsx";
+import * as $templates_mssqlserver_aws from "./routes/templates/mssqlserver/aws.tsx";
+import * as $templates_mssqlserver_azure from "./routes/templates/mssqlserver/azure.tsx";
+import * as $templates_mssqlserver_dev from "./routes/templates/mssqlserver/dev.tsx";
+import * as $templates_mssqlserver_gcp from "./routes/templates/mssqlserver/gcp.tsx";
+import * as $templates_mssqlserver_index from "./routes/templates/mssqlserver/index.tsx";
 import * as $templates_mysql_aws from "./routes/templates/mysql/aws.tsx";
 import * as $templates_mysql_azure from "./routes/templates/mysql/azure.tsx";
 import * as $templates_mysql_dev from "./routes/templates/mysql/dev.tsx";
@@ -61,6 +66,11 @@ const manifest = {
     "./routes/templates/mongodb/dev.tsx": $templates_mongodb_dev,
     "./routes/templates/mongodb/gcp.tsx": $templates_mongodb_gcp,
     "./routes/templates/mongodb/index.tsx": $templates_mongodb_index,
+    "./routes/templates/mssqlserver/aws.tsx": $templates_mssqlserver_aws,
+    "./routes/templates/mssqlserver/azure.tsx": $templates_mssqlserver_azure,
+    "./routes/templates/mssqlserver/dev.tsx": $templates_mssqlserver_dev,
+    "./routes/templates/mssqlserver/gcp.tsx": $templates_mssqlserver_gcp,
+    "./routes/templates/mssqlserver/index.tsx": $templates_mssqlserver_index,
     "./routes/templates/mysql/aws.tsx": $templates_mysql_aws,
     "./routes/templates/mysql/azure.tsx": $templates_mysql_azure,
     "./routes/templates/mysql/dev.tsx": $templates_mysql_dev,

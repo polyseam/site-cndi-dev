@@ -40,7 +40,7 @@ export default function TemplateHopAWSPage(props: PageProps) {
             on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web <br />
+            Easily Deploy {title} on Amazon Web<br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
@@ -49,7 +49,7 @@ export default function TemplateHopAWSPage(props: PageProps) {
               pathname="/gh"
               utm_content="hop_aws_get_started"
               utm_source={utm_source}
-              utm_id={8027}
+              utm_id={8031}
               contentVersion={pageVersion}
             >
               Get Started

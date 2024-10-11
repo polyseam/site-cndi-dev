@@ -4,22 +4,21 @@ import AKSDistributionCard from "components/templates/distributions/aws/EKSDistr
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import AirflowWhatAndWhoForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
+import MSSQLServerWhatAndWhoForSection from "components/sections/mssqlserver/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import AirflowOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MSSQLServerOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
   Subheading,
 } from "components/TemplateHero.tsx";
-import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateAirflowAWSPage(props: PageProps) {
+export default function TemplateMSSQLServerAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "airflow";
-  const title = "Airflow";
-  const type = "Orchestration";
+  const templateName = "mssqlserver";
+  const title = "MS SQL Server";
+  const type = "Database";
 
   const utm_source = props.url.toString();
 
@@ -32,18 +31,8 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Airflow and AWS Connection Online"
+          heroImgAlt={`${title} and AWS Connection Online`}
           templateName={templateName}
-          officialDeploymentMethod={
-            <OfficialDeploymentMethod
-              title={title}
-              templateName={templateName}
-              utm_id={8055}
-              utm_source={utm_source}
-              pathname="/ae"
-              contentVersion={pageVersion}
-            />
-          }
         >
           <Heading>
             Deploy {title}
@@ -51,16 +40,18 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
             on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web<br />
+            {" "}
+            Easily Deploy {title} on Amazon Web
+            <br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="airflow_aws_get_started"
+              utm_content="mssqlserver_aws_get_started"
               utm_source={utm_source}
-              utm_id={8023}
+              utm_id={8051}
               contentVersion={pageVersion}
             >
               Get Started
@@ -68,24 +59,23 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <AirflowOnAWSSection>
-        Running a production Airflow cluster doesn’t need to be expensive. CNDI
-        provides the simplest and most affordable alternative to MWAA and
-        Astronomer. Running your own cluster is a breeze. Thanks to GitOps,
-        changing your cluster infrastructure or config is as simple as making a
-        Pull Request.
-      </AirflowOnAWSSection>
+      <MSSQLServerOnAWSSection>
+        Deploying MS SQL Server on AWS with CNDI gives you a cloud hosted
+        database that is just as dependable and performant as SQL Server on RDS,
+        but portable, and without license fees. Thanks to GitOps, changing your
+        cluster infrastructure or config is as simple as making a Pull Request.
+      </MSSQLServerOnAWSSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Automatically Synchronize your DAGs from Git",
-          "Manage your Kubernetes cluster with GitOps",
-          "Scale your workloads with the Kubernetes Executor",
+          "Performant and Reliable",
+          "Easily maintained with GitOps",
+          "Flexible to your needs",
         ]}
       />
-      <AirflowWhatAndWhoForSection />
+      <MSSQLServerWhatAndWhoForSection />
     </>
   );
 }

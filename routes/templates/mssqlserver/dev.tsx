@@ -3,9 +3,9 @@ import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
+import MSSQLServerWhatAndWhoForSection from "components/sections/mssqlserver/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import HopOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MSSQLServerOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,10 +14,10 @@ import TemplateHero, {
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateHopDevPage(props: PageProps) {
+export default function TemplateMSSQLServerDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "hop";
-  const title = "Hop";
+  const templateName = "mssqlserver";
+  const title = "MS SQL Server";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -31,7 +31,7 @@ export default function TemplateHopDevPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
-          heroImgAlt="Hop and Laptop Connection Online"
+          heroImgAlt="Mssqlserver and Laptop Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -42,9 +42,9 @@ export default function TemplateHopDevPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="hop_dev_get_started"
+              utm_content="mssqlserver_dev_get_started"
               utm_source={utm_source}
-              utm_id={8034}
+              utm_id={8054}
               contentVersion={pageVersion}
             >
               Get Started
@@ -52,12 +52,12 @@ export default function TemplateHopDevPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <HopOnDevSection>
-        Running a development Hop cluster is made simple using CNDI. Begin
-        experimenting with data integration in minutes right in your web the
-        browser. Building data pipelines is a drag-and-drop style experience
-        with support for nearly every source and target.
-      </HopOnDevSection>
+      <MSSQLServerOnDevSection>
+        Running Microsoft SQL Server on your local development environment
+        offers a convenient and efficient way to experiment with your data and
+        dial in your requirements. Run your cloud-native Microsoft SQL Server
+        cluster locally and prove it’s ready to go live.
+      </MSSQLServerOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
           Deploying {title}
@@ -70,11 +70,11 @@ export default function TemplateHopDevPage(props: PageProps) {
       <ThreePoints
         statements={[
           "Up and running in minutes",
-          "Drag and drop editing experience",
-          "Deep integration with nearly every source and target",
+          "Just like production",
+          "Develop and debug with ease",
         ]}
       />
-      <HopWhatAndWhoForSection />
+      <MSSQLServerWhatAndWhoForSection />
     </>
   );
 }

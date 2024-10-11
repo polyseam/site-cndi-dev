@@ -80,14 +80,16 @@ export default function CNDIFeaturesSection() {
             id="w-node-_348c7f0e-47c2-bfbc-e9c7-8d8187618034-f6848bac"
             class="w-layout-cell"
           >
-            <img
-              src="images/template_home_img.png"
-              loading="lazy"
-              sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 992px"
-              srcset="images/template_home_img-p-500.png 500w, images/template_home_img-p-800.png 800w, images/template_home_img.png 992w"
-              alt="CNDI Templates"
-              class="image-89"
-            />
+            <a href="/templates">
+              <img
+                src="images/template_home_img.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 992px"
+                srcset="images/template_home_img-p-500.png 500w, images/template_home_img-p-800.png 800w, images/template_home_img.png 992w"
+                alt="CNDI Templates"
+                class="image-89"
+              />
+            </a>
           </div>
         </div>
       </div>

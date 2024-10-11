@@ -40,7 +40,7 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
             on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web <br />
+            Easily Deploy {title} on Amazon Web<br />
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
