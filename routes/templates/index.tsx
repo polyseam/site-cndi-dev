@@ -5,11 +5,27 @@ import TemplateCardListSection from "components/sections/TemplateCardListSection
 export default function TemplatesPage(props: PageProps) {
   const pageTitle = "Templates | CNDI";
   const pageVersion = "v1.0.0";
-
+  const description = "Self-Host Open-Source Applications with CNDI Templates";
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
+        <meta content={description} name="description" />
+        <meta content={pageTitle} property="og:title" />
+        <meta content={description} property="og:description" />
+        <meta
+          content={`https://cndi.dev/images/meta/meta_home.jpg`}
+          property="og:image"
+        />
+        <meta content={pageTitle} property="twitter:title" />
+        <meta content={description} property="twitter:description" />
+        <meta
+          content={`https://cndi.dev/images/meta/meta_home.jpg`}
+          property="twitter:image"
+        />
+        <meta property="og:type" content="website" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <div>
         <section class="section-29">

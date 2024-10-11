@@ -13,27 +13,29 @@ import CNDIFeaturesSection from "components/sections/CNDIFeaturesSection.tsx";
 import TemplateCardListSection from "components/sections/TemplateCardListSection.tsx";
 
 export default function HomePage(props: PageProps) {
+  const title = "CNDI | Home";
   const homePageVersion = "v1.0.0";
+  const description = "a framework for self-hosting open-source applications";
   return (
     <>
       <Head>
-        <title>CNDI | Home</title>
+        <title>{title}</title>
         <meta
-          content="Open-source self-serve data Infrastructure deployment tool."
+          content={description}
           name="description"
         />
-        <meta content="CNDI | Home" property="og:title" />
+        <meta content={title} property="og:title" />
         <meta
-          content="Open-source self-serve data Infrastructure deployment tool."
+          content={description}
           property="og:description"
         />
         <meta
           content="https://cndi.dev/images/meta/meta_home.jpg"
           property="og:image"
         />
-        <meta content="CNDI | Home" property="twitter:title" />
+        <meta content={title} property="twitter:title" />
         <meta
-          content="Open-source self-serve data Infrastructure deployment tool."
+          content={description}
           property="twitter:description"
         />
         <meta
@@ -54,8 +56,6 @@ export default function HomePage(props: PageProps) {
           url={props.url}
           pageVersion={homePageVersion}
         />
-
-        <script src="/js/webflow.js" type="text/javascript"></script>
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 import { PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";

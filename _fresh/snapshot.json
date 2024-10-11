@@ -1,8 +1,8 @@
 {
-  "build_id": "6520252c757171ed771113dea7212f46bf81742c",
+  "build_id": "d3f4fe6794bd07e410a5ceb57baf81389900b60d",
   "files": {
     "main.js": [
-      "chunk-S3UPPUKF.js",
+      "chunk-MCYFSI63.js",
       "chunk-YXFWN52L.js"
     ],
     "deserializer.js": [],
@@ -11,12 +11,12 @@
       "chunk-YXFWN52L.js"
     ],
     "island-counter.js": [
-      "chunk-S3UPPUKF.js",
+      "chunk-MCYFSI63.js",
       "chunk-OKFTCS7B.js",
       "chunk-WAIVBOVI.js",
       "chunk-YXFWN52L.js"
     ],
-    "chunk-S3UPPUKF.js": [],
+    "chunk-MCYFSI63.js": [],
     "island-logoticker.js": [
       "chunk-OKFTCS7B.js",
       "chunk-WAIVBOVI.js",

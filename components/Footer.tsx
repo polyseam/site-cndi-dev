@@ -107,7 +107,7 @@ export default function Footer(props: FooterProps) {
           </div>
         </div>
         <div class="footer-copyright-center">
-          Copyright © 2024{" "}
+          Copyright © {new Date().getFullYear()}{" "}
           <a href="index.html" aria-current="page" class="link w--current">
             Polyseam
           </a>

@@ -16,7 +16,7 @@ export default function TemplateCardListSection({ pageVersion, url }: Props) {
         <div class="div-block-86">
           <h1 class="heading-61">CNDI Templates</h1>
           <div class="text-block-62">
-            Make a request for new template{" "}
+            Make a request for new template
             <LinkOut
               pathname="/ghi"
               utm_content="site_cndidev_templates_request_new_template"

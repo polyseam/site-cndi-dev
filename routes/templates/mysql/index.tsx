@@ -1,10 +1,10 @@
 import { PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
 import MySQLWhoAndWhatForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
+import TemplateHead from "components/TemplateHead.tsx";
 
 export default function TemplateMySQLPage(_props: PageProps) {
   const templateName = "mysql";
@@ -13,9 +13,7 @@ export default function TemplateMySQLPage(_props: PageProps) {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <TemplateHead templateTitle={title} templateName={templateName} />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero

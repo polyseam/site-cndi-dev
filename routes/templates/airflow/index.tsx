@@ -1,11 +1,11 @@
 import { PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
 import AirflowWhoAndWhatForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
+import TemplateHead from "components/TemplateHead.tsx";
 
 export default function TemplateAirflowPage(props: PageProps) {
   const templateName = "airflow";
@@ -16,9 +16,7 @@ export default function TemplateAirflowPage(props: PageProps) {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <TemplateHead templateTitle={title} templateName={templateName} />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero
