@@ -11,6 +11,11 @@ import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
 import * as $templates_airflow_gcp from "./routes/templates/airflow/gcp.tsx";
 import * as $templates_airflow_index from "./routes/templates/airflow/index.tsx";
 import * as $templates_index from "./routes/templates/index.tsx";
+import * as $templates_mongodb_aws from "./routes/templates/mongodb/aws.tsx";
+import * as $templates_mongodb_azure from "./routes/templates/mongodb/azure.tsx";
+import * as $templates_mongodb_dev from "./routes/templates/mongodb/dev.tsx";
+import * as $templates_mongodb_gcp from "./routes/templates/mongodb/gcp.tsx";
+import * as $templates_mongodb_index from "./routes/templates/mongodb/index.tsx";
 import * as $templates_mysql_aws from "./routes/templates/mysql/aws.tsx";
 import * as $templates_mysql_azure from "./routes/templates/mysql/azure.tsx";
 import * as $templates_mysql_dev from "./routes/templates/mysql/dev.tsx";
@@ -41,6 +46,11 @@ const manifest = {
     "./routes/templates/airflow/gcp.tsx": $templates_airflow_gcp,
     "./routes/templates/airflow/index.tsx": $templates_airflow_index,
     "./routes/templates/index.tsx": $templates_index,
+    "./routes/templates/mongodb/aws.tsx": $templates_mongodb_aws,
+    "./routes/templates/mongodb/azure.tsx": $templates_mongodb_azure,
+    "./routes/templates/mongodb/dev.tsx": $templates_mongodb_dev,
+    "./routes/templates/mongodb/gcp.tsx": $templates_mongodb_gcp,
+    "./routes/templates/mongodb/index.tsx": $templates_mongodb_index,
     "./routes/templates/mysql/aws.tsx": $templates_mysql_aws,
     "./routes/templates/mysql/azure.tsx": $templates_mysql_azure,
     "./routes/templates/mysql/dev.tsx": $templates_mysql_dev,

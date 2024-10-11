@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import AKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
+import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
@@ -63,7 +63,7 @@ export default function TemplateNeo4jAWSPage(props: PageProps) {
         to Neo4j Aura, managed directly from Git.
       </Neo4jOnAWSSection>
       <DistributionCardSection>
-        <AKSDistributionCard title={title} />
+        <EKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[

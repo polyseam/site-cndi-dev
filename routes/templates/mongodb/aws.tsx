@@ -4,9 +4,9 @@ import EKSDistributionCard from "components/templates/distributions/aws/EKSDistr
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import MySQLWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
+import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import MySQLOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MongoDBOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,10 +14,10 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateMySQLAWSPage(props: PageProps) {
+export default function TemplateMongodbAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "mysql";
-  const title = "MySQL";
+  const templateName = "mongodb";
+  const title = "MongoDB";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -31,7 +31,7 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="MySQL and AWS Connection Online"
+          heroImgAlt="Mongodb and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -44,9 +44,9 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="mysql_aws_get_started"
+              utm_content="mongodb_aws_get_started"
               utm_source={utm_source}
-              utm_id={8039}
+              utm_id={8043}
               contentVersion={pageVersion}
             >
               Get Started
@@ -54,25 +54,25 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <MySQLOnAWSSection>
-        Deploying MySQL on AWS with CNDI offers a seamless and efficient
-        solution for managing your MySQL database in the cloud. Tune your MySQL
-        cluster for your performance and reliability requirements. With
-        infrastructure and configuration as code, CNDI brings a free alternative
-        to AWS’s RDS for MySQL, for no cost. Changing your cluster
-        infrastructure or config is as simple as making a Pull Request.
-      </MySQLOnAWSSection>
+      <MongoDBOnAWSSection>
+        Deploying MongoDB on AWS with CNDI offers a streamlined and efficient
+        process to set up and manage your MongoDB database. With CNDI's
+        automated infrastructure provisioning, you can quickly deploy scalable
+        MongoDB clusters that cater to your data storage needs. Running MongoDB
+        clusters with CNDI on EKS is more cost-effective than AWS DocumentDB and
+        MongoDB Atlas while also being more flexible.
+      </MongoDBOnAWSSection>
       <DistributionCardSection>
         <EKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Cost effective",
-          "Performant and Easily Scaled",
-          "Infrastructure and Config as Code",
+          "Scalable database cluster",
+          "Manage infrastructure and configuration from git",
+          "No license fee",
         ]}
       />
-      <MySQLWhatAndWhoForSection />
+      <MongoDBWhatAndWhoForSection />
     </>
   );
 }
