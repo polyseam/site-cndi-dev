@@ -1,34 +1,22 @@
 {
-  "build_id": "35f1900545f121c26f29e6d4f6697c27593cd523",
+  "build_id": "62df9dce03545868229985b7442051f54e5f86c1",
   "files": {
     "main.js": [
-      "chunk-PPTGKADT.js",
-      "chunk-YXFWN52L.js"
+      "chunk-H6LPW6N3.js"
     ],
     "deserializer.js": [],
     "signals.js": [
-      "chunk-WAIVBOVI.js",
-      "chunk-YXFWN52L.js"
+      "chunk-ENXECTKD.js",
+      "chunk-H6LPW6N3.js"
     ],
-    "island-counter.js": [
-      "chunk-PPTGKADT.js",
-      "chunk-OKFTCS7B.js",
-      "chunk-WAIVBOVI.js",
-      "chunk-YXFWN52L.js"
-    ],
-    "chunk-PPTGKADT.js": [],
     "island-logoticker.js": [
-      "chunk-OKFTCS7B.js",
-      "chunk-WAIVBOVI.js",
-      "chunk-YXFWN52L.js"
+      "chunk-ENXECTKD.js",
+      "chunk-H6LPW6N3.js"
     ],
-    "chunk-OKFTCS7B.js": [
-      "chunk-YXFWN52L.js"
+    "chunk-ENXECTKD.js": [
+      "chunk-H6LPW6N3.js"
     ],
-    "chunk-WAIVBOVI.js": [
-      "chunk-YXFWN52L.js"
-    ],
-    "chunk-YXFWN52L.js": [],
+    "chunk-H6LPW6N3.js": [],
     "metafile.json": []
   }
 }

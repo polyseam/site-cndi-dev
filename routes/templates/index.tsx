@@ -59,7 +59,7 @@ export default function TemplatesPage(props: PageProps) {
                     <div class="x"></div>
                   </div>
                   <img
-                    src="/images/cndi_templates.gif"
+                    src="/images/vhs-animations/cndi-init-i.gif"
                     loading="lazy"
                     width="727"
                     alt="CNDI Templates Gif"
@@ -84,12 +84,12 @@ export default function TemplatesPage(props: PageProps) {
               create your own Templates to accelerate your team!
             </div>
             <img
-              src="/images/Templates_img_2.png"
+              src="/images/content/templates/workflow.png"
               loading="lazy"
               width="741"
               sizes="(max-width: 479px) 100vw, (max-width: 767px) 85vw, (max-width: 991px) 688px, 741px"
               alt=""
-              srcset="/images/Templates_img_2-p-500.png 500w, images/Templates_img_2-p-800.png 800w, images/Templates_img_2-p-1080.png 1080w, images/Templates_img_2.png 1480w"
+              srcset="/images/content/templates/workflow-p-500.png 500w, /images/content/templates/workflow-p-800.png 800w, /images/content/templates/workflow-p-1080.png 1080w, /images/content/templates/workflow.png 1480w"
               class="image-48"
             />
           </div>
@@ -116,12 +116,12 @@ export default function TemplatesPage(props: PageProps) {
                 class="w-layout-cell cell-36"
               >
                 <img
-                  src="/images/AWS-2.png"
+                  src="/images/provider-icons/aws.png"
                   loading="lazy"
                   width="75"
                   sizes="75px"
                   alt="Amazon Web Services Logo"
-                  srcset="/images/AWS-2-p-500.png 500w, images/AWS-2.png 782w"
+                  // srcset="/images/AWS-2-p-500.png 500w, images/AWS-2.png 782w"
                 />
               </div>
               <div
@@ -135,7 +135,7 @@ export default function TemplatesPage(props: PageProps) {
                 class="w-layout-cell cell-37"
               >
                 <img
-                  src="/images/gcp-logo-cloud.webp"
+                  src="/images/provider-icons/gcp.webp"
                   loading="lazy"
                   width="75"
                   alt="GCP Logo"
@@ -152,12 +152,12 @@ export default function TemplatesPage(props: PageProps) {
                 class="w-layout-cell cell-38"
               >
                 <img
-                  src="/images/Microsoft_Azure.svg.png"
+                  src="/images/provider-icons/azure.png"
                   loading="lazy"
                   width="75"
                   sizes="75px"
                   alt="Microsoft Azure Logo"
-                  srcset="/images/Microsoft_Azure.svg-p-500.png 500w, images/Microsoft_Azure.svg-p-800.png 800w, images/Microsoft_Azure.svg-p-1080.png 1080w, images/Microsoft_Azure.svg.png 1200w"
+                  // srcset="/images/provider-icons/azure-p-500.png 500w, /images/provider-icons/azure-p-800.png 800w, /images/provider-icons/azure-p-1080.png 1080w, /images/provider-icons/azure.png 1200w"
                 />
               </div>
               <div
@@ -171,7 +171,7 @@ export default function TemplatesPage(props: PageProps) {
                 class="w-layout-cell cell-40"
               >
                 <img
-                  src="/images/local_dev_icon.png"
+                  src="/images/provider-icons/dev.png"
                   loading="lazy"
                   width="75"
                   alt=""
