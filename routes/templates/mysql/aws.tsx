@@ -39,7 +39,10 @@ export default function TemplateMySQLAWSPage(props: PageProps) {
             <br />
             on AWS
           </Heading>
-          <Subheading>Easily Deploy {title} on using CNDI.</Subheading>
+          <Subheading>
+            Easily Deploy {title} on Amazon Web <br />
+            Services (AWS) using CNDI.
+          </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"

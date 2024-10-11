@@ -1,12 +1,12 @@
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
+import AKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
+import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import MongoDBOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import HopOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,10 +14,10 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-export default function TemplateMongodbAWSPage(props: PageProps) {
+export default function TemplateHopAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "mongodb";
-  const title = "MongoDB";
+  const templateName = "hop";
+  const title = "Hop";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -31,7 +31,7 @@ export default function TemplateMongodbAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Mongodb and AWS Connection Online"
+          heroImgAlt="Hop and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -47,9 +47,9 @@ export default function TemplateMongodbAWSPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="mongodb_aws_get_started"
+              utm_content="hop_aws_get_started"
               utm_source={utm_source}
-              utm_id={8043}
+              utm_id={8027}
               contentVersion={pageVersion}
             >
               Get Started
@@ -57,27 +57,23 @@ export default function TemplateMongodbAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <MongoDBOnAWSSection>
-        Deploying MongoDB on AWS with CNDI offers a streamlined and efficient
-        process to set up and manage your MongoDB database. With CNDI's
-        automated infrastructure provisioning, you can quickly deploy scalable
-        MongoDB clusters that cater to your data storage needs. Running MongoDB
-        clusters with CNDI on EKS is more cost-effective than AWS DocumentDB and
-        MongoDB Atlas while also being more flexible. Thanks to GitOps, changing
-        your cluster infrastructure or config is as simple as making a Pull
-        Request.
-      </MongoDBOnAWSSection>
+      <HopOnAWSSection>
+        Deploying Apache Hop on AWS with CNDI gives you a cloud hosted visual
+        data integration engine accessible securely through the browser. Thanks
+        to GitOps, changing your cluster infrastructure or config is as simple
+        as making a Pull Request.
+      </HopOnAWSSection>
       <DistributionCardSection>
-        <EKSDistributionCard title={title} />
+        <AKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Scalable database cluster",
-          "Manage infrastructure and configuration from git",
-          "No license fee",
+          "Up and running in minutes",
+          "Drag and drop editing experience",
+          "Deep integration with nearly every source and target",
         ]}
       />
-      <MongoDBWhatAndWhoForSection />
+      <HopWhatAndWhoForSection />
     </>
   );
 }

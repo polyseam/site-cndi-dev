@@ -10,6 +10,11 @@ import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx"
 import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
 import * as $templates_airflow_gcp from "./routes/templates/airflow/gcp.tsx";
 import * as $templates_airflow_index from "./routes/templates/airflow/index.tsx";
+import * as $templates_hop_aws from "./routes/templates/hop/aws.tsx";
+import * as $templates_hop_azure from "./routes/templates/hop/azure.tsx";
+import * as $templates_hop_dev from "./routes/templates/hop/dev.tsx";
+import * as $templates_hop_gcp from "./routes/templates/hop/gcp.tsx";
+import * as $templates_hop_index from "./routes/templates/hop/index.tsx";
 import * as $templates_index from "./routes/templates/index.tsx";
 import * as $templates_mongodb_aws from "./routes/templates/mongodb/aws.tsx";
 import * as $templates_mongodb_azure from "./routes/templates/mongodb/azure.tsx";
@@ -45,6 +50,11 @@ const manifest = {
     "./routes/templates/airflow/dev.tsx": $templates_airflow_dev,
     "./routes/templates/airflow/gcp.tsx": $templates_airflow_gcp,
     "./routes/templates/airflow/index.tsx": $templates_airflow_index,
+    "./routes/templates/hop/aws.tsx": $templates_hop_aws,
+    "./routes/templates/hop/azure.tsx": $templates_hop_azure,
+    "./routes/templates/hop/dev.tsx": $templates_hop_dev,
+    "./routes/templates/hop/gcp.tsx": $templates_hop_gcp,
+    "./routes/templates/hop/index.tsx": $templates_hop_index,
     "./routes/templates/index.tsx": $templates_index,
     "./routes/templates/mongodb/aws.tsx": $templates_mongodb_aws,
     "./routes/templates/mongodb/azure.tsx": $templates_mongodb_azure,
