@@ -21,11 +21,11 @@ export default function TemplateWordpressPage(_props: PageProps) {
           heroImgAlt="Wordpress Logo alongside Azure, GCP, and AWS Logos"
           templateName={templateName}
         >
-          <Heading>Deploy Apache Wordpress with CNDI</Heading>
+          <Heading>Deploy Wordpress with CNDI</Heading>
           <Subheading>
-            Easily deploy Apache Wordpress on any of our supported Template
-            targets in minutes with CNDI. Get started by choosing your
-            deployment target below.
+            Easily deploy Wordpress on any of our supported Template targets in
+            minutes with CNDI. Get started by choosing your deployment target
+            below.
           </Subheading>
         </TemplateHero>
       </HeroSection>
