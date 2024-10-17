@@ -94,7 +94,8 @@ post about that!
 
 ![A tree of components: a config file, terraform objects, kubernetes objects, servers, and cloud providers](/images/blog/gitops/one-file.png)
 
-If you're interested, you can check out the project [here!]()
+If you're interested, you can check out the project
+[here!](https://cndi.run/gh?utm_id=8057&utm_medium=blog&utm_campaign=gitops_blog&utm_content=blog_gitops_cndi_link&utm_source=https://cndi.dev/blog/gitops)
 
 Last thing I want to mention is since CNDI is an open-source project, we’re
 excited to onboard every interested contributor. So if you want to be involved
@@ -102,4 +103,6 @@ in building this new Cloud-Native tool, we would love to hear your ideas and
 build together.
 
 Please reach out if you want to learn more about GitOps or CNDI, our team is
-here to [help!]() ‍
+here to
+[help on Discord!](https://cndi.run/di?utm_id=8058&utm_medium=blog&utm_campaign=gitops_blog&utm_content=blog_gitops_discord_link&utm_source=https://cndi.dev/blog/gitops)
+‍

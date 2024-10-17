@@ -60,13 +60,13 @@ microservices were born. And, they really took off as Kubernetes provided a
 platform that simplified deploying and running microservices. As an example of
 microservices, let’s look at a made up ecommerce site.
 
-![](/images/blog/cloud-native/monolitic.png)
+![a wireframe showing all technical components in a single bounding box](/images/blog/cloud-native/monolitic.png)
 
 Now, with a traditional monolithic architecture, the dotted line reflects the
 application’s structure. Everything is just rolled up into one big application,
 making everything tightly coupled and harder to update only certain features.
 
-![](/images/blog/cloud-native/microservices.png)
+![a wireframe showing all components separated with bounding boxes](/images/blog/cloud-native/microservices.png)
 
 With Cloud-Native architecture, we may build our applications as microservices.
 Each different component of the application is broken down into a microservice.
@@ -74,23 +74,23 @@ In this case, we have four of them. Having each microservice containerized and
 built independently means that you are able to upgrade any one service without
 impacting the others.
 
-![](/images/blog/cloud-native/trifecta.png)
+In a Cloud Native architecture, services can be moved, scaled across different
+cloud environments, and updated easily. This is all achieved by the services
+being containerized and deployed using a modern DevOps workflow.
 
-In Cloud Native, services can be moved, scaled across different cloud
-environments, and updated easily. This is all achieved by the services being
-containerized and deployed using a modern DevOps workflow.
+**A Cloud-Native application is one designed from the beginning to best leverage
+the power of the cloud**, and today that is best exemplified by Kubernetes.
 
-A Cloud-Native application is one designed from the beginning to best leverage
-the power of the cloud. It gives your engineering teams the power to ship
-features quickly with the best possible performance, scalability, and
-reliability. All of that provides a smoother user experience for both the people
-building and using the application.
+It gives your engineering teams the power to ship features quickly with the best
+possible performance, scalability, and reliability. All of that provides a
+smoother user experience for both the people building and using the application.
 
 The goal with every application is to provide users with a seamless and quick
 user experience. The less your users are thinking about what's going on under
 the hood of your application, the better. It should just work, all the time.
 
 If you're looking for a way to quickly deploy and maintain Cloud-Native
-applications, and their infrastructure, check out our open-source tool CNDI.
+applications, and their infrastructure, check out our open-source tool
+[CNDI](https://cndi.run/gh?utm_content=blog_cloud-native_cndi_link&utm_campaign=cloud-native_blog&utm_source=https://cndi.dev/blog/cloud-native&utm_medium=blog&utm_id=8059).
 It’s free for anyone and reduces the complexity of deploying a Kubernetes
 cluster.

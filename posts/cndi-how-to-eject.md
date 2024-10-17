@@ -16,8 +16,10 @@ ever decide to eject, you’ll have what you need to manage your cluster
 afterwards. Let’s dig into how that all works, starting with some information
 about how CNDI operates.
 
-Every CNDI project begins with a Template which is responsible for creating a
-number of artifacts.
+Every
+[CNDI](https://cndi.run/?utm_content=blog_cndi-how-to-eject_cndi_link&utm_campaign=cndi-how-to-eject_blog&utm_source=https://www.cndi.dev/blog/cndi-how-to-eject&utm_medium=blog&utm_id=8062)
+project begins with a Template which is responsible for creating a number of
+artifacts.
 
 The first artifact is a file called `cndi_config.yaml`, and one of our primary
 goals is to ensure that if the user has a solid understanding of this file, that
