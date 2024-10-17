@@ -14,7 +14,7 @@ export const handler: Handlers<Post> = {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
-  const ogImgSrc = post.imgSrc;
+  const ogImgSrc = `https://cndi.dev${post.imgSrc}`;
   return (
     <>
       <Head>
