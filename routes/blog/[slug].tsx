@@ -14,7 +14,7 @@ export const handler: Handlers<Post> = {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
-  const ogImgSrc = `/images/blog/${post.slug}/cover.png`;
+  const ogImgSrc = post.imgSrc;
   return (
     <>
       <Head>
