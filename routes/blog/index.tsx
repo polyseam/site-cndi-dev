@@ -2,21 +2,23 @@ import { Handlers } from "$fresh/server.ts";
 import { extract } from "$std/front_matter/any.ts";
 import { join } from "$std/path/mod.ts";
 import PostCard from "components/PostCard.tsx";
+import { Head } from "$fresh/runtime.ts";
 
 export interface Post {
   slug: string;
   title: string;
   publishedAt: Date;
   content: string;
-  snippet: string;
   authorName: string;
   authorImgSrc: string;
+  description: string;
+  imgSrc: string;
 }
 
 interface PostAttrs {
   title: string;
   published_at: string;
-  snippet: string;
+  description: string;
   author_name: string;
 }
 
@@ -30,14 +32,16 @@ export async function getPost(slug: string): Promise<Post | null> {
   const post = extract(text);
   const attrs = post.attrs as unknown as PostAttrs;
   const content = post.body as string;
+  const imgSrc = `/images/blog/${slug}/cover.png`;
   return {
     slug,
     title: attrs.title,
     publishedAt: new Date(attrs.published_at),
     content,
-    snippet: attrs.snippet,
+    description: attrs.description,
     authorName: attrs.author_name,
     authorImgSrc: getAuthorImgSrc(attrs.author_name),
+    imgSrc,
   };
 }
 
@@ -63,31 +67,22 @@ export const handler: Handlers<Post[]> = {
 export default function PostsPage(props: { data: Post[] }) {
   const posts = props.data;
   return (
-    <main class="max-w-screen-md px-4 pt-16 mx-auto">
-      <h1 class="text-5xl font-bold">Blog</h1>
-      <div class="mt-8">
-        {posts.map((post) => <PostCard post={post} />)}
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Blog | CNDI</title>
+        <meta
+          name="description"
+          content="CNDI Blog Posts from the Polyseam Team"
+        />
+      </Head>
+      <main class="max-w-screen-md px-4 pt-16 mx-auto">
+        <h2 class="text-slate-50 p-6">Blog Posts from the CNDI Team</h2>
+        <div className="bg-[#180f1e] p-6 min-h-screen">
+          <div className="grid grid-cols-3 gap-8">
+            {posts.map((post) => <PostCard post={post} />)}
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
-
-// function PostCard(props: { post: Post }) {
-//   const { post } = props;
-//   return (
-
-//     <div class="py-8 border(t gray-200)">
-//       <a class="sm:col-span-2" href={`/${post.slug}`}>
-//         <h3 class="text(3xl gray-900) font-bold">{post.title}</h3>
-//         <time class="text-gray-500">
-//           {new Date(post.publishedAt).toLocaleDateString("en-us", {
-//             year: "numeric",
-//             month: "long",
-//             day: "numeric",
-//           })}
-//         </time>
-//         <div class="mt-4 text-gray-900">{post.snippet}</div>
-//       </a>
-//     </div>
-//   );
-// }

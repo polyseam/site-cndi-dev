@@ -14,9 +14,29 @@ export const handler: Handlers<Post> = {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
+  const ogImgSrc = `/images/blog/${post.slug}/cover.png`;
   return (
     <>
       <Head>
+        <title>{post.title}</title>
+        {/* opengraph */}
+        <meta property="description" content={post.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:image" content={ogImgSrc} />
+
+        {/* search */}
+        <meta itemprop="image" content={ogImgSrc} />
+        <meta itemprop="name" content={post.title} />
+        <meta itemprop="description" content={post.description} />
+
+        {/* twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.description} />
+        <meta name="twitter:image" content={ogImgSrc} />
+
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
         <style>{".octicon {display: none}"}</style>
         <style>
@@ -28,6 +48,11 @@ export default function PostPage(props: PageProps<Post>) {
               margin: 0;
               padding: .2em .4em;
             }
+
+            strong {
+              color: white;
+            }
+
             ul {
               list-style-type: disc;        /* Ensures bullet points are displayed */
               list-style-position: outside; /* Positions bullets outside the text block */
@@ -41,6 +66,8 @@ export default function PostPage(props: PageProps<Post>) {
             }`}
         </style>
       </Head>
+
+      <div className="py-8" />
       <div class="w-container">
         <div class="div-block-62">
           <div class="div-block-61">
@@ -76,7 +103,9 @@ export default function PostPage(props: PageProps<Post>) {
             backgroundColor: "#180f1e",
           }}
           dangerouslySetInnerHTML={{
-            __html: render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n")),
+            __html: render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
+              allowIframes: true,
+            }),
           }}
         />
       </div>

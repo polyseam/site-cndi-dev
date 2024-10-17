@@ -4,9 +4,9 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $blog_slug_ from "./routes/blog/[slug].tsx";
+import * as $blog_index from "./routes/blog/index.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $posts_slug_ from "./routes/posts/[slug].tsx";
-import * as $posts_index from "./routes/posts/index.tsx";
 import * as $privacy_policy from "./routes/privacy-policy.tsx";
 import * as $templates_airflow_aws from "./routes/templates/airflow/aws.tsx";
 import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx";
@@ -57,9 +57,9 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/blog/[slug].tsx": $blog_slug_,
+    "./routes/blog/index.tsx": $blog_index,
     "./routes/index.tsx": $index,
-    "./routes/posts/[slug].tsx": $posts_slug_,
-    "./routes/posts/index.tsx": $posts_index,
     "./routes/privacy-policy.tsx": $privacy_policy,
     "./routes/templates/airflow/aws.tsx": $templates_airflow_aws,
     "./routes/templates/airflow/azure.tsx": $templates_airflow_azure,

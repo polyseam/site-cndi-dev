@@ -34,6 +34,9 @@ export default function Nav(props: NavProps) {
         </a>
         <nav role="navigation" class="uui-navbar07_menu w-nav-menu">
           <div class="uui-navbar07_menu-left">
+            <a href="/blog" class="uui-navbar07_link bug-fix w-nav-link">
+              Blog
+            </a>
             <a href="/templates" class="uui-navbar07_link bug-fix w-nav-link">
               Templates
             </a>
