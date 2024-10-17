@@ -28,21 +28,26 @@ function getAuthorImgSrc(authorName: string) {
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
-  const text = await Deno.readTextFile(join("./posts", `${slug}.md`));
-  const post = extract(text);
-  const attrs = post.attrs as unknown as PostAttrs;
-  const content = post.body as string;
-  const imgSrc = `/images/blog/${slug}/cover.png`;
-  return {
-    slug,
-    title: attrs.title,
-    publishedAt: new Date(attrs.published_at),
-    content,
-    description: attrs.description,
-    authorName: attrs.author_name,
-    authorImgSrc: getAuthorImgSrc(attrs.author_name),
-    imgSrc,
-  };
+  try {
+    const text = await Deno.readTextFile(join("./posts", `${slug}.md`));
+    const post = extract(text);
+    const attrs = post.attrs as unknown as PostAttrs;
+    const content = post.body as string;
+    const imgSrc = `/images/blog/${slug}/cover.png`;
+    return {
+      slug,
+      title: attrs.title,
+      publishedAt: new Date(attrs.published_at),
+      content,
+      description: attrs.description,
+      authorName: attrs.author_name,
+      authorImgSrc: getAuthorImgSrc(attrs.author_name),
+      imgSrc,
+    };
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 }
 
 async function getPosts(): Promise<Post[]> {
