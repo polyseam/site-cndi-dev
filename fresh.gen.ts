@@ -49,6 +49,11 @@ import * as $templates_postgres_azure from "./routes/templates/postgres/azure.ts
 import * as $templates_postgres_dev from "./routes/templates/postgres/dev.tsx";
 import * as $templates_postgres_gcp from "./routes/templates/postgres/gcp.tsx";
 import * as $templates_postgres_index from "./routes/templates/postgres/index.tsx";
+import * as $templates_wordpress_aws from "./routes/templates/wordpress/aws.tsx";
+import * as $templates_wordpress_azure from "./routes/templates/wordpress/azure.tsx";
+import * as $templates_wordpress_dev from "./routes/templates/wordpress/dev.tsx";
+import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx";
+import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -102,6 +107,11 @@ const manifest = {
     "./routes/templates/postgres/dev.tsx": $templates_postgres_dev,
     "./routes/templates/postgres/gcp.tsx": $templates_postgres_gcp,
     "./routes/templates/postgres/index.tsx": $templates_postgres_index,
+    "./routes/templates/wordpress/aws.tsx": $templates_wordpress_aws,
+    "./routes/templates/wordpress/azure.tsx": $templates_wordpress_azure,
+    "./routes/templates/wordpress/dev.tsx": $templates_wordpress_dev,
+    "./routes/templates/wordpress/gcp.tsx": $templates_wordpress_gcp,
+    "./routes/templates/wordpress/index.tsx": $templates_wordpress_index,
     "./routes/terms-of-use.tsx": $terms_of_use,
   },
   islands: {

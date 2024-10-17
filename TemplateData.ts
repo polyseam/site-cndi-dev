@@ -40,6 +40,10 @@ export const data: TemplateData = [
     title: "MongoDB",
     type: "Database",
   },
+  {
+    name: "wordpress",
+    type: "CMS",
+  },
   // {
   //   name: "redis",
   //   type: "Cache",
