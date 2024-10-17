@@ -7,20 +7,11 @@ export default function Nav(props: NavProps) {
   const navVersion = "v1.0.0";
   const utm_source = props.url.toString();
   return (
-    <div
-      data-animation="default"
-      data-collapse="medium"
-      data-duration="400"
-      data-easing="ease"
-      data-easing2="ease"
-      role="banner"
-      class="uui-navbar07_component w-nav"
-    >
-      <div class="uui-navbar07_container">
+    <div>
+      <div class="flex justify-between m-8">
         <a
           href="/"
           aria-current="page"
-          class="uui-navbar07_logo-link w-nav-brand w--current"
         >
           <div class="uui-logo_component">
             <img
@@ -32,8 +23,8 @@ export default function Nav(props: NavProps) {
             />
           </div>
         </a>
-        <nav role="navigation" class="uui-navbar07_menu w-nav-menu">
-          <div class="uui-navbar07_menu-left">
+        <nav role="navigation">
+          <div>
             <a href="/blog" class="uui-navbar07_link bug-fix w-nav-link">
               Blog
             </a>
@@ -68,15 +59,6 @@ export default function Nav(props: NavProps) {
             </LinkOut>
           </div>
         </nav>
-        <div class="uui-navbar07_menu-button w-nav-button">
-          <div class="menu-icon_component">
-            <div class="menu-icon_line-top"></div>
-            <div class="menu-icon_line-middle">
-              <div class="menu-icon_line-middle-inner"></div>
-            </div>
-            <div class="menu-icon_line-bottom"></div>
-          </div>
-        </div>
       </div>
     </div>
   );
