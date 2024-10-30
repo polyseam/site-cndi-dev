@@ -45,7 +45,11 @@ export async function getPost(slug: string): Promise<Post | null> {
       imgSrc,
     };
   } catch (e) {
-    console.error(e);
+    if (e instanceof Deno.errors.NotFound) {
+      console.error(`Post not found: ${slug}`);
+    } else {
+      console.error(e);
+    }
     return null;
   }
 }
