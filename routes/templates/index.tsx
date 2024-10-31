@@ -59,7 +59,7 @@ export default function TemplatesPage(props: PageProps) {
                     <div class="x"></div>
                   </div>
                   <img
-                    src="/images/vhs-animations/cndi-init-i.gif"
+                    src="/images/vhs-animations/cndi-create.gif"
                     loading="lazy"
                     width="727"
                     alt="CNDI Templates Gif"

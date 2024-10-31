@@ -38,7 +38,7 @@ export default function UseInteractiveCNDITemplatesSection() {
                 <div class="x"></div>
               </div>
               <img
-                src="/images/vhs-animations/cndi-init-i.gif"
+                src="/images/vhs-animations/cndi-create.gif"
                 loading="lazy"
                 width="667"
                 alt="CNDI Templates Gif"

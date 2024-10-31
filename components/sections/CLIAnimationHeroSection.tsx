@@ -35,7 +35,7 @@ export default function CLIAnimationHeroSection() {
             id="w-node-_278051a2-1495-6037-4a17-b5871d195bcf-f6848bac"
             class="w-layout-cell cell-2"
           >
-            <TerminalView src="/images/vhs-animations/cndi-init-i.gif" />
+            <TerminalView src="/images/vhs-animations/cndi-create.gif" />
           </div>
         </div>
       </div>
