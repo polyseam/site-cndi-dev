@@ -5,7 +5,7 @@ export function handler(req: Request): Response {
   }
   const Location = url.toString();
   return new Response("", {
-    status: 307,
+    status: 301,
     headers: { Location },
   });
 }
