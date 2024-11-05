@@ -122,7 +122,7 @@ every service.
 
 If you are building out an internal development platform of your own, check out
 our tool
-[CNDI](https://cndi.run/?utm_content=blog_shifting-responsibilities_cndi_link&utm_campaign=shifting-responsibilities_blog&utm_source=https://www.cndi.dev/blog/shifting-responsibilities&utm_medium=blog&utm_id=8061),
+[CNDI](https://cndi.run/?utm_content=blog_shifting-responsibilities_cndi_link&utm_campaign=shifting-responsibilities_blog&utm_source=https://cndi.dev/blog/shifting-responsibilities&utm_medium=blog&utm_id=8061),
 which contains excellent templates out of the box for things like
 [Airflow](https://cndi.dev/templates/airflow) and
 [Postgres](https://cndi.dev/templates/postgres), powered by the latest in IaC

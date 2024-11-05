@@ -75,7 +75,7 @@ for Kubernetes, you build for anywhere.
 
 PaaS and SaaS providers are incentivized to make it difficult to move your
 workload elsewhere. By contrast current tools
-([like CNDI](https://cndi.run/gh?utm_content=blog_self-host_cndi_link&utm_campaign=self-host_blog&utm_source=https://www.cndi.dev/blog/self-host&medium=blog&utm_id=8060))
+([like CNDI](https://cndi.run/gh?utm_content=blog_self-host_cndi_link&utm_campaign=self-host_blog&utm_source=https://cndi.dev/blog/self-host&medium=blog&utm_id=8060))
 can have your workload running on a new cloud provider with 5 lines of code and
 a Pull Request.
 
@@ -87,4 +87,4 @@ their own use.
 
 Running your own open source clusters puts you in the driver's seat. If you're
 ready to get started with hosting you're own systems, check out
-[CNDI](https://cndi.run/gh?utm_content=blog_self-host_cndi_link&utm_campaign=self-host_blog&utm_source=https://www.cndi.dev/blog/self-host&medium=blog&utm_id=8060).
+[CNDI](https://cndi.run/gh?utm_content=blog_self-host_cndi_link&utm_campaign=self-host_blog&utm_source=https://cndi.dev/blog/self-host&medium=blog&utm_id=8060).

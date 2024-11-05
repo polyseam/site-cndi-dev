@@ -23,7 +23,7 @@ export default function CLIAnimationHeroSection() {
             </div>
             <div>
               <a
-                href="https://cndi.run/gh?utm_content=home_deploy&amp;utm_campaign=cndi_dev&amp;utm_source=https://www.cndi.dev/&amp;utm_medium=website&amp;utm_id=8001"
+                href="https://cndi.run/gh?utm_content=home_deploy&amp;utm_campaign=cndi_dev&amp;utm_source=https://cndi.dev/&amp;utm_medium=website&amp;utm_id=8001"
                 target="_blank"
                 class="hero_button w-button"
               >
