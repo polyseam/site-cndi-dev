@@ -2,8 +2,8 @@ import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import MongodbWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
-import MongodbOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
+import MongoDBOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import TemplateHero, {
   CallToAction,
@@ -15,10 +15,10 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateMongodbGCPPage(props: PageProps) {
+export default function TemplateMongoDBGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "mongodb";
-  const title = "Mongodb";
+  const title = "MongoDB";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -34,7 +34,7 @@ export default function TemplateMongodbGCPPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
-          heroImgAlt="Mongodb and GCP Connection Online"
+          heroImgAlt="MongoDB and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -59,7 +59,7 @@ export default function TemplateMongodbGCPPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <MongodbOnGCPSection>
+      <MongoDBOnGCPSection>
         Deploying MongoDB on GCP with CNDI offers a streamlined and efficient
         process to set up and manage your MongoDB database. With CNDI's
         automated infrastructure provisioning, you can quickly deploy scalable
@@ -67,7 +67,7 @@ export default function TemplateMongodbGCPPage(props: PageProps) {
         clusters with CNDI on GCP is more cost-effective than MongoDB Atlas
         while also being more flexible. Thanks to GitOps, changing your cluster
         infrastructure or config is as simple as making a Pull Request.
-      </MongodbOnGCPSection>
+      </MongoDBOnGCPSection>
       <DistributionCardSection>
         <GKEDistributionCard title={title} />
       </DistributionCardSection>
@@ -78,7 +78,7 @@ export default function TemplateMongodbGCPPage(props: PageProps) {
           "No license fee",
         ]}
       />
-      <MongodbWhatAndWhoForSection />
+      <MongoDBWhatAndWhoForSection />
     </>
   );
 }

@@ -1,12 +1,12 @@
 import { PageProps } from "$fresh/server.ts";
-import MongodbWhoAndWhatForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
+import MongoDBWhoAndWhatForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateMongodbPage(_props: PageProps) {
+export default function TemplateMongoDBPage(_props: PageProps) {
   const templateName = "mongodb";
   const title = "MongoDB";
   const type = "Database";
@@ -18,7 +18,7 @@ export default function TemplateMongodbPage(_props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/constellation.png`}
-          heroImgAlt="Mongodb Logo alongside Azure, GCP, and AWS Logos"
+          heroImgAlt="MongoDB Logo alongside Azure, GCP, and AWS Logos"
           templateName={templateName}
         >
           <Heading>
@@ -34,7 +34,7 @@ export default function TemplateMongodbPage(_props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <MongodbWhoAndWhatForSection />
+      <MongoDBWhoAndWhatForSection />
     </>
   );
 }

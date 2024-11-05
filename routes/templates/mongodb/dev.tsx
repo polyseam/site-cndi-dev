@@ -2,9 +2,9 @@ import { PageProps } from "$fresh/server.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import MongodbWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
+import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import MongodbOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import MongoDBOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,10 +14,10 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateMongodbDevPage(props: PageProps) {
+export default function TemplateMongoDBDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "mongodb";
-  const title = "Mongodb";
+  const title = "MongoDB";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -33,7 +33,7 @@ export default function TemplateMongodbDevPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
-          heroImgAlt="Mongodb and Laptop Connection Online"
+          heroImgAlt="MongoDB and Laptop Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -54,7 +54,7 @@ export default function TemplateMongodbDevPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <MongodbOnDevSection>
+      <MongoDBOnDevSection>
         Experience seamless MongoDB deployment on your local development
         environment with CNDI. Our user-friendly process and powerful tools
         simplify setting up and managing MongoDB databases, allowing you to
@@ -63,7 +63,7 @@ export default function TemplateMongodbDevPage(props: PageProps) {
         Templates make deploying MongoDB a breeze. Enjoy the flexibility of
         running MongoDB locally and optimize your development workflow with
         CNDI.
-      </MongodbOnDevSection>
+      </MongoDBOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
           Deploying {title}
@@ -80,7 +80,7 @@ export default function TemplateMongodbDevPage(props: PageProps) {
           "Determine optimal configurations",
         ]}
       />
-      <MongodbWhatAndWhoForSection />
+      <MongoDBWhatAndWhoForSection />
     </>
   );
 }

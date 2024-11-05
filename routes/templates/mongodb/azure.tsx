@@ -14,10 +14,10 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateMongodbAzurePage(props: PageProps) {
+export default function TemplateMongoDBAzurePage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "mongodb";
-  const title = "Mongodb";
+  const title = "MongoDB";
   const type = "Database";
 
   const utm_source = props.url.toString();
@@ -33,7 +33,7 @@ export default function TemplateMongodbAzurePage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
-          heroImgAlt="Mongodb and Azure Connection Online"
+          heroImgAlt="MongoDB and Azure Connection Online"
           templateName={templateName}
         >
           <Heading>

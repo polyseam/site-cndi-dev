@@ -14,7 +14,7 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateMongodbAWSPage(props: PageProps) {
+export default function TemplateMongoDBAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
   const templateName = "mongodb";
   const title = "MongoDB";
@@ -33,7 +33,7 @@ export default function TemplateMongodbAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Mongodb and AWS Connection Online"
+          heroImgAlt="MongoDB and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
