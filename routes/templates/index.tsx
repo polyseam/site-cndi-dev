@@ -10,6 +10,7 @@ export default function TemplatesPage(props: PageProps) {
     <>
       <Head>
         <title>{pageTitle}</title>
+        <link rel="canonical" href="https://cndi.dev/templates" />
         <meta content={description} name="description" />
         <meta content={pageTitle} property="og:title" />
         <meta content={description} property="og:description" />
