@@ -181,7 +181,7 @@ export const SitemapPlugin = (
             ? `<priority>${entry.priority}</priority>`
             : "";
           return `<url>${loc}${lastmod}${changefreq}${priority}</url>`;
-        })
+        }).join("\n")
       }
           </urlset>`.trim();
       await Deno.writeTextFile("./static/sitemap.xml", sitemap);
