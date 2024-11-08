@@ -19,6 +19,7 @@ export default function PostPage(props: PageProps<Post>) {
     <>
       <Head>
         <title>{post.title}</title>
+        <link rel="canonical" href={`https://cndi.dev/blog/${post.slug}`} />
         {/* opengraph */}
         <meta property="description" content={post.description} />
         <meta property="og:type" content="article" />

@@ -15,6 +15,10 @@ export default function TemplateHead(props: TemplateHeadProps) {
     return (
       <Head>
         <title>{pageTitle}</title>
+        <link
+          rel="canonical"
+          href={`https://cndi.dev/templates/${props.templateName}`}
+        />
         <meta content={description} name="description" />
         <meta content={pageTitle} property="og:title" />
         <meta content={description} property="og:description" />
@@ -44,6 +48,10 @@ export default function TemplateHead(props: TemplateHeadProps) {
   return (
     <Head>
       <title>{pageTitle}</title>
+      <link
+        rel="canonical"
+        href={`https://cndi.dev/templates/${props.templateName}/${providerName}`}
+      />
       <meta content={description} name="description" />
       <meta content={pageTitle} property="og:title" />
       <meta content={description} property="og:description" />

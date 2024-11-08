@@ -15,7 +15,7 @@ export interface Post {
   imgSrc: string;
 }
 
-interface PostAttrs {
+export interface PostAttrs {
   title: string;
   published_at: string;
   description: string;
@@ -79,6 +79,7 @@ export default function PostsPage(props: { data: Post[] }) {
     <>
       <Head>
         <title>Blog | CNDI</title>
+        <link rel="canonical" href="https://cndi.dev/blog" />
         <meta
           name="description"
           content="CNDI Blog Posts from the Polyseam Team"

@@ -1,6 +1,12 @@
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import TemplateCardListSection from "components/sections/TemplateCardListSection.tsx";
+import { SitemapHints } from "../../Sitemap.ts";
+
+export const sitemapHints: SitemapHints = {
+  changefreq: "weekly",
+  lastmod: "2024-11-07",
+};
 
 export default function TemplatesPage(props: PageProps) {
   const pageTitle = "Templates | CNDI";
@@ -10,6 +16,7 @@ export default function TemplatesPage(props: PageProps) {
     <>
       <Head>
         <title>{pageTitle}</title>
+        <link rel="canonical" href="https://cndi.dev/templates" />
         <meta content={description} name="description" />
         <meta content={pageTitle} property="og:title" />
         <meta content={description} property="og:description" />
