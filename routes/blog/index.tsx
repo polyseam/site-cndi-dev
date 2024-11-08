@@ -15,7 +15,7 @@ export interface Post {
   imgSrc: string;
 }
 
-interface PostAttrs {
+export interface PostAttrs {
   title: string;
   published_at: string;
   description: string;
