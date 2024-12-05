@@ -64,7 +64,15 @@ export default function PostPage(props: PageProps<Post>) {
             li {
               margin: 0;
               padding: 0;
-            }`}
+            }
+            
+            ol {
+              list-style-type: decimal;     /* Ensures numbers are displayed */
+              list-style-position: outside; /* Positions numbers outside the text block */
+              margin-left: 20px;            /* Adjust as needed for indentation */
+              padding-left: 0;              /* Removes default padding */
+            }
+            `}
         </style>
       </Head>
 
