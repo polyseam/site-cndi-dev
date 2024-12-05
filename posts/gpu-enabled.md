@@ -135,8 +135,24 @@ running the following command:
 kubectl port-forward svc/model-service -n vllm 8080:80
 ```
 
-At that endpoint you should now be able to connect in the way described in this
-[vllm doc](https://docs.vllm.ai/en/latest/serving/deploying_with_k8s.html).
+At that endpoint locally you can send requests to the model service to generate
+text:
+
+```bash
+curl http://localhost:8080/v1/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+  model: "meta-llama/Llama-3.2-1B-Instruct",
+  messages: [
+    {
+      role: "system",
+      content: "You are a helpful assistant."
+    },
+    { role: "user", content: "How should I navigate the cloud-native landscape?" }
+  ],
+  temperature: 0.7
+}'
+```
 
 If you're using the GPU for another workload, you can use the GPU by ensuring
 your workload has the Pod tolerations and node selectors like the example
