@@ -166,6 +166,7 @@ like. cndi has made it quick and easy to get started and brings increased
 portability, accessibility, and reproducibility to your infrastructure. We hope
 you enjoy using it as much as we do.
 
-If you'd like us to cover other applications or double down by looking into
-technologies like [ray.io](https://ray.io), or if you have any other feedback
-please hop into our Discord available in the nav bar at the top of the page!
+If you'd like us to cover other applications or double down on AI content by
+looking into technologies like [ray.io](https://ray.io), or if you have any
+other feedback please hop into our Discord available in the nav bar at the top
+of the page!
