@@ -1,5 +1,5 @@
 ---
-title: GPU Enabled Clusters
+title: Accelerate AI with Kubernetes and GPUs
 published_at: 2024-12-04T15:00:00.000Z
 author_name: 'Matt Johnston'
 description: 'Get Up and Running with GPU Acceleration'
@@ -8,9 +8,13 @@ description: 'Get Up and Running with GPU Acceleration'
 Kubernetes (K8s) has become the de facto operating system of the cloud,
 orchestrating software workloads across clusters of servers. Most
 GPU-accelerated workflows naturally end up being built on Kubernetes, but it has
-quite a steep learning curve. Today we'll talk about how to leverage best
-practices like GitOps in order to have a GPU-enabled Kubernetes cluster up and
-running in no time.
+quite a steep learning curve.
+
+Today we'll talk about how to leverage best practices like GitOps in order to
+have a GPU-enabled Kubernetes cluster up and running in no time. Whether you
+want to deploy a large language model (LLM) for inference using
+[vllm](https://docs.vllm.ai/en/latest/), or you have your own plans for the
+hardware, this guide will help you get there.
 
 Every cloud service provider (eg. AWS, Azure, GCP) has their own Kubernetes
 offering and the first step is to choose which CSP you want to use. For this
