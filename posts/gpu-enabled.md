@@ -174,3 +174,5 @@ If you'd like us to cover other applications or double down on AI content by
 looking into technologies like [ray.io](https://ray.io), or if you have any
 other feedback please hop into our Discord available in the nav bar at the top
 of the page!
+
+#### Check [cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8063) out on GitHub! ⭐️
