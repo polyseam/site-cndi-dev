@@ -91,6 +91,6 @@ the hood of your application, the better. It should just work, all the time.
 
 If you're looking for a way to quickly deploy and maintain Cloud-Native
 applications, and their infrastructure, check out our open-source tool
-[CNDI](https://cndi.run/gh?utm_content=blog_cloud-native_cndi_link&utm_campaign=cloud-native_blog&utm_source=https://cndi.dev/blog/cloud-native&utm_medium=blog&utm_id=8059).
+[CNDI](https://cndi.run/gh?utm_content=blog_cloud-native_cndi_link&utm_campaign=cloud-native_blog&utm_source=https://cndi.dev/blog/cloud-native&utm_medium=blog&utm_id=8102).
 It’s free for anyone and reduces the complexity of deploying a Kubernetes
 cluster.

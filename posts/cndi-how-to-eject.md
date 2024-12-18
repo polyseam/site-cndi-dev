@@ -17,7 +17,7 @@ afterwards. Let’s dig into how that all works, starting with some information
 about how CNDI operates.
 
 Every
-[CNDI](https://cndi.run/?utm_content=blog_cndi-how-to-eject_cndi_link&utm_campaign=cndi-how-to-eject_blog&utm_source=https://cndi.dev/blog/cndi-how-to-eject&utm_medium=blog&utm_id=8062)
+[CNDI](https://cndi.run/?utm_content=blog_cndi-how-to-eject_cndi_link&utm_campaign=cndi-how-to-eject_blog&utm_source=https://cndi.dev/blog/cndi-how-to-eject&utm_medium=blog&utm_id=8105)
 project begins with a Template which is responsible for creating a number of
 artifacts.
 
@@ -91,3 +91,4 @@ TL;DR - If you want to eject from CNDI:
 
 - Without `cndi run` automation you’ll need to setup a place to store Terraform
   state after each `terraform apply`
+

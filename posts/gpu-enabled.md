@@ -47,7 +47,7 @@ can create a token at
 
 To interact with GitHub from the command line, we'll be using the `gh` CLI tool
 from GitHub. The
-[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8063)
+[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8106)
 CLI will use this tool to create the repository that manages your cluster,
 you'll inherit the repo immediately after we create it for you.
 
@@ -58,7 +58,7 @@ You can install the `gh` CLI from the
 
 The `cndi` CLI is a tool that helps you bootstrap your cluster and manage it
 from Git. You can install it by following the install instructions
-[here](https://cndi.run/gh?utm_content=blog_cndi-how-to-eject_cndi_link&utm_campaign=cndi-how-to-eject_blog&utm_source=https://cndi.dev/blog/cndi-how-to-eject&utm_medium=blog&utm_id=8063).
+[here](https://cndi.run/gh?utm_content=blog_cndi-how-to-eject_cndi_link&utm_campaign=cndi-how-to-eject_blog&utm_source=https://cndi.dev/blog/cndi-how-to-eject&utm_medium=blog&utm_id=8106).
 
 ### Step 5: Choose your path 🤗？
 
@@ -90,7 +90,7 @@ models at
 ### Step 8: Create your Cluster 🚀
 
 As illustrated in the diagram below,
-[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8063)
+[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8106)
 will use Terraform to create your cluster in the cloud of your choice, and it
 will use ArgoCD and SealedSecrets to manage your cluster through Git.
 
@@ -110,7 +110,7 @@ If you decided to use `vllm` you can select that Template when prompted, or you
 can select the `gpu-operator` Template instead if you have other plans.
 
 After you've answered all the prompts, you'll find that
-[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8063)
+[cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8106)
 has created a repository and configured automation so that any hardware or
 software changes made to the main branch will be applied to your cluster.
 
@@ -175,4 +175,4 @@ looking into technologies like [ray.io](https://ray.io), or if you have any
 other feedback please hop into our Discord available in the nav bar at the top
 of the page!
 
-#### Check [cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8063) out on GitHub! ⭐️
+#### Check [cndi](https://cndi.run/gh?utm_content=blog_cndi-gpu-enabled_cndi_link&utm_campaign=cndi-gpu-enabled_blog&utm_source=https://cndi.dev/blog/gpu-enabled&utm_medium=blog&utm_id=8106) out on GitHub! ⭐️
