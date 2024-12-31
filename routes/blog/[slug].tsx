@@ -20,14 +20,20 @@ export default function PostPage(props: PageProps<Post>) {
   const ogImgSrc = `https://cndi.dev${post.imgSrc}`;
 
   const __html = `
-  ${render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
-    allowIframes: true,
-  })}
+  ${
+    render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
+      allowIframes: true,
+    })
+  }
 
   <style>
   ${CSS}
   .markdown-body {
-    background-color: #180f1e;
+    background-color: transparent;
+  }
+
+  .markdown-body img {
+    background-color: transparent;
   }
   </style>
   `;

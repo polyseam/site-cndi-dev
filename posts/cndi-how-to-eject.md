@@ -91,4 +91,3 @@ TL;DR - If you want to eject from CNDI:
 
 - Without `cndi run` automation you’ll need to setup a place to store Terraform
   state after each `terraform apply`
-
