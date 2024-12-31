@@ -2,7 +2,10 @@ import { PageProps } from "$fresh/server.ts";
 import { Handlers } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPost, Post } from "./index.tsx";
-import { CSS, render } from "$gfm";
+import { CSS, render } from "@deno/gfm";
+
+import "prismjs/components/prism-yaml.js";
+import "prismjs/components/prism-bash.js";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -15,10 +18,26 @@ export const handler: Handlers<Post> = {
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
   const ogImgSrc = `https://cndi.dev${post.imgSrc}`;
+
+  const __html = `
+  ${render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
+    allowIframes: true,
+  })}
+
+  <style>
+  ${CSS}
+  .markdown-body {
+    background-color: #180f1e;
+  }
+  </style>
+  `;
+
   return (
     <>
       <Head>
         <title>{post.title}</title>
+        <meta charSet={"utf-8"} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={`https://cndi.dev/blog/${post.slug}`} />
         {/* opengraph */}
         <meta property="description" content={post.description} />
@@ -38,42 +57,7 @@ export default function PostPage(props: PageProps<Post>) {
         <meta name="twitter:description" content={post.description} />
         <meta name="twitter:image" content={ogImgSrc} />
 
-        <style dangerouslySetInnerHTML={{ __html: CSS }} />
         <style>{".octicon {display: none}"}</style>
-        <style>
-          {`
-            code {
-              background-color: #101010;
-              border-radius: 3px;
-              font-size: 85%;
-              margin: 0;
-              padding: .2em .4em;
-            }
-
-            strong {
-              color: white;
-            }
-
-            ul {
-              list-style-type: disc;        /* Ensures bullet points are displayed */
-              list-style-position: outside; /* Positions bullets outside the text block */
-              margin-left: 20px;            /* Adjust as needed for indentation */
-              padding-left: 0;              /* Removes default padding */
-            }
-
-            li {
-              margin: 0;
-              padding: 0;
-            }
-            
-            ol {
-              list-style-type: decimal;     /* Ensures numbers are displayed */
-              list-style-position: outside; /* Positions numbers outside the text block */
-              margin-left: 20px;            /* Adjust as needed for indentation */
-              padding-left: 0;              /* Removes default padding */
-            }
-            `}
-        </style>
       </Head>
 
       <div className="py-8" />
@@ -102,21 +86,16 @@ export default function PostPage(props: PageProps<Post>) {
             <div class="text-block-43">{post.authorName}</div>
           </div>
         </div>
-        <div
-          class="text-base rich-text-block-2-copy leading-loose bg-[#180f1e]"
-          data-color-mode="dark"
-          data-dark-theme="dark"
-          style={{
-            fontFamily: "Roboto, sans-serif",
-            color: "silver",
-            backgroundColor: "#180f1e",
-          }}
-          dangerouslySetInnerHTML={{
-            __html: render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
-              allowIframes: true,
-            }),
-          }}
-        />
+        <div>
+          <main
+            data-color-mode="dark"
+            data-dark-theme="dark"
+            class="markdown-body"
+            dangerouslySetInnerHTML={{
+              __html,
+            }}
+          />
+        </div>
       </div>
     </>
   );
