@@ -58,9 +58,7 @@ infrastructure:
 ```
 
 We can see here that we are configuring External-DNS to use AWS Route53 as the
-DNS Provider, only making updates to DNS records for the `example.com` domain
-(optionally you can omit the `domain_filter` key to allow External-DNS to manage
-all domains).
+DNS Provider, only allowing updates to DNS records for the `example.com` domain.
 
 We are also configuring Cert-Manager to use the email address
 `"john.smith@example.com"` and that address will be used when requesting TLS
