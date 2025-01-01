@@ -1,23 +1,24 @@
 import { PageProps } from "$fresh/server.ts";
-import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
+import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import HRule from "components/HRule.tsx";
-import FunctionsWhatAndWhoForSection from "components/sections/functions/WhatAndWhoForSection.tsx";
+import FnsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
+import FnsOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import FunctionsOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
   Subheading,
 } from "components/TemplateHero.tsx";
-import HeroSection from "components/sections/HeroSection.tsx";
 
+import HRule from "components/HRule.tsx";
+
+import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateFunctionsAWSPage(props: PageProps) {
+export default function TemplateFnsGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "functions";
+  const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
 
@@ -28,32 +29,30 @@ export default function TemplateFunctionsAWSPage(props: PageProps) {
       <TemplateHead
         templateTitle={title}
         templateName={templateName}
-        provider="AWS"
+        provider="GCP"
       />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero
-          heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Functions and AWS Connection Online"
+          heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
+          heroImgAlt="Fns and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
             Deploy {title}
             <br />
-            on AWS
+            on GCP
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web
-            <br />
-            Services (AWS) using CNDI.
+            Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_aws_get_started"
+              utm_content="functions_gcp_get_started"
               utm_source={utm_source}
-              utm_id={8075}
+              utm_id={8076}
               contentVersion={pageVersion}
             >
               Get Started
@@ -61,15 +60,15 @@ export default function TemplateFunctionsAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <FunctionsOnAWSSection>
+      <FnsOnGCPSection>
         Writing functions that respond to web requests should be accessible to
         everyone. You don't need to be locked into a per-request pricing model
-        or API with AWS Lambda. CNDI Functions are built on web standards and
-        Deno - all you need to do is push your code to git and they'll scale,
-        forever!
-      </FunctionsOnAWSSection>
+        or API with Cloud Functions or Firebase Functions. CNDI Functions are
+        built on web standards and Deno - all you need to do is push your code
+        to git and they'll scale, forever!
+      </FnsOnGCPSection>
       <DistributionCardSection>
-        <EKSDistributionCard title={title} />
+        <GKEDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
@@ -78,7 +77,7 @@ export default function TemplateFunctionsAWSPage(props: PageProps) {
           "Infinite scale, simple cluster pricing, and no cold starts",
         ]}
       />
-      <FunctionsWhatAndWhoForSection />
+      <FnsWhatAndWhoForSection />
     </>
   );
 }

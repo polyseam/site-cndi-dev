@@ -18,11 +18,11 @@ import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx"
 import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
 import * as $templates_airflow_gcp from "./routes/templates/airflow/gcp.tsx";
 import * as $templates_airflow_index from "./routes/templates/airflow/index.tsx";
-import * as $templates_functions_aws from "./routes/templates/functions/aws.tsx";
-import * as $templates_functions_azure from "./routes/templates/functions/azure.tsx";
-import * as $templates_functions_dev from "./routes/templates/functions/dev.tsx";
-import * as $templates_functions_gcp from "./routes/templates/functions/gcp.tsx";
-import * as $templates_functions_index from "./routes/templates/functions/index.tsx";
+import * as $templates_fns_aws from "./routes/templates/fns/aws.tsx";
+import * as $templates_fns_azure from "./routes/templates/fns/azure.tsx";
+import * as $templates_fns_dev from "./routes/templates/fns/dev.tsx";
+import * as $templates_fns_gcp from "./routes/templates/fns/gcp.tsx";
+import * as $templates_fns_index from "./routes/templates/fns/index.tsx";
 import * as $templates_gpu_operator_aws from "./routes/templates/gpu-operator/aws.tsx";
 import * as $templates_gpu_operator_azure from "./routes/templates/gpu-operator/azure.tsx";
 import * as $templates_gpu_operator_dev from "./routes/templates/gpu-operator/dev.tsx";
@@ -96,11 +96,11 @@ const manifest = {
     "./routes/templates/airflow/dev.tsx": $templates_airflow_dev,
     "./routes/templates/airflow/gcp.tsx": $templates_airflow_gcp,
     "./routes/templates/airflow/index.tsx": $templates_airflow_index,
-    "./routes/templates/functions/aws.tsx": $templates_functions_aws,
-    "./routes/templates/functions/azure.tsx": $templates_functions_azure,
-    "./routes/templates/functions/dev.tsx": $templates_functions_dev,
-    "./routes/templates/functions/gcp.tsx": $templates_functions_gcp,
-    "./routes/templates/functions/index.tsx": $templates_functions_index,
+    "./routes/templates/fns/aws.tsx": $templates_fns_aws,
+    "./routes/templates/fns/azure.tsx": $templates_fns_azure,
+    "./routes/templates/fns/dev.tsx": $templates_fns_dev,
+    "./routes/templates/fns/gcp.tsx": $templates_fns_gcp,
+    "./routes/templates/fns/index.tsx": $templates_fns_index,
     "./routes/templates/gpu-operator/aws.tsx": $templates_gpu_operator_aws,
     "./routes/templates/gpu-operator/azure.tsx": $templates_gpu_operator_azure,
     "./routes/templates/gpu-operator/dev.tsx": $templates_gpu_operator_dev,

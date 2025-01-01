@@ -23,7 +23,7 @@ export const data: TemplateData = [
     type: "Hardware Acceleration",
   },
   {
-    name: "functions",
+    name: "fns",
     title: "Functions",
     type: "Serverless",
   },

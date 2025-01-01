@@ -3,7 +3,7 @@ import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import FunctionsWhatAndWhoForSection from "components/sections/functions/WhatAndWhoForSection.tsx";
+import FunctionsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import FunctionsOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
@@ -16,7 +16,7 @@ import HeroSection from "components/sections/HeroSection.tsx";
 
 export default function TemplateFunctionsDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "functions";
+  const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
 

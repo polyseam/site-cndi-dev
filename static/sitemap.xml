@@ -15,11 +15,11 @@
 <url><loc>https://cndi.dev/templates/airflow/dev</loc></url>
 <url><loc>https://cndi.dev/templates/airflow/gcp</loc></url>
 <url><loc>https://cndi.dev/templates/airflow</loc></url>
-<url><loc>https://cndi.dev/templates/functions/aws</loc></url>
-<url><loc>https://cndi.dev/templates/functions/azure</loc></url>
-<url><loc>https://cndi.dev/templates/functions/dev</loc></url>
-<url><loc>https://cndi.dev/templates/functions/gcp</loc></url>
-<url><loc>https://cndi.dev/templates/functions</loc></url>
+<url><loc>https://cndi.dev/templates/fns/aws</loc></url>
+<url><loc>https://cndi.dev/templates/fns/azure</loc></url>
+<url><loc>https://cndi.dev/templates/fns/dev</loc></url>
+<url><loc>https://cndi.dev/templates/fns/gcp</loc></url>
+<url><loc>https://cndi.dev/templates/fns</loc></url>
 <url><loc>https://cndi.dev/templates/gpu-operator/aws</loc></url>
 <url><loc>https://cndi.dev/templates/gpu-operator/azure</loc></url>
 <url><loc>https://cndi.dev/templates/gpu-operator/dev</loc></url>

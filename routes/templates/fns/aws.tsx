@@ -1,24 +1,23 @@
 import { PageProps } from "$fresh/server.ts";
-import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
+import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import FunctionsWhatAndWhoForSection from "components/sections/functions/WhatAndWhoForSection.tsx";
-import FunctionsOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import HRule from "components/HRule.tsx";
+import FnsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
+import FnsOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
   Subheading,
 } from "components/TemplateHero.tsx";
-
-import HRule from "components/HRule.tsx";
-
 import HeroSection from "components/sections/HeroSection.tsx";
+
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateFunctionsGCPPage(props: PageProps) {
+export default function TemplateFnsAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "functions";
+  const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
 
@@ -29,30 +28,32 @@ export default function TemplateFunctionsGCPPage(props: PageProps) {
       <TemplateHead
         templateTitle={title}
         templateName={templateName}
-        provider="GCP"
+        provider="AWS"
       />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero
-          heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
-          heroImgAlt="Functions and GCP Connection Online"
+          heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
+          heroImgAlt="Fns and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
             Deploy {title}
             <br />
-            on GCP
+            on AWS
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
+            Easily Deploy {title} on Amazon Web
+            <br />
+            Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_gcp_get_started"
+              utm_content="functions_aws_get_started"
               utm_source={utm_source}
-              utm_id={8076}
+              utm_id={8075}
               contentVersion={pageVersion}
             >
               Get Started
@@ -60,15 +61,15 @@ export default function TemplateFunctionsGCPPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <FunctionsOnGCPSection>
+      <FnsOnAWSSection>
         Writing functions that respond to web requests should be accessible to
         everyone. You don't need to be locked into a per-request pricing model
-        or API with Cloud functions or Firebase functions. CNDI Functions are
-        built on web standards and Deno - all you need to do is push your code
-        to git and they'll scale, forever!
-      </FunctionsOnGCPSection>
+        or API with AWS Lambda. CNDI Functions are built on web standards and
+        Deno - all you need to do is push your code to git and they'll scale,
+        forever!
+      </FnsOnAWSSection>
       <DistributionCardSection>
-        <GKEDistributionCard title={title} />
+        <EKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
@@ -77,7 +78,7 @@ export default function TemplateFunctionsGCPPage(props: PageProps) {
           "Infinite scale, simple cluster pricing, and no cold starts",
         ]}
       />
-      <FunctionsWhatAndWhoForSection />
+      <FnsWhatAndWhoForSection />
     </>
   );
 }

@@ -3,9 +3,9 @@ import AKSDistributionCard from "components/templates/distributions/azure/AKSDis
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import FunctionsWhatAndWhoForSection from "components/sections/functions/WhatAndWhoForSection.tsx";
+import FnsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import FunctionsOnAzureSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import FnsOnAzureSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -14,9 +14,9 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateFunctionsAzurePage(props: PageProps) {
+export default function TemplateFnsAzurePage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "functions";
+  const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
 
@@ -33,7 +33,7 @@ export default function TemplateFunctionsAzurePage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
-          heroImgAlt="Functions and Azure Connection Online"
+          heroImgAlt="Fns and Azure Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -58,13 +58,13 @@ export default function TemplateFunctionsAzurePage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <FunctionsOnAzureSection>
+      <FnsOnAzureSection>
         Writing functions that respond to web requests should be accessible to
         everyone. You don't need to be locked into a per-request pricing model
         or API with Azure Functions. CNDI Functions are built on web standards
         and Deno - all you need to do is push your code to git and they'll
         scale, forever!
-      </FunctionsOnAzureSection>
+      </FnsOnAzureSection>
       <DistributionCardSection>
         <AKSDistributionCard title={title} />
       </DistributionCardSection>
@@ -75,7 +75,7 @@ export default function TemplateFunctionsAzurePage(props: PageProps) {
           "Infinite scale, simple cluster pricing, and no cold starts",
         ]}
       />
-      <FunctionsWhatAndWhoForSection />
+      <FnsWhatAndWhoForSection />
     </>
   );
 }
