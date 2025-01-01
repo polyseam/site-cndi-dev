@@ -50,7 +50,7 @@ export default function TemplateFnsGCPPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_gcp_get_started"
+              utm_content="fns_gcp_get_started"
               utm_source={utm_source}
               utm_id={8076}
               contentVersion={pageVersion}

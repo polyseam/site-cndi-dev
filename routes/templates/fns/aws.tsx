@@ -51,7 +51,7 @@ export default function TemplateFnsAWSPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_aws_get_started"
+              utm_content="fns_aws_get_started"
               utm_source={utm_source}
               utm_id={8075}
               contentVersion={pageVersion}

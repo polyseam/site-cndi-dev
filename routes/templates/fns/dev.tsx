@@ -61,7 +61,7 @@ export default function TemplateFunctionsDevPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_dev_get_started"
+              utm_content="fns_dev_get_started"
               utm_source={utm_source}
               utm_id={8078}
               contentVersion={pageVersion}

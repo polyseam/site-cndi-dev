@@ -48,7 +48,7 @@ export default function TemplateFnsAzurePage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="functions_azure_get_started"
+              utm_content="fns_azure_get_started"
               utm_source={utm_source}
               utm_id={8077}
               contentVersion={pageVersion}
