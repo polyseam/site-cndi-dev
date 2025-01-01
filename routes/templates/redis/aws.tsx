@@ -3,9 +3,9 @@ import EKSDistributionCard from "components/templates/distributions/aws/EKSDistr
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
-import WordpressWhatAndWhoForSection from "components/sections/wordpress/WhatAndWhoForSection.tsx";
+import RedisWhatAndWhoForSection from "components/sections/redis/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import WordpressOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
+import RedisOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
@@ -15,11 +15,11 @@ import HeroSection from "components/sections/HeroSection.tsx";
 
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateWordpressAWSPage(props: PageProps) {
+export default function TemplateRedisAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "wordpress";
-  const title = "Wordpress";
-  const type = "CMS";
+  const templateName = "redis";
+  const title = "Redis";
+  const type = "Cache";
 
   const utm_source = props.url.toString();
 
@@ -34,7 +34,7 @@ export default function TemplateWordpressAWSPage(props: PageProps) {
         <HRule topText={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Wordpress and AWS Connection Online"
+          heroImgAlt="Redis and AWS Connection Online"
           templateName={templateName}
         >
           <Heading>
@@ -51,9 +51,9 @@ export default function TemplateWordpressAWSPage(props: PageProps) {
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="wordpress_aws_get_started"
+              utm_content="redis_aws_get_started"
               utm_source={utm_source}
-              utm_id={8063}
+              utm_id={8067}
               contentVersion={pageVersion}
             >
               Get Started
@@ -61,23 +61,23 @@ export default function TemplateWordpressAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <WordpressOnAWSSection>
-        Running a production Wordpress cluster doesn’t need to be expensive.
-        CNDI provides the simplest and most affordable alternative to
-        Wordpress.com and WP Engine. Thanks to GitOps, changing your cluster
-        infrastructure or config is as simple as making a Pull Request.
-      </WordpressOnAWSSection>
+      <RedisOnAWSSection>
+        Running a production Redis cluster doesn’t need to be expensive. CNDI
+        provides the simplest and most affordable alternative to Redis Cloud.
+        Thanks to GitOps, changing your cluster infrastructure or config is as
+        simple as making a Pull Request.
+      </RedisOnAWSSection>
       <DistributionCardSection>
         <EKSDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Modify your content with the Wordpress Admin Panel",
-          "Leverage the plugin ecosystem to extend your site",
           "Manage confiuration and infrastructure with GitOps",
+          "Durable and Scalable",
+          "Built-in monitoring and logging",
         ]}
       />
-      <WordpressWhatAndWhoForSection />
+      <RedisWhatAndWhoForSection />
     </>
   );
 }

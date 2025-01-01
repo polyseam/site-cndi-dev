@@ -1,25 +1,26 @@
 import { PageProps } from "$fresh/server.ts";
-
-import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
+import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
 import LinkOut from "components/LinkOut.tsx";
-import HRule from "components/HRule.tsx";
-import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
+import RedisWhatAndWhoForSection from "components/sections/redis/WhatAndWhoForSection.tsx";
+import RedisOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
-import HopOnAWSSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import TemplateHero, {
   CallToAction,
   Heading,
   Subheading,
 } from "components/TemplateHero.tsx";
+
+import HRule from "components/HRule.tsx";
+
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-export default function TemplateHopAWSPage(props: PageProps) {
+export default function TemplateRedisGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
-  const templateName = "hop";
-  const title = "Hop";
-  const type = "Visual Orchestration";
+  const templateName = "redis";
+  const title = "Redis";
+  const type = "Cache";
 
   const utm_source = props.url.toString();
 
@@ -28,32 +29,30 @@ export default function TemplateHopAWSPage(props: PageProps) {
       <TemplateHead
         templateTitle={title}
         templateName={templateName}
-        provider="AWS"
+        provider="GCP"
       />
       <HeroSection>
         <HRule topText={type} />
         <TemplateHero
-          heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
-          heroImgAlt="Hop and AWS Connection Online"
+          heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
+          heroImgAlt="Redis and GCP Connection Online"
           templateName={templateName}
         >
           <Heading>
             Deploy {title}
             <br />
-            on AWS
+            on GCP
           </Heading>
           <Subheading>
-            Easily Deploy {title} on Amazon Web
-            <br />
-            Services (AWS) using CNDI.
+            Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
             <LinkOut
               className="button w-button"
               pathname="/gh"
-              utm_content="hop_aws_get_started"
+              utm_content="redis_gcp_get_started"
               utm_source={utm_source}
-              utm_id={8031}
+              utm_id={8068}
               contentVersion={pageVersion}
             >
               Get Started
@@ -61,23 +60,23 @@ export default function TemplateHopAWSPage(props: PageProps) {
           </CallToAction>
         </TemplateHero>
       </HeroSection>
-      <HopOnAWSSection>
-        Deploying Apache Hop on AWS with CNDI gives you a cloud hosted visual
-        data integration engine accessible securely through the browser. Thanks
-        to GitOps, changing your cluster infrastructure or config is as simple
-        as making a Pull Request.
-      </HopOnAWSSection>
+      <RedisOnGCPSection>
+        Running a production Redis cluster doesn’t need to be expensive. CNDI
+        provides the simplest and most affordable alternative to Redis Cloud.
+        Thanks to GitOps, changing your cluster infrastructure or config is as
+        simple as making a Pull Request.
+      </RedisOnGCPSection>
       <DistributionCardSection>
-        <EKSDistributionCard title={title} />
+        <GKEDistributionCard title={title} />
       </DistributionCardSection>
       <ThreePoints
         statements={[
-          "Up and running in minutes",
-          "Drag and drop editing experience",
-          "Deep integration with nearly every source and target",
+          "Manage confiuration and infrastructure with GitOps",
+          "Durable and Scalable",
+          "Built-in monitoring and logging",
         ]}
       />
-      <HopWhatAndWhoForSection />
+      <RedisWhatAndWhoForSection />
     </>
   );
 }

@@ -30,6 +30,7 @@ const BenefitCard = (props: BenefitCardProps) => (
 );
 
 export default function UseInteractiveCNDITemplatesSection() {
+  // More than 6 cards is noise
   return (
     <section class="home_section_cndi_cards">
       <div class="w-layout-blockcontainer container-1474 w-container">
@@ -38,10 +39,10 @@ export default function UseInteractiveCNDITemplatesSection() {
           class="w-layout-layout quick-stack-16 wf-layout-layout"
         >
           <BenefitCard>
-            <Title>Simplified K8s</Title>
+            <Title>Infrastructure as Code and GitOps</Title>
             <Description>
-              Reducing the complexity and learning curve through automation and
-              sensible defaults.
+              Manage the infrastructure and configuration of your cluster as
+              code in Git
             </Description>
           </BenefitCard>
           <BenefitCard>
@@ -52,10 +53,10 @@ export default function UseInteractiveCNDITemplatesSection() {
             </Description>
           </BenefitCard>
           <BenefitCard>
-            <Title>Reduce Costs</Title>
+            <Title>Built-in Observability</Title>
             <Description>
-              Pay for compute, not fluff -  avoid the PaaS or SaaS tax by
-              enjoying self-hosting made easy.
+              Complete observability stack, with Prometheus, Loki, Grafana, and
+              pre-configured dashboards included.
             </Description>
           </BenefitCard>
           <BenefitCard>
@@ -66,17 +67,17 @@ export default function UseInteractiveCNDITemplatesSection() {
             </Description>
           </BenefitCard>
           <BenefitCard>
-            <Title>Infrastructure as Code</Title>
-            <Description>
-              Represent your infrastructure as code to optimize cost and
-              resource allocation for each application cluster.
-            </Description>
-          </BenefitCard>
-          <BenefitCard>
             <Title>Uncompromised Self-Hosting</Title>
             <Description>
               Deploy workloads across any cloud or on-prem infrastructure. Get
               all the scalability and flexibility you need without constraints.
+            </Description>
+          </BenefitCard>
+          <BenefitCard>
+            <Title>Reduce Costs</Title>
+            <Description>
+              Pay for compute, not fluff -  avoid the PaaS or SaaS tax by
+              enjoying self-hosting made easy.
             </Description>
           </BenefitCard>
         </div>

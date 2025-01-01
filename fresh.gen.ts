@@ -18,6 +18,16 @@ import * as $templates_airflow_azure from "./routes/templates/airflow/azure.tsx"
 import * as $templates_airflow_dev from "./routes/templates/airflow/dev.tsx";
 import * as $templates_airflow_gcp from "./routes/templates/airflow/gcp.tsx";
 import * as $templates_airflow_index from "./routes/templates/airflow/index.tsx";
+import * as $templates_functions_aws from "./routes/templates/functions/aws.tsx";
+import * as $templates_functions_azure from "./routes/templates/functions/azure.tsx";
+import * as $templates_functions_dev from "./routes/templates/functions/dev.tsx";
+import * as $templates_functions_gcp from "./routes/templates/functions/gcp.tsx";
+import * as $templates_functions_index from "./routes/templates/functions/index.tsx";
+import * as $templates_gpu_operator_aws from "./routes/templates/gpu-operator/aws.tsx";
+import * as $templates_gpu_operator_azure from "./routes/templates/gpu-operator/azure.tsx";
+import * as $templates_gpu_operator_dev from "./routes/templates/gpu-operator/dev.tsx";
+import * as $templates_gpu_operator_gcp from "./routes/templates/gpu-operator/gcp.tsx";
+import * as $templates_gpu_operator_index from "./routes/templates/gpu-operator/index.tsx";
 import * as $templates_hop_aws from "./routes/templates/hop/aws.tsx";
 import * as $templates_hop_azure from "./routes/templates/hop/azure.tsx";
 import * as $templates_hop_dev from "./routes/templates/hop/dev.tsx";
@@ -54,6 +64,11 @@ import * as $templates_postgres_azure from "./routes/templates/postgres/azure.ts
 import * as $templates_postgres_dev from "./routes/templates/postgres/dev.tsx";
 import * as $templates_postgres_gcp from "./routes/templates/postgres/gcp.tsx";
 import * as $templates_postgres_index from "./routes/templates/postgres/index.tsx";
+import * as $templates_redis_aws from "./routes/templates/redis/aws.tsx";
+import * as $templates_redis_azure from "./routes/templates/redis/azure.tsx";
+import * as $templates_redis_dev from "./routes/templates/redis/dev.tsx";
+import * as $templates_redis_gcp from "./routes/templates/redis/gcp.tsx";
+import * as $templates_redis_index from "./routes/templates/redis/index.tsx";
 import * as $templates_wordpress_aws from "./routes/templates/wordpress/aws.tsx";
 import * as $templates_wordpress_azure from "./routes/templates/wordpress/azure.tsx";
 import * as $templates_wordpress_dev from "./routes/templates/wordpress/dev.tsx";
@@ -81,6 +96,16 @@ const manifest = {
     "./routes/templates/airflow/dev.tsx": $templates_airflow_dev,
     "./routes/templates/airflow/gcp.tsx": $templates_airflow_gcp,
     "./routes/templates/airflow/index.tsx": $templates_airflow_index,
+    "./routes/templates/functions/aws.tsx": $templates_functions_aws,
+    "./routes/templates/functions/azure.tsx": $templates_functions_azure,
+    "./routes/templates/functions/dev.tsx": $templates_functions_dev,
+    "./routes/templates/functions/gcp.tsx": $templates_functions_gcp,
+    "./routes/templates/functions/index.tsx": $templates_functions_index,
+    "./routes/templates/gpu-operator/aws.tsx": $templates_gpu_operator_aws,
+    "./routes/templates/gpu-operator/azure.tsx": $templates_gpu_operator_azure,
+    "./routes/templates/gpu-operator/dev.tsx": $templates_gpu_operator_dev,
+    "./routes/templates/gpu-operator/gcp.tsx": $templates_gpu_operator_gcp,
+    "./routes/templates/gpu-operator/index.tsx": $templates_gpu_operator_index,
     "./routes/templates/hop/aws.tsx": $templates_hop_aws,
     "./routes/templates/hop/azure.tsx": $templates_hop_azure,
     "./routes/templates/hop/dev.tsx": $templates_hop_dev,
@@ -117,6 +142,11 @@ const manifest = {
     "./routes/templates/postgres/dev.tsx": $templates_postgres_dev,
     "./routes/templates/postgres/gcp.tsx": $templates_postgres_gcp,
     "./routes/templates/postgres/index.tsx": $templates_postgres_index,
+    "./routes/templates/redis/aws.tsx": $templates_redis_aws,
+    "./routes/templates/redis/azure.tsx": $templates_redis_azure,
+    "./routes/templates/redis/dev.tsx": $templates_redis_dev,
+    "./routes/templates/redis/gcp.tsx": $templates_redis_gcp,
+    "./routes/templates/redis/index.tsx": $templates_redis_index,
     "./routes/templates/wordpress/aws.tsx": $templates_wordpress_aws,
     "./routes/templates/wordpress/azure.tsx": $templates_wordpress_azure,
     "./routes/templates/wordpress/dev.tsx": $templates_wordpress_dev,

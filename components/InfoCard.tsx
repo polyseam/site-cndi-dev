@@ -13,10 +13,7 @@ export default function InfoCard(props: Props) {
   const { children, heading, cta } = props;
 
   return (
-    <div
-      id="w-node-_00701ea6-7f63-616b-6522-dae43b4b5ad5-02e921a5"
-      class="w-layout-cell templates_cell"
-    >
+    <div class="w-layout-cell templates_cell">
       <h1 class="heading-63">{heading}</h1>
       <p class="paragraph-28">{children}</p>
       {cta
@@ -36,7 +33,7 @@ export default function InfoCard(props: Props) {
             />
           </a>
         )
-        : null}
+        : <div class="link_block_view_project w-inline-block" />}
     </div>
   );
 }

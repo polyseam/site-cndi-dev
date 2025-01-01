@@ -14,6 +14,28 @@ export const data: TemplateData = [
     type: "Database",
   },
   {
+    name: "kafka",
+    type: "Messaging",
+  },
+  {
+    name: "gpu-operator",
+    title: "GPU Operator",
+    type: "Hardware Acceleration",
+  },
+  {
+    name: "functions",
+    title: "Functions",
+    type: "Serverless",
+  },
+  {
+    name: "redis",
+    type: "Cache",
+  },
+  {
+    name: "wordpress",
+    type: "CMS",
+  },
+  {
     name: "hop",
     type: "Data Integration",
   },
@@ -32,25 +54,8 @@ export const data: TemplateData = [
     title: "MS SQL Server",
   },
   {
-    name: "kafka",
-    type: "Messaging",
-  },
-  {
     name: "mongodb",
     title: "MongoDB",
     type: "Database",
   },
-  {
-    name: "wordpress",
-    type: "CMS",
-  },
-  // {
-  //   name: "redis",
-  //   type: "Cache",
-  // },
-  // {
-  //   name: "gpu-operator",
-  //   title: "GPU Operator",
-  //   type: "Hardware Acceleration",
-  // },
 ];
