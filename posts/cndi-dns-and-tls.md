@@ -5,12 +5,19 @@ author_name: 'Matt Johnston'
 description: 'CNDI Integrates External-DNS and Cert-Manager Automatically'
 ---
 
-The Kubernetes
+Not long ago it was a manual process to manage DNS records and TLS certificates
+for your services, but Kubernetes and a few of it's extensions have made this a
+thing of the past.
+
+Today we'll run through how CNDI integrates the Nginx Ingress controller,
+External-DNS, and Cert-Manager to automatically manage DNS and TLS for your
+public facing services.
+
+It all starts with the Kubernetes
 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-resource is a powerful tool for managing external access to your services. It
-can be used to route traffic to your services. Today we'll run through how CNDI
-integrates the Nginx Ingress controller, External-DNS, and Cert-Manager to
-automatically manage DNS and TLS for your services.
+resource, it provides a declarative way to manage external access to services
+deployed in your cluster. Ingress resources are not all that useful on their own
+though, they need a Controller to watch for changes and act on them.
 
 [Kubernetes Controllers](https://kubernetes.io/docs/concepts/architecture/controller/)
 are programs which monitor the Kubernetes API for changes to resources they are
