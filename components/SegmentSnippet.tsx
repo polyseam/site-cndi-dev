@@ -4,6 +4,30 @@ export default function SegmentSnippet() {
   analytics.load("MS1j3f3cwJSgjFxigYY2bTQ6LtPjypXG");
   analytics.page();
   }}();
+
+// Middleware to add Mixpanel's session recording properties to Segment events
+analytics.addSourceMiddleware(({ payload, next, integrations }) => {
+	if (payload.obj.type === 'track' || payload.obj.type === 'page') {
+		if (window.mixpanel) {
+			const segmentDeviceId = payload.obj.anonymousId;
+			// Simplified ID Merge
+			mixpanel.register({ $device_id: segmentDeviceId, distinct_id : "$device:"+segmentDeviceId }); 
+			// -------------------------------------------	
+			const sessionReplayProperties = mixpanel.get_session_recording_properties();
+			payload.obj.properties = {
+				...payload.obj.properties,
+				...sessionReplayProperties
+			};
+		}
+	}
+	if (payload.obj.type === 'identify') {
+		if (window.mixpanel) {
+			const userId = payload.obj.userId;
+			mixpanel.identify(userId);
+		}
+	}
+	next(payload);
+});
   `;
   return (
     <>
