@@ -1,22 +1,35 @@
 {
-  "build_id": "ba47f7ef4465b8d426432a27116317fb3ed6fbf0",
+  "build_id": "056621a5ce0b9682195bf251836f379af506f991",
   "files": {
     "main.js": [
-      "chunk-H6LPW6N3.js"
+      "chunk-GI7LLYGM.js",
+      "chunk-LYSTMUJ4.js"
     ],
     "deserializer.js": [],
     "signals.js": [
-      "chunk-ENXECTKD.js",
-      "chunk-H6LPW6N3.js"
+      "chunk-GI7LLYGM.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-LYSTMUJ4.js"
+    ],
+    "island-clisnippet.js": [
+      "chunk-MKV2KPJU.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-LYSTMUJ4.js"
     ],
     "island-logoticker.js": [
-      "chunk-ENXECTKD.js",
-      "chunk-H6LPW6N3.js"
+      "chunk-GI7LLYGM.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-LYSTMUJ4.js"
     ],
-    "chunk-ENXECTKD.js": [
-      "chunk-H6LPW6N3.js"
+    "chunk-GI7LLYGM.js": [],
+    "chunk-MKV2KPJU.js": [
+      "chunk-LYSTMUJ4.js"
     ],
-    "chunk-H6LPW6N3.js": [],
+    "chunk-EMTYLGJR.js": [
+      "chunk-LYSTMUJ4.js"
+    ],
+    "chunk-LYSTMUJ4.js": [],
     "metafile.json": []
   }
 }

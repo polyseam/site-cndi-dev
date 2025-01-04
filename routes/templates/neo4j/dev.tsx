@@ -14,8 +14,11 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateNeo4jDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "dev/microk8s";
   const templateName = "neo4j";
   const title = "Neo4j";
   const type = "Database";
@@ -49,8 +52,12 @@ export default function TemplateNeo4jDevPage(props: PageProps) {
               utm_id={8038}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

@@ -17,8 +17,11 @@ import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "../../../components/TemplateHead.tsx";
 import YoutubeVideoDemoEmbedSection from "components/sections/YoutubeVideoDemoEmbedSection.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateAirflowAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "aws/eks";
   const templateName = "airflow";
   const title = "Airflow";
   const type = "Orchestration";
@@ -68,8 +71,12 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
               utm_id={8023}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

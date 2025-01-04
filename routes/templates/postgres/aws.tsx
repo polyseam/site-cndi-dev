@@ -14,8 +14,11 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplatePostgresAWSPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "aws/eks";
   const templateName = "postgres";
   const title = "Postgres";
   const type = "Database";
@@ -55,8 +58,12 @@ export default function TemplatePostgresAWSPage(props: PageProps) {
               utm_id={8027}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName="cnpg"
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

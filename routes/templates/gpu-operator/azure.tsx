@@ -14,8 +14,11 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateGPUOperatorAzurePage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "azure/aks";
   const templateName = "gpu-operator";
   const title = "GPU Operator";
   const type = "Hardware Acceleration";
@@ -53,8 +56,12 @@ export default function TemplateGPUOperatorAzurePage(props: PageProps) {
               utm_id={8073}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

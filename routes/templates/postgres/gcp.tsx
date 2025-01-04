@@ -15,8 +15,11 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplatePostgresGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "gcp/gke";
   const templateName = "postgres";
   const title = "Postgres";
   const type = "Database";
@@ -54,8 +57,12 @@ export default function TemplatePostgresGCPPage(props: PageProps) {
               utm_id={8028}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName="cnpg"
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

@@ -7,6 +7,8 @@ import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateAirflowPage(props: PageProps) {
   const templateName = "airflow";
   const title = "Airflow";

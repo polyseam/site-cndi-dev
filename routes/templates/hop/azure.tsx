@@ -14,8 +14,11 @@ import TemplateHero, {
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateHopAzurePage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "azure/aks";
   const templateName = "hop";
   const title = "Hop";
   const type = "Visual Orchestration";
@@ -53,8 +56,12 @@ export default function TemplateHopAzurePage(props: PageProps) {
               utm_id={8033}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>
