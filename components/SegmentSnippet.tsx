@@ -14,7 +14,8 @@ mixpanel.init(
     "26ce66c5e540b010ebdfa66679a34601", 
     {
         record_sessions_percent: 100,  //records 100% of all sessions
-        record_mask_text_selector: '.mask-text-in-replay'
+        record_mask_text_selector: '.mask-text-in-replay',
+        record_block_selector: '.block-in-replay',
     }
 )
 
