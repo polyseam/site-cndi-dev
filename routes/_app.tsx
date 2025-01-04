@@ -1,6 +1,8 @@
 import { type PageProps } from "$fresh/server.ts";
 import Nav from "../components/Nav.tsx";
 import Footer from "../components/Footer.tsx";
+import SegmentSnippet from "components/SegmentSnippet.tsx";
+// import SegmentSnippet from "../components/SegmentSnippet.tsx";
 
 export default function App({ Component, url }: PageProps) {
   return (
@@ -43,6 +45,7 @@ export default function App({ Component, url }: PageProps) {
           type="image/x-icon"
         />
         <link href="/images/webclip.png" rel="apple-touch-icon"></link>
+        <SegmentSnippet />
       </head>
       <body class="body wf-17859gj wf-vl64f">
         <Nav url={url} />
