@@ -55,12 +55,15 @@ export default function CNDICreateCLISnippet({
       class="p-2 m-2 mx-8 text-sm rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
       onClick={copyToClipboard}
     >
-      <span class="verb text-purple-200">cndi{' '}</span>
-      <span class="verb text-purple-200">create{' '}</span>
-      <span class="option-name text-green-600">-t{' '}</span>
-      <span class="option-val text-purple-200">{templateName}{' '}</span>
-      <span class="option-name text-green-600">-l{' '}</span>
-      <span class="option-val text-purple-200">{deploymentTargetLabel}{' '}</span>
+      <span class="verb text-purple-200">cndi{" "}</span>
+      <span class="verb text-purple-200">create{" "}</span>
+      <span class="option-name text-green-600">-t{" "}</span>
+      <span class="option-val text-purple-200">{templateName}{" "}</span>
+      <span class="option-name text-green-600">-l{" "}</span>
+      <span class="option-val text-purple-200">
+        {deploymentTargetLabel}
+        {" "}
+      </span>
       <span class="text-purple-200">&#x2398;</span>
     </code>
   );
