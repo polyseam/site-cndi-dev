@@ -14,8 +14,11 @@ import TemplateHero, {
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateFunctionsDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "dev/microk8s";
   const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
@@ -66,8 +69,12 @@ export default function TemplateFunctionsDevPage(props: PageProps) {
               utm_id={8078}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

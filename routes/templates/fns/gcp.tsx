@@ -16,8 +16,11 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateFnsGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "gcp/gke";
   const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
@@ -55,8 +58,12 @@ export default function TemplateFnsGCPPage(props: PageProps) {
               utm_id={8076}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

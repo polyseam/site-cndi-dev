@@ -15,8 +15,11 @@ import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateAirflowDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
+  const deploymentTargetLabel = "dev/microk8s";
   const templateName = "airflow";
   const title = "Airflow";
   const type = "Orchestration";
@@ -77,8 +80,12 @@ export default function TemplateAirflowDevPage(props: PageProps) {
               utm_id={8026}
               contentVersion={pageVersion}
             >
-              Get Started
+              Get Started with
             </LinkOut>
+            <CNDICreateCLISnippet
+              deploymentTargetLabel={deploymentTargetLabel}
+              templateName={templateName}
+            />
           </CallToAction>
         </TemplateHero>
       </HeroSection>

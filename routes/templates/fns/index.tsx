@@ -6,6 +6,8 @@ import HRule from "components/HRule.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
+import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+
 export default function TemplateFnsPage(_props: PageProps) {
   const templateName = "fns";
   const title = "Functions";

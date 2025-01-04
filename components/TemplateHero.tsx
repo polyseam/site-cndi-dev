@@ -4,7 +4,7 @@ type Props = {
   officialDeploymentMethod?: ComponentChild;
   ctaComponent?: JSX.Element;
   templateName: string;
-  children: [ComponentChild, ComponentChild, ComponentChild?];
+  children: [ComponentChild, ComponentChild, ComponentChild?, ComponentChild?];
   heroImgSrc: string;
   heroImgAlt: string;
 };
@@ -26,6 +26,7 @@ export default function TemplateHero(props: Props) {
   const heading = props.children[0];
   const subheading = props.children[1];
   const ctaComponent = props.children[2];
+  const cliComponent = props.children[3];
   return (
     <div
       id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd4-00a367a8"
@@ -38,7 +39,10 @@ export default function TemplateHero(props: Props) {
         {heading}
         {subheading}
         {officialDeploymentMethod}
-        {ctaComponent}
+        <p>
+          {ctaComponent}
+          {cliComponent}
+        </p>
       </div>
       <div
         id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852ace1-00a367a8"
