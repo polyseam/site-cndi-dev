@@ -14,7 +14,9 @@ import TemplateHero, {
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
-import TemplateHead from "../../../components/TemplateHead.tsx";
+import TemplateHead from "components/TemplateHead.tsx";
+import { Button } from "components/Button.tsx";
+
 import YoutubeVideoDemoEmbedSection from "components/sections/YoutubeVideoDemoEmbedSection.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
@@ -71,7 +73,7 @@ export default function TemplateAirflowAWSPage(props: PageProps) {
               utm_id={8023}
               contentVersion={pageVersion}
             >
-              Get Started with
+              <Button>Get Started with</Button>
             </LinkOut>
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}

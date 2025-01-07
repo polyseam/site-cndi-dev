@@ -13,7 +13,7 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
-
+import { Button } from "components/Button.tsx";
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
 
 export default function TemplateWordpressDevPage(props: PageProps) {
@@ -69,7 +69,7 @@ export default function TemplateWordpressDevPage(props: PageProps) {
               utm_id={8066}
               contentVersion={pageVersion}
             >
-              Get Started with
+              <Button>Get Started with</Button>
             </LinkOut>
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}

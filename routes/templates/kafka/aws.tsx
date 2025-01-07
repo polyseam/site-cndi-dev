@@ -13,6 +13,7 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
+import { Button } from "components/Button.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
 
@@ -58,7 +59,7 @@ export default function TemplateKafkaAWSPage(props: PageProps) {
               utm_id={8047}
               contentVersion={pageVersion}
             >
-              Get Started with
+              <Button>Get Started with</Button>
             </LinkOut>
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}

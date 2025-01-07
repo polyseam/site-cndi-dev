@@ -14,6 +14,7 @@ import TemplateHero, {
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
+import { Button } from "components/Button.tsx";
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
 
 export default function TemplateAirflowAzurePage(props: PageProps) {
@@ -66,7 +67,7 @@ export default function TemplateAirflowAzurePage(props: PageProps) {
               utm_id={8025}
               contentVersion={pageVersion}
             >
-              Get Started with
+              <Button>Get Started with</Button>
             </LinkOut>
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
