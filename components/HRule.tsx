@@ -41,7 +41,7 @@ export default function HRule(props: Props) {
             </div>
           </div>
         </div>
-        <div class="bg-[var(--stroke)] w-[1040px] h-px mt-2"></div>
+        <div class="bg-[var(--stroke)] w-full h-px mt-2"></div>
       </div>
     </>
   );

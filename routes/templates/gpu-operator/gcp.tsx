@@ -16,7 +16,7 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
+import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
 
 export default function TemplateGPUOperatorGCPPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -51,7 +51,7 @@ export default function TemplateGPUOperatorGCPPage(props: PageProps) {
           </Subheading>
           <CallToAction>
             <LinkOut
-              className="button w-button"
+              className="no-underline"
               pathname="/gh"
               utm_content="redis_gcp_get_started"
               utm_source={utm_source}

@@ -6,8 +6,6 @@ import HRule from "components/HRule.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
 
-import CNDICreateCLISnippet from "../../../islands/CLISnippet.tsx";
-
 export default function TemplateHopPage(_props: PageProps) {
   const templateName = "hop";
   const title = "Hop";

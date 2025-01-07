@@ -3,7 +3,7 @@ import { ComponentChildren } from "preact";
 type Props = {
   children: ComponentChildren;
   pathname: string;
-  className: string;
+  className?: string;
   contentVersion: string;
   utm_content: string;
   utm_source: string;
@@ -17,13 +17,10 @@ const UTM_CAMPAIGN_PREFIX = "site_cndidev@";
 declare global {
   interface Window {
     analytics?: {
+      // deno-lint-ignore no-explicit-any
       track: (event: string, properties?: Record<string, any>) => void;
     };
   }
-}
-
-function trackClick() {
-  window.analytics?.track("Link Out Clicked", {});
 }
 
 /**
@@ -46,6 +43,7 @@ export default function LinkOut(props: Props) {
   };
 
   const trackClick = () => {
+    // deno-lint-ignore no-window
     window?.analytics?.track("Link Out Clicked", data);
   };
 
@@ -58,7 +56,12 @@ export default function LinkOut(props: Props) {
   }
 
   return (
-    <a href={href} className={className} target="_blank" onClick={trackClick}>
+    <a
+      href={href}
+      className={className || ""}
+      target="_blank"
+      onClick={trackClick}
+    >
       {children}
     </a>
   );

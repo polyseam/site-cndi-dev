@@ -17,16 +17,25 @@ export const Subheading = ({ children }: { children: ComponentChild }) => (
   <div class="subheading_template">{children}</div>
 );
 
-export const CallToAction = ({ children }: { children: ComponentChild }) => (
-  <>{children}</>
-);
+export const CallToAction = (props: {
+  children: [ComponentChild, ComponentChild];
+}) => {
+  const button = props.children[0];
+  const cliSnippet = props.children[1];
+  return (
+    <div class="cta_template flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-x-4 sm:space-y-0">
+      <div class="button p-2 inline-block w-fit">{button}</div>
+      <div class="inline-flex">{cliSnippet}</div>
+    </div>
+  );
+};
 
 export default function TemplateHero(props: Props) {
   const { officialDeploymentMethod } = props;
   const heading = props.children[0];
   const subheading = props.children[1];
   const ctaComponent = props.children[2];
-  const cliComponent = props.children[3];
+
   return (
     <div
       id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd4-00a367a8"
@@ -39,10 +48,7 @@ export default function TemplateHero(props: Props) {
         {heading}
         {subheading}
         {officialDeploymentMethod}
-        <p>
-          {ctaComponent}
-          {cliComponent}
-        </p>
+        {ctaComponent}
       </div>
       <div
         id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852ace1-00a367a8"

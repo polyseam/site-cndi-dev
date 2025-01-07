@@ -1,9 +1,9 @@
-import { copy } from "$std/fs/copy.ts";
 import { useState } from "preact/hooks";
 
 declare global {
   interface Window {
     analytics?: {
+      // deno-lint-ignore no-explicit-any
       track: (event: string, properties?: Record<string, any>) => void;
     };
   }
@@ -18,7 +18,7 @@ export default function CNDICreateCLISnippet({
   templateName,
   deploymentTargetLabel,
 }: CNDICreateCLISnippetProps) {
-  const command = `cndi create -t ${templateName} -l ${deploymentTargetLabel}`;
+  const command = `cndi create -t ${templateName}`;
 
   const [copied, setCopied] = useState(false);
 
@@ -42,7 +42,7 @@ export default function CNDICreateCLISnippet({
   if (copied) {
     return (
       <code
-        class="p-2 m-2 mx-8 text-sm rounded-md monospace bg-[#161b22]"
+        class="p-2 my-2 ml-0 sm:ml-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
         onClick={copyToClipboard}
       >
         <span class="verb text-purple-200">copied!</span>
@@ -52,19 +52,13 @@ export default function CNDICreateCLISnippet({
 
   return (
     <code
-      class="p-2 m-2 mx-8 text-sm rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
+      class="p-2 my-2 ml-0 sm:ml-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
       onClick={copyToClipboard}
     >
       <span class="verb text-purple-200">cndi{" "}</span>
       <span class="verb text-purple-200">create{" "}</span>
       <span class="option-name text-green-600">-t{" "}</span>
-      <span class="option-val text-purple-200">{templateName}{" "}</span>
-      <span class="option-name text-green-600">-l{" "}</span>
-      <span class="option-val text-purple-200">
-        {deploymentTargetLabel}
-        {" "}
-      </span>
-      <span class="text-purple-200">&#x2398;</span>
+      <span class="option-val text-purple-200">{templateName}</span>
     </code>
   );
 }
