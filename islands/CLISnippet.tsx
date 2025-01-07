@@ -58,7 +58,8 @@ export default function CNDICreateCLISnippet({
       <span class="verb text-purple-200">cndi{" "}</span>
       <span class="verb text-purple-200">create{" "}</span>
       <span class="option-name text-green-600">-t{" "}</span>
-      <span class="option-val text-purple-200">{templateName}</span>
+      <span class="option-val text-purple-200">{templateName}{" "}</span>
+      <span class="text-purple-200">&#x2398;</span>
     </code>
   );
 }
