@@ -1,5 +1,5 @@
 import TemplateCardList from "components/templates/TemplateCardList.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 
 type Props = {
   pageVersion: string;

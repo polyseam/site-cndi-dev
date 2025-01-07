@@ -76,6 +76,7 @@ import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx"
 import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $CLISnippet from "./islands/CLISnippet.tsx";
+import * as $LinkOut from "./islands/LinkOut.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -157,6 +158,7 @@ const manifest = {
   },
   islands: {
     "./islands/CLISnippet.tsx": $CLISnippet,
+    "./islands/LinkOut.tsx": $LinkOut,
     "./islands/LogoTicker.tsx": $LogoTicker,
   },
   baseUrl: import.meta.url,

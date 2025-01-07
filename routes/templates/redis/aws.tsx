@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
 import RedisWhatAndWhoForSection from "components/sections/redis/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";

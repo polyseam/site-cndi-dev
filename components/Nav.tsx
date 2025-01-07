@@ -1,4 +1,4 @@
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 type NavProps = {
   url: URL;
 };

@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import Neo4jWhatAndWhoForSection from "components/sections/neo4j/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import Neo4jOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";

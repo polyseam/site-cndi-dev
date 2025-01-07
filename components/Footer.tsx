@@ -1,5 +1,5 @@
 import CookieManager from "components/CookieManager.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 type FooterProps = {
   url: URL;
 };

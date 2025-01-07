@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import AKSDistributionCard from "components/templates/distributions/azure/AKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
 import PostgresWhatAndWhoForSection from "components/sections/postgres/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";

@@ -42,11 +42,6 @@ export default function LinkOut(props: Props) {
     utm_id: props.utm_id,
   };
 
-  const trackClick = () => {
-    // deno-lint-ignore no-window
-    window?.analytics?.track("Link Out Clicked", data);
-  };
-
   let href =
     `https://cndi.run${pathname}?utm_content=${props.utm_content}&utm_campaign=${utm_campaign}&utm_source=${props.utm_source}&utm_medium=${utm_medium}&utm_id=${props.utm_id}`;
 
@@ -55,9 +50,19 @@ export default function LinkOut(props: Props) {
     data[key] = query[key];
   }
 
+  const trackClick = () => {
+    // deno-lint-ignore no-window
+    window?.analytics?.track("Link Out Clicked", data);
+    if (pathname === "/gh") {
+      fetch(`${href}&synthetic=true`);
+    }
+  };
+
   return (
     <a
-      href={href}
+      // if the link is to the GitHub repo, use the GitHub URL
+      // and synthesizes a link shortener request
+      href={pathname === "/gh" ? `https://github.com/polyseam/cndi` : href}
       className={className || ""}
       target="_blank"
       onClick={trackClick}

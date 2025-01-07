@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import MySQLWhatAndWhoForSection from "components/sections/mysql/WhatAndWhoForSection.tsx";
 import MySQLOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";

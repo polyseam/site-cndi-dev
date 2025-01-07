@@ -2,7 +2,7 @@ import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import FunctionsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import FunctionsOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";

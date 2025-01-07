@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "components/LinkOut.tsx";
+import LinkOut from "islands/LinkOut.tsx";
 import PostgresWhatAndWhoForSection from "components/sections/postgres/WhatAndWhoForSection.tsx";
 import PostgresOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
