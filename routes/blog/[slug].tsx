@@ -96,7 +96,7 @@ export default function PostPage(props: PageProps<Post>) {
             <div class="text-block-43">{post.authorName}</div>
           </div>
         </div>
-        <div>
+        <div class="m-8">
           <main
             data-color-mode="dark"
             data-dark-theme="dark"
