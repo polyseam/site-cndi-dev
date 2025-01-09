@@ -23,6 +23,10 @@ export default function PostPage(props: PageProps<Post>) {
   ${
     render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
       allowIframes: true,
+      allowMath: true,
+      allowedTags: [
+        "code",
+      ],
     })
   }
 
