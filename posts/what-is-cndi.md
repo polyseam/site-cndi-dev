@@ -1,6 +1,6 @@
 ---
 title: What is CNDI?
-published_at: 2024-21-20T15:00:00.000Z
+published_at: 2024-12-20T15:00:00.000Z
 author_name: 'Matt Johnston'
 description: "CNDI: What does it do? Does it do things? Let's find out!"
 ---
