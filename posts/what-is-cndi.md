@@ -94,26 +94,11 @@ resources CNDI created.
 - **Completely free and Open-Source**: No licensing fees or vendor lock-in
 - **Community & Support**: Supportive Discord community and active development
 
-# Getting Started
-
-1. Install: Use the handy scripts for macOS/Linux or Windows to quickly get CNDI
-   on your machine.
-2. Create a Project: Run `cndi create <owner>/<repo> -t <template> && cd <repo>`
-   and follow the prompts.
-3. Check Your Repo: Head over to your newly-created GitHub repository to watch
-   the Action logs as your cluster comes online.
-4. Iterate: Make changes to `cndi_config.yaml` or `.env`, then run `cndi ow` and
-   push your commit to see the updates applied automatically.
-
-# Wrapping Up
-
 CNDI aims to close the gap between infrastructure provisioning and application
-delivery by wrapping best practices and automation into one approachable CLI. It
-demystifies the process, so instead of juggling dozens of commands and
-configurations, you can focus on building applications that deliver value.
+delivery by wrapping best practices and automation into one approachable CLI.
 
 If you’re curious to see how it all fits together—or if you’re simply tired of
-manual cluster setups—give CNDI a try. Chances are you’ll come away wishing
-you’d found it sooner.
+manual cluster setups—give CNDI a try. We hope you find it useful and we'd love
+to hear from you!
 
 #### For complete documentation, check out [cndi](https://cndi.run/gh?utm_content=blog_what-is-cndi_cndi_link&utm_campaign=cndi-what-is-cndi_blog&utm_source=https://cndi.dev/blog/what-is-cndi&utm_medium=blog&utm_id=8108) on GitHub! ⭐️
