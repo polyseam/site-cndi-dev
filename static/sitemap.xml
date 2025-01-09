@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
           <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url><loc>https://cndi.dev/blog/cndi-dns-and-tls</loc><lastmod>2024-12-30</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://cndi.dev/blog/what-is-cndi</loc><lastmod>2025-01-08</lastmod><changefreq>daily</changefreq></url>
 <url><loc>https://cndi.dev/blog/self-host</loc><lastmod>2024-10-16</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://cndi.dev/blog/cndi-how-to-eject</loc><lastmod>2024-02-22</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://cndi.dev/blog/cloud-native</loc><lastmod>2023-05-09</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://cndi.dev/blog/gitops</loc><lastmod>2023-03-23</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://cndi.dev/blog/shifting-responsibilities</loc><lastmod>2023-05-09</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://cndi.dev/blog/cndi-secrets</loc><lastmod>2025-01-04</lastmod><changefreq>daily</changefreq></url>
 <url><loc>https://cndi.dev/blog/gpu-enabled</loc><lastmod>2024-12-04</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://cndi.dev/blog</loc></url>
 <url><loc>https://cndi.dev</loc></url>

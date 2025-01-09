@@ -101,4 +101,4 @@ If you’re curious to see how it all fits together—or if you’re simply tire
 manual cluster setups—give CNDI a try. We hope you find it useful and we'd love
 to hear from you!
 
-#### For complete documentation, check out [cndi](https://cndi.run/gh?utm_content=blog_what-is-cndi_cndi_link&utm_campaign=cndi-what-is-cndi_blog&utm_source=https://cndi.dev/blog/what-is-cndi&utm_medium=blog&utm_id=8108) on GitHub! ⭐️
+#### For complete documentation, check out [cndi](https://cndi.run/gh?utm_content=blog_what-is-cndi_cndi_link&utm_campaign=what-is-cndi_blog&utm_source=https://cndi.dev/blog/what-is-cndi&utm_medium=blog&utm_id=8108) on GitHub! ⭐️
