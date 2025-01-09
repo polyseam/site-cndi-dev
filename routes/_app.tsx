@@ -2,7 +2,6 @@ import { type PageProps } from "$fresh/server.ts";
 import Nav from "../components/Nav.tsx";
 import Footer from "../components/Footer.tsx";
 import SegmentSnippet from "components/SegmentSnippet.tsx";
-// import SegmentSnippet from "../components/SegmentSnippet.tsx";
 
 export default function App({ Component, url }: PageProps) {
   return (
