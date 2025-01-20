@@ -6,6 +6,10 @@ import { CSS, render } from "@deno/gfm";
 
 import "prismjs/components/prism-yaml.js";
 import "prismjs/components/prism-bash.js";
+import "prismjs/components/prism-javascript.js";
+import "prismjs/components/prism-typescript.js";
+import "prismjs/components/prism-jsx.js";
+import "prismjs/components/prism-tsx.js";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -21,7 +25,7 @@ export default function PostPage(props: PageProps<Post>) {
 
   const __html = `
   ${
-    render(post.content.replaceAll("\n\n", "\n\n<br/>\n\n"), {
+    render(post.content, {
       allowIframes: true,
       allowMath: true,
       allowedTags: [
