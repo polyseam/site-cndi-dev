@@ -1,6 +1,6 @@
 ---
 title: 'The Platform: How CNDI Automates Code Scanning'
-published_at: 2024-12-30T15:00:00.000Z
+published_at: 2025-01-20T15:00:00.000Z
 author_name: 'Matt Johnston'
 description: 'CNDI Integrates Code Scanning with GitHub Actions and Checkov'
 ---
