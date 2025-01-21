@@ -1,5 +1,5 @@
 ---
-title: "The Platform: CNDI Automates Serverless Functions"
+title: "The Platform: How CNDI Automates Serverless Functions"
 published_at: 2025-01-21T15:00:00.000Z
 author_name: 'Matt Johnston'
 description: "How CNDI Automates the Deployment of Serverless Functions"
