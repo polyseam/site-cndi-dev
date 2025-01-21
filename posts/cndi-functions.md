@@ -92,9 +92,15 @@ infrastructure:
       hostname: fns.example.com
 ```
 
-If you provided `infrastructure.cndi.functions.hostname`, that's where your
-functions will be accessible. Every function you write should be in
-`./functions/my-fn/index.ts` and call `Deno.serve` to handle incoming requests.
+If you configured a hostname for your Functions when prompted, it will be shown
+in your `cndi_config.yaml` as `infrastructure.cndi.functions.hostname`. This
+hostname's DNS records will be automatically updated as well if you are using
+CNDI's [ExternalDNS and TLS](/blog/cndi-dns-and-tls) features.
+
+Every function you write should be in your repo as `./functions/my-fn/index.ts`
+and should call `Deno.serve` to handle incoming requests. When you call
+`cndi overwrite` and push your cndi project to git, your function will be served
+at `https://fns.example.com/my-fn`.
 
 ```typescript
 // ./functions/cowsay/index.ts
@@ -127,14 +133,10 @@ Deno.serve((req) => {
 });
 ```
 
-If you save your functions in the `./functions` directory following the same
-pattern, a call to `cndi overwrite` will create the required resources in your
-`./cndi` directory, and they will be deployed when you push to your repository.
-
 ### Secrets and Environment Variables
 
 You can also use the `fns-env-secret` in `cndi_config.yaml` to attach Secret
-environment variables to read from your Functions. The
+environment variables to be read by your Functions. The
 `./functions/hello-world/index.ts` function below reads the `GREETING`
 environment variable.
 
