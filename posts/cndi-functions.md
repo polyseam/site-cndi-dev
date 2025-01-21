@@ -43,7 +43,8 @@ Now, let's talk options.
    [Google Cloud Functions](https://cloud.google.com/functions), or
    [Azure Functions](https://azure.microsoft.com/en-us/services/functions/).
    Even though these are built-in to the cloud, they are still surprisingly
-   lacking in developer experience.
+   lacking in developer experience and each have vendor-specific non-portable
+   APIs.
 
 2. If you are able to use an up-and-coming cloud provider, I'd recommend
    [Deno Deploy](https://deno.com/deploy). It's a great platform for writing
