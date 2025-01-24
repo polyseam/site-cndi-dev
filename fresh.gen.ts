@@ -7,6 +7,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_middleware from "./routes/_middleware.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
+import * as $blog_prism_cndi from "./routes/blog/prism-cndi.js";
 import * as $index from "./routes/index.tsx";
 import * as $post_slug_ from "./routes/post/[slug].tsx";
 import * as $post_index from "./routes/post/index.tsx";
@@ -87,6 +88,7 @@ const manifest = {
     "./routes/_middleware.tsx": $_middleware,
     "./routes/blog/[slug].tsx": $blog_slug_,
     "./routes/blog/index.tsx": $blog_index,
+    "./routes/blog/prism-cndi.js": $blog_prism_cndi,
     "./routes/index.tsx": $index,
     "./routes/post/[slug].tsx": $post_slug_,
     "./routes/post/index.tsx": $post_index,
