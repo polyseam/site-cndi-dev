@@ -10,9 +10,9 @@ called serverless because you don't need to think about the server as a
 developer. You just write your function and deploy it, and the cloud provider
 takes care of the rest.
 
-Another interesting attribute about serverless functions is that they are
-generally billed per-invocation, so you're paying only for the time the function
-is running. This is in contrast to a traditional server where you pay for the
+Another interesting attribute of serverless functions is that they are generally
+billed per-invocation, so you're paying only for the time the function is
+running. This is in contrast to a traditional server where you pay for the
 server to be running all the time, even if it's not doing anything. This isn't
 always an advantage though, in fact the more your functions are called, the less
 affordable this model becomes.
@@ -22,7 +22,7 @@ Serverless functions also have the property that because they are invoked
 start" and can be a problem for some applications.
 
 CNDI provides an authoring and deployment experience just like other
-Functions-as-a-Service runtimes, except that it runs in your own Kubernetes
+Functions-as-a-Service runtimes, except that it runs in **your own** Kubernetes
 cluster. You don't have to [worry](https://serverlesshorrors.com) about cold
 starts or costs that scale poorly with usage.
 
@@ -72,16 +72,21 @@ With all that said, let's dive into what makes CNDI Functions special.
 Getting started with CNDI Functions is similar to getting started with any other
 CNDI Template:
 
-```bash
-# eg. cndi create johnstonmatt/my-fns-cluster -t fns
+```cndi
+# eg. cndi create johnstonmatt/my-fns-cluster --template fns
 cndi create <github-owner>/<new-github-repo> -t fns
 ```
 
-This will create a new repository on GitHub and source in the folder
-`./<new-github-repo>`. Inside you'll see a folder `./functions`, and a couple
-demo functions.
+This will prompt you interactively for all required info starting with the
+basics like which Kubernetes distribution you are targeting (eg. `aws/eks`),
+then moving on to asking you about the domain names to use for your new cluster
+services.
 
-Your `cndi_config.yaml` will include a block for Functions:
+Using all that info `cndi` will create a new repository on GitHub and generate
+some source code in the folder `./<new-github-repo>`. Inside you'll see a folder
+`./functions`, and a couple demo functions.
+
+Your `cndi_config.yaml` will include a block for configuring CNDI Functions:
 
 ```yaml
 # ./cndi_config.yaml
@@ -93,10 +98,10 @@ infrastructure:
       hostname: fns.example.com
 ```
 
-If you configured a hostname for your Functions when prompted, it will be shown
-in your `cndi_config.yaml` as `infrastructure.cndi.functions.hostname`. This
-hostname's DNS records will be automatically updated as well if you are using
-CNDI's [ExternalDNS and TLS](/blog/cndi-dns-and-tls) features.
+If you configured a hostname for your Functions when prompted earlier, it will
+be shown in your `cndi_config.yaml` as `infrastructure.cndi.functions.hostname`.
+This hostname's DNS records will be automatically updated as well if you are
+using CNDI's [ExternalDNS and TLS](/blog/cndi-dns-and-tls) features.
 
 Every function you write should be in your repo as `./functions/my-fn/index.ts`
 and should call `Deno.serve` to handle incoming requests. When you call
@@ -105,7 +110,7 @@ at `https://fns.example.com/my-fn`.
 
 ```typescript
 // ./functions/cowsay/index.ts
-import { say } from "npm:cowsay";
+import { say } from "npm:cowsay/build/cowsay.es.js";
 
 Deno.serve((req) => {
   const { pathname } = new URL(req.url);
@@ -155,7 +160,8 @@ cluster_manifests:
 
 ```typescript
 // ./functions/greet/index.ts
-import { STATUS_CODE } from "https://deno.land/std@0.224.0/http/status.ts";
+import { STATUS_CODE } from "jsr:@std/http";
+
 const greeting = Deno.env.get("GREETING") || "Hello";
 
 Deno.serve((req) => {
@@ -163,7 +169,7 @@ Deno.serve((req) => {
 
   if (!pathname.startsWith("/greet")) {
     return new Response("Not Found", {
-      status: 404,
+      status: STATUS_CODE.NotFound,
     });
   }
 
@@ -191,5 +197,9 @@ encrypted by leveraging our [Secrets Management](/blog/cndi-secrets) features.
 CNDI Functions allows you to easily spin up a serverless function runtime based
 on modern Typescript and web standards, and all you need to do is write the code
 and push to git.
+
+Big shoutouts to the MIT licensed
+[supabase/edge-runtime](https://github.com/supabase/edge-runtime) which powers
+much of the CNDI Functions project under the hood.
 
 #### To get started with writing your own Functions check out [cndi](https://cndi.run/gh?utm_content=blog_cndi-functions&utm_campaign=cndi-functions_blog&utm_source=https://cndi.dev/blog/cndi-functions&utm_medium=blog&utm_id=8112) on GitHub! ⭐️

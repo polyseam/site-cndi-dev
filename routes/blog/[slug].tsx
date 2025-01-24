@@ -10,6 +10,7 @@ import "prismjs/components/prism-javascript.js";
 import "prismjs/components/prism-typescript.js";
 import "prismjs/components/prism-jsx.js";
 import "prismjs/components/prism-tsx.js";
+import "./prism-cndi.js";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -28,9 +29,7 @@ export default function PostPage(props: PageProps<Post>) {
     render(post.content, {
       allowIframes: true,
       allowMath: true,
-      allowedTags: [
-        "code",
-      ],
+      allowedTags: ["code"],
     })
   }
 
@@ -42,6 +41,11 @@ export default function PostPage(props: PageProps<Post>) {
 
   .markdown-body img {
     background-color: transparent;
+  }
+  
+  code {
+    color: rgb(233 213 255);
+    background-color: var(--bgColor-muted,var(--color-canvas-subtle)) !important;
   }
   </style>
   `;
