@@ -8,6 +8,8 @@ import * as $_middleware from "./routes/_middleware.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $blog_prism_cndi from "./routes/blog/prism-cndi.js";
+import * as $configurator_index from "./routes/configurator/index.tsx";
+import * as $configurator_yaml from "./routes/configurator/yaml.ts";
 import * as $index from "./routes/index.tsx";
 import * as $post_slug_ from "./routes/post/[slug].tsx";
 import * as $post_index from "./routes/post/index.tsx";
@@ -77,8 +79,11 @@ import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx"
 import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $CLISnippet from "./islands/CLISnippet.tsx";
+import * as $ConfiguratorGizmo from "./islands/ConfiguratorGizmo.tsx";
 import * as $LinkOut from "./islands/LinkOut.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
+import * as $SourceShower from "./islands/SourceShower.tsx";
+import * as $TemplateSelector from "./islands/TemplateSelector.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -89,6 +94,8 @@ const manifest = {
     "./routes/blog/[slug].tsx": $blog_slug_,
     "./routes/blog/index.tsx": $blog_index,
     "./routes/blog/prism-cndi.js": $blog_prism_cndi,
+    "./routes/configurator/index.tsx": $configurator_index,
+    "./routes/configurator/yaml.ts": $configurator_yaml,
     "./routes/index.tsx": $index,
     "./routes/post/[slug].tsx": $post_slug_,
     "./routes/post/index.tsx": $post_index,
@@ -160,8 +167,11 @@ const manifest = {
   },
   islands: {
     "./islands/CLISnippet.tsx": $CLISnippet,
+    "./islands/ConfiguratorGizmo.tsx": $ConfiguratorGizmo,
     "./islands/LinkOut.tsx": $LinkOut,
     "./islands/LogoTicker.tsx": $LogoTicker,
+    "./islands/SourceShower.tsx": $SourceShower,
+    "./islands/TemplateSelector.tsx": $TemplateSelector,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
