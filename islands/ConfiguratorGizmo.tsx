@@ -45,6 +45,7 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
     case "Input":
       return (
         <input
+          class="text-black p-2 rounded placeholder:text-gray-900"
           type="text"
           id={prompt.name}
           name={prompt.name}
@@ -55,6 +56,7 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
     case "Secret":
       return (
         <input
+          class="text-black p-2 rounded placeholder:text-gray-900"
           type="password"
           id={prompt.name}
           name={prompt.name}
@@ -65,7 +67,11 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
       return <input type="checkbox" id={prompt.name} name={prompt.name} />;
     case "Select":
       return (
-        <select id={prompt.name} name={prompt.name}>
+        <select
+          id={prompt.name}
+          name={prompt.name}
+          class="text-black p-2 rounded"
+        >
           <option value={prompt.default}>{prompt.default}</option>
           {prompt?.options?.map((o) => <option value={o}>{o}</option>)}
         </select>
@@ -74,7 +80,12 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
       return <input type="input" id={prompt.name} name={prompt.name} />;
     case "Checkbox":
       return (
-        <select id={prompt.name} name={prompt.name} multiple>
+        <select
+          id={prompt.name}
+          name={prompt.name}
+          multiple
+          class="text-black p-2 rounded"
+        >
           <option value={prompt.default}>{prompt.default}</option>
           {prompt?.options?.map((o) => <option value={o}>{o}</option>)}
         </select>
@@ -82,6 +93,7 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
     case "Number":
       return (
         <input
+          class="text-black p-2 rounded"
           type="number"
           id={prompt.name}
           name={prompt.name}
@@ -89,7 +101,14 @@ const PromptElement = (prompt: CNDIPromptSpec) => {
         />
       );
     case "File":
-      return <input type="file" id={prompt.name} name={prompt.name} />;
+      return (
+        <input
+          class="text-black p-2 rounded"
+          type="file"
+          id={prompt.name}
+          name={prompt.name}
+        />
+      );
   }
 };
 
@@ -98,7 +117,7 @@ const PromptList = (props: { prompts: CNDIPromptSpec[] }) => {
   return (
     <form>
       {prompts.map((prompt) => (
-        <div>
+        <div class="text-white">
           <label for={prompt.name}>{prompt.message}</label>
           {PromptElement(prompt)}
         </div>
