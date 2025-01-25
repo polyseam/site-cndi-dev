@@ -1,18 +1,30 @@
 {
-  "build_id": "caaa62efd14ff4cdbc050ca2320335afe5311abd",
+  "build_id": "d7b60e3ed8eab625ff0210505e768962747d5bf0",
   "files": {
+    "island-templateselector.js": [
+      "chunk-XJTZDMYQ.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
+    ],
     "main.js": [
       "chunk-GI7LLYGM.js",
       "chunk-LYSTMUJ4.js"
     ],
     "deserializer.js": [],
     "signals.js": [
+      "chunk-XJTZDMYQ.js",
       "chunk-GI7LLYGM.js",
       "chunk-EMTYLGJR.js",
       "chunk-LYSTMUJ4.js"
     ],
     "island-clisnippet.js": [
       "chunk-EMTYLGJR.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
+    ],
+    "island-configuratorgizmo.js": [
       "chunk-MKV2KPJU.js",
       "chunk-LYSTMUJ4.js"
     ],
@@ -24,6 +36,17 @@
       "chunk-GI7LLYGM.js",
       "chunk-EMTYLGJR.js",
       "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
+    ],
+    "island-sourceshower.js": [
+      "chunk-XJTZDMYQ.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
+    ],
+    "chunk-XJTZDMYQ.js": [
+      "chunk-EMTYLGJR.js",
       "chunk-LYSTMUJ4.js"
     ],
     "chunk-GI7LLYGM.js": [],
