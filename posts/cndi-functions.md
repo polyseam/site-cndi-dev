@@ -1,8 +1,8 @@
 ---
-title: "The Platform: How CNDI Automates Serverless Functions"
+title: "The Platform: How CNDI Automates Deploying Serverless Functions"
 published_at: 2025-01-24T15:00:00.000Z
 author_name: 'Matt Johnston'
-description: "How CNDI Automates the Deployment of Serverless Functions"
+description: "How CNDI Enables Self-Hosted Serverless Functions on Kubernetes"
 ---
 
 Serverless functions are of course not serverless. They run on servers, but are
