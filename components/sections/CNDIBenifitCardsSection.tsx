@@ -42,7 +42,7 @@ export default function UseInteractiveCNDITemplatesSection() {
             <Title>Infrastructure as Code and GitOps</Title>
             <Description>
               Manage the infrastructure and configuration of your cluster as
-              code in Git
+              code in Git.
             </Description>
           </BenefitCard>
           <BenefitCard>
