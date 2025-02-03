@@ -102,7 +102,7 @@ export default function TemplatesPage(props: PageProps) {
           </div>
         </section>
         <TemplateCardListSection pageVersion={pageVersion} url={props.url} />
-        <section id="supported-deployments" class="supported-deployments">
+        <section id="supported-deployments" class="supported-deployments p-5">
           <div class="w-layout-blockcontainer container-14698 w-container">
             <h1 class="heading-101">Supported Deployment Targets</h1>
             <p class="paragraph-43">
