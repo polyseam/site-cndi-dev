@@ -1,8 +1,11 @@
 import { type Signal, useSignal } from "@preact/signals";
-export default function SourceShower(props: { source: string }) {
-  const source = props.source;
+type Props = {
+  source: string;
+  name: string;
+}
+export default function SourceShower({ source, name = "Source" }:Props) {
   const showSource: Signal<boolean> = useSignal(false);
-  const label = showSource.value ? "Hide Source △" : "Show Source ▼";
+  const label = showSource.value ? `Hide ${name} △` : `Show ${name} ▼`;
   return (
     <>
       <div class="my-4 p-4 bg-[#333] text-purple-200 rounded">
