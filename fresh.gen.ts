@@ -79,7 +79,13 @@ import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx"
 import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $CLISnippet from "./islands/CLISnippet.tsx";
-import * as $ConfiguratorGizmo from "./islands/ConfiguratorGizmo.tsx";
+import * as $Configurator_ConfiguratorContextProvider from "./islands/Configurator/ConfiguratorContextProvider.tsx";
+import * as $Configurator_ConfiguratorGizmo from "./islands/Configurator/ConfiguratorGizmo.tsx";
+import * as $Configurator_ConfiguratorGizmoContext from "./islands/Configurator/ConfiguratorGizmoContext.tsx";
+import * as $Configurator_ConfiguratorPromptField from "./islands/Configurator/ConfiguratorPromptField.tsx";
+import * as $Configurator_conditionals from "./islands/Configurator/conditionals.ts";
+import * as $Configurator_macros from "./islands/Configurator/macros.ts";
+import * as $Configurator_shared from "./islands/Configurator/shared.ts";
 import * as $LinkOut from "./islands/LinkOut.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
 import * as $SourceShower from "./islands/SourceShower.tsx";
@@ -167,7 +173,17 @@ const manifest = {
   },
   islands: {
     "./islands/CLISnippet.tsx": $CLISnippet,
-    "./islands/ConfiguratorGizmo.tsx": $ConfiguratorGizmo,
+    "./islands/Configurator/ConfiguratorContextProvider.tsx":
+      $Configurator_ConfiguratorContextProvider,
+    "./islands/Configurator/ConfiguratorGizmo.tsx":
+      $Configurator_ConfiguratorGizmo,
+    "./islands/Configurator/ConfiguratorGizmoContext.tsx":
+      $Configurator_ConfiguratorGizmoContext,
+    "./islands/Configurator/ConfiguratorPromptField.tsx":
+      $Configurator_ConfiguratorPromptField,
+    "./islands/Configurator/conditionals.ts": $Configurator_conditionals,
+    "./islands/Configurator/macros.ts": $Configurator_macros,
+    "./islands/Configurator/shared.ts": $Configurator_shared,
     "./islands/LinkOut.tsx": $LinkOut,
     "./islands/LogoTicker.tsx": $LogoTicker,
     "./islands/SourceShower.tsx": $SourceShower,

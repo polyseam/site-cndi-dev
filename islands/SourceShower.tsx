@@ -1,7 +1,7 @@
 import { type Signal, useSignal } from "@preact/signals";
 type Props = {
   source: string;
-  name: string;
+  name?: string;
 }
 export default function SourceShower({ source, name = "Source" }:Props) {
   const showSource: Signal<boolean> = useSignal(false);

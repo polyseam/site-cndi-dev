@@ -1,4 +1,5 @@
 import * as yaml from "jsr:@std/yaml";
+import { JSONObject } from "islands/Configurator/shared.ts";
 
 const YAML = {
   ...yaml,
@@ -16,7 +17,7 @@ type FetchYamlResult<T> = {
   };
 };
 
-export async function fetchYaml<T = any>(
+export async function fetchYaml<T = JSONObject>(
   url: string,
 ): Promise<FetchYamlResult<T>> {
   try {
