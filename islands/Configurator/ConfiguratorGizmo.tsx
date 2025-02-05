@@ -2,23 +2,22 @@
 // instead this Gizmo is built from scratch with shared principals
 // remember: make it work, then make it pretty
 
-import { useState, useContext, useEffect } from "preact/hooks";
-import * as yaml from "jsr:@std/yaml";
+import { useContext, useEffect, useState } from "preact/hooks";
 
 import SourceShower from "islands/SourceShower.tsx";
 
 import {
-  processMacrosInObject,
-  literalizeGetPromptResponseCalls,
-
+  processMacrosInValue,
 } from "islands/Configurator/macros.ts";
 
-import type {
-  CNDITemplateObject,
-  CNDIPromptSpec,
-  CNDITemplatePromptResponsePrimitive,
-  CNDIPrompt,
-  JSONObject
+import {
+  type CNDIPrompt,
+  type CNDIState,
+  type CNDIBlockSpec,
+  type CNDITemplateObject,
+  type CNDITemplatePromptResponsePrimitive,
+  type JSONObject,
+  YAML
 } from "./shared.ts";
 
 import { ConfiguratorGizmoContext } from "islands/Configurator/ConfiguratorGizmoContext.tsx";
@@ -28,15 +27,9 @@ import { ConfiguratorPromptField } from "islands/Configurator/ConfiguratorPrompt
 
 import {
   type CNDITemplateConditonSpec,
-  evaluateCNDITemplateCondition,
 } from "islands/Configurator/conditionals.ts";
+import { evaluateCNDITemplateCondition } from "islands/Configurator/conditionals.ts";
 
-const YAML = {
-  ...yaml,
-  // deno-lint-ignore no-explicit-any
-  stringify: (obj: any, opt = {}) =>
-    yaml.stringify(obj, { lineWidth: -1, ...opt }), // prevent auto line wrap
-};
 
 type CNDIFileMap = {
   "README.md": string;
@@ -54,33 +47,10 @@ export type UseTemplateResult = {
 export type CNDIGUIError = { title: string; description: string; code: number };
 export type CNDIGUIErrors = CNDIGUIError[];
 
-// const $cndi = {
-//   responses: new Map<string, CNDITemplatePromptResponsePrimitive>(),
-//   getResponsesAsRecord: (skipUndefined = false) => {
-//     const responses: Record<string, CNDITemplatePromptResponsePrimitive> = {};
-//     $cndi.responses.forEach(
-//       (val: CNDITemplatePromptResponsePrimitive, key: string) => {
-//         if (skipUndefined && val === undefined) return;
-//         responses[key] = val;
-//       }
-//     );
-//     return responses;
-//   },
-//   blocks: new Map<string, unknown>(),
-//   errors: []
-// };
-
-// const CNDIGizmoContext = createContext({
-//   responses: new Map<string, CNDITemplatePromptResponsePrimitive>(),
-//   blocks: new Map<string, unknown>(),
-//   errors: [],
-// });
-
 type ConfiguratorGizmoProps = {
   templateIdentifier: string;
   templateObject: CNDITemplateObject;
 };
-
 
 type CNDITemplateBlockSpec = {
   identifier: string;
@@ -93,107 +63,101 @@ type CNDITemplateBlockSpec = {
 const ConfiguratorGizmoForm = () => {
   const ctx = useContext(ConfiguratorGizmoContext);
 
-  const promptSpecs = ctx.templateObjectSource?.prompts || [];
   const [prompts, setPrompts] = useState(new Map<string, CNDIPrompt>());
-  const [blocks, setBlocks] = useState(new Map<string, unknown>());
+
+  const [blocks, setBlocks] = useState(new Map<string, CNDIBlockSpec>());
   const [_errors, _setErrors] = useState<CNDIGUIErrors>([]);
 
   const [responses, setResponses] = useState(
-    new Map<string, CNDITemplatePromptResponsePrimitive>()
+    new Map<string, CNDITemplatePromptResponsePrimitive>(),
   );
 
-  const insertBlock = (name: string, value: unknown) => {
-    setBlocks((prev) => {
-      const newBlocks = new Map(prev);
-      const blk = processMacrosInObject(value as JSONObject);
-      console.log(JSON.stringify(blk, null, 2));
-      newBlocks.set(name, blk);
-      return newBlocks;
-    });
+  const setters = {
+    prompts: {
+      insert: (key: string, value: CNDIPrompt) => {
+        if(prompts.has(key)) return;
+        setPrompts((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      },
+      remove: (key: string) => {
+        if(!prompts.has(key)) return;
+        setPrompts((prev) => {
+          const newMap = new Map(prev);
+          newMap.delete(key);
+          return newMap;
+        });
+      },
+    },
+    responses: {
+      insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
+        if(prompts.has(key)) return;
+        setResponses((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      },
+    },
+    blocks: {
+      insert: (key: string, value: CNDIBlockSpec) => {
+        if(prompts.has(key)) return;
+        setBlocks((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      },
+    },
+  };
+
+  const $cndi: CNDIState = {
+    values: {
+      blocks,
+      prompts,
+      responses,
+    },
+    setters,
   };
 
   useEffect(() => {
-    console.log("effect fired");
-    promptSpecs.forEach(
-      async (p: CNDIPromptSpec | CNDITemplateBlockSpec, specIndex: number) => {
-        let identifier = null;
-
-        if (!("type" in p)) {
-          identifier = Object.keys(p)[0];
-
-          if (!identifier || !identifier.startsWith("$cndi.get_block")) {
-            throw new Error(
-              `Invalid prompt:\n\n -- ${JSON.stringify(p, null, 2)}\n --`
-            );
-          }
-
-          // @ts-ignore - we know the identifier is a key
-          const body = p[identifier];
-
-          const blockSpec = {
-            identifier,
-            body,
-          };
-
-          const blk = await getBlock(blockSpec, {
-            responses,
-            insertBlock,
-            blocks,
-          });
-
-          if (Array.isArray(blk)) {
-            blk.forEach((p, _innerIndex) => {
-              let shouldOutput = true;
-              if ("condition" in p) {
-                shouldOutput = evaluateCNDITemplateCondition(p.condition, {
-                  responses,
-                });
-              }
-              if (shouldOutput) {
-                setPrompts((prev) => {
-                  const newMap = new Map(prev);
-                  newMap.set(p.name, { ...p, index: specIndex });
-                  return newMap;
-                });
-              } else if (prompts.has(p.name)) {
-                console.log("deleting prompt from blk", p.name);
-                setPrompts((prev) => {
-                  const newMap = new Map(prev);
-                  newMap.delete(p.name);
-                  return newMap;
-                });
-              }
-            });
-          }
-          return;
-        }
-
-        let shouldOutput = true;
-        if ("condition" in p) {
-          // @ts-ignore - we know the condition is there
-          shouldOutput = evaluateCNDITemplateCondition(p.condition, {
-            responses,
-          });
-        }
-
-        if (shouldOutput) {
-          setPrompts((prev) => {
-            const newMap = new Map(prev);
-            newMap.set(p.name, { ...p, index: prev.size + specIndex });
-            return newMap;
-          });
-        } else if (prompts.has(p.name)) {
-          console.log("deleting prompt from promptSpec", p.name);
-          setPrompts((prev) => {
-            const newMap = new Map(prev);
-            newMap.delete(p.name);
-            return newMap;
-          });
-        }
+    console.log("processing macros");
+    const processTemplateObject = async () => {
+      const processed = (await processMacrosInValue(
+        ctx.templateObjectSource as JSONObject,
+        $cndi,
+      )) as CNDITemplateObject;
+      let index = 0;
+      for (const [name, spec] of Object.entries(processed.prompts)) {
+        console.log("inserting prompt", name);
+        setters.prompts.insert(name, { ...spec, index });
+        index++;
       }
-    );
-  }, [responses]);
+    };
+    processTemplateObject();
+  }, []);
 
+  useEffect(() => {
+    const prompts = Array.from($cndi.values.prompts.values());
+    let index = 0;
+    for(const prompt of prompts) {
+      let shouldPresentPrompt = true;
+      if (Object.keys(prompt).includes("condition")) {
+        console.log("evaluating condition", prompt.condition);
+        shouldPresentPrompt = evaluateCNDITemplateCondition(prompt?.condition!, $cndi);
+      }
+      if (shouldPresentPrompt) {
+        console.log("presenting prompt", prompt);
+        $cndi.setters.prompts.insert(prompt.name, {...prompt, index});
+      } else {
+        console.log("skipping prompt", prompt);
+        $cndi.setters.prompts.remove(prompt.name);
+      }
+      index++;
+    }
+  }, [responses])
 
   const promptArray = Array.from(prompts.values());
   const responseRecord = Object.fromEntries(Array.from(responses.entries()));
@@ -206,7 +170,6 @@ const ConfiguratorGizmoForm = () => {
             spec={p}
             value={responses.get(p.name)}
             onChange={(responseName, newResponseValue) => {
-              // setVersion((prev) => prev + 1);
               setResponses((prev) => {
                 const newResponses = new Map(prev);
                 newResponses.set(responseName, newResponseValue);
@@ -221,97 +184,10 @@ const ConfiguratorGizmoForm = () => {
         source={YAML.stringify(responseRecord)}
         name="Response Record"
       />
+      <SourceShower source={YAML.stringify(promptArray)} name="Prompts" />
     </>
   );
 };
-
-
-
-function resolveGetBlockIdentifier(
-  identifierSpec: string,
-  { responses }: { responses: Map<string, CNDITemplatePromptResponsePrimitive> }
-) {
-  // 1. determine if the identifier depends on $cndi.get_prompt_response(foo);
-  // 2. if so, consult state to see if that value is available
-  // 3. if not, decide we might try later on -- not sure why this is the case, but CLI mode does this
-
-  const identifier = identifierSpec.split("$cndi.get_block(")[1].slice(0, -1);
-
-  return literalizeGetPromptResponseCalls(identifier, { responses });
-}
-
-async function getBlock(
-  spec: CNDITemplateBlockSpec,
-  {
-    responses,
-    blocks,
-    insertBlock,
-  }: {
-    responses: Map<string, CNDITemplatePromptResponsePrimitive>;
-    blocks: Map<string, unknown>;
-    insertBlock: (name: string, value: unknown) => void;
-  }
-) {
-  let shouldIncludeBlock = true;
-  const { condition } = spec.body;
-  const _args = spec.body.args;
-
-  if (condition) {
-    shouldIncludeBlock = evaluateCNDITemplateCondition(condition, {
-      responses,
-    });
-  }
-
-  if (!shouldIncludeBlock) return null;
-
-  const identifier = resolveGetBlockIdentifier(spec.identifier, { responses });
-
-  // TODO: use body
-  try {
-    const blockUrl = new URL(identifier);
-    console.log("fetching block from URL", blockUrl);
-    try {
-      const blockResponse = await fetch(blockUrl);
-      if (blockResponse.ok) {
-        const blockText = await blockResponse.text();
-        try {
-          const blockData = YAML.parse(blockText);
-          insertBlock(identifier, blockData);
-          return blockData;
-        } catch (_e) {
-          throw new Error(
-            `Failed to parse block: ${blockResponse.status} - ${blockResponse.statusText}`
-          );
-        }
-      } else {
-        throw new Error(
-          `Failed to fetch block: ${blockResponse.status} - ${blockResponse.statusText}`
-        );
-      }
-    } catch (e) {
-      throw new Error(
-        `Failed to fetch block with identifier ${identifier} \n ${JSON.stringify(
-          e,
-          null,
-          2
-        )}`
-      );
-    }
-  } catch (_e) {
-    // constructing a URL failed, identifier must be a block name
-    // cannot be a relative path because we don't support that in a web UI
-    // we could, but it would require file uploads and `/foo` would be relative to the browser, not the disk
-    // so we would need to add a file upload mechanism
-    // for now, we'll just throw an error
-
-    const fileIntent = identifier.startsWith(".") || identifier.startsWith("/");
-    if (fileIntent) {
-      throw new Error(`Invalid block identifier: ${identifier}`);
-    }
-    return blocks.get(identifier);
-  }
-}
-
 
 export default function ConfiguratorGizmo(props: ConfiguratorGizmoProps) {
   return (

@@ -1,5 +1,5 @@
 import type { CNDITemplateObject } from "./shared.ts";
-import { createContext, type ComponentChildren } from "preact";
+import { type ComponentChildren, createContext } from "preact";
 
 type ConfiguratorGizmoContextValue = {
   templateObjectSource?: CNDITemplateObject;
@@ -10,5 +10,5 @@ type ConfiguratorGizmoContextValue = {
 const initialConfiguratorGizmoContextValue: ConfiguratorGizmoContextValue = {};
 
 export const ConfiguratorGizmoContext = createContext(
-  initialConfiguratorGizmoContextValue
+  initialConfiguratorGizmoContextValue,
 );

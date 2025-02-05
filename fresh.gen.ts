@@ -9,7 +9,6 @@ import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $blog_prism_cndi from "./routes/blog/prism-cndi.js";
 import * as $configurator_index from "./routes/configurator/index.tsx";
-import * as $configurator_yaml from "./routes/configurator/yaml.ts";
 import * as $index from "./routes/index.tsx";
 import * as $post_slug_ from "./routes/post/[slug].tsx";
 import * as $post_index from "./routes/post/index.tsx";
@@ -83,6 +82,7 @@ import * as $Configurator_ConfiguratorContextProvider from "./islands/Configurat
 import * as $Configurator_ConfiguratorGizmo from "./islands/Configurator/ConfiguratorGizmo.tsx";
 import * as $Configurator_ConfiguratorGizmoContext from "./islands/Configurator/ConfiguratorGizmoContext.tsx";
 import * as $Configurator_ConfiguratorPromptField from "./islands/Configurator/ConfiguratorPromptField.tsx";
+import * as $Configurator_asyncReplace from "./islands/Configurator/asyncReplace.ts";
 import * as $Configurator_conditionals from "./islands/Configurator/conditionals.ts";
 import * as $Configurator_macros from "./islands/Configurator/macros.ts";
 import * as $Configurator_shared from "./islands/Configurator/shared.ts";
@@ -101,7 +101,6 @@ const manifest = {
     "./routes/blog/index.tsx": $blog_index,
     "./routes/blog/prism-cndi.js": $blog_prism_cndi,
     "./routes/configurator/index.tsx": $configurator_index,
-    "./routes/configurator/yaml.ts": $configurator_yaml,
     "./routes/index.tsx": $index,
     "./routes/post/[slug].tsx": $post_slug_,
     "./routes/post/index.tsx": $post_index,
@@ -181,6 +180,7 @@ const manifest = {
       $Configurator_ConfiguratorGizmoContext,
     "./islands/Configurator/ConfiguratorPromptField.tsx":
       $Configurator_ConfiguratorPromptField,
+    "./islands/Configurator/asyncReplace.ts": $Configurator_asyncReplace,
     "./islands/Configurator/conditionals.ts": $Configurator_conditionals,
     "./islands/Configurator/macros.ts": $Configurator_macros,
     "./islands/Configurator/shared.ts": $Configurator_shared,

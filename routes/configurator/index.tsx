@@ -1,11 +1,9 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { fetchYaml } from "./yaml.ts";
-
 import SourceShower from "islands/SourceShower.tsx";
 import TemplateSelector from "islands/TemplateSelector.tsx";
-import ConfiguratorGizmo from "../../islands/Configurator/ConfiguratorGizmo.tsx";
-import type { CNDITemplateObject } from "islands/Configurator/shared.ts";
+import ConfiguratorGizmo from "islands/Configurator/ConfiguratorGizmo.tsx";
+import { type CNDITemplateObject, YAML } from "islands/Configurator/shared.ts";
 
 const TEMPLATE_IDENTIFIER_BASIC =
   "https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/basic.yaml";
@@ -18,8 +16,8 @@ export const handler: Handlers<CNDITemplateData> = {
   // The server will simply fail to parse it, but maybe it could be exploited?
   async GET(req, ctx) {
     const requestUrl = new URL(req.url);
-    const templateIdentifier =
-      requestUrl.searchParams.get("t") || TEMPLATE_IDENTIFIER_BASIC;
+    const templateIdentifier = requestUrl.searchParams.get("t") ||
+      TEMPLATE_IDENTIFIER_BASIC;
     let templateIdentifierURL: URL;
     try {
       templateIdentifierURL = new URL(templateIdentifier);
@@ -41,8 +39,8 @@ export const handler: Handlers<CNDITemplateData> = {
       });
     }
 
-    const result = await fetchYaml<CNDITemplateData>(
-      templateIdentifierURL.href
+    const result = await YAML.fetch<CNDITemplateData>(
+      templateIdentifierURL.href,
     );
 
     if (result.success) {
@@ -55,7 +53,7 @@ export const handler: Handlers<CNDITemplateData> = {
 
 const normalizeTemplateData = (data: unknown): CNDITemplateObject | null => {
   if (!data) return null;
-  
+
   const normalized = data as CNDITemplateObject;
 
   if (!Array.isArray(normalized?.prompts)) normalized.prompts = [];
@@ -78,25 +76,30 @@ export default function ConfiguratorPage(props: PageProps<CNDITemplateData>) {
         <meta
           content="Initialize CNDI Projects from the Browser."
           name="description"
-        ></meta>
+        >
+        </meta>
       </Head>
       <div class="p-4 m-4">
         <h1>CNDI Configurator</h1>
-        {templateActive ? (
-          <a class="font-mono text-sm" href={templateIdentifier}>
-            {templateIdentifier}
-          </a>
-        ) : null}
+        {templateActive
+          ? (
+            <a class="font-mono text-sm" href={templateIdentifier}>
+              {templateIdentifier}
+            </a>
+          )
+          : null}
         <TemplateSelector />
         {templateActive && (
           <SourceShower source={JSON.stringify(props.data, null, 2)} />
         )}
-        {templateActive ? (
-          <ConfiguratorGizmo
-            templateObject={templateObject}
-            templateIdentifier={templateIdentifier}
-          />
-        ) : null}
+        {templateActive
+          ? (
+            <ConfiguratorGizmo
+              templateObject={templateObject}
+              templateIdentifier={templateIdentifier}
+            />
+          )
+          : null}
       </div>
     </>
   );

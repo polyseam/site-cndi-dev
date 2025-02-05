@@ -1,27 +1,27 @@
-import { CNDITemplatePromptResponsePrimitive } from "./shared.ts";
-import { literalizeGetPromptResponseCalls } from "./macros.ts";
+import { CNDIState, CNDITemplatePromptResponsePrimitive } from "./shared.ts";
+import { processMacrosInValue } from "./macros.ts";
 
 type CNDITemplateConditionComparator = "==" | "!=" | ">" | "<" | ">=" | "<=";
 
 export type CNDITemplateConditonSpec = [
   CNDITemplatePromptResponsePrimitive,
   CNDITemplateConditionComparator,
-  CNDITemplatePromptResponsePrimitive
+  CNDITemplatePromptResponsePrimitive,
 ];
 
 export const CNDITemplateComparators = {
   // comparators are generous with type coercion for better or worse
   "==": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => response == standard,
   "!=": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => response != standard,
   ">": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => {
     if (typeof standard !== "number") {
       throw new Error("'>' can be used in comparisons only");
@@ -33,7 +33,7 @@ export const CNDITemplateComparators = {
   },
   "<": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => {
     if (typeof standard !== "number") {
       throw new Error("'<' can be used in comparisons only");
@@ -45,7 +45,7 @@ export const CNDITemplateComparators = {
   },
   "<=": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => {
     if (typeof standard !== "number") {
       throw new Error("'<=' can be used in comparisons only");
@@ -57,7 +57,7 @@ export const CNDITemplateComparators = {
   },
   ">=": (
     response: CNDITemplatePromptResponsePrimitive,
-    standard: CNDITemplatePromptResponsePrimitive
+    standard: CNDITemplatePromptResponsePrimitive,
   ) => {
     if (typeof standard !== "number") {
       throw new Error("'>=' can be used in comparisons only");
@@ -71,16 +71,18 @@ export const CNDITemplateComparators = {
 
 export function evaluateCNDITemplateCondition(
   spec: CNDITemplateConditonSpec,
-  { responses }: { responses: Map<string, CNDITemplatePromptResponsePrimitive> }
+  $cndi: CNDIState,
 ) {
   const left =
-    typeof spec[0] === "string"
-      ? literalizeGetPromptResponseCalls(spec[0], { responses })
-      : spec[0];
+    (typeof spec[0] === "string"
+      ? processMacrosInValue(spec[0], $cndi)
+      : spec[0]) as CNDITemplatePromptResponsePrimitive;
+
   const right =
-    typeof spec[2] === "string"
-      ? literalizeGetPromptResponseCalls(spec[2], { responses })
-      : spec[2];
+    (typeof spec[2] === "string"
+      ? processMacrosInValue(spec[2], $cndi)
+      : spec[2]) as CNDITemplatePromptResponsePrimitive;
+
   const comparator = spec[1];
   const result = CNDITemplateComparators[comparator](left, right);
   return result;
