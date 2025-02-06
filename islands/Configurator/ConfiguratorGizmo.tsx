@@ -57,6 +57,24 @@ type CNDITemplateBlockSpec = {
   };
 };
 
+const processTemplateObject = async (
+  obj: CNDITemplateObject,
+  $cndi: CNDIState
+): Promise<void> => {
+  const processed = (await processMacrosInValue(
+    obj as JSONObject,
+    $cndi
+  )) as CNDITemplateObject;
+
+  let index = 0;
+  for (const [_, spec] of Object.entries(processed.prompts)) {
+
+      $cndi.setters.prompts.upsert(spec.name, { ...spec, index });
+
+    index++;
+  }
+};
+
 const ConfiguratorGizmoForm = () => {
   const ctx = useContext(ConfiguratorGizmoContext);
 
@@ -66,11 +84,21 @@ const ConfiguratorGizmoForm = () => {
   const [_errors, _setErrors] = useState<CNDIGUIErrors>([]);
 
   const [responses, setResponses] = useState(
-    new Map<string, CNDITemplatePromptResponsePrimitive>(),
+    new Map<string, CNDITemplatePromptResponsePrimitive>()
   );
 
   const setters = {
     prompts: {
+      // add a prompt or update an existing one
+      upsert: (key: string, value: CNDIPrompt) => {
+        console.log("setter inserting prompt", key);
+        // if (prompts.has(key)) return;
+        setPrompts((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      },
       insert: (key: string, value: CNDIPrompt) => {
         if (prompts.has(key)) return;
         setPrompts((prev) => {
@@ -89,23 +117,38 @@ const ConfiguratorGizmoForm = () => {
       },
     },
     responses: {
-      update: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
+      upsert: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
         setResponses((prev) => {
           const newMap = new Map(prev);
           newMap.set(key, value);
           return newMap;
         });
       },
+      insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
+        if (responses.has(key)) return;
+        setResponses((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      }
     },
     blocks: {
-      insert: (key: string, value: CNDIBlockSpec) => {
-        if (prompts.has(key)) return;
+      upsert: (key: string, value: CNDIBlockSpec) => {
         setBlocks((prev) => {
           const newMap = new Map(prev);
           newMap.set(key, value);
           return newMap;
         });
       },
+      insert: (key: string, value: CNDIBlockSpec) => {
+        if (blocks.has(key)) return;
+        setBlocks((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(key, value);
+          return newMap;
+        });
+      }
     },
   };
 
@@ -120,19 +163,8 @@ const ConfiguratorGizmoForm = () => {
 
   useEffect(() => {
     console.log("processing macros");
-    const processTemplateObject = async () => {
-      const processed = (await processMacrosInValue(
-        ctx.templateObjectSource as JSONObject,
-        $cndi,
-      )) as CNDITemplateObject;
-      let index = 0;
-      for (const [name, spec] of Object.entries(processed.prompts)) {
-        console.log("inserting prompt", name);
-        setters.prompts.insert(name, { ...spec, index });
-        index++;
-      }
-    };
-    processTemplateObject();
+    const t = ctx.templateObjectSource as CNDITemplateObject;
+    processTemplateObject(t, $cndi);
   }, []);
 
   useEffect(() => {
@@ -141,14 +173,13 @@ const ConfiguratorGizmoForm = () => {
     for (const prompt of prompts) {
       let shouldPresentPrompt = true;
       if (Object.keys(prompt).includes("condition")) {
-        console.log("evaluating condition", prompt.condition);
+        console.log("evaluating condition", prompt.name);
         shouldPresentPrompt = evaluateCNDITemplateCondition(
           prompt?.condition!,
-          $cndi,
+          $cndi
         );
       }
       if (shouldPresentPrompt) {
-        console.log("presenting prompt", prompt.name);
         $cndi.setters.prompts.insert(prompt.name, { ...prompt, index });
       } else {
         console.log("removing prompt", prompt);
@@ -156,11 +187,15 @@ const ConfiguratorGizmoForm = () => {
       }
       index++;
     }
+  }, [$cndi.values.responses, $cndi.values.prompts]);
+
+  useEffect(() => {
+    processTemplateObject(ctx.templateObjectSource as CNDITemplateObject, $cndi);
   }, [$cndi.values.responses]);
 
   const promptArray = Array.from($cndi.values.prompts.values());
   const responseRecord = Object.fromEntries(
-    Array.from($cndi.values.responses.entries()),
+    Array.from($cndi.values.responses.entries())
   );
 
   return (
@@ -176,7 +211,7 @@ const ConfiguratorGizmoForm = () => {
               spec={p}
               value={$cndi.values.responses.get(p.name)}
               onChange={(responseName, newResponseValue) => {
-                $cndi.setters.responses.update(responseName, newResponseValue);
+                $cndi.setters.responses.upsert(responseName, newResponseValue);
               }}
             />
           ))}

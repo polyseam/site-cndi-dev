@@ -94,14 +94,17 @@ export type CNDIState = {
   values: CNDIStateValues;
   setters: {
     blocks: {
+      upsert: (key: string, value: CNDIBlockSpec) => void;
       insert: (key: string, value: CNDIBlockSpec) => void;
     };
     prompts: {
+      upsert: (key: string, value: CNDIPrompt) => void;
       insert: (key: string, value: CNDIPrompt) => void;
       remove: (key: string) => void;
     };
     responses: {
-      update: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
+      upsert: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
+      insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
     };
   };
 };

@@ -7,18 +7,7 @@ import {
   evaluateCNDITemplateCondition,
 } from "islands/Configurator/conditionals.ts";
 
-/**
- * Matches {{ $objectName.methodName(arg1, arg2, ...) }}.
- * We use capturing groups for objectName, methodName, and argument string.
- */
-const STRING_MACRO_REGEX = /\{\{\s*\$([^.]+)\.([^(]+)\(([^)]*)\)\s*\}\}/g;
 
-/**
- * Matches the entire key if it is of the form:
- *   objectName.methodName(arg1, arg2, ...)
- * Example: "foo.bar(x, y)"
- */
-const KEY_MACRO_REGEX = /^([^.]+)\.([^(]+)\(([^)]*)\)$/;
 
 import {
   CNDIState,
@@ -76,6 +65,14 @@ function handleGetRandomStringMacro(args: string[]) {
     (byte) => ALPHANUMERIC_CHARSET[byte % ALPHANUMERIC_CHARSET.length],
   ).join("");
 }
+
+/**
+ * Matches {{ $objectName.methodName(arg1, arg2, ...) }}.
+ * We use capturing groups for objectName, methodName, and argument string.
+ */
+const STRING_MACRO_REGEX = /\{\{\s*\$([^.]+)\.([^(]+)\(([^)]*)\)\s*\}\}/g;
+
+
 /**
  * Replace *all* occurrences of string macros in `str`.
  * If the macro returns a non-string, we'll JSON-stringify it (you could do otherwise).
@@ -104,6 +101,7 @@ async function processStringMacros(
       $cndi,
     );
 
+
     // If it's already a string, use as-is; otherwise, serialize
     if (typeof macroResult === "string") {
       return macroResult;
@@ -113,26 +111,65 @@ async function processStringMacros(
   });
 }
 
+/**
+ * Matches the entire key if it is of the form:
+ *   objectName.methodName(arg1, arg2, ...)
+ * Example: "foo.bar(x, y)"
+ * Supports nested macros inside arguments using `{{ ... }}`.
+ */
+const KEY_MACRO_REGEX = /^([^.]+)\.([^(]+)\(([\s\S]*)\)$/;
+
 type ParsedMacro = {
   objectName: string;
   methodName: string;
   args: string[];
 };
 
-function parseKeyAsMacro(key: string): {
-  objectName: string;
-  methodName: string;
-  args: string[];
-} | null {
+function parseKeyAsMacro(key: string): ParsedMacro | null {
   const match = KEY_MACRO_REGEX.exec(key);
   if (!match) return null;
 
   const [, objectName, methodName, argString] = match;
-  const args = argString
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const args = extractArguments(argString);
   return { objectName, methodName, args };
+}
+
+/**
+ * Extracts KeyMacro arguments while preserving nested macros.
+ */
+function extractArguments(argString: string): string[] {
+  const args: string[] = [];
+  let currentArg = "";
+  let insideMacro = 0; // Tracks nesting level of `{{ ... }}` macros
+  let insideString = false; // Tracks if inside a quoted string
+
+  for (let i = 0; i < argString.length; i++) {
+    const char = argString[i];
+
+    if (char === "{" && argString[i + 1] === "{") {
+      insideMacro++;
+      currentArg += "{{";
+      i++; // Skip next '{'
+    } else if (char === "}" && argString[i + 1] === "}") {
+      insideMacro--;
+      currentArg += "}}";
+      i++; // Skip next '}'
+    } else if ((char === '"' || char === "'") && insideMacro === 0) {
+      insideString = !insideString;
+      currentArg += char;
+    } else if (char === "," && insideMacro === 0 && !insideString) {
+      args.push(currentArg.trim());
+      currentArg = "";
+    } else {
+      currentArg += char;
+    }
+  }
+
+  if (currentArg.trim()) {
+    args.push(currentArg.trim());
+  }
+
+  return args;
 }
 
 /**
@@ -148,7 +185,6 @@ function handleGetPromptResponseMacro(
   { $cndi }: HandleGetPromptResponseMacroOptions,
 ) {
   const promptName = args[0];
-  console.log("looking up prompt response", promptName);
   return $cndi.values.responses.get(promptName);
 }
 
@@ -177,9 +213,10 @@ async function handleGetBlockMacro(
       $cndi,
     );
   }
+
   if (!shouldInsert) {
     console.log("skipping block lookup", identifier);
-    return;
+    return null;
   }
 
   console.log("looking up block", identifier);
@@ -204,6 +241,7 @@ async function handleGetBlockMacro(
 
   try {
     const blockUrl = new URL(await processStringMacros(content_url, $cndi));
+    console.log("fetching block", blockUrl.href);
     const block = await YAML.fetch<JSONObject>(blockUrl.href);
     if (block.success) {
       console.log("fetched block!", blockUrl.href);
@@ -278,7 +316,6 @@ function isSingleKeyMacroObject(value: JSONValue): value is JSONObject {
 
   // Check if that single key is a macro
   const singleKey = keys[0];
-  console.log("isSingleKeyMacroObject", value);
   return parseKeyAsMacro(singleKey) !== null;
 }
 
@@ -341,6 +378,8 @@ async function processMacrosInArray(
         $cndi,
       );
 
+ 
+
       if (Array.isArray(macroResult)) {
         // Flatten (expand) the macro array results in place
         result.push(...macroResult);
@@ -371,7 +410,8 @@ export async function processMacrosInObject(
     const processedVal = await processMacrosInValue(rawVal, $cndi);
 
     // Check if the key is a macro
-    const parsed = parseKeyAsMacro(key);
+    const parsed = parseKeyAsMacro(key); 
+
     if (!parsed) {
       // Not a macro key
       result[key] = processedVal;
@@ -386,6 +426,13 @@ export async function processMacrosInObject(
         processedVal,
         $cndi,
       );
+
+
+
+      if(macroResult === null) {
+        console.error("macroResult is null for", objectName, methodName, args)
+        continue;
+      }
       insertMacroResultIntoParent(result, macroResult as JSONValue);
     }
   }
