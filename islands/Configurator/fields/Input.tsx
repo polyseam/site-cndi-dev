@@ -1,6 +1,6 @@
 import {
-  type ConfiguratorPromptFieldProps,
   ConfiguratorPromptFieldLabel,
+  type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
@@ -36,7 +36,7 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
             tSpec,
             e.currentTarget.name,
             "to",
-            e.currentTarget.value
+            e.currentTarget.value,
           );
           onChange(e.currentTarget.name, e.currentTarget.value);
         }}

@@ -314,7 +314,10 @@ export async function processMacrosInValue(
  *   - if the result is an array, splice it in place (flatten)
  *   - otherwise, replace that item with the result
  */
-async function processMacrosInArray(arr: JSONArray, $cndi:CNDIState): Promise<JSONValue> {
+async function processMacrosInArray(
+  arr: JSONArray,
+  $cndi: CNDIState,
+): Promise<JSONValue> {
   const result: JSONValue[] = [];
 
   for (const item of arr) {
@@ -330,7 +333,13 @@ async function processMacrosInArray(arr: JSONArray, $cndi:CNDIState): Promise<JS
       const body = obj[macroKey];
 
       // Call the macro
-      const macroResult = await handleMacroCall(objectName, methodName, args, body, $cndi);
+      const macroResult = await handleMacroCall(
+        objectName,
+        methodName,
+        args,
+        body,
+        $cndi,
+      );
 
       if (Array.isArray(macroResult)) {
         // Flatten (expand) the macro array results in place

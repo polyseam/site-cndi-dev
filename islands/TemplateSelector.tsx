@@ -29,6 +29,7 @@ const TemplateLinks = () => (
 
 export default function TemplateSelector() {
   const templateIdentifier: Signal<string> = useSignal("");
+  const shouldShake = useSignal(false); // controls the shake animation
   const isValidTemplateIdentifier = useComputed(() => {
     if (!templateIdentifier.value) return false;
     try {
@@ -45,16 +46,35 @@ export default function TemplateSelector() {
         <div>Choose A Template:</div>
         <TemplateLinks />
 
-        <div class="m-2">OR</div>
+        <div class="m-2 inline-block">OR</div>
         <label for="template-identifier-field">Enter Your Template URL</label>
+
         <input
           type="text"
-          class="text-black p-2 rounded"
+          className={`text-black p-2 rounded ${
+            shouldShake.value ? "animate-wiggle ring ring-red-500" : ""
+          }`}
           name="template-identifier-field"
+          aria-invalid={!isValidTemplateIdentifier.value}
           placeholder={placeholder}
           size={placeholder.length}
           onInput={(e) => {
             templateIdentifier.value = e.currentTarget.value;
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              // Prevent form submission if needed
+              e.preventDefault();
+              if (!isValidTemplateIdentifier.value) {
+                shouldShake.value = true;
+                // Reset the shake flag after the animation (e.g., 500ms)
+                setTimeout(() => {
+                  shouldShake.value = false;
+                }, 500);
+                return;
+              }
+              location.href = `?t=${templateIdentifier.value}`;
+            }
           }}
         />
         {isValidTemplateIdentifier.value

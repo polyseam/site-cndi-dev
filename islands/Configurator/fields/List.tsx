@@ -1,6 +1,6 @@
 import {
-  type ConfiguratorPromptFieldProps,
   ConfiguratorPromptFieldLabel,
+  type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
@@ -22,9 +22,8 @@ export const List = (props: ConfiguratorPromptFieldProps) => {
         onInput={(e) =>
           onChange(
             e.currentTarget.name,
-            e.currentTarget.value.split(",").map((s) => s.trim())
-          )
-        }
+            e.currentTarget.value.split(",").map((s) => s.trim()),
+          )}
       />
     </ConfiguratorPromptFieldLabel>
   );

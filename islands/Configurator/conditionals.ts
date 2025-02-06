@@ -1,4 +1,7 @@
-import { CNDIState, CNDITemplatePromptResponsePrimitive } from "islands/Configurator/shared.ts";
+import {
+  CNDIState,
+  CNDITemplatePromptResponsePrimitive,
+} from "islands/Configurator/shared.ts";
 import { processMacrosInValue } from "islands/Configurator/macros.ts";
 
 type CNDITemplateConditionComparator = "==" | "!=" | ">" | "<" | ">=" | "<=";

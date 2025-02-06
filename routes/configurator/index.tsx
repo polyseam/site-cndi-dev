@@ -8,35 +8,65 @@ import { type CNDITemplateObject, YAML } from "islands/Configurator/shared.ts";
 const TEMPLATE_IDENTIFIER_BASIC =
   "https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/basic.yaml";
 
-type CNDITemplateData = Record<string, unknown>;
+type CNDITemplateData = { template: CNDITemplateObject };
+type CNDITemplateDataError = { error: { message: string; code: number } };
 
-export const handler: Handlers<CNDITemplateData> = {
+const dataIsCNDITemplateObject = (
+  maybeTemplate: unknown,
+): maybeTemplate is CNDITemplateObject => {
+  if (typeof maybeTemplate !== "object") return false;
+
+  return (
+    Object.keys(maybeTemplate as CNDITemplateObject).includes("outputs") &&
+    Object.keys(maybeTemplate as CNDITemplateObject).includes("prompts")
+  );
+};
+
+export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
   // TODO: what are the chances that processing a remote file on the server could result in a security vulnerability?
   // It seems that if the user provides a URL which points to a file that is not a YAML file
   // The server will simply fail to parse it, but maybe it could be exploited?
   async GET(req, ctx) {
     const requestUrl = new URL(req.url);
-    const templateIdentifier = requestUrl.searchParams.get("t") ||
-      TEMPLATE_IDENTIFIER_BASIC;
+    const templateIdentifier = requestUrl.searchParams.get("t");
+    if (!templateIdentifier) {
+      return new Response("", {
+        status: 307,
+        headers: { Location: `?t=${TEMPLATE_IDENTIFIER_BASIC}` },
+      });
+    }
     let templateIdentifierURL: URL;
     try {
       templateIdentifierURL = new URL(templateIdentifier);
     } catch {
       // template identifier is not a valid URL
-      return ctx.render({
-        error: { message: "Template Identifier must be a URL", code: 400 },
-      });
+
+      return ctx.render(
+        {
+          error: { message: "Template Identifier must be a URL", code: 400 },
+        },
+        {
+          status: 400,
+        },
+      );
     }
-    console.log("templateIdentifierURL", templateIdentifierURL);
+
     if (
       templateIdentifierURL.protocol !== "http:" &&
       templateIdentifierURL.protocol !== "https:"
     ) {
-      return ctx.render({
-        error: {
-          message: "Template Identifier URL protocol must be 'http' or 'https'",
+      return ctx.render(
+        {
+          error: {
+            message:
+              "Template Identifier URL protocol must be 'http' or 'https'",
+            code: 400,
+          },
         },
-      });
+        {
+          status: 400,
+        },
+      );
     }
 
     const result = await YAML.fetch<CNDITemplateData>(
@@ -44,26 +74,35 @@ export const handler: Handlers<CNDITemplateData> = {
     );
 
     if (result.success) {
-      return ctx.render(result.data);
+      if (dataIsCNDITemplateObject(result.data)) {
+        return ctx.render({ template: result.data });
+      } else {
+        return ctx.render(
+          {
+            error: {
+              message: "Template is not a valid CNDI Template",
+              code: 400,
+            },
+          },
+          {
+            status: 400,
+          },
+        );
+      }
     }
-    const status = result?.error?.code || 500;
-    return ctx.render(result.error, { status });
+    const error = result.error as CNDITemplateDataError["error"];
+    const status = error.code || 500;
+    return ctx.render({ error }, { status });
   },
 };
 
-const normalizeTemplateData = (data: unknown): CNDITemplateObject | null => {
-  if (!data) return null;
-
-  const normalized = data as CNDITemplateObject;
-
-  if (!Array.isArray(normalized?.prompts)) normalized.prompts = [];
-  if (!Array.isArray(normalized?.blocks)) normalized.blocks = [];
-  return normalized;
-};
-
-export default function ConfiguratorPage(props: PageProps<CNDITemplateData>) {
+export default function ConfiguratorPage(
+  props: PageProps<CNDITemplateData | CNDITemplateDataError>,
+) {
   const templateIdentifier = props.url.searchParams.get("t");
-  const templateObject = normalizeTemplateData(props.data);
+
+  const templateObject = (props.data as CNDITemplateData)?.template;
+  const templateError = (props.data as CNDITemplateDataError)?.error;
 
   const templateActive = !!templateObject && !!templateIdentifier;
 
@@ -81,23 +120,37 @@ export default function ConfiguratorPage(props: PageProps<CNDITemplateData>) {
       </Head>
       <div class="p-4 m-4">
         <h1>CNDI Configurator</h1>
+        <SourceShower name="Props" source={JSON.stringify(props, null, 2)} />
         {templateActive
           ? (
-            <a class="font-mono text-sm" href={templateIdentifier}>
+            <a
+              class={`font-mono text-sm${templateError ? " text-red-400" : ""}`}
+              href={templateIdentifier}
+            >
               {templateIdentifier}
             </a>
           )
           : null}
-        <TemplateSelector />
-        {templateActive && (
-          <SourceShower source={YAML.stringify(props.data)} />
+        {templateError && (
+          <>
+            <div class="text-red-400 font-mono">{templateError.code}</div>
+            <div class="text-red-400 font-mono">{templateError.message}</div>
+          </>
         )}
-        {templateActive
+        <TemplateSelector />
+
+        {templateActive && !templateError
           ? (
-            <ConfiguratorGizmo
-              templateObject={templateObject}
-              templateIdentifier={templateIdentifier}
-            />
+            <>
+              <SourceShower
+                name="Template Source"
+                source={YAML.stringify(props.data)}
+              />
+              <ConfiguratorGizmo
+                templateObject={templateObject}
+                templateIdentifier={templateIdentifier}
+              />
+            </>
           )
           : null}
       </div>

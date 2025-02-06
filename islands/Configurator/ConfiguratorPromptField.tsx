@@ -9,7 +9,7 @@ import { File } from "islands/Configurator/fields/File.tsx";
 
 export type UpdatePromptResponse = (
   responseName: string,
-  newResponseValue: CNDITemplatePromptResponsePrimitive
+  newResponseValue: CNDITemplatePromptResponsePrimitive,
 ) => void;
 
 export type ConfiguratorPromptFieldProps = {

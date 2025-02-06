@@ -37,8 +37,8 @@ export type CNDIPromptType =
 // | "Toggle"; https://cliffy.io/docs/prompt/types/toggle
 
 type ValidatorSpec = {
-  [name:string]: CNDITemplatePromptResponsePrimitive
-}
+  [name: string]: CNDITemplatePromptResponsePrimitive;
+};
 export type CNDIPromptSpec = {
   name: string;
   type: CNDIPromptType;
@@ -46,7 +46,7 @@ export type CNDIPromptSpec = {
   default?: CNDITemplatePromptResponsePrimitive;
   options?: (string | number)[];
   condition?: CNDITemplateConditonSpec;
-  validators?: ValidatorSpec[]
+  validators?: ValidatorSpec[];
 };
 
 export type CNDITemplateObject = {
@@ -101,7 +101,7 @@ export type CNDIState = {
       remove: (key: string) => void;
     };
     responses: {
-      insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
+      update: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
     };
   };
 };
@@ -132,7 +132,7 @@ export const YAML = {
         return {
           success: false,
           error: {
-            message: `HTTP Error: ${response.status} - ${response.statusText}`,
+            message: `Server Responded with ${response.status} ${response.statusText}`,
             code,
           },
         };
@@ -149,21 +149,21 @@ export const YAML = {
         };
       } catch (parseError) {
         // Handle YAML parsing errors
-        const syntaxError = parseError as SyntaxError;
+        const _syntaxError = parseError as SyntaxError;
         return {
           success: false,
           error: {
-            message: `YAML Parsing Error: ${syntaxError.message}`,
+            message: `Failed To Parse Template as YAML`,
             code: 400, // because the user's yaml is bad we say it's their fault
           },
         };
       }
-    } catch (networkError) {
+    } catch (_networkError) {
       // Handle network or fetch-related errors
       return {
         success: false,
         error: {
-          message: `Network Error: ${(networkError as Error).message}`,
+          message: `Could not Reach "${url}"`,
           code: 500,
         },
       };

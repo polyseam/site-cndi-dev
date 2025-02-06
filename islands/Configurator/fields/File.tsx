@@ -1,6 +1,6 @@
 import {
-  type ConfiguratorPromptFieldProps,
   ConfiguratorPromptFieldLabel,
+  type ConfiguratorPromptFieldProps,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
 export const File = (props: ConfiguratorPromptFieldProps) => {

@@ -1,6 +1,6 @@
 import {
-  type ConfiguratorPromptFieldProps,
   ConfiguratorPromptFieldLabel,
+  type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
@@ -20,7 +20,7 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
             "selecting",
             e.currentTarget.value,
             "for",
-            e.currentTarget.name
+            e.currentTarget.name,
           );
           onChange(e.currentTarget.name, e.currentTarget.value);
         }}
