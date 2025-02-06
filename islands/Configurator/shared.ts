@@ -34,14 +34,19 @@ export type CNDIPromptType =
   | "Checkbox"
   | "Number"
   | "File";
-// | "Toggle" ???;
+// | "Toggle"; https://cliffy.io/docs/prompt/types/toggle
+
+type ValidatorSpec = {
+  [name:string]: CNDITemplatePromptResponsePrimitive
+}
 export type CNDIPromptSpec = {
   name: string;
   type: CNDIPromptType;
   message: string;
-  default?: string;
+  default?: CNDITemplatePromptResponsePrimitive;
   options?: (string | number)[];
   condition?: CNDITemplateConditonSpec;
+  validators?: ValidatorSpec[]
 };
 
 export type CNDITemplateObject = {

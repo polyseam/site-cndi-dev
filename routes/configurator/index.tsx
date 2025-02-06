@@ -90,7 +90,7 @@ export default function ConfiguratorPage(props: PageProps<CNDITemplateData>) {
           : null}
         <TemplateSelector />
         {templateActive && (
-          <SourceShower source={JSON.stringify(props.data, null, 2)} />
+          <SourceShower source={YAML.stringify(props.data)} />
         )}
         {templateActive
           ? (

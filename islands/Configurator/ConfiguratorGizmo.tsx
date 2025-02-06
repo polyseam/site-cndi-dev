@@ -6,30 +6,27 @@ import { useContext, useEffect, useState } from "preact/hooks";
 
 import SourceShower from "islands/SourceShower.tsx";
 
-import {
-  processMacrosInValue,
-} from "islands/Configurator/macros.ts";
+import { processMacrosInValue } from "islands/Configurator/macros.ts";
 
-import {
-  type CNDIPrompt,
-  type CNDIState,
-  type CNDIBlockSpec,
-  type CNDITemplateObject,
-  type CNDITemplatePromptResponsePrimitive,
-  type JSONObject,
-  YAML
-} from "./shared.ts";
+import type {
+  CNDIPrompt,
+  CNDIState,
+  CNDIBlockSpec,
+  CNDITemplateObject,
+  CNDITemplatePromptResponsePrimitive,
+  JSONObject,
+} from "islands/Configurator/shared.ts";
+
+import { YAML } from "islands/Configurator/shared.ts";
 
 import { ConfiguratorGizmoContext } from "islands/Configurator/ConfiguratorGizmoContext.tsx";
 import { ConfiguratorGizmoProvider } from "islands/Configurator/ConfiguratorContextProvider.tsx";
 
 import { ConfiguratorPromptField } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
-import {
-  type CNDITemplateConditonSpec,
-} from "islands/Configurator/conditionals.ts";
+import { type CNDITemplateConditonSpec } from "islands/Configurator/conditionals.ts";
 import { evaluateCNDITemplateCondition } from "islands/Configurator/conditionals.ts";
-
+import { FormPanel } from "islands/Configurator/FormPanel.tsx";
 
 type CNDIFileMap = {
   "README.md": string;
@@ -69,13 +66,13 @@ const ConfiguratorGizmoForm = () => {
   const [_errors, _setErrors] = useState<CNDIGUIErrors>([]);
 
   const [responses, setResponses] = useState(
-    new Map<string, CNDITemplatePromptResponsePrimitive>(),
+    new Map<string, CNDITemplatePromptResponsePrimitive>()
   );
 
   const setters = {
     prompts: {
       insert: (key: string, value: CNDIPrompt) => {
-        if(prompts.has(key)) return;
+        if (prompts.has(key)) return;
         setPrompts((prev) => {
           const newMap = new Map(prev);
           newMap.set(key, value);
@@ -83,7 +80,7 @@ const ConfiguratorGizmoForm = () => {
         });
       },
       remove: (key: string) => {
-        if(!prompts.has(key)) return;
+        if (!prompts.has(key)) return;
         setPrompts((prev) => {
           const newMap = new Map(prev);
           newMap.delete(key);
@@ -93,7 +90,7 @@ const ConfiguratorGizmoForm = () => {
     },
     responses: {
       insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
-        if(prompts.has(key)) return;
+        if (prompts.has(key)) return;
         setResponses((prev) => {
           const newMap = new Map(prev);
           newMap.set(key, value);
@@ -103,7 +100,7 @@ const ConfiguratorGizmoForm = () => {
     },
     blocks: {
       insert: (key: string, value: CNDIBlockSpec) => {
-        if(prompts.has(key)) return;
+        if (prompts.has(key)) return;
         setBlocks((prev) => {
           const newMap = new Map(prev);
           newMap.set(key, value);
@@ -127,7 +124,7 @@ const ConfiguratorGizmoForm = () => {
     const processTemplateObject = async () => {
       const processed = (await processMacrosInValue(
         ctx.templateObjectSource as JSONObject,
-        $cndi,
+        $cndi
       )) as CNDITemplateObject;
       let index = 0;
       for (const [name, spec] of Object.entries(processed.prompts)) {
@@ -142,44 +139,53 @@ const ConfiguratorGizmoForm = () => {
   useEffect(() => {
     const prompts = Array.from($cndi.values.prompts.values());
     let index = 0;
-    for(const prompt of prompts) {
+    for (const prompt of prompts) {
       let shouldPresentPrompt = true;
       if (Object.keys(prompt).includes("condition")) {
         console.log("evaluating condition", prompt.condition);
-        shouldPresentPrompt = evaluateCNDITemplateCondition(prompt?.condition!, $cndi);
+        shouldPresentPrompt = evaluateCNDITemplateCondition(
+          prompt?.condition!,
+          $cndi
+        );
       }
       if (shouldPresentPrompt) {
-        console.log("presenting prompt", prompt);
-        $cndi.setters.prompts.insert(prompt.name, {...prompt, index});
+        console.log("presenting prompt", prompt.name);
+        $cndi.setters.prompts.insert(prompt.name, { ...prompt, index });
       } else {
         console.log("skipping prompt", prompt);
         $cndi.setters.prompts.remove(prompt.name);
       }
       index++;
     }
-  }, [responses])
+  }, [responses]);
 
   const promptArray = Array.from(prompts.values());
   const responseRecord = Object.fromEntries(Array.from(responses.entries()));
 
   return (
     <>
-      <form>
-        {promptArray.map((p) => (
-          <ConfiguratorPromptField
-            spec={p}
-            value={responses.get(p.name)}
-            onChange={(responseName, newResponseValue) => {
-              setResponses((prev) => {
-                const newResponses = new Map(prev);
-                newResponses.set(responseName, newResponseValue);
-                console.log("setting response", responseName, newResponseValue);
-                return newResponses;
-              });
-            }}
-          />
-        ))}
-      </form>
+      <FormPanel>
+        <form>
+          {promptArray.map((p) => (
+            <ConfiguratorPromptField
+              spec={p}
+              value={responses.get(p.name)}
+              onChange={(responseName, newResponseValue) => {
+                setResponses((prev) => {
+                  const newResponses = new Map(prev);
+                  newResponses.set(responseName, newResponseValue);
+                  console.log(
+                    "setting response",
+                    responseName,
+                    newResponseValue
+                  );
+                  return newResponses;
+                });
+              }}
+            />
+          ))}
+        </form>
+      </FormPanel>
       <SourceShower
         source={YAML.stringify(responseRecord)}
         name="Response Record"

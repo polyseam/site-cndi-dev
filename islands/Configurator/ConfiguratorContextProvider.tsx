@@ -1,5 +1,5 @@
 import { ConfiguratorGizmoContext } from "./ConfiguratorGizmoContext.tsx";
-import { CNDITemplateObject } from "./shared.ts";
+import { CNDITemplateObject } from "islands/Configurator/shared.ts";
 import { ComponentChildren } from "preact";
 
 export type ConfiguratorGizmoProviderProps = {

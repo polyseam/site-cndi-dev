@@ -1,4 +1,4 @@
-import type { CNDITemplateObject } from "./shared.ts";
+import type { CNDITemplateObject } from "islands/Configurator/shared.ts";
 import { type ComponentChildren, createContext } from "preact";
 
 type ConfiguratorGizmoContextValue = {

@@ -82,9 +82,16 @@ import * as $Configurator_ConfiguratorContextProvider from "./islands/Configurat
 import * as $Configurator_ConfiguratorGizmo from "./islands/Configurator/ConfiguratorGizmo.tsx";
 import * as $Configurator_ConfiguratorGizmoContext from "./islands/Configurator/ConfiguratorGizmoContext.tsx";
 import * as $Configurator_ConfiguratorPromptField from "./islands/Configurator/ConfiguratorPromptField.tsx";
+import * as $Configurator_FormPanel from "./islands/Configurator/FormPanel.tsx";
 import * as $Configurator_asyncReplace from "./islands/Configurator/asyncReplace.ts";
 import * as $Configurator_conditionals from "./islands/Configurator/conditionals.ts";
+import * as $Configurator_fields_Confirm from "./islands/Configurator/fields/Confirm.tsx";
+import * as $Configurator_fields_File from "./islands/Configurator/fields/File.tsx";
+import * as $Configurator_fields_Input from "./islands/Configurator/fields/Input.tsx";
+import * as $Configurator_fields_List from "./islands/Configurator/fields/List.tsx";
+import * as $Configurator_fields_Select from "./islands/Configurator/fields/Select.tsx";
 import * as $Configurator_macros from "./islands/Configurator/macros.ts";
+import * as $Configurator_responseValidators from "./islands/Configurator/responseValidators.ts";
 import * as $Configurator_shared from "./islands/Configurator/shared.ts";
 import * as $LinkOut from "./islands/LinkOut.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
@@ -180,9 +187,17 @@ const manifest = {
       $Configurator_ConfiguratorGizmoContext,
     "./islands/Configurator/ConfiguratorPromptField.tsx":
       $Configurator_ConfiguratorPromptField,
+    "./islands/Configurator/FormPanel.tsx": $Configurator_FormPanel,
     "./islands/Configurator/asyncReplace.ts": $Configurator_asyncReplace,
     "./islands/Configurator/conditionals.ts": $Configurator_conditionals,
+    "./islands/Configurator/fields/Confirm.tsx": $Configurator_fields_Confirm,
+    "./islands/Configurator/fields/File.tsx": $Configurator_fields_File,
+    "./islands/Configurator/fields/Input.tsx": $Configurator_fields_Input,
+    "./islands/Configurator/fields/List.tsx": $Configurator_fields_List,
+    "./islands/Configurator/fields/Select.tsx": $Configurator_fields_Select,
     "./islands/Configurator/macros.ts": $Configurator_macros,
+    "./islands/Configurator/responseValidators.ts":
+      $Configurator_responseValidators,
     "./islands/Configurator/shared.ts": $Configurator_shared,
     "./islands/LinkOut.tsx": $LinkOut,
     "./islands/LogoTicker.tsx": $LogoTicker,
