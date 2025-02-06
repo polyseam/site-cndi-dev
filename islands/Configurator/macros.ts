@@ -7,10 +7,9 @@ import {
   evaluateCNDITemplateCondition,
 } from "islands/Configurator/conditionals.ts";
 
-
-
 import {
   CNDIState,
+  CNDITemplateObject,
   CNDITemplatePromptResponsePrimitive,
   JSONArray,
   JSONObject,
@@ -72,7 +71,6 @@ function handleGetRandomStringMacro(args: string[]) {
  */
 const STRING_MACRO_REGEX = /\{\{\s*\$([^.]+)\.([^(]+)\(([^)]*)\)\s*\}\}/g;
 
-
 /**
  * Replace *all* occurrences of string macros in `str`.
  * If the macro returns a non-string, we'll JSON-stringify it (you could do otherwise).
@@ -100,7 +98,6 @@ async function processStringMacros(
       undefined,
       $cndi,
     );
-
 
     // If it's already a string, use as-is; otherwise, serialize
     if (typeof macroResult === "string") {
@@ -204,11 +201,11 @@ type HandleGetBlockMacroOptions = {
 async function handleGetBlockMacro(
   args: string[],
   { body, $cndi }: HandleGetBlockMacroOptions,
-) {
+): Promise<JSONObject | null> {
   const [identifier] = args;
   let shouldInsert = true;
   if ("condition" in body) {
-    shouldInsert = evaluateCNDITemplateCondition(
+    shouldInsert = await evaluateCNDITemplateCondition(
       body.condition as CNDITemplateConditonSpec,
       $cndi,
     );
@@ -222,6 +219,7 @@ async function handleGetBlockMacro(
   console.log("looking up block", identifier);
 
   const block = $cndi.values.blocks.get(identifier);
+
   let content_url = "";
 
   if (block) {
@@ -245,10 +243,12 @@ async function handleGetBlockMacro(
     const block = await YAML.fetch<JSONObject>(blockUrl.href);
     if (block.success) {
       console.log("fetched block!", blockUrl.href);
-      return block.data;
+      return block.data as JSONObject;
     }
+    return null;
   } catch (error) {
     console.log("error fetching block", error);
+    return null;
   }
 }
 
@@ -319,6 +319,16 @@ function isSingleKeyMacroObject(value: JSONValue): value is JSONObject {
   return parseKeyAsMacro(singleKey) !== null;
 }
 
+export async function processMacrosInCNDITemplateObject(
+  obj: CNDITemplateObject,
+  $cndi: CNDIState,
+): Promise<CNDITemplateObject> {
+  return await processMacrosInObject(
+    obj as JSONObject,
+    $cndi,
+  ) as CNDITemplateObject;
+}
+
 /**
  * Recursively process macros in a JSON-like structure:
  *  - String macros in string values: {{ $foo.bar(...) }}
@@ -378,8 +388,6 @@ async function processMacrosInArray(
         $cndi,
       );
 
- 
-
       if (Array.isArray(macroResult)) {
         // Flatten (expand) the macro array results in place
         result.push(...macroResult);
@@ -410,7 +418,7 @@ export async function processMacrosInObject(
     const processedVal = await processMacrosInValue(rawVal, $cndi);
 
     // Check if the key is a macro
-    const parsed = parseKeyAsMacro(key); 
+    const parsed = parseKeyAsMacro(key);
 
     if (!parsed) {
       // Not a macro key
@@ -427,10 +435,7 @@ export async function processMacrosInObject(
         $cndi,
       );
 
-
-
-      if(macroResult === null) {
-        console.error("macroResult is null for", objectName, methodName, args)
+      if (macroResult === null) {
         continue;
       }
       insertMacroResultIntoParent(result, macroResult as JSONValue);

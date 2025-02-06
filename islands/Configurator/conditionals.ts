@@ -72,21 +72,24 @@ export const CNDITemplateComparators = {
   },
 } as const;
 
-export function evaluateCNDITemplateCondition(
+export async function evaluateCNDITemplateCondition(
   spec: CNDITemplateConditonSpec,
   $cndi: CNDIState,
 ) {
+
   const left =
     (typeof spec[0] === "string"
-      ? processMacrosInValue(spec[0], $cndi)
+      ? await processMacrosInValue(spec[0], $cndi)
       : spec[0]) as CNDITemplatePromptResponsePrimitive;
 
   const right =
     (typeof spec[2] === "string"
-      ? processMacrosInValue(spec[2], $cndi)
+      ? await processMacrosInValue(spec[2], $cndi)
       : spec[2]) as CNDITemplatePromptResponsePrimitive;
-
   const comparator = spec[1];
+
+  // console.warn(left, comparator, right);
+
   const result = CNDITemplateComparators[comparator](left, right);
   return result;
 }

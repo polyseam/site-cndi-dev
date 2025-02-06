@@ -120,7 +120,6 @@ export default function ConfiguratorPage(
       </Head>
       <div class="p-4 m-4">
         <h1>CNDI Configurator</h1>
-        <SourceShower name="Props" source={JSON.stringify(props, null, 2)} />
         {templateActive
           ? (
             <a
@@ -144,7 +143,7 @@ export default function ConfiguratorPage(
             <>
               <SourceShower
                 name="Template Source"
-                source={YAML.stringify(props.data)}
+                source={YAML.stringify(templateObject)}
               />
               <ConfiguratorGizmo
                 templateObject={templateObject}

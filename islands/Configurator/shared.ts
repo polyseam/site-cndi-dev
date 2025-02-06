@@ -75,6 +75,7 @@ export type CNDITemplatePromptResponsePrimitive =
 
 export interface CNDIPrompt extends CNDIPromptSpec {
   index: number;
+  conditionMet: boolean;
 }
 
 export type CNDIBlockSpec = {
@@ -86,25 +87,16 @@ export type CNDIBlockSpec = {
 
 type CNDIStateValues = {
   blocks: Map<string, CNDIBlockSpec>;
-  prompts: Map<string, CNDIPromptSpec>;
+  prompts: CNDIPrompt[];
   responses: Map<string, CNDITemplatePromptResponsePrimitive>;
 };
 
 export type CNDIState = {
   values: CNDIStateValues;
   setters: {
-    blocks: {
-      upsert: (key: string, value: CNDIBlockSpec) => void;
-      insert: (key: string, value: CNDIBlockSpec) => void;
-    };
-    prompts: {
-      upsert: (key: string, value: CNDIPrompt) => void;
-      insert: (key: string, value: CNDIPrompt) => void;
-      remove: (key: string) => void;
-    };
+    prompts: { set: (prompts: CNDIPrompt[]) => void };
     responses: {
       upsert: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
-      insert: (key: string, value: CNDITemplatePromptResponsePrimitive) => void;
     };
   };
 };
@@ -135,7 +127,8 @@ export const YAML = {
         return {
           success: false,
           error: {
-            message: `Server Responded with ${response.status} ${response.statusText}`,
+            message:
+              `Server Responded with ${response.status} ${response.statusText}`,
             code,
           },
         };
