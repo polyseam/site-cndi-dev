@@ -1,4 +1,7 @@
+import { useState } from "preact/hooks";
+
 import {
+  ConfiguratorPromptFieldError,
   ConfiguratorPromptFieldLabel,
   type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
@@ -9,6 +12,12 @@ const INPUT_TYPE_MAP = {
   Input: "text",
   Number: "number",
 } as const;
+
+import {
+  validateFields,
+  type ValidationError,
+} from "islands/Configurator/responseValidators.ts";
+// import { CNDITemplatePromptResponsePrimitive } from "islands/Configurator/shared.ts";
 
 export const Input = (props: ConfiguratorPromptFieldProps) => {
   const { spec, onChange } = props;
@@ -21,8 +30,11 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
 
   const type = INPUT_TYPE_MAP?.[tSpec] ?? "text";
 
+  const [errors, setErrors] = useState<ValidationError[]>([]);
+
   return (
     <ConfiguratorPromptFieldLabel message={message}>
+      <ConfiguratorPromptFieldError errors={errors} responseName={name} />
       <input
         class="p-2 m-2 rounded text-gray-200  placeholder:text-gray-400 bg-[--dark-purp]"
         type={type}
@@ -31,14 +43,16 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
         placeholder={placeholder}
         value={value}
         onInput={(e) => {
-          console.debug(
-            "updating",
-            tSpec,
-            e.currentTarget.name,
-            "to",
-            e.currentTarget.value,
-          );
-          onChange(e.currentTarget.name, e.currentTarget.value);
+          const value = e.currentTarget.value;
+          const responseName = e.currentTarget.name;
+          if (value !== "") {
+            const errs: ValidationError[] = validateFields(value, spec);
+            setErrors(() => errs);
+          } else {
+            setErrors(() => []);
+          }
+          console.debug("updating", tSpec, responseName, "to", value);
+          onChange(responseName, value);
         }}
       />
     </ConfiguratorPromptFieldLabel>

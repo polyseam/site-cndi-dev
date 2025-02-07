@@ -76,7 +76,6 @@ export async function evaluateCNDITemplateCondition(
   spec: CNDITemplateConditonSpec,
   $cndi: CNDIState,
 ) {
-
   const left =
     (typeof spec[0] === "string"
       ? await processMacrosInValue(spec[0], $cndi)

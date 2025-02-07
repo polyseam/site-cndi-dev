@@ -13,8 +13,6 @@ export function ConfiguratorGizmoProvider(
 ) {
   const { templateIdentifier, children } = props;
 
-  // templateObjectSource comes in with strings containing {{ $cndi.some_macro(foo) }}
-
   const templateObjectSource = props.templateObjectSource as CNDITemplateObject;
 
   const contextValue = {

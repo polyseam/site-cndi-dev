@@ -78,6 +78,7 @@ import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx"
 import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $CLISnippet from "./islands/CLISnippet.tsx";
+import * as $Configurator_ConfiguratorCLISnippet from "./islands/Configurator/ConfiguratorCLISnippet.tsx";
 import * as $Configurator_ConfiguratorContextProvider from "./islands/Configurator/ConfiguratorContextProvider.tsx";
 import * as $Configurator_ConfiguratorGizmo from "./islands/Configurator/ConfiguratorGizmo.tsx";
 import * as $Configurator_ConfiguratorGizmoContext from "./islands/Configurator/ConfiguratorGizmoContext.tsx";
@@ -179,6 +180,8 @@ const manifest = {
   },
   islands: {
     "./islands/CLISnippet.tsx": $CLISnippet,
+    "./islands/Configurator/ConfiguratorCLISnippet.tsx":
+      $Configurator_ConfiguratorCLISnippet,
     "./islands/Configurator/ConfiguratorContextProvider.tsx":
       $Configurator_ConfiguratorContextProvider,
     "./islands/Configurator/ConfiguratorGizmo.tsx":

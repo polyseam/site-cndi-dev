@@ -1,4 +1,5 @@
 import { CNDITemplatePromptResponsePrimitive } from "islands/Configurator/shared.ts";
+import { ValidationError } from "islands/Configurator/responseValidators.ts";
 import { CNDIPromptSpec } from "islands/Configurator/shared.ts";
 import { ComponentChildren } from "preact";
 import { Input } from "islands/Configurator/fields/Input.tsx";
@@ -9,7 +10,7 @@ import { File } from "islands/Configurator/fields/File.tsx";
 
 export type UpdatePromptResponse = (
   responseName: string,
-  newResponseValue: CNDITemplatePromptResponsePrimitive,
+  newResponseValue: CNDITemplatePromptResponsePrimitive
 ) => void;
 
 export type ConfiguratorPromptFieldProps = {
@@ -37,6 +38,22 @@ export const ConfiguratorPromptFieldLabel = ({
 
 export const deriveInputAttribute = (v?: CNDITemplatePromptResponsePrimitive) =>
   `${v}` === "undefined" ? "" : `${v}`;
+
+type ConfiguratorPromptFieldErrorProps = {
+  responseName: string;
+  errors: Array<ValidationError>;
+}
+
+export const ConfiguratorPromptFieldError = ({errors, responseName}: ConfiguratorPromptFieldErrorProps) => {
+  if(errors.length === 0) return null;
+  const [{message}] = errors;
+  return (
+    <div class="text-red-500">
+      <span class="font-mono text-xs">{responseName}{' '}</span>
+      <span class="text-xs text-red-400">{message}</span>
+    </div>
+  );
+};
 
 export const ConfiguratorPromptField = ({
   spec,

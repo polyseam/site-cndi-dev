@@ -25,7 +25,8 @@
     "utils": "./utils.ts",
     "components/": "./components/",
     "islands/": "./islands/",
-    "http": "https://deno.land/std@0.224.0/http/mod.ts"
+    "http": "https://deno.land/std@0.224.0/http/mod.ts",
+    "validator": "npm:validator@^13.12.0"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": "auto"

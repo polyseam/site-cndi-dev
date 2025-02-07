@@ -17,26 +17,6 @@ import {
   YAML,
 } from "islands/Configurator/shared.ts";
 
-/**
- * Takes a string with $cndi.get_prompt_response(foo) calls and replaces them with the corresponding prompt responses.
- */
-export function literalizeGetPromptResponseCalls(
-  input: string,
-  { responses }: {
-    responses: Map<string, CNDITemplatePromptResponsePrimitive>;
-  },
-): string {
-  const macroRegex = /{{\s*\$cndi\.get_prompt_response\(([^)]+)\)\s*}}/g; // Matches {{ $cndi.get_prompt_response(foo) }}
-
-  return input.replace(
-    macroRegex,
-    (match: string, promptName: string): string => {
-      const cleanPromptName = promptName.trim();
-      const response = responses.get(cleanPromptName);
-      return response === undefined ? match : `${response}`;
-    },
-  );
-}
 type HandleCommentMacroOptions = {
   body: string;
 };
@@ -55,14 +35,16 @@ function handleCommentMacro(
 const ALPHANUMERIC_CHARSET =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-function handleGetRandomStringMacro(args: string[]) {
+function handleGetRandomStringMacro(args: string[]): string {
   const length = parseInt(args[0]) || 32;
   const array = new Uint8Array(length);
   crypto.getRandomValues(array);
-  return Array.from(
+  const rando = Array.from(
     array,
     (byte) => ALPHANUMERIC_CHARSET[byte % ALPHANUMERIC_CHARSET.length],
   ).join("");
+  console.log("rando", rando);
+  return rando;
 }
 
 /**
@@ -98,6 +80,10 @@ async function processStringMacros(
       undefined,
       $cndi,
     );
+
+    if (methodName === "get_random_string") {
+      console.log("macroResult", macroResult);
+    }
 
     // If it's already a string, use as-is; otherwise, serialize
     if (typeof macroResult === "string") {
@@ -397,7 +383,8 @@ async function processMacrosInArray(
       }
     } else {
       // Normal array element
-      result.push(item);
+      const processedItem = await processMacrosInValue(item, $cndi);
+      result.push(processedItem);
     }
   }
 

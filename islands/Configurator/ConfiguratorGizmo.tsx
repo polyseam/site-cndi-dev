@@ -26,6 +26,7 @@ import { ConfiguratorPromptField } from "islands/Configurator/ConfiguratorPrompt
 import { type CNDITemplateConditonSpec } from "islands/Configurator/conditionals.ts";
 import { evaluateCNDITemplateCondition } from "islands/Configurator/conditionals.ts";
 import { FormPanel } from "islands/Configurator/FormPanel.tsx";
+import { CNDICreateConfiguratorCLISnippet } from "islands/Configurator/ConfiguratorCLISnippet.tsx";
 
 type CNDIFileMap = {
   "README.md": string;
@@ -80,10 +81,10 @@ const processTemplateObject = async (
       index,
       conditionMet,
     };
-  })
+  });
 
   const newPrompts = (await Promise.all(promises)).filter(Boolean);
-  
+
   $cndi.setters.prompts.set(newPrompts as CNDIPrompt[]);
 };
 
@@ -98,14 +99,14 @@ const ConfiguratorGizmoForm = () => {
   const [responses, setResponses] = useState(
     new Map<string, CNDITemplatePromptResponsePrimitive>()
   );
-  
+
   const $cndi: CNDIState = {
     values: {
       blocks,
       prompts,
       responses,
     },
-    setters:{
+    setters: {
       responses: {
         upsert: (key: string, value: CNDITemplatePromptResponsePrimitive) => {
           setResponses((prev) => {
@@ -134,15 +135,21 @@ const ConfiguratorGizmoForm = () => {
     );
   }, [responses]);
 
-  const promptArray = Array.from($cndi.values.prompts.values()).filter(
-    ({ conditionMet }) => conditionMet
-  );
+  const activePrompts = prompts.filter(({ conditionMet }) => conditionMet);
 
   return (
     <>
       <FormPanel>
-        <form>
-          {promptArray.map((p) => (
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            downloadString(
+              YAML.stringify(responseRecord),
+              "cndi_responses.yaml"
+            );
+          }}
+        >
+          {activePrompts.map((p) => (
             <ConfiguratorPromptField
               spec={p}
               value={$cndi.values.responses.get(p.name)}
@@ -155,12 +162,20 @@ const ConfiguratorGizmoForm = () => {
               }}
             />
           ))}
+          <div class="grid grid-cols-1">
+            <input
+              class="w-auto justify-self-start p-2 m-2 text-lg bg-purple-200 text-softgrey rounded-lg inline-block"
+              type="submit"
+              value="Download"
+            />
+            <span class="p-2 m-2 ml-4">then run</span>
+            <CNDICreateConfiguratorCLISnippet
+              templateIdentifier={ctx.templateIdentifier!}
+            />
+          </div>
         </form>
       </FormPanel>
-      <SourceShower
-        source={YAML.stringify(promptArray)}
-        name="Prompts Source"
-      />
+      <SourceShower source={YAML.stringify(prompts)} name="Prompts Source" />
       <SourceShower
         source={YAML.stringify(responseRecord)}
         name="Response Record"
@@ -168,6 +183,26 @@ const ConfiguratorGizmoForm = () => {
     </>
   );
 };
+
+function downloadString(content: string, fileName: string) {
+  // 1. Create a Blob from the string
+  const blob = new Blob([content], { type: "text/plain" });
+
+  // 2. Generate a temporary object URL
+  const url = URL.createObjectURL(blob);
+
+  // 3. Create and trigger a download link
+  const a = document.createElement("a");
+  a.style.display = "none";
+  a.href = url;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+
+  // 4. Clean up by revoking the Object URL and removing the element
+  URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+}
 
 export default function ConfiguratorGizmo(props: ConfiguratorGizmoProps) {
   return (
