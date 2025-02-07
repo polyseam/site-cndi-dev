@@ -59,11 +59,11 @@ type CNDITemplateBlockSpec = {
 
 const processTemplateObject = async (
   obj: CNDITemplateObject,
-  $cndi: CNDIState
+  $cndi: CNDIState,
 ): Promise<void> => {
   const processed = (await processMacrosInCNDITemplateObject(
     obj,
-    $cndi
+    $cndi,
   )) as CNDITemplateObject;
 
   const promises = processed.prompts.map(async (spec, index) => {
@@ -97,7 +97,7 @@ const ConfiguratorGizmoForm = () => {
   const [_errors, _setErrors] = useState<CNDIGUIErrors>([]);
 
   const [responses, setResponses] = useState(
-    new Map<string, CNDITemplatePromptResponsePrimitive>()
+    new Map<string, CNDITemplatePromptResponsePrimitive>(),
   );
 
   const $cndi: CNDIState = {
@@ -131,7 +131,7 @@ const ConfiguratorGizmoForm = () => {
   useEffect(() => {
     processTemplateObject(
       ctx.templateObjectSource as CNDITemplateObject,
-      $cndi
+      $cndi,
     );
   }, [responses]);
 
@@ -145,7 +145,7 @@ const ConfiguratorGizmoForm = () => {
             e.preventDefault();
             downloadString(
               YAML.stringify(responseRecord),
-              "cndi_responses.yaml"
+              "cndi_responses.yaml",
             );
           }}
         >

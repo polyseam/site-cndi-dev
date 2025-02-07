@@ -10,7 +10,7 @@ import { File } from "islands/Configurator/fields/File.tsx";
 
 export type UpdatePromptResponse = (
   responseName: string,
-  newResponseValue: CNDITemplatePromptResponsePrimitive
+  newResponseValue: CNDITemplatePromptResponsePrimitive,
 ) => void;
 
 export type ConfiguratorPromptFieldProps = {
@@ -42,14 +42,16 @@ export const deriveInputAttribute = (v?: CNDITemplatePromptResponsePrimitive) =>
 type ConfiguratorPromptFieldErrorProps = {
   responseName: string;
   errors: Array<ValidationError>;
-}
+};
 
-export const ConfiguratorPromptFieldError = ({errors, responseName}: ConfiguratorPromptFieldErrorProps) => {
-  if(errors.length === 0) return null;
-  const [{message}] = errors;
+export const ConfiguratorPromptFieldError = (
+  { errors, responseName }: ConfiguratorPromptFieldErrorProps,
+) => {
+  if (errors.length === 0) return null;
+  const [{ message }] = errors;
   return (
     <div class="text-red-500">
-      <span class="font-mono text-xs">{responseName}{' '}</span>
+      <span class="font-mono text-xs">{responseName}{" "}</span>
       <span class="text-xs text-red-400">{message}</span>
     </div>
   );

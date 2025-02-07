@@ -38,7 +38,7 @@ export const List = (props: ConfiguratorPromptFieldProps) => {
           }
           onChange(
             responseName,
-            value.split(",").map((s) => s.trim())
+            value.split(",").map((s) => s.trim()),
           );
         }}
       />
