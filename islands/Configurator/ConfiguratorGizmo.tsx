@@ -61,6 +61,7 @@ const processTemplateObject = async (
   obj: CNDITemplateObject,
   $cndi: CNDIState,
 ): Promise<void> => {
+  // FIX: this function is serializing condition[0] as 'undefined'
   const processed = (await processMacrosInCNDITemplateObject(
     obj,
     $cndi,
@@ -68,12 +69,14 @@ const processTemplateObject = async (
 
   const promises = processed.prompts.map(async (spec, index) => {
     if (!spec?.name) {
-      console.warn("Prompt spec missing name", spec);
       return null;
     }
 
     const conditionMet = Array.isArray(spec?.condition)
-      ? await evaluateCNDITemplateCondition(spec.condition, $cndi)
+      ? await evaluateCNDITemplateCondition(
+        spec.condition,
+        $cndi,
+      )
       : true;
 
     return {

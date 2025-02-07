@@ -16,12 +16,6 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
         name={name}
         class="p-2 m-2 rounded text-gray-200 placeholder:text-gray-400 bg-[--dark-purp] border-r-8 border-transparent text-lg"
         onChange={(e) => {
-          console.log(
-            "selecting",
-            e.currentTarget.value,
-            "for",
-            e.currentTarget.name,
-          );
           onChange(e.currentTarget.name, e.currentTarget.value);
         }}
         value={selected}

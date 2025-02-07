@@ -43,7 +43,6 @@ function handleGetRandomStringMacro(args: string[]): string {
     array,
     (byte) => ALPHANUMERIC_CHARSET[byte % ALPHANUMERIC_CHARSET.length],
   ).join("");
-  console.log("rando", rando);
   return rando;
 }
 
@@ -60,7 +59,7 @@ const STRING_MACRO_REGEX = /\{\{\s*\$([^.]+)\.([^(]+)\(([^)]*)\)\s*\}\}/g;
 async function processStringMacros(
   str: string,
   $cndi: CNDIState,
-): Promise<string> {
+): Promise<CNDITemplatePromptResponsePrimitive> {
   return await asyncReplace(str, STRING_MACRO_REGEX, async (
     _match: string,
     objectName: string,
@@ -81,16 +80,20 @@ async function processStringMacros(
       $cndi,
     );
 
-    if (methodName === "get_random_string") {
-      console.log("macroResult", macroResult);
+    // If it's already a string, use as-is; otherwise, serialize
+    if (macroResult === null) {
+      return `{{ $${objectName}.${methodName}(${args.join(", ")}) }}`;
     }
 
-    // If it's already a string, use as-is; otherwise, serialize
-    if (typeof macroResult === "string") {
-      return macroResult;
-    } else {
-      return JSON.stringify(macroResult);
-    }
+    return `${macroResult}`;
+    // if (typeof macroResult === "string") {
+    //   return macroResult;
+    // } else if (macroResult === null) {
+    //   // return 'no'
+
+    // } else {
+    //   return JSON.stringify(macroResult);
+    // }
   });
 }
 
@@ -166,9 +169,10 @@ type HandleGetPromptResponseMacroOptions = {
 function handleGetPromptResponseMacro(
   args: string[],
   { $cndi }: HandleGetPromptResponseMacroOptions,
-) {
+): CNDITemplatePromptResponsePrimitive | null {
   const promptName = args[0];
-  return $cndi.values.responses.get(promptName);
+  const response = $cndi.values.responses.get(promptName) ?? null;
+  return response;
 }
 
 /**
@@ -197,12 +201,7 @@ async function handleGetBlockMacro(
     );
   }
 
-  if (!shouldInsert) {
-    console.log("skipping block lookup", identifier);
-    return null;
-  }
-
-  console.log("looking up block", identifier);
+  if (!shouldInsert) return null;
 
   const block = $cndi.values.blocks.get(identifier);
 
@@ -214,7 +213,7 @@ async function handleGetBlockMacro(
     }
     if (block?.content_path) {
       // fetch the content from the path
-      console.log('"content_path" unsupported in Web UI', block.name);
+      console.warn('"content_path" unsupported in Web UI', block.name);
     }
     if (block?.content_url) {
       content_url = block.content_url;
@@ -224,16 +223,16 @@ async function handleGetBlockMacro(
   }
 
   try {
-    const blockUrl = new URL(await processStringMacros(content_url, $cndi));
-    console.log("fetching block", blockUrl.href);
+    const blockUrl = new URL(
+      `${await processStringMacros(content_url, $cndi)}`,
+    );
     const block = await YAML.fetch<JSONObject>(blockUrl.href);
     if (block.success) {
-      console.log("fetched block!", blockUrl.href);
       return block.data as JSONObject;
     }
     return null;
   } catch (error) {
-    console.log("error fetching block", error);
+    console.debug("error fetching block", error);
     return null;
   }
 }
@@ -358,7 +357,7 @@ async function processMacrosInArray(
     if (isSingleKeyMacroObject(item)) {
       const obj = item as JSONObject;
       const macroKey = Object.keys(obj)[0]; // The single macro key
-      // console.log("single macroKey in array", macroKey);
+
       const parsedMacro = parseKeyAsMacro(macroKey)!; // not null if isSingleKeyMacroObject
 
       const { objectName, methodName, args } = parsedMacro;
@@ -450,6 +449,6 @@ function insertMacroResultIntoParent(
       parent[key] = objResult[key];
     }
   } else {
-    console.error("failed to insert macroResult of type", typeof macroResult);
+    console.warn("failed to insert macroResult of type", typeof macroResult);
   }
 }

@@ -17,11 +17,13 @@ export const CNDITemplateComparators = {
   "==": (
     response: CNDITemplatePromptResponsePrimitive,
     standard: CNDITemplatePromptResponsePrimitive,
-  ) => response == standard,
+  ) => (
+    `${response}` == `${standard}`
+  ),
   "!=": (
     response: CNDITemplatePromptResponsePrimitive,
     standard: CNDITemplatePromptResponsePrimitive,
-  ) => response != standard,
+  ) => `${response}` != `${standard}`,
   ">": (
     response: CNDITemplatePromptResponsePrimitive,
     standard: CNDITemplatePromptResponsePrimitive,
@@ -73,21 +75,20 @@ export const CNDITemplateComparators = {
 } as const;
 
 export async function evaluateCNDITemplateCondition(
-  spec: CNDITemplateConditonSpec,
+  cSpec: CNDITemplateConditonSpec,
   $cndi: CNDIState,
 ) {
+  const [lSpec, comparator, rSpec] = cSpec;
+
   const left =
-    (typeof spec[0] === "string"
-      ? await processMacrosInValue(spec[0], $cndi)
-      : spec[0]) as CNDITemplatePromptResponsePrimitive;
+    (typeof lSpec === "string"
+      ? await processMacrosInValue(lSpec, $cndi)
+      : lSpec) as CNDITemplatePromptResponsePrimitive;
 
   const right =
-    (typeof spec[2] === "string"
-      ? await processMacrosInValue(spec[2], $cndi)
-      : spec[2]) as CNDITemplatePromptResponsePrimitive;
-  const comparator = spec[1];
-
-  // console.warn(left, comparator, right);
+    (typeof rSpec === "string"
+      ? await processMacrosInValue(rSpec, $cndi)
+      : rSpec) as CNDITemplatePromptResponsePrimitive;
 
   const result = CNDITemplateComparators[comparator](left, right);
   return result;
