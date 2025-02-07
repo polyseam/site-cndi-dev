@@ -1,5 +1,5 @@
 {
-  "build_id": "8d0bda89117374f6e3799547c2e4556ebb9bd471",
+  "build_id": "72efdbcb93955b43d8c32a46d1d5b74f80db74d1",
   "files": {
     "island-configurator_macros.js": [
       "chunk-YS36VDOI.js",
@@ -116,7 +116,7 @@
       "chunk-ONOOT4BC.js"
     ],
     "island-configurator_configuratorclisnippet.js": [
-      "chunk-ZWWSELMP.js",
+      "chunk-JJKG6DJY.js",
       "chunk-APUOKIQF.js",
       "chunk-VXQGIN4V.js",
       "chunk-VLNPATEH.js",
@@ -135,7 +135,7 @@
       "chunk-YS36VDOI.js",
       "chunk-YZRTCWN5.js",
       "chunk-GYNDVJWC.js",
-      "chunk-ZWWSELMP.js",
+      "chunk-JJKG6DJY.js",
       "chunk-TRTD6XCX.js",
       "chunk-GI7LLYGM.js",
       "chunk-LV6UIBZH.js",
@@ -162,7 +162,7 @@
       "chunk-APUOKIQF.js",
       "chunk-VLNPATEH.js"
     ],
-    "chunk-ZWWSELMP.js": [
+    "chunk-JJKG6DJY.js": [
       "chunk-APUOKIQF.js",
       "chunk-VXQGIN4V.js"
     ],
