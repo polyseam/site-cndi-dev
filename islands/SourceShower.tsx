@@ -5,10 +5,10 @@ type Props = {
 };
 export default function SourceShower({ source, name = "Source" }: Props) {
   const showSource: Signal<boolean> = useSignal(false);
-  const label = showSource.value ? `Hide ${name} △` : `Show ${name} ▼`;
+  const label = showSource.value ? `Hide ${name} △` : `View ${name} ▼`;
   return (
     <>
-      <div class="my-4 p-4 bg-[#333] text-purple-200 rounded">
+      <div class={`my-4 p-4 bg-[#333] text-purple-200 rounded`}>
         <button
           class="text-purple-200 border-gray-300 rounded focus:ring-blue-400 hover:cursor-pointer"
           id="show-source-button"

@@ -173,7 +173,7 @@ const ConfiguratorGizmoForm = () => {
                 );
               }}
             >
-              Download
+              Download Config File
             </button>
             <span class="p-2 m-2 ml-4">then run</span>
             <CNDICreateConfiguratorCLISnippet
@@ -182,10 +182,11 @@ const ConfiguratorGizmoForm = () => {
           </div>
         </form>
       </FormPanel>
-      <SourceShower source={YAML.stringify(prompts)} name="Prompts Source" />
       <SourceShower
-        source={YAML.stringify(responseRecord)}
-        name="Response Record"
+        source={`# this cndi_responses.yaml file can be passed into \`cndi create -r\` to bootstrap your project\n\n${
+          YAML.stringify(responseRecord)
+        }`}
+        name="Config File"
       />
     </>
   );

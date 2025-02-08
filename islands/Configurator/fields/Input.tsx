@@ -14,6 +14,8 @@ const INPUT_TYPE_MAP = {
   List: "text",
 } as const;
 
+type TSpec = keyof typeof INPUT_TYPE_MAP;
+
 import {
   validateFields,
   type ValidationError,
@@ -21,13 +23,24 @@ import {
 
 const DEBOUNCE_TIME = 500; // ms
 
+const parseValue = (value: string, tSpec: TSpec) => {
+  switch (tSpec) {
+    case "Number":
+      return Number(value);
+    case "List":
+      return value.split(",");
+    default:
+      return value;
+  }
+};
+
 export const Input = (props: ConfiguratorPromptFieldProps) => {
   const { spec, onChange } = props;
   const { name, message } = spec;
   const defaultValue = deriveInputAttribute(spec.default);
 
   // assume that type is one of the keys of INPUT_TYPE_MAP
-  const tSpec = spec.type as keyof typeof INPUT_TYPE_MAP;
+  const tSpec = spec.type as TSpec;
 
   const type = INPUT_TYPE_MAP?.[tSpec] ?? "text";
 
@@ -35,7 +48,7 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
   const debounceTimerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
-    onChange(name, defaultValue);
+    onChange(name, parseValue(defaultValue, tSpec));
   }, []);
 
   return (
@@ -50,9 +63,7 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
         defaultValue={defaultValue}
         onInput={(e) => {
           const responseName = e.currentTarget.name;
-          const value = tSpec === "List"
-            ? e.currentTarget.value.split(",")
-            : e.currentTarget.value;
+          const value = parseValue(e.currentTarget.value, tSpec);
 
           // If a timer is already running, cancel it
           if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);

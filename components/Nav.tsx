@@ -25,6 +25,12 @@ export default function Nav(props: NavProps) {
         </a>
         <nav role="navigation">
           <div>
+            <a
+              href="/configurator"
+              class="uui-navbar07_link bug-fix w-nav-link"
+            >
+              Configurator
+            </a>
             <a href="/blog" class="uui-navbar07_link bug-fix w-nav-link">
               Blog
             </a>
