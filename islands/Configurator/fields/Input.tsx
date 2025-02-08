@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 import {
   ConfiguratorPromptFieldError,
@@ -11,19 +11,20 @@ const INPUT_TYPE_MAP = {
   Secret: "password",
   Input: "text",
   Number: "number",
+  List: "text",
 } as const;
 
 import {
   validateFields,
   type ValidationError,
 } from "islands/Configurator/responseValidators.ts";
-// import { CNDITemplatePromptResponsePrimitive } from "islands/Configurator/shared.ts";
+
+const DEBOUNCE_TIME = 500; // ms
 
 export const Input = (props: ConfiguratorPromptFieldProps) => {
   const { spec, onChange } = props;
   const { name, message } = spec;
-  const placeholder = deriveInputAttribute(spec.default);
-  const value = deriveInputAttribute(props.value);
+  const defaultValue = deriveInputAttribute(spec.default);
 
   // assume that type is one of the keys of INPUT_TYPE_MAP
   const tSpec = spec.type as keyof typeof INPUT_TYPE_MAP;
@@ -31,6 +32,11 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
   const type = INPUT_TYPE_MAP?.[tSpec] ?? "text";
 
   const [errors, setErrors] = useState<ValidationError[]>([]);
+  const debounceTimerRef = useRef<number | undefined>(undefined);
+
+  useEffect(() => {
+    onChange(name, defaultValue);
+  }, []);
 
   return (
     <ConfiguratorPromptFieldLabel message={message}>
@@ -40,19 +46,27 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
         type={type}
         id={name}
         name={name}
-        placeholder={placeholder}
-        value={value}
+        placeholder={name}
+        defaultValue={defaultValue}
         onInput={(e) => {
-          const value = e.currentTarget.value;
           const responseName = e.currentTarget.name;
-          if (value !== "") {
-            const errs: ValidationError[] = validateFields(value, spec);
-            setErrors(() => errs);
-          } else {
-            setErrors(() => []);
-          }
-          console.debug("updating", tSpec, responseName, "to", value);
-          onChange(responseName, value);
+          const value = tSpec === "List"
+            ? e.currentTarget.value.split(",")
+            : e.currentTarget.value;
+
+          // If a timer is already running, cancel it
+          if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+
+          // Start a new debounce timer
+          debounceTimerRef.current = setTimeout(() => {
+            if (value !== "") {
+              const errs: ValidationError[] = validateFields(value, spec);
+              setErrors(() => errs);
+            } else {
+              setErrors(() => []);
+            }
+            onChange(responseName, value);
+          }, DEBOUNCE_TIME);
         }}
       />
     </ConfiguratorPromptFieldLabel>

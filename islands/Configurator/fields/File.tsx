@@ -14,16 +14,24 @@ export const File = (props: ConfiguratorPromptFieldProps) => {
         type="file"
         class="m-2 p-2 text-lg block text-gray-200 placeholder:text-gray-400 bg-[--dark-purp] rounded cursor-pointer focus:outline-none"
         id={name}
-        onChange={(e) => {
+        onChange={async (e) => {
           const files = e.currentTarget.files;
 
           if (!files) {
-            onChange(e.currentTarget.name, "");
+            onChange(name, "");
             return;
           }
-          const objectURL = URL.createObjectURL(files[0]);
 
-          onChange(e.currentTarget.name, objectURL);
+          try {
+            const objectURL = URL.createObjectURL(files[0]);
+            const d = await fetch(objectURL);
+            const text = await d.text();
+
+            onChange(name, text);
+          } catch (e) {
+            console.error(e);
+            onChange(name, "");
+          }
         }}
       />
     </ConfiguratorPromptFieldLabel>

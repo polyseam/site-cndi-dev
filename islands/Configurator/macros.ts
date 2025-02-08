@@ -56,7 +56,7 @@ const STRING_MACRO_REGEX = /\{\{\s*\$([^.]+)\.([^(]+)\(([^)]*)\)\s*\}\}/g;
  * Replace *all* occurrences of string macros in `str`.
  * If the macro returns a non-string, we'll JSON-stringify it (you could do otherwise).
  */
-async function processStringMacros(
+export async function processStringMacros(
   str: string,
   $cndi: CNDIState,
 ): Promise<CNDITemplatePromptResponsePrimitive> {
@@ -222,19 +222,50 @@ async function handleGetBlockMacro(
     content_url = identifier;
   }
 
+  let processedUrl = null;
+  let blockData = null;
+
+  // URL may contain macros to expand
   try {
-    const blockUrl = new URL(
-      `${await processStringMacros(content_url, $cndi)}`,
-    );
-    const block = await YAML.fetch<JSONObject>(blockUrl.href);
-    if (block.success) {
-      return block.data as JSONObject;
-    }
-    return null;
-  } catch (error) {
-    console.debug("error fetching block", error);
+    processedUrl = `${await processStringMacros(content_url, $cndi)}`;
+  } catch (errorProcessingContentUrl) {
+    console.error("error processing content url", errorProcessingContentUrl);
+  }
+
+  // the result of the expansion may not be a valid URL
+  try {
+    new URL(processedUrl as string);
+  } catch {
+    console.error("invalid block url", processedUrl);
     return null;
   }
+
+  // fetch the block content and return null if there is an error
+  try {
+    const block = await YAML.fetch<JSONObject>(processedUrl as string);
+    if (block.success) {
+      blockData = block.data as JSONObject;
+    } else {
+      console.error("error fetching block", block.error, processedUrl);
+      return null;
+    }
+  } catch (error) {
+    console.error("error fetching block", error);
+    return null;
+  }
+
+  // attempt to post-process the block content
+  try {
+    const postprocessedBlock = await processMacrosInValue(
+      blockData as JSONObject,
+      $cndi,
+    );
+    return postprocessedBlock as JSONObject;
+  } catch (error) {
+    console.error("error processing block", error);
+  }
+  // return the block data as-is if post processing fails, null if nothing works
+  return blockData;
 }
 
 /**
@@ -248,16 +279,6 @@ async function handleMacroCall(
   body: JSONValue | undefined,
   $cndi: CNDIState,
 ) {
-  // // Example logic that depends on "objectName" and "methodName"
-  // if (objectName === "foo" && methodName === "bar") {
-  //   // Just an example: produce an object with some info
-  //   return {
-  //     macro: `${objectName}.${methodName}`,
-  //     args,
-  //     body
-  //   };
-  // }
-
   switch (methodName) {
     case "get_prompt_response":
       return handleGetPromptResponseMacro(args, { $cndi });

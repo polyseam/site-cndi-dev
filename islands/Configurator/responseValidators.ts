@@ -80,12 +80,21 @@ export const validateFields = (
   const errs: { message: string; validator: string }[] = [];
 
   validators?.map((
-    vx: string | Record<string, CNDITemplatePromptResponsePrimitive>,
+    vSpec: string | Record<string, CNDITemplatePromptResponsePrimitive>,
   ) => {
-    const vName = Object.keys(vx)?.[0] ?? vx;
+    const vName = typeof vSpec == "string" ? vSpec : Object.keys(vSpec)?.[0];
+    const vSpecArg = vSpec?.[vName as keyof typeof vSpec];
+
+    console.log(
+      "validating",
+      value,
+      "against",
+      vName,
+      vSpecArg ? `with arg ${vSpecArg}` : "",
+    );
 
     const message = BuiltInValidators[vName as string]({
-      arg: typeof vx === "object" ? vx[vName] : undefined,
+      arg: vSpecArg,
       value,
       type,
       name,

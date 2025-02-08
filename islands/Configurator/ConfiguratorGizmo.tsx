@@ -73,10 +73,7 @@ const processTemplateObject = async (
     }
 
     const conditionMet = Array.isArray(spec?.condition)
-      ? await evaluateCNDITemplateCondition(
-        spec.condition,
-        $cndi,
-      )
+      ? await evaluateCNDITemplateCondition(spec.condition, $cndi)
       : true;
 
     return {
@@ -146,31 +143,38 @@ const ConfiguratorGizmoForm = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            downloadString(
-              YAML.stringify(responseRecord),
-              "cndi_responses.yaml",
-            );
           }}
         >
           {activePrompts.map((p) => (
             <ConfiguratorPromptField
+              key={p.name}
               spec={p}
-              value={$cndi.values.responses.get(p.name)}
               onChange={(responseName, newResponseValue) => {
                 setResponses((prev) => {
                   const newMap = new Map(prev);
-                  newMap.set(responseName, newResponseValue);
+                  if (newResponseValue === "") {
+                    newMap.delete(responseName);
+                  } else {
+                    newMap.set(responseName, newResponseValue);
+                  }
                   return newMap;
                 });
               }}
             />
           ))}
           <div class="grid grid-cols-1">
-            <input
+            <button
               class="w-auto justify-self-start p-2 m-2 text-lg bg-purple-200 text-softgrey rounded-lg inline-block"
-              type="submit"
-              value="Download"
-            />
+              type="button"
+              onClick={() => {
+                downloadString(
+                  YAML.stringify(responseRecord),
+                  "cndi_responses.yaml",
+                );
+              }}
+            >
+              Download
+            </button>
             <span class="p-2 m-2 ml-4">then run</span>
             <CNDICreateConfiguratorCLISnippet
               templateIdentifier={ctx.templateIdentifier!}

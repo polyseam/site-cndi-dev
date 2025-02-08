@@ -5,7 +5,6 @@ import { ComponentChildren } from "preact";
 import { Input } from "islands/Configurator/fields/Input.tsx";
 import { Confirm } from "islands/Configurator/fields/Confirm.tsx";
 import { Select } from "islands/Configurator/fields/Select.tsx";
-import { List } from "islands/Configurator/fields/List.tsx";
 import { File } from "islands/Configurator/fields/File.tsx";
 
 export type UpdatePromptResponse = (
@@ -16,7 +15,6 @@ export type UpdatePromptResponse = (
 export type ConfiguratorPromptFieldProps = {
   spec: CNDIPromptSpec;
   onChange: UpdatePromptResponse;
-  value?: CNDITemplatePromptResponsePrimitive;
 };
 
 type ConfiguratorPromptFieldLabelProps = {
@@ -44,14 +42,15 @@ type ConfiguratorPromptFieldErrorProps = {
   errors: Array<ValidationError>;
 };
 
-export const ConfiguratorPromptFieldError = (
-  { errors, responseName }: ConfiguratorPromptFieldErrorProps,
-) => {
+export const ConfiguratorPromptFieldError = ({
+  errors,
+  responseName,
+}: ConfiguratorPromptFieldErrorProps) => {
   if (errors.length === 0) return null;
   const [{ message }] = errors;
   return (
-    <div class="text-red-500">
-      <span class="font-mono text-xs">{responseName}{" "}</span>
+    <div class="mx-2 text-red-500">
+      <span class="font-mono text-xs">{responseName}</span>
       <span class="text-xs text-red-400">{message}</span>
     </div>
   );
@@ -60,21 +59,19 @@ export const ConfiguratorPromptFieldError = (
 export const ConfiguratorPromptField = ({
   spec,
   onChange,
-  value,
 }: ConfiguratorPromptFieldProps) => {
   switch (spec.type) {
-    case "Input":
-    case "Secret":
-    case "Number":
-      return <Input spec={spec} onChange={onChange} value={value} />;
-    case "Confirm": // single checkbox
-      return <Confirm spec={spec} onChange={onChange} value={value} />;
-    case "Checkbox": // multiple select
-    case "Select":
-      return <Select spec={spec} onChange={onChange} value={value} />;
+    case "Input": // type="text"
+    case "Secret": // type="password"
+    case "Number": // type="number"
     case "List": // comma separated
-      return <List spec={spec} onChange={onChange} value={value} />;
-    case "File":
-      return <File spec={spec} onChange={onChange} value={value} />;
+      return <Input spec={spec} onChange={onChange} />;
+    case "Confirm": // on/off switch
+      return <Confirm spec={spec} onChange={onChange} />;
+    case "Checkbox": // multiple select
+    case "Select": // single select
+      return <Select spec={spec} onChange={onChange} />;
+    case "File": // file upload
+      return <File spec={spec} onChange={onChange} />;
   }
 };

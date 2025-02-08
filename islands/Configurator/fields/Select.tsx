@@ -1,3 +1,4 @@
+import { useEffect } from "preact/hooks";
 import {
   ConfiguratorPromptFieldLabel,
   type ConfiguratorPromptFieldProps,
@@ -5,10 +6,15 @@ import {
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
 export const Select = (props: ConfiguratorPromptFieldProps) => {
-  const { spec, onChange, value } = props;
+  const { spec, onChange } = props;
   const { name, message } = spec;
-  const selected = deriveInputAttribute(value);
+  const defaultValue = deriveInputAttribute(spec.default);
   const multiple = spec.type === "Checkbox";
+
+  useEffect(() => {
+    onChange(name, defaultValue);
+  }, []);
+
   return (
     <ConfiguratorPromptFieldLabel message={message}>
       <select
@@ -18,7 +24,8 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
         onChange={(e) => {
           onChange(e.currentTarget.name, e.currentTarget.value);
         }}
-        value={selected}
+        placeholder={name}
+        defaultValue={defaultValue}
         multiple={multiple}
       >
         {spec?.options?.map((o) => (

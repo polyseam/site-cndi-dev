@@ -1,11 +1,16 @@
+import { useEffect } from "preact/hooks";
 import {
   ConfiguratorPromptFieldLabel,
   type ConfiguratorPromptFieldProps,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
 export const Confirm = (props: ConfiguratorPromptFieldProps) => {
-  const { spec, onChange, value } = props;
+  const { spec, onChange } = props;
   const { name, message } = spec;
+  const defaultChecked = !!spec.default;
+  useEffect(() => {
+    onChange(name, defaultChecked);
+  }, []);
   return (
     <ConfiguratorPromptFieldLabel message={message}>
       <input
@@ -13,10 +18,8 @@ export const Confirm = (props: ConfiguratorPromptFieldProps) => {
         type="checkbox"
         id={name}
         name={name}
-        checked={!!value}
+        defaultChecked={defaultChecked}
         onInput={(e) => {
-          const { checked } = e.currentTarget;
-          console.debug(checked ? "checked!" : "unchecked!");
           onChange(e.currentTarget.name, e.currentTarget.checked);
         }}
       />

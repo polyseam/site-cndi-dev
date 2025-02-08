@@ -89,7 +89,6 @@ import * as $Configurator_conditionals from "./islands/Configurator/conditionals
 import * as $Configurator_fields_Confirm from "./islands/Configurator/fields/Confirm.tsx";
 import * as $Configurator_fields_File from "./islands/Configurator/fields/File.tsx";
 import * as $Configurator_fields_Input from "./islands/Configurator/fields/Input.tsx";
-import * as $Configurator_fields_List from "./islands/Configurator/fields/List.tsx";
 import * as $Configurator_fields_Select from "./islands/Configurator/fields/Select.tsx";
 import * as $Configurator_macros from "./islands/Configurator/macros.ts";
 import * as $Configurator_responseValidators from "./islands/Configurator/responseValidators.ts";
@@ -196,7 +195,6 @@ const manifest = {
     "./islands/Configurator/fields/Confirm.tsx": $Configurator_fields_Confirm,
     "./islands/Configurator/fields/File.tsx": $Configurator_fields_File,
     "./islands/Configurator/fields/Input.tsx": $Configurator_fields_Input,
-    "./islands/Configurator/fields/List.tsx": $Configurator_fields_List,
     "./islands/Configurator/fields/Select.tsx": $Configurator_fields_Select,
     "./islands/Configurator/macros.ts": $Configurator_macros,
     "./islands/Configurator/responseValidators.ts":
