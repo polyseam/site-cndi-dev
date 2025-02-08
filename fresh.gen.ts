@@ -8,6 +8,7 @@ import * as $_middleware from "./routes/_middleware.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $blog_prism_cndi from "./routes/blog/prism-cndi.js";
+import * as $configurator_index from "./routes/configurator/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $post_slug_ from "./routes/post/[slug].tsx";
 import * as $post_index from "./routes/post/index.tsx";
@@ -77,8 +78,25 @@ import * as $templates_wordpress_gcp from "./routes/templates/wordpress/gcp.tsx"
 import * as $templates_wordpress_index from "./routes/templates/wordpress/index.tsx";
 import * as $terms_of_use from "./routes/terms-of-use.tsx";
 import * as $CLISnippet from "./islands/CLISnippet.tsx";
+import * as $Configurator_ConfiguratorCLISnippet from "./islands/Configurator/ConfiguratorCLISnippet.tsx";
+import * as $Configurator_ConfiguratorContextProvider from "./islands/Configurator/ConfiguratorContextProvider.tsx";
+import * as $Configurator_ConfiguratorGizmo from "./islands/Configurator/ConfiguratorGizmo.tsx";
+import * as $Configurator_ConfiguratorGizmoContext from "./islands/Configurator/ConfiguratorGizmoContext.tsx";
+import * as $Configurator_ConfiguratorPromptField from "./islands/Configurator/ConfiguratorPromptField.tsx";
+import * as $Configurator_FormPanel from "./islands/Configurator/FormPanel.tsx";
+import * as $Configurator_asyncReplace from "./islands/Configurator/asyncReplace.ts";
+import * as $Configurator_conditionals from "./islands/Configurator/conditionals.ts";
+import * as $Configurator_fields_Confirm from "./islands/Configurator/fields/Confirm.tsx";
+import * as $Configurator_fields_File from "./islands/Configurator/fields/File.tsx";
+import * as $Configurator_fields_Input from "./islands/Configurator/fields/Input.tsx";
+import * as $Configurator_fields_Select from "./islands/Configurator/fields/Select.tsx";
+import * as $Configurator_macros from "./islands/Configurator/macros.ts";
+import * as $Configurator_responseValidators from "./islands/Configurator/responseValidators.ts";
+import * as $Configurator_shared from "./islands/Configurator/shared.ts";
 import * as $LinkOut from "./islands/LinkOut.tsx";
 import * as $LogoTicker from "./islands/LogoTicker.tsx";
+import * as $SourceShower from "./islands/SourceShower.tsx";
+import * as $TemplateSelector from "./islands/TemplateSelector.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -89,6 +107,7 @@ const manifest = {
     "./routes/blog/[slug].tsx": $blog_slug_,
     "./routes/blog/index.tsx": $blog_index,
     "./routes/blog/prism-cndi.js": $blog_prism_cndi,
+    "./routes/configurator/index.tsx": $configurator_index,
     "./routes/index.tsx": $index,
     "./routes/post/[slug].tsx": $post_slug_,
     "./routes/post/index.tsx": $post_index,
@@ -160,8 +179,31 @@ const manifest = {
   },
   islands: {
     "./islands/CLISnippet.tsx": $CLISnippet,
+    "./islands/Configurator/ConfiguratorCLISnippet.tsx":
+      $Configurator_ConfiguratorCLISnippet,
+    "./islands/Configurator/ConfiguratorContextProvider.tsx":
+      $Configurator_ConfiguratorContextProvider,
+    "./islands/Configurator/ConfiguratorGizmo.tsx":
+      $Configurator_ConfiguratorGizmo,
+    "./islands/Configurator/ConfiguratorGizmoContext.tsx":
+      $Configurator_ConfiguratorGizmoContext,
+    "./islands/Configurator/ConfiguratorPromptField.tsx":
+      $Configurator_ConfiguratorPromptField,
+    "./islands/Configurator/FormPanel.tsx": $Configurator_FormPanel,
+    "./islands/Configurator/asyncReplace.ts": $Configurator_asyncReplace,
+    "./islands/Configurator/conditionals.ts": $Configurator_conditionals,
+    "./islands/Configurator/fields/Confirm.tsx": $Configurator_fields_Confirm,
+    "./islands/Configurator/fields/File.tsx": $Configurator_fields_File,
+    "./islands/Configurator/fields/Input.tsx": $Configurator_fields_Input,
+    "./islands/Configurator/fields/Select.tsx": $Configurator_fields_Select,
+    "./islands/Configurator/macros.ts": $Configurator_macros,
+    "./islands/Configurator/responseValidators.ts":
+      $Configurator_responseValidators,
+    "./islands/Configurator/shared.ts": $Configurator_shared,
     "./islands/LinkOut.tsx": $LinkOut,
     "./islands/LogoTicker.tsx": $LogoTicker,
+    "./islands/SourceShower.tsx": $SourceShower,
+    "./islands/TemplateSelector.tsx": $TemplateSelector,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
