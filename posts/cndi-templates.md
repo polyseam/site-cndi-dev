@@ -1,6 +1,6 @@
 ---
 title: "The Platform: How CNDI Templates Automate Project Setup"
-published_at: 2025-01-08T15:00:00.000Z
+published_at: 2025-02-08T15:00:00.000Z
 author_name: 'Matt Johnston'
 description: "CNDI Templates Provide Interactive Project Creation"
 ---
