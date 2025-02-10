@@ -31,9 +31,8 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
   useEffect(() => {
     onChange(name, defaultValue);
     return () => {
-      console.warn('cleanup', name);
-      onChange(name, '');
-    }
+      onChange(name, "");
+    };
   }, []);
 
   return (

@@ -11,9 +11,8 @@ export const Confirm = (props: ConfiguratorPromptFieldProps) => {
   useEffect(() => {
     onChange(name, defaultChecked);
     return () => {
-      console.warn('cleanup', name);
-      onChange(name, '');
-    }
+      onChange(name, "");
+    };
   }, []);
   return (
     <ConfiguratorPromptFieldLabel message={message}>

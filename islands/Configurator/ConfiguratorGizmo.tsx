@@ -23,7 +23,6 @@ import { ConfiguratorGizmoProvider } from "islands/Configurator/ConfiguratorCont
 
 import { ConfiguratorPromptField } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
-import { type CNDITemplateConditonSpec } from "islands/Configurator/conditionals.ts";
 import { evaluateCNDITemplateCondition } from "islands/Configurator/conditionals.ts";
 import { FormPanel } from "islands/Configurator/FormPanel.tsx";
 import { CNDICreateConfiguratorCLISnippet } from "islands/Configurator/ConfiguratorCLISnippet.tsx";
@@ -47,14 +46,6 @@ export type CNDIGUIErrors = CNDIGUIError[];
 type ConfiguratorGizmoProps = {
   templateIdentifier: string;
   templateObject: CNDITemplateObject;
-};
-
-type CNDITemplateBlockSpec = {
-  identifier: string;
-  body: {
-    args: Record<string, CNDITemplatePromptResponsePrimitive>;
-    condition: CNDITemplateConditonSpec;
-  };
 };
 
 const processTemplateObject = async (
