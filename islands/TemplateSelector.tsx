@@ -1,16 +1,9 @@
 import { type Signal, useComputed, useSignal } from "@preact/signals";
 import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 
-const templateNames = [
-  "basic",
-  "airflow",
-  "cnpg",
-  "fns",
-  "mongodb",
-  "redis",
-  "kafka",
-  "neo4j",
-];
+import { data } from "template-details";
+
+const templateNames = ["basic", ...data.map((template) => template.name)];
 
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
   <a
@@ -48,11 +41,9 @@ const TemplateLinks = () => {
         const isActive = templateParam
           ? abbreviateTemplateIdentifier(templateParam) === templateName
           : false;
-        return isActive ? (
-          <ActiveTemplateLink templateName={templateName} />
-        ) : (
-          <InactiveTemplateLink templateName={templateName} />
-        );
+        return isActive
+          ? <ActiveTemplateLink templateName={templateName} />
+          : <InactiveTemplateLink templateName={templateName} />;
       })}
     </div>
   );
@@ -109,13 +100,15 @@ export default function TemplateSelector() {
             }
           }}
         />
-        {isValidTemplateIdentifier.value ? (
-          <div class={"text-cyan-400"}>
-            <a href={`?t=${templateIdentifier.value}`}>
-              cndi.dev/configurator?t={templateIdentifier.value}
-            </a>
-          </div>
-        ) : null}
+        {isValidTemplateIdentifier.value
+          ? (
+            <div class={"text-cyan-400"}>
+              <a href={`?t=${templateIdentifier.value}`}>
+                cndi.dev/configurator?t={templateIdentifier.value}
+              </a>
+            </div>
+          )
+          : null}
       </div>
     </>
   );
