@@ -15,7 +15,7 @@ const templateNames = [
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
   <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
     <a
-      class="text-white"
+      class="text-purple-200"
       href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
     >
       {templateName}
@@ -27,7 +27,7 @@ const ActiveTemplateLink = ({ templateName }: { templateName: string }) => {
   return (
     <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
       <a
-        class="text-purple-200"
+        class="text-white"
         href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
       >
         {templateName}
