@@ -1,6 +1,7 @@
 import { type Signal, useComputed, useSignal } from "@preact/signals";
+import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 
-const templates = [
+const templateNames = [
   "basic",
   "airflow",
   "cnpg",
@@ -11,21 +12,50 @@ const templates = [
   "neo4j",
 ];
 
-const TemplateLink = ({ template }: { template: string }) => (
-  <button class="text-cyan-400 p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
+const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
+  <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
     <a
-      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${template}.yaml`}
+      class="text-purple-200"
+      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
     >
-      {template}
+      {templateName}
     </a>
   </button>
 );
 
-const TemplateLinks = () => (
-  <div class="pl-1 flex-col">
-    {templates.map((template) => <TemplateLink template={template} />)}
-  </div>
-);
+const ActiveTemplateLink = ({ templateName }: { templateName: string }) => {
+  return (
+    <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
+      <a
+        class="text-white"
+        href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+      >
+        {templateName}
+      </a>
+    </button>
+  );
+};
+
+const TemplateLinks = () => {
+  let templateParam = null;
+  try {
+    templateParam = new URL(location.href).searchParams.get("t");
+  } catch (_e) {
+    // no location object
+  }
+  return (
+    <div class="pl-1 flex-col">
+      {templateNames.map((templateName) => {
+        const isActive = templateParam
+          ? abbreviateTemplateIdentifier(templateParam) === templateName
+          : false;
+        return isActive
+          ? <ActiveTemplateLink templateName={templateName} />
+          : <InactiveTemplateLink templateName={templateName} />;
+      })}
+    </div>
+  );
+};
 
 export default function TemplateSelector() {
   const templateIdentifier: Signal<string> = useSignal("");
@@ -44,6 +74,7 @@ export default function TemplateSelector() {
     <>
       <div class="my-4 p-4 text-purple-200 bg-[#333] rounded">
         <div>Choose A Template:</div>
+
         <TemplateLinks />
 
         <div class="m-2 inline-block">OR</div>

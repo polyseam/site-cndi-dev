@@ -120,6 +120,8 @@ export default function ConfiguratorPage(
       </Head>
       <div class="p-4 m-4">
         <h1>CNDI Configurator</h1>
+
+        {/* show link if templateIdentifier is valid */}
         {templateActive
           ? (
             <a
@@ -130,14 +132,19 @@ export default function ConfiguratorPage(
             </a>
           )
           : null}
+
+        {/* show error message if error is returned from server */}
         {templateError && (
           <>
             <div class="text-red-400 font-mono">{templateError.code}</div>
             <div class="text-red-400 font-mono">{templateError.message}</div>
           </>
         )}
+
+        {/* always show template selector */}
         <TemplateSelector />
 
+        {/* show template source code drawer and configurator if Template is valid */}
         {templateActive && !templateError
           ? (
             <>

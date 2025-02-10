@@ -1,8 +1,5 @@
 import { useState } from "preact/hooks";
-
-const POLYSEAM_TEMPLATE_REGEX =
-  /^https:\/\/raw\.githubusercontent\.com\/polyseam\/cndi\/refs\/heads\/main\/templates\/([^/]+)\.yaml$/;
-
+import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 type CNDICreateConfiguratorCLISnippetProps = {
   templateIdentifier: string;
 };
@@ -10,9 +7,9 @@ type CNDICreateConfiguratorCLISnippetProps = {
 export function CNDICreateConfiguratorCLISnippet(
   props: CNDICreateConfiguratorCLISnippetProps,
 ) {
-  const matches = props.templateIdentifier.match(POLYSEAM_TEMPLATE_REGEX);
-
-  const templateIdentifier = matches ? matches[1] : props.templateIdentifier;
+  const templateIdentifier = abbreviateTemplateIdentifier(
+    props.templateIdentifier,
+  );
 
   // The full command string that will be copied.
   const command =
