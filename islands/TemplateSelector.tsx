@@ -12,11 +12,6 @@ const templateNames = [
   "neo4j",
 ];
 
-type TemplateLinkProps = {
-  templateName: string;
-  isActive: boolean;
-};
-
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
   <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
     <a
