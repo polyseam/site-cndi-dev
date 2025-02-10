@@ -10,6 +10,10 @@ export const Confirm = (props: ConfiguratorPromptFieldProps) => {
   const defaultChecked = !!spec.default;
   useEffect(() => {
     onChange(name, defaultChecked);
+    return () => {
+      console.warn('cleanup', name);
+      onChange(name, '');
+    }
   }, []);
   return (
     <ConfiguratorPromptFieldLabel message={message}>

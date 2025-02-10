@@ -4,6 +4,7 @@ import {
   type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
+
 import {
   CNDIPromptSpec,
   CNDITemplatePromptResponsePrimitive,
@@ -29,6 +30,10 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
 
   useEffect(() => {
     onChange(name, defaultValue);
+    return () => {
+      console.warn('cleanup', name);
+      onChange(name, '');
+    }
   }, []);
 
   return (
