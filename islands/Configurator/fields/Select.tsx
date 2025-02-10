@@ -4,11 +4,27 @@ import {
   type ConfiguratorPromptFieldProps,
   deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
+import {
+  CNDIPromptSpec,
+  CNDITemplatePromptResponsePrimitive,
+} from "islands/Configurator/shared.ts";
+
+const defaultValueForSpec = (pSpec: CNDIPromptSpec) => {
+  if (pSpec.default) {
+    return `${pSpec.default}`;
+  }
+  const [first] = pSpec?.options as CNDITemplatePromptResponsePrimitive[];
+  if (!first) {
+    console.error("Select prompt has no default value and no options!");
+    return "";
+  }
+  return `${first}`;
+};
 
 export const Select = (props: ConfiguratorPromptFieldProps) => {
   const { spec, onChange } = props;
   const { name, message } = spec;
-  const defaultValue = deriveInputAttribute(spec.default);
+  const defaultValue = defaultValueForSpec(spec);
   const multiple = spec.type === "Checkbox";
 
   useEffect(() => {
