@@ -1,16 +1,9 @@
 import { type Signal, useComputed, useSignal } from "@preact/signals";
 import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 
-const templateNames = [
-  "basic",
-  "airflow",
-  "cnpg",
-  "fns",
-  "mongodb",
-  "redis",
-  "kafka",
-  "neo4j",
-];
+import { data } from "template-details";
+
+const templateNames = data.map((template) => template.name);
 
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
   <a
