@@ -13,26 +13,25 @@ const templateNames = [
 ];
 
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
-  <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
-    <a
-      class="text-purple-200"
-      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
-    >
+  <a
+    class="text-purple-200"
+    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+  >
+    <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg underline">
       {templateName}
-    </a>
-  </button>
+    </button>
+  </a>
 );
 
 const ActiveTemplateLink = ({ templateName }: { templateName: string }) => {
   return (
-    <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
-      <a
-        class="text-white"
-        href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
-      >
+    <a
+      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+    >
+      <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
         {templateName}
-      </a>
-    </button>
+      </button>
+    </a>
   );
 };
 
@@ -49,9 +48,11 @@ const TemplateLinks = () => {
         const isActive = templateParam
           ? abbreviateTemplateIdentifier(templateParam) === templateName
           : false;
-        return isActive
-          ? <ActiveTemplateLink templateName={templateName} />
-          : <InactiveTemplateLink templateName={templateName} />;
+        return isActive ? (
+          <ActiveTemplateLink templateName={templateName} />
+        ) : (
+          <InactiveTemplateLink templateName={templateName} />
+        );
       })}
     </div>
   );
@@ -108,15 +109,13 @@ export default function TemplateSelector() {
             }
           }}
         />
-        {isValidTemplateIdentifier.value
-          ? (
-            <div class={"text-cyan-400"}>
-              <a href={`?t=${templateIdentifier.value}`}>
-                cndi.dev/configurator?t={templateIdentifier.value}
-              </a>
-            </div>
-          )
-          : null}
+        {isValidTemplateIdentifier.value ? (
+          <div class={"text-cyan-400"}>
+            <a href={`?t=${templateIdentifier.value}`}>
+              cndi.dev/configurator?t={templateIdentifier.value}
+            </a>
+          </div>
+        ) : null}
       </div>
     </>
   );
