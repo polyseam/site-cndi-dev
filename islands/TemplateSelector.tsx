@@ -3,7 +3,7 @@ import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 
 import { data } from "template-details";
 
-const templateNames = data.map((template) => template.name);
+const templateNames = ["basic", ...data.map((template) => template.name)];
 
 const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
   <a
