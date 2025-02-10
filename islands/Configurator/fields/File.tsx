@@ -1,11 +1,22 @@
+import { useEffect } from "preact/hooks";
+
 import {
   ConfiguratorPromptFieldLabel,
   type ConfiguratorPromptFieldProps,
+  deriveInputAttribute,
 } from "islands/Configurator/ConfiguratorPromptField.tsx";
 
 export const File = (props: ConfiguratorPromptFieldProps) => {
   const { spec, onChange } = props;
   const { name, message } = spec;
+  const defaultValue = deriveInputAttribute(spec.default);
+
+  useEffect(() => {
+    onChange(name, defaultValue);
+    return () => {
+      onChange(name, "");
+    };
+  }, []);
 
   return (
     <ConfiguratorPromptFieldLabel message={message}>

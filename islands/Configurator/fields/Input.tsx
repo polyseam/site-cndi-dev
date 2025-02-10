@@ -49,6 +49,10 @@ export const Input = (props: ConfiguratorPromptFieldProps) => {
 
   useEffect(() => {
     onChange(name, parseValue(defaultValue, tSpec));
+    return () => {
+      console.warn('cleanup', name);
+      onChange(name, '');
+    }
   }, []);
 
   return (

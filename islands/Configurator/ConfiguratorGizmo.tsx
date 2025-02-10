@@ -147,7 +147,8 @@ const ConfiguratorGizmoForm = () => {
         >
           {activePrompts.map((p) => (
             <ConfiguratorPromptField
-              key={p.name}
+              // when a prompt instance is replaced, ensure the new instance is unique
+              key={`${p.name}-${p?.options?.join("-") || p.type}`}
               spec={p}
               onChange={(responseName, newResponseValue) => {
                 setResponses((prev) => {
