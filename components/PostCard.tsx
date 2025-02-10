@@ -37,8 +37,9 @@ export default function BlogPostCard(props: Props) {
   const title = post.title;
   const thumbImgSrc = post.imgSrc;
   const href = `/blog/${post.slug}`;
+
   return (
-    <div class="hover:border rounded-3xl">
+    <div class="border border-transparent hover:border-white rounded-3xl">
       <a href={href}>
         <div class="h-48 w-full overflow-hidden rounded-t-3xl">
           <img
