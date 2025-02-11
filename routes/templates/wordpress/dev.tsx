@@ -2,7 +2,6 @@ import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import WordpressWhatAndWhoForSection from "components/sections/wordpress/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import WordpressOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
@@ -17,15 +16,12 @@ import HeroSection from "components/sections/HeroSection.tsx";
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
 import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateWordpressDevPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateWordpressDevPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "dev/microk8s";
   const templateName = "wordpress";
   const title = "Wordpress";
   const type = "CMS";
-
-  const utm_source = props.url.toString();
-
   const pageTitle = `Templates | ${title} on Dev`;
   const description = `Running ${title} on Kubernetes Locally using CNDI.`;
 
