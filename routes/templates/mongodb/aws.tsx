@@ -1,7 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import EKSDistributionCard from "components/templates/distributions/aws/EKSDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import HRule from "components/HRule.tsx";
 import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
@@ -13,18 +12,15 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-import { Button } from "components/Button.tsx";
-
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateMongoDBAWSPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateMongoDBAWSPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "aws/eks";
   const templateName = "mongodb";
   const title = "MongoDB";
   const type = "Database";
-
-  const utm_source = props.url.toString();
 
   return (
     <>
@@ -50,16 +46,7 @@ export default function TemplateMongoDBAWSPage(props: PageProps) {
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="mongodb_aws_get_started"
-              utm_source={utm_source}
-              utm_id={8043}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

@@ -42,7 +42,7 @@ export default function CNDICreateCLISnippet({
   if (copied) {
     return (
       <code
-        class="p-2 my-2 ml-0 sm:ml-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
+        class="p-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
         onClick={copyToClipboard}
       >
         <span class="verb text-purple-200">copied!</span>
@@ -52,7 +52,7 @@ export default function CNDICreateCLISnippet({
 
   return (
     <code
-      class="p-2 my-2 ml-0 sm:ml-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
+      class="p-2 rounded-md monospace bg-[#161b22] hover:bg-[#1f2937] cursor-pointer"
       onClick={copyToClipboard}
     >
       <span class="verb text-purple-200">cndi{" "}</span>

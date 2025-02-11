@@ -23,8 +23,9 @@ export const CallToAction = (props: {
   const button = props.children[0];
   const cliSnippet = props.children[1];
   return (
-    <div class="cta_template flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-x-4 sm:space-y-0">
+    <div class="flex flex-col space-y-0 sm:space-y-0 sm:flex-row sm:items-center">
       <div>{button}</div>
+      <span class="p-3 text-purple-200">or</span>
       <div class="inline-flex">{cliSnippet}</div>
     </div>
   );

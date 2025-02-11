@@ -2,7 +2,6 @@ import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import FunctionsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import FunctionsOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
@@ -13,17 +12,15 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
-import { Button } from "components/Button.tsx";
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateFunctionsDevPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateFunctionsDevPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "dev/microk8s";
   const templateName = "fns";
   const title = "Functions";
   const type = "Serverless";
-
-  const utm_source = props.url.toString();
 
   const pageTitle = `Templates | ${title} on Dev`;
   const description = `Running ${title} on Kubernetes Locally using CNDI.`;
@@ -61,16 +58,8 @@ export default function TemplateFunctionsDevPage(props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="fns_dev_get_started"
-              utm_source={utm_source}
-              utm_id={8078}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
+
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

@@ -2,7 +2,6 @@ import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import GPUOperatorWhatAndWhoForSection from "components/sections/gpu-operator/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import GPUOperatorOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
@@ -15,16 +14,14 @@ import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
-import { Button } from "components/Button.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateGPUOperatorDevPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateGPUOperatorDevPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "dev/microk8s";
   const templateName = "gpu-operator";
   const title = "GPU Operator";
   const type = "Hardware Acceleration";
-
-  const utm_source = props.url.toString();
 
   const pageTitle = `Templates | ${title} on Dev`;
   const description = `Running ${title} on Kubernetes Locally using CNDI.`;
@@ -62,16 +59,7 @@ export default function TemplateGPUOperatorDevPage(props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="redis_dev_get_started"
-              utm_source={utm_source}
-              utm_id={8074}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

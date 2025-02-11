@@ -2,7 +2,6 @@ import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import AirflowWhatAndWhoForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import AirflowOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
@@ -14,8 +13,8 @@ import TemplateHero, {
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
-import { Button } from "components/Button.tsx";
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
 export default function TemplateAirflowDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -72,16 +71,7 @@ export default function TemplateAirflowDevPage(props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="airflow_dev_get_started"
-              utm_source={utm_source}
-              utm_id={8026}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}
