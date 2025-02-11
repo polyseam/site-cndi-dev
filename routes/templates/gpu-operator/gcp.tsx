@@ -1,7 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import GPUOperatorWhatAndWhoForSection from "components/sections/gpu-operator/WhatAndWhoForSection.tsx";
 import GPUOperatorOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
@@ -15,18 +14,16 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-import { Button } from "components/Button.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateGPUOperatorGCPPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateGPUOperatorGCPPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "gcp/gke";
   const templateName = "gpu-operator";
   const title = "GPU Operator";
   const type = "Hardware Acceleration";
-
-  const utm_source = props.url.toString();
 
   return (
     <>
@@ -51,16 +48,7 @@ export default function TemplateGPUOperatorGCPPage(props: PageProps) {
             Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="redis_gcp_get_started"
-              utm_source={utm_source}
-              utm_id={8068}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

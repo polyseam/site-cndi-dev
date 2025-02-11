@@ -1,7 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import Microk8sDistributionCard from "components/templates/distributions/dev/Microk8sDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import MongoDBWhatAndWhoForSection from "components/sections/mongodb/WhatAndWhoForSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
 import MongoDBOnDevSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
@@ -13,18 +12,16 @@ import TemplateHero, {
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-import { Button } from "components/Button.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateMongoDBDevPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateMongoDBDevPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "dev/microk8s";
   const templateName = "mongodb";
   const title = "MongoDB";
   const type = "Database";
-
-  const utm_source = props.url.toString();
 
   return (
     <>
@@ -45,16 +42,7 @@ export default function TemplateMongoDBDevPage(props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="mongodb_dev_get_started"
-              utm_source={utm_source}
-              utm_id={8046}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

@@ -1,7 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import Neo4jWhatAndWhoForSection from "components/sections/neo4j/WhatAndWhoForSection.tsx";
 import Neo4jOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
@@ -14,18 +13,16 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-import { Button } from "components/Button.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateNeo4jGCPPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateNeo4jGCPPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "gcp/gke";
   const templateName = "neo4j";
   const title = "Neo4j";
   const type = "Database";
-
-  const utm_source = props.url.toString();
 
   return (
     <>
@@ -50,16 +47,7 @@ export default function TemplateNeo4jGCPPage(props: PageProps) {
             Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="neo4j_gcp_get_started"
-              utm_source={utm_source}
-              utm_id={8036}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

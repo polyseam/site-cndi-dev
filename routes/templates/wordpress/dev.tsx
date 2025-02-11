@@ -13,8 +13,9 @@ import TemplateHero, {
 } from "components/TemplateHero.tsx";
 import HRule from "components/HRule.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
-import { Button } from "components/Button.tsx";
+
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
 export default function TemplateWordpressDevPage(props: PageProps) {
   const pageVersion = "v1.0.0";
@@ -61,16 +62,7 @@ export default function TemplateWordpressDevPage(props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="wordpress_dev_get_started"
-              utm_source={utm_source}
-              utm_id={8066}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}

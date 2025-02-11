@@ -1,7 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import GKEDistributionCard from "components/templates/distributions/gcp/GKEDistributionCard.tsx";
 import ThreePoints from "components/templates/ThreePoints.tsx";
-import LinkOut from "islands/LinkOut.tsx";
 import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
 import HopOnGCPSection from "components/sections/TemplateOnTargetParagraphSection.tsx";
 import DistributionCardSection from "components/sections/DistributionCardSection.tsx";
@@ -14,18 +13,16 @@ import HRule from "components/HRule.tsx";
 
 import HeroSection from "components/sections/HeroSection.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-import { Button } from "components/Button.tsx";
 
 import CNDICreateCLISnippet from "islands/CLISnippet.tsx";
+import { GetStartedWithConfiguratorButton } from "components/GetStartedWithConfiguratorButton.tsx";
 
-export default function TemplateHopGCPPage(props: PageProps) {
-  const pageVersion = "v1.0.0";
+export default function TemplateHopGCPPage(_props: PageProps) {
+  const _pageVersion = "v1.0.0";
   const deploymentTargetLabel = "gcp/gke";
   const templateName = "hop";
   const title = "Hop";
   const type = "Visual Orchestration";
-
-  const utm_source = props.url.toString();
 
   return (
     <>
@@ -50,16 +47,8 @@ export default function TemplateHopGCPPage(props: PageProps) {
             Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
-            <LinkOut
-              className="no-underline"
-              pathname="/gh"
-              utm_content="hop_gcp_get_started"
-              utm_source={utm_source}
-              utm_id={8032}
-              contentVersion={pageVersion}
-            >
-              <Button>Get Started with</Button>
-            </LinkOut>
+            <GetStartedWithConfiguratorButton templateName={templateName} />
+
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName={templateName}
