@@ -8,10 +8,10 @@ declare global {
     };
   }
 }
-
+type Slug = `${string}/${string}`;
 type CNDICreateCLISnippetProps = {
   templateName: string;
-  deploymentTargetLabel: string;
+  deploymentTargetLabel: Slug;
 };
 
 export default function CNDICreateCLISnippet({
@@ -23,15 +23,20 @@ export default function CNDICreateCLISnippet({
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
+    const [deployment_target_provider, deployment_target_distribution] =
+      deploymentTargetLabel.split("/");
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
       // Track copied event
+      const data = {
+        templateIdentifier: templateName,
+        deployment_target_provider,
+        deployment_target_distribution,
+        configurator: false,
+      };
       // deno-lint-ignore no-window
-      window?.analytics?.track("CLI Snippet Copied", {
-        templateName,
-        deploymentTargetLabel,
-      });
+      window?.analytics?.track("CLI Snippet Copied", data);
       // Reset copied after 1 second
       setTimeout(() => setCopied(false), 1000);
     } catch (error) {

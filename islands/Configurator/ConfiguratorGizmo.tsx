@@ -48,6 +48,15 @@ type ConfiguratorGizmoProps = {
   templateObject: CNDITemplateObject;
 };
 
+declare global {
+  interface Window {
+    analytics?: {
+      // deno-lint-ignore no-explicit-any
+      track: (event: string, properties?: Record<string, any>) => void;
+    };
+  }
+}
+
 const processTemplateObject = async (
   obj: CNDITemplateObject,
   $cndi: CNDIState,
@@ -128,6 +137,13 @@ const ConfiguratorGizmoForm = () => {
 
   const activePrompts = prompts.filter(({ conditionMet }) => conditionMet);
 
+  const project_name = responseRecord?.project_name ?? "my-cndi-project";
+  const yamlHint =
+    `# this ${project_name}.responses.yaml file can be passed into \`cndi create -r\` to bootstrap your project'`;
+  const deployment_target_distribution = responseRecord
+    ?.deployment_target_distribution as string | undefined;
+  const deployment_target_provider = responseRecord
+    ?.deployment_target_provider as string | undefined;
   return (
     <>
       <FormPanel>
@@ -160,24 +176,32 @@ const ConfiguratorGizmoForm = () => {
               type="button"
               onClick={() => {
                 downloadString(
-                  YAML.stringify(responseRecord),
-                  "cndi_responses.yaml",
+                  `${yamlHint}\n\n${YAML.stringify(responseRecord)}`,
+                  `${project_name}.responses.yaml`,
                 );
+                // deno-lint-ignore no-window
+                window?.analytics?.track("Configurator Responses Downloaded", {
+                  responseNames: Object.keys(responseRecord),
+                  templateIdentifier: ctx.templateIdentifier,
+                  deployment_target_distribution,
+                  deployment_target_provider,
+                });
               }}
             >
               Download Config File
             </button>
             <span class="p-2 m-2 ml-4">then run</span>
             <CNDICreateConfiguratorCLISnippet
+              project_name={`${project_name}`}
+              deployment_target_distribution={deployment_target_distribution}
+              deployment_target_provider={deployment_target_provider}
               templateIdentifier={ctx.templateIdentifier!}
             />
           </div>
         </form>
       </FormPanel>
       <SourceShower
-        source={`# this cndi_responses.yaml file can be passed into \`cndi create -r\` to bootstrap your project\n\n${
-          YAML.stringify(responseRecord)
-        }`}
+        source={`${yamlHint}\n\n${YAML.stringify(responseRecord)}`}
         name="Config File"
       />
     </>

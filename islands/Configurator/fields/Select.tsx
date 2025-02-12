@@ -35,6 +35,10 @@ export const Select = (props: ConfiguratorPromptFieldProps) => {
     };
   }, []);
 
+  // git_credentials_mode='token' is the only valid value to pass into `cndi create`
+  // TODO: support git_credentials_mode='ssh' in the `cndi create` CLI
+  if (name === "git_credentials_mode") return null;
+
   return (
     <ConfiguratorPromptFieldLabel message={message}>
       <select

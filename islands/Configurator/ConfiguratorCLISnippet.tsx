@@ -2,7 +2,19 @@ import { useState } from "preact/hooks";
 import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 type CNDICreateConfiguratorCLISnippetProps = {
   templateIdentifier: string;
+  project_name: string;
+  deployment_target_distribution?: string;
+  deployment_target_provider?: string;
 };
+
+declare global {
+  interface Window {
+    analytics?: {
+      // deno-lint-ignore no-explicit-any
+      track: (event: string, properties?: Record<string, any>) => void;
+    };
+  }
+}
 
 export function CNDICreateConfiguratorCLISnippet(
   props: CNDICreateConfiguratorCLISnippetProps,
@@ -11,9 +23,16 @@ export function CNDICreateConfiguratorCLISnippet(
     props.templateIdentifier,
   );
 
+  const {
+    deployment_target_distribution,
+    deployment_target_provider,
+    project_name,
+  } = props;
+
+  const filepath = `~/Downloads/${project_name}.responses.yaml`;
+
   // The full command string that will be copied.
-  const command =
-    `cndi create -r ~/Downloads/cndi_responses.yaml -t ${templateIdentifier}`;
+  const command = `cndi create -r ${filepath} -t ${templateIdentifier}`;
 
   const [copied, setCopied] = useState(false);
 
@@ -22,6 +41,17 @@ export function CNDICreateConfiguratorCLISnippet(
       await navigator.clipboard.writeText(command);
       setCopied(true);
       // Reset "copied" after 1 second
+
+      const data = {
+        templateIdentifier,
+        configurator: true,
+        deployment_target_provider,
+        deployment_target_distribution,
+        project_name,
+      };
+
+      // deno-lint-ignore no-window
+      window?.analytics?.track("CLI Snippet Copied", data);
       setTimeout(() => setCopied(false), 1000);
     } catch (error) {
       console.error("Failed to copy text: ", error);
@@ -56,7 +86,8 @@ export function CNDICreateConfiguratorCLISnippet(
       <span class="verb text-purple-200 block sm:inline">create{" "}</span>
       <span class="option-name text-green-600 block sm:inline">-r{" "}</span>
       <span class="option-val text-purple-200 block sm:inline">
-        ~/Downloads/cndi_responses.yaml{" "}
+        {filepath}
+        {" "}
       </span>
       <span class="option-name text-green-600 block sm:inline">-t{" "}</span>
       <span class="option-val text-purple-200 block sm:inline">
