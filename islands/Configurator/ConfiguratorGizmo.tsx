@@ -139,7 +139,7 @@ const ConfiguratorGizmoForm = () => {
 
   const project_name = responseRecord?.project_name ?? "my-cndi-project";
   const yamlHint =
-    `# this ${project_name}.responses.yaml file can be passed into \`cndi create -r\` to bootstrap your project'`;
+    `# this ${project_name}.responses.yaml file can be passed into \`cndi create -r\` to bootstrap your project`;
   const deployment_target_distribution = responseRecord
     ?.deployment_target_distribution as string | undefined;
   const deployment_target_provider = responseRecord
