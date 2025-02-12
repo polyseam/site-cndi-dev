@@ -49,7 +49,7 @@ export function CNDICreateConfiguratorCLISnippet(
         deployment_target_distribution,
         project_name,
       };
-      console.info("CLI Snippet Copied", data);
+
       // deno-lint-ignore no-window
       window?.analytics?.track("CLI Snippet Copied", data);
       setTimeout(() => setCopied(false), 1000);
