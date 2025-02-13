@@ -50,9 +50,18 @@ const TemplateLinks = () => {
   return (
     <div class="pl-1 flex-col">
       {templates.map(({ name, directory_name }) => {
-        const isActive = templateParam
-          ? abbreviateTemplateIdentifier(templateParam) === name
-          : false;
+        let isActive = false;
+
+        if (directory_name) {
+          isActive = templateParam
+            ? abbreviateTemplateIdentifier(templateParam) === directory_name
+            : false;
+        } else {
+          isActive = templateParam
+            ? abbreviateTemplateIdentifier(templateParam) === name
+            : false;
+        }
+
         return isActive
           ? <ActiveTemplateLink name={name} directory_name={directory_name} />
           : (
