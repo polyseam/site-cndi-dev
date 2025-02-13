@@ -41,7 +41,7 @@ export default function TemplatePostgresDevPage(_props: PageProps) {
           </Heading>
           <Subheading>Quickly deploy {title} on your local machine.</Subheading>
           <CallToAction>
-            <GetStartedWithConfiguratorButton templateName={templateName} />
+            <GetStartedWithConfiguratorButton templateName="cnpg" />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName="cnpg"

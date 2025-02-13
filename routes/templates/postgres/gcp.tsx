@@ -47,7 +47,7 @@ export default function TemplatePostgresGCPPage(_props: PageProps) {
             Easily Deploy {title} on Google Cloud Platform (GCP) using CNDI.
           </Subheading>
           <CallToAction>
-            <GetStartedWithConfiguratorButton templateName={templateName} />
+            <GetStartedWithConfiguratorButton templateName="cnpg" />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
               templateName="cnpg"
