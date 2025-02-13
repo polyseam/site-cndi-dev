@@ -2,6 +2,7 @@ type TemplateData = Array<{
   name: string;
   title?: string; // eg. MS SQL Server
   type: string;
+  directory_name?: string; // eg. cnpg
 }>;
 
 export const data: TemplateData = [
@@ -10,7 +11,8 @@ export const data: TemplateData = [
     type: "Orchestration",
   },
   {
-    name: "postgres",
+    name: "postgres", // name as presented to user
+    directory_name: "cnpg", // cnpg is where to find the template in the cndi repo
     type: "Database",
   },
   {

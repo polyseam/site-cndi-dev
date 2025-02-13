@@ -3,26 +3,38 @@ import { abbreviateTemplateIdentifier } from "islands/Configurator/shared.ts";
 
 import { data } from "template-details";
 
-const templateNames = ["basic", ...data.map((template) => template.name)];
+type Template = {
+  name: string; // name as presented to user
+  directory_name?: string; // name of template in https://github.com/polyseam/cndi/tree/main/templates/
+};
 
-const InactiveTemplateLink = ({ templateName }: { templateName: string }) => (
+const templates: Template[] = [
+  { name: "basic" },
+  ...data.map(({ name, directory_name }) => ({ name, directory_name })),
+];
+
+const InactiveTemplateLink = ({ name, directory_name }: Template) => (
   <a
     class="text-purple-200"
-    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${
+      directory_name ?? name
+    }.yaml`}
   >
     <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg underline">
-      {templateName}
+      {name}
     </button>
   </a>
 );
 
-const ActiveTemplateLink = ({ templateName }: { templateName: string }) => {
+const ActiveTemplateLink = ({ name, directory_name }: Template) => {
   return (
     <a
-      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${
+        directory_name ?? name
+      }.yaml`}
     >
       <button class="p-2 m-2 bg-[var(--dark-purp)] focus:ring rounded w-auto font-mono text-lg">
-        {templateName}
+        {name}
       </button>
     </a>
   );
@@ -37,13 +49,15 @@ const TemplateLinks = () => {
   }
   return (
     <div class="pl-1 flex-col">
-      {templateNames.map((templateName) => {
+      {templates.map(({ name, directory_name }) => {
         const isActive = templateParam
-          ? abbreviateTemplateIdentifier(templateParam) === templateName
+          ? abbreviateTemplateIdentifier(templateParam) === name
           : false;
         return isActive
-          ? <ActiveTemplateLink templateName={templateName} />
-          : <InactiveTemplateLink templateName={templateName} />;
+          ? <ActiveTemplateLink name={name} directory_name={directory_name} />
+          : (
+            <InactiveTemplateLink name={name} directory_name={directory_name} />
+          );
       })}
     </div>
   );
