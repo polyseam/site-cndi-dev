@@ -110,7 +110,10 @@ export default function ConfiguratorPage(
     <>
       <Head>
         <title>CNDI Configurator</title>
-        <link rel="canonical" href="https://cndi.dev/configurator" />
+        <link
+          rel="canonical"
+          href={`https://cndi.dev/configurator?t=${templateIdentifier}`}
+        />
 
         <meta
           content="Initialize CNDI Projects from the Browser."
