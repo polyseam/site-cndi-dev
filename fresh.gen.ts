@@ -10,6 +10,7 @@ import * as $blog_index from "./routes/blog/index.tsx";
 import * as $blog_prism_cndi from "./routes/blog/prism-cndi.js";
 import * as $configurator_index from "./routes/configurator/index.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $llms_txt_index from "./routes/llms.txt/index.tsx";
 import * as $post_slug_ from "./routes/post/[slug].tsx";
 import * as $post_index from "./routes/post/index.tsx";
 import * as $posts_slug_ from "./routes/posts/[slug].tsx";
@@ -109,6 +110,7 @@ const manifest = {
     "./routes/blog/prism-cndi.js": $blog_prism_cndi,
     "./routes/configurator/index.tsx": $configurator_index,
     "./routes/index.tsx": $index,
+    "./routes/llms.txt/index.tsx": $llms_txt_index,
     "./routes/post/[slug].tsx": $post_slug_,
     "./routes/post/index.tsx": $post_index,
     "./routes/posts/[slug].tsx": $posts_slug_,
