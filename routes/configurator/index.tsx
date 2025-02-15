@@ -31,7 +31,7 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
     const templateIdentifier = requestUrl.searchParams.get("t");
     if (!templateIdentifier) {
       return new Response("", {
-        status: 307,
+        status: 301,
         headers: { Location: `?t=${TEMPLATE_IDENTIFIER_BASIC}` },
       });
     }
