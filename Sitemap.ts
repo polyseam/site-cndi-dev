@@ -31,6 +31,12 @@ interface SitemapEntry extends SitemapHints {
   loc: string;
 }
 
+// this is required because the llms.txt route has no default export
+// but we want it to be included in the sitemap anyway
+const HARDCODED_ENTRIES: Array<SitemapEntry> = [{
+  loc: "https://cndi.dev/llms.txt",
+}];
+
 const time = {
   isLessThanAMonthOld(dateString: string): boolean {
     // Parse the input date string
@@ -119,6 +125,7 @@ export const SitemapPlugin = (
         if (!("default" in manifest.routes[route]!)) {
           continue;
         }
+
         let changefreq: string | undefined;
         let lastmod: string | undefined;
         let priority: string | undefined;
@@ -164,6 +171,8 @@ export const SitemapPlugin = (
         }
         entries.push({ loc, changefreq, lastmod, priority });
       }
+
+      entries.push(...HARDCODED_ENTRIES);
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
