@@ -63,6 +63,14 @@ export const BuiltInValidators: Record<string, CNDIValidator> = {
 
     return `must be at least ${len} characters long`;
   },
+  max_length: ({ value, arg }: CNDIValidatorInput) => {
+    const len = arg as number;
+    if ((value as string).length <= len) {
+      return null;
+    }
+
+    return `must be at most ${len} characters long`;
+  },
   is_json: ({ value }: CNDIValidatorInput) => {
     try {
       JSON.parse(value as string);
