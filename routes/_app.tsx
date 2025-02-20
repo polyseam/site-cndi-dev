@@ -39,7 +39,7 @@ export default function App({ Component, url }: PageProps) {
         >
         </script>
         <script type="text/javascript">
-          {'WebFont.load({  google: {    famixlies: ["Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic","Source Code Pro:regular"]  }});'}
+          {'WebFont.load({  google: {    families: ["Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic","Source Code Pro:regular"]  }});'}
         </script>
         <link
           href="/images/favicon.png"
