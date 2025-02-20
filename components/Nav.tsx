@@ -8,11 +8,11 @@ export default function Nav(props: NavProps) {
   const navVersion = "v2.0.0";
   const utm_source = props.url.toString();
   return (
-    <div class="flex justify-between m-8">
+    <div class="flex justify-between m-8 text-[16px]">
       <div>
         <a
           href="/"
-          className="inline-block p-2 align-top position-relative text-align-left"
+          className="inline-block p-2 align-top position-relative text-align-left no-underline"
         >
           <img
             src="/images/logo/cndi_by_polyseam.png"
@@ -29,19 +29,19 @@ export default function Nav(props: NavProps) {
             utm_source={utm_source}
             contentVersion={navVersion}
             pathname="/configurator"
-            className="inline-block p-2 align-top position-relative text-align-left"
+            className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Configurator
           </LinkOut>
           <a
             href="/blog"
-            className="inline-block p-2 align-top position-relative text-align-left"
+            className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Blog
           </a>
           <a
             href="/templates"
-            className="inline-block p-2 align-top position-relative text-align-left"
+            className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Templates
           </a>
@@ -49,7 +49,7 @@ export default function Nav(props: NavProps) {
             utm_id={8056}
             utm_content="nav_discord_cndidev"
             pathname="/di"
-            className="inline-block p-2 align-top position-relative text-align-left"
+            className="inline-block p-2 align-top position-relative text-align-left no-underline"
             contentVersion={navVersion}
             utm_source={utm_source}
           >
