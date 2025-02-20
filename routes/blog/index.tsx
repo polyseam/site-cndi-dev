@@ -89,7 +89,7 @@ export default function PostsPage(props: { data: Post[] }) {
         <h2 class="text-slate-50 p-6">Blog Posts from the CNDI Team</h2>
         <div className="bg-[#180f1e] p-6 min-h-screen">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {posts.map((post) => <PostCard post={post} />)}
+            {posts.map((post, key) => <PostCard post={post} key={key}/>)}
           </div>
         </div>
       </main>

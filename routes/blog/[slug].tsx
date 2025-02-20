@@ -54,7 +54,7 @@ export default function PostPage(props: PageProps<Post>) {
     <>
       <Head>
         <title>{post.title}</title>
-        <meta charSet={"utf-8"} />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={`https://cndi.dev/blog/${post.slug}`} />
         {/* opengraph */}
@@ -74,8 +74,6 @@ export default function PostPage(props: PageProps<Post>) {
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.description} />
         <meta name="twitter:image" content={ogImgSrc} />
-
-        <style>{".octicon {display: none}"}</style>
       </Head>
 
       <div className="py-8" />
@@ -109,6 +107,7 @@ export default function PostPage(props: PageProps<Post>) {
             data-color-mode="dark"
             data-dark-theme="dark"
             class="markdown-body"
+            // deno-lint-ignore react-no-danger
             dangerouslySetInnerHTML={{
               __html,
             }}

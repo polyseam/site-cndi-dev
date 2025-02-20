@@ -1,205 +1,39 @@
 {
-  "build_id": "3cf23fe264ee5be54125ce72b74e905fb4c70873",
+  "build_id": "2c168f05f1c46a0a165f6e47aacab729880e4388",
   "files": {
-    "island-configurator_responsevalidators.js": [
-      "chunk-YJ5KT75U.js",
-      "chunk-ONOOT4BC.js"
+    "main.js": [
+      "chunk-GI7LLYGM.js",
+      "chunk-LYSTMUJ4.js"
     ],
-    "island-configurator_shared.js": [
-      "chunk-RJOJX76P.js",
-      "chunk-ONOOT4BC.js"
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-GI7LLYGM.js",
+      "chunk-EMTYLGJR.js",
+      "chunk-LYSTMUJ4.js"
+    ],
+    "island-clisnippet.js": [
+      "chunk-EMTYLGJR.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
     ],
     "island-linkout.js": [
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
     ],
     "island-logoticker.js": [
       "chunk-GI7LLYGM.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-sourceshower.js": [
-      "chunk-NQKGPUMO.js",
-      "chunk-GYNDVJWC.js",
-      "chunk-GI7LLYGM.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-templateselector.js": [
-      "chunk-GYNDVJWC.js",
-      "chunk-RJOJX76P.js",
-      "chunk-GI7LLYGM.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_formpanel.js": [
-      "chunk-4XHYZCPB.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_asyncreplace.js": [
-      "chunk-YZRTCWN5.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_conditionals.js": [
-      "chunk-IHXE6XCV.js",
-      "chunk-YZRTCWN5.js",
-      "chunk-RJOJX76P.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_fields_confirm.js": [
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_fields_file.js": [
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_fields_input.js": [
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_fields_select.js": [
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_macros.js": [
-      "chunk-IHXE6XCV.js",
-      "chunk-YZRTCWN5.js",
-      "chunk-RJOJX76P.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "main.js": [
-      "chunk-GI7LLYGM.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "deserializer.js": [
-      "chunk-ONOOT4BC.js"
-    ],
-    "signals.js": [
-      "chunk-GYNDVJWC.js",
-      "chunk-GI7LLYGM.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-clisnippet.js": [
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_configuratorclisnippet.js": [
-      "chunk-PNATDVKU.js",
-      "chunk-RJOJX76P.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_configuratorcontextprovider.js": [
-      "chunk-TRTD6XCX.js",
-      "chunk-GI7LLYGM.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "island-configurator_configuratorgizmo.js": [
-      "chunk-NQKGPUMO.js",
-      "chunk-4XHYZCPB.js",
-      "chunk-IHXE6XCV.js",
-      "chunk-YZRTCWN5.js",
-      "chunk-GYNDVJWC.js",
-      "chunk-PNATDVKU.js",
-      "chunk-RJOJX76P.js",
-      "chunk-TRTD6XCX.js",
-      "chunk-GI7LLYGM.js",
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
-    ],
-    "chunk-NQKGPUMO.js": [
-      "chunk-GYNDVJWC.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js"
-    ],
-    "chunk-4XHYZCPB.js": [
-      "chunk-VXQGIN4V.js"
-    ],
-    "chunk-IHXE6XCV.js": [
-      "chunk-YZRTCWN5.js",
-      "chunk-RJOJX76P.js"
-    ],
-    "chunk-YZRTCWN5.js": [],
-    "chunk-GYNDVJWC.js": [
-      "chunk-APUOKIQF.js",
-      "chunk-VLNPATEH.js"
-    ],
-    "chunk-PNATDVKU.js": [
-      "chunk-RJOJX76P.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js"
-    ],
-    "chunk-RJOJX76P.js": [
-      "chunk-ONOOT4BC.js"
-    ],
-    "chunk-TRTD6XCX.js": [
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js"
+      "chunk-EMTYLGJR.js",
+      "chunk-MKV2KPJU.js",
+      "chunk-LYSTMUJ4.js"
     ],
     "chunk-GI7LLYGM.js": [],
-    "island-configurator_configuratorpromptfield.js": [
-      "chunk-63D35YFM.js",
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js",
-      "chunk-VLNPATEH.js",
-      "chunk-ONOOT4BC.js"
+    "chunk-EMTYLGJR.js": [
+      "chunk-LYSTMUJ4.js"
     ],
-    "chunk-63D35YFM.js": [
-      "chunk-YJ5KT75U.js",
-      "chunk-APUOKIQF.js",
-      "chunk-VXQGIN4V.js"
+    "chunk-MKV2KPJU.js": [
+      "chunk-LYSTMUJ4.js"
     ],
-    "chunk-YJ5KT75U.js": [
-      "chunk-ONOOT4BC.js"
-    ],
-    "chunk-APUOKIQF.js": [
-      "chunk-VLNPATEH.js"
-    ],
-    "chunk-VXQGIN4V.js": [
-      "chunk-VLNPATEH.js"
-    ],
-    "chunk-VLNPATEH.js": [],
-    "chunk-ONOOT4BC.js": [],
+    "chunk-LYSTMUJ4.js": [],
     "metafile.json": []
   }
 }
