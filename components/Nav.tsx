@@ -1,71 +1,84 @@
 import LinkOut from "islands/LinkOut.tsx";
+
 type NavProps = {
   url: URL;
 };
 
 export default function Nav(props: NavProps) {
-  const navVersion = "v1.0.0";
+  const navVersion = "v2.0.0";
   const utm_source = props.url.toString();
   return (
-    <div>
-      <div class="flex justify-between m-8">
-        <a
-          href="/"
+    <div class="flex justify-between m-8">
+      <div>
+        <LinkOut
+          utm_id={8056}
           aria-current="page"
+          utm_content="nav_blog_cndidev"
+          utm_source={utm_source}
+          contentVersion={navVersion}
+          pathname="/dev"
+          className="inline-block p-2 align-top position-relative text-align-left"
         >
-          <div class="uui-logo_component">
-            <img
-              src="/images/logo/cndi_by_polyseam.png"
-              loading="lazy"
-              width="125"
-              alt=""
-              class="image-40"
-            />
-          </div>
-        </a>
-        <nav role="navigation">
-          <div>
-            <a
-              href="/configurator"
-              class="uui-navbar07_link bug-fix w-nav-link"
-            >
-              Configurator
-            </a>
-            <a href="/blog" class="uui-navbar07_link bug-fix w-nav-link">
-              Blog
-            </a>
-            <a href="/templates" class="uui-navbar07_link bug-fix w-nav-link">
-              Templates
-            </a>
-            <LinkOut
-              utm_id={8056}
-              utm_content="nav_discord"
-              pathname="/di"
-              className="uui-navbar07_link bug-fix w-nav-link"
-              contentVersion={navVersion}
-              utm_source={utm_source}
-            >
-              Discord
-            </LinkOut>
-            <LinkOut
-              className="link-block-7 w-inline-block"
-              pathname="/gh"
-              utm_content="nav_github"
-              utm_source={utm_source}
-              utm_id={8000}
-              contentVersion={navVersion}
-            >
+          <img
+            src="/images/logo/cndi_by_polyseam.png"
+            loading="lazy"
+            width="125"
+          />
+        </LinkOut>
+      </div>
+      <nav role="navigation" class="my-4">
+        <div class="grid grid-flow-row gap-4 sm:grid-flow-col">
+          <LinkOut
+            utm_id={8056}
+            utm_content="nav_blog_cndidev"
+            utm_source={utm_source}
+            contentVersion={navVersion}
+            pathname="/configurator"
+            className="inline-block p-2 align-top position-relative text-align-left"
+          >
+            Configurator
+          </LinkOut>
+          <a
+            href="/blog"
+            className="inline-block p-2 align-top position-relative text-align-left"
+          >
+            Blog
+          </a>
+          <a
+            href="/templates"
+            className="inline-block p-2 align-top position-relative text-align-left"
+          >
+            Templates
+          </a>
+          <LinkOut
+            utm_id={8056}
+            utm_content="nav_discord_cndidev"
+            pathname="/di"
+            className="inline-block p-2 align-top position-relative text-align-left"
+            contentVersion={navVersion}
+            utm_source={utm_source}
+          >
+            Discord
+          </LinkOut>
+          <LinkOut
+            pathname="/gh"
+            utm_content="nav_github_cndidev"
+            utm_source={utm_source}
+            utm_id={8000}
+            contentVersion={navVersion}
+            className="flex flex-row items-center justify-center align-top position-relative text-align-left"
+          >
+            <div class="w-10">
               <img
                 src="/images/logo/GitHub.png"
                 loading="lazy"
-                width="40"
                 alt="Github Logo"
-                class="image-38"
+                width="40"
               />
-            </LinkOut>
-          </div>
-        </nav>
-      </div>
+            </div>
+          </LinkOut>
+        </div>
+      </nav>
     </div>
   );
 }
