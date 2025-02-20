@@ -28,7 +28,7 @@ export default function Nav(props: NavProps) {
             utm_content="nav_blog_cndidev"
             utm_source={utm_source}
             contentVersion={navVersion}
-            pathname="/configurator"
+            pathname="/conf"
             className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Configurator
