@@ -10,13 +10,8 @@ export default function Nav(props: NavProps) {
   return (
     <div class="flex justify-between m-8">
       <div>
-        <LinkOut
-          utm_id={8056}
-          aria-current="page"
-          utm_content="nav_blog_cndidev"
-          utm_source={utm_source}
-          contentVersion={navVersion}
-          pathname="/dev"
+        <a
+          href="/"
           className="inline-block p-2 align-top position-relative text-align-left"
         >
           <img
@@ -24,7 +19,7 @@ export default function Nav(props: NavProps) {
             loading="lazy"
             width="125"
           />
-        </LinkOut>
+        </a>
       </div>
       <nav role="navigation" class="my-4">
         <div class="grid grid-flow-row gap-4 sm:grid-flow-col">
