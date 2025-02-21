@@ -13,6 +13,8 @@
   "exclude": ["**/_fresh/*", "webflow/**", "node_modules/**", "static/**"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@cndi/known-templates": "jsr:@cndi/known-templates@^0.1.0",
+    "@cndi/validators": "jsr:@cndi/validators@^0.1.0",
     "@deno/gfm": "jsr:@deno/gfm@^0.10.0",
     "@std/http": "jsr:@std/http@^1.0.13",
     "preact": "https://esm.sh/preact@10.22.0",
@@ -22,7 +24,6 @@
     "prismjs": "npm:prismjs@1.29.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "$std/": "https://deno.land/std@0.216.0/",
-    "template-details": "./TemplateData.ts",
     "utils": "./utils.ts",
     "components/": "./components/",
     "islands/": "./islands/",

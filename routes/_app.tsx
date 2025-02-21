@@ -2,6 +2,7 @@ import { type PageProps } from "$fresh/server.ts";
 import Nav from "../components/Nav.tsx";
 import Footer from "../components/Footer.tsx";
 import SegmentSnippet from "components/SegmentSnippet.tsx";
+import GASnippet from "components/GASnippet.tsx";
 
 export default function App({ Component, url }: PageProps) {
   const devMode = url.hostname === "localhost";
@@ -47,31 +48,21 @@ export default function App({ Component, url }: PageProps) {
           type="image/x-icon"
         />
         <link href="/images/webclip.png" rel="apple-touch-icon"></link>
-        {!devMode ? <SegmentSnippet /> : <meta name="devmode"></meta>}
+        {!devMode
+          ? (
+            <SegmentSnippet
+              segmentioWriteKey={Deno.env.get('SEGMENTIO_WRITE_KEY')!}
+              mixpanelProjectToken={Deno.env.get('MIXPANEL_PROJECT_TOKEN')!}
+            />
+          )
+          : <meta name="devmode"></meta>}
       </head>
       <body class="body wf-17859gj wf-vl64f">
         <Nav url={url} />
         <Component />
         <Footer url={url} />
         {!devMode
-          ? (
-            <>
-              <script
-                async
-                src="https://www.googletagmanager.com/gtag/js?id=G-7REFQVSM9L"
-              >
-              </script>
-              <script>
-                {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-7REFQVSM9L');
-              `}
-              </script>
-            </>
-          )
+          ? <GASnippet gaMeasurementId={Deno.env.get('GA_MEASUREMENT_ID')!} />
           : <script>{`console.log('GA Disabled for DEVMODE')`}</script>}
       </body>
     </html>
