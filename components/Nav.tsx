@@ -23,16 +23,12 @@ export default function Nav(props: NavProps) {
       </div>
       <nav role="navigation" class="my-4">
         <div class="grid grid-flow-row gap-4 sm:grid-flow-col">
-          <LinkOut
-            utm_id={8056}
-            utm_content="nav_blog_cndidev"
-            utm_source={utm_source}
-            contentVersion={navVersion}
-            pathname="/conf"
+          <a
+            href="/configurator"
             className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Configurator
-          </LinkOut>
+          </a>
           <a
             href="/blog"
             className="inline-block p-2 align-top position-relative text-align-left no-underline"
