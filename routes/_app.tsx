@@ -51,8 +51,8 @@ export default function App({ Component, url }: PageProps) {
         {!devMode
           ? (
             <SegmentSnippet
-              segmentioWriteKey={Deno.env.get('SEGMENTIO_WRITE_KEY')!}
-              mixpanelProjectToken={Deno.env.get('MIXPANEL_PROJECT_TOKEN')!}
+              segmentioWriteKey={Deno.env.get("SEGMENTIO_WRITE_KEY")!}
+              mixpanelProjectToken={Deno.env.get("MIXPANEL_PROJECT_TOKEN")!}
             />
           )
           : <meta name="devmode"></meta>}
@@ -62,7 +62,7 @@ export default function App({ Component, url }: PageProps) {
         <Component />
         <Footer url={url} />
         {!devMode
-          ? <GASnippet gaMeasurementId={Deno.env.get('GA_MEASUREMENT_ID')!} />
+          ? <GASnippet gaMeasurementId={Deno.env.get("GA_MEASUREMENT_ID")!} />
           : <script>{`console.log('GA Disabled for DEVMODE')`}</script>}
       </body>
     </html>

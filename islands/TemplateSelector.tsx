@@ -132,7 +132,7 @@ export default function TemplateSelector() {
           ? (
             <div class="text-cyan-400 mt-2 underline">
               <a href={`?t=${templateIdentifier.value}`}>
-                configurator.cndi.dev/?t={templateIdentifier.value}
+                cndi.dev/configurator?t={templateIdentifier.value}
               </a>
             </div>
           )

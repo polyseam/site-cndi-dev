@@ -17,7 +17,7 @@ export default function TemplateCardList() {
             type={type}
             key={`${name}-${idx}`}
           />
-        )
+        ),
       )}
     </div>
   );

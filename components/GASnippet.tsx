@@ -12,7 +12,8 @@ export default function GASnippet({
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-      ></script>
+      >
+      </script>
       <script>
         {`
         window.dataLayer = window.dataLayer || [];

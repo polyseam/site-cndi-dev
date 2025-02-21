@@ -6,11 +6,11 @@ export default function SegmentSnippet({
   segmentioWriteKey: string;
   mixpanelProjectToken: string;
 }) {
-  if(!segmentioWriteKey){
+  if (!segmentioWriteKey) {
     console.error("Segment.io write key not provided");
     return null;
   }
-  if(!mixpanelProjectToken){
+  if (!mixpanelProjectToken) {
     console.error("Mixpanel project token not provided");
     return null;
   }
