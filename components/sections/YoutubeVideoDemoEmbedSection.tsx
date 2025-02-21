@@ -5,7 +5,7 @@ type Props = {
 export default function YoutubeVideoDemoEmbedSection(props: Props) {
   return (
     <section class="pt-[100px]">
-      <div class="w-layout-blockcontainer container-1473 w-container">
+      <div class="w-layout-blockcontainer container-1473 mx-auto max-w-screen-lg">
         <div
           style="padding-top:56.17021276595745%"
           class="bg-[url('/images/system/youtube_placeholder.svg')] bg-center bg-cover w-full pb-0 pl-0 pr-0 relative empty:min-h-[75px] empty:pb-[56.25%]"

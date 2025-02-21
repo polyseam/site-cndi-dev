@@ -22,7 +22,7 @@ type BenefitCardProps = {
 const BenefitCard = (props: BenefitCardProps) => (
   <div
     id="w-node-d24c5821-8291-5d15-b148-5b87d5c1b58e-f6848bac"
-    class="w-layout-cell cndi_card_cell"
+    class="flex-col justify-start items-start flex cndi_card_cell"
   >
     {props.children[0]}
     {props.children[1]}
@@ -33,10 +33,10 @@ export default function UseInteractiveCNDITemplatesSection() {
   // More than 6 cards is noise
   return (
     <section class="home_section_cndi_cards">
-      <div class="w-layout-blockcontainer container-1474 w-container">
+      <div class="w-layout-blockcontainer container-1474 mx-auto max-w-screen-lg">
         <div
           id="w-node-_8da0fe8c-da81-a70f-efc5-7077e1b079f9-f6848bac"
-          class="w-layout-layout quick-stack-16 wf-layout-layout"
+          class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-16 wf-layout-layout"
         >
           <BenefitCard>
             <Title>Infrastructure as Code and GitOps</Title>

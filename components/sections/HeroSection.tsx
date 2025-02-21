@@ -7,7 +7,7 @@ export default function HeroSection({
 }) {
   return (
     <section class="section_template_deploy_hero">
-      <div class="w-layout-blockcontainer container-1461 w-container">
+      <div class="w-layout-blockcontainer container-1461 mx-auto max-w-screen-lg">
         {children}
       </div>
     </section>

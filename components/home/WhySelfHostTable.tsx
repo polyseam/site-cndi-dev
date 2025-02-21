@@ -1,38 +1,20 @@
 export default function WhySelfHostCopy() {
   return (
-    <div class="w-layout-blockcontainer w-container">
-      <div
-        id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa17-f6848bac"
-        class="w-layout-layout quick-stack-19 wf-layout-layout"
-      >
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa18-f6848bac"
-          class="w-layout-cell top-left-cell-self-host-grid"
-        >
-          <div class="text-block-76">Criteria</div>
+    <div class="mx-auto max-w-screen-lg text-[#f1f1f1] font-bold">
+      <div class="auto-cols-[1fr] justify-center p-5 gap-x-[0px] gap-y-[0px] border-[0] border-solid border-[#654885] rounded-xl grid grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto] grid-cols-[3.25fr_1.25fr_1fr]">
+        <div class="flex-col justify-start items-start flex top-left-cell-self-host-grid">
+          <div class="text-3xl">Criteria</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa1b-f6848bac"
-          class="w-layout-cell top-mid-cell-self-host-grid"
-        >
-          <div class="text-block-76">Self-Hosting</div>
+        <div class="flex-col justify-start items-start flex top-mid-cell-self-host-grid">
+          <div class="text-3xl">Self-Hosting</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa1e-f6848bac"
-          class="w-layout-cell top-right-cell-self-host-grid"
-        >
-          <div class="text-block-76">PaaS</div>
+        <div class="flex-col justify-start items-start flex top-right-cell-self-host-grid">
+          <div class="text-3xl">PaaS</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa21-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Quick &amp; Easy Setup</div>
+        <div class="flex-col justify-start items-start flex self-hosting-grid-cell">
+          <div class="text-lg font-normal">Quick &amp; Easy Setup</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa24-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -42,10 +24,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa26-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -55,16 +34,10 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa28-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Run Anywhere</div>
+        <div class="flex-col justify-start items-start flex self-hosting-grid-cell">
+          <div class="text-lg font-normal">Run Anywhere</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2b-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -74,10 +47,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2d-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"
@@ -87,16 +57,10 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2f-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Managed From Git</div>
+        <div class="flex-col justify-start items-start flex self-hosting-grid-cell">
+          <div class="text-lg font-normal">Managed From Git</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa32-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -106,10 +70,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa34-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"
@@ -119,16 +80,10 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa36-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Lowest Possible Cost</div>
+        <div class="flex-col justify-start items-start flex cell-52">
+          <div class="text-lg font-normal">Lowest Possible Cost</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa39-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -138,10 +93,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa3b-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"
@@ -151,16 +103,10 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa3d-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Open-Source</div>
+        <div class="flex-col justify-start items-start flex cell-52">
+          <div class="text-lg font-normal">Open-Source</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa40-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -170,10 +116,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa42-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"
@@ -183,15 +126,12 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa44-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Fully Featured</div>
+        <div class="flex-col justify-start items-start flex cell-52">
+          <div class="text-lg font-normal">Fully Featured</div>
         </div>
         <div
           id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa47-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
+          class="flex flex-col border border-midpurp justify-center items-center p-[10px]"
         >
           <img
             src="/images/system/checkmark_circle_green.png"
@@ -202,10 +142,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa49-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"
@@ -215,16 +152,10 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa4b-f6848bac"
-          class="w-layout-cell cell-52-copy"
-        >
-          <div class="text-block-76-copy">Completely Customizable</div>
+        <div class="flex flex-col border border-midpurp rounded-bl-xl justify-center items-start pl-6">
+          <div class="text-lg font-normal">Completely Customizable</div>
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa4e-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
+        <div class="flex flex-col border border-midpurp justify-center items-center p-[10px]">
           <img
             src="/images/system/checkmark_circle_green.png"
             loading="lazy"
@@ -234,10 +165,7 @@ export default function WhySelfHostCopy() {
             srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
           />
         </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa50-f6848bac"
-          class="w-layout-cell self-hosting-grid-check-copy"
-        >
+        <div class="flex flex-col border border-midpurp rounded-br-xl justify-center items-center p-[10px]">
           <img
             src="/images/system/x_circle_red.png"
             loading="lazy"

@@ -1,7 +1,7 @@
 export default function WhatIsCNDISection() {
   return (
     <section class="pt-[100px]">
-      <div class="w-layout-blockcontainer container-1266 w-container">
+      <div class="w-layout-blockcontainer container-1266 mx-auto max-w-screen-lg">
         <div class="div-block-34">
           <h1 class="heading-27">
             What is <span class="text-span-9">CNDI?</span>

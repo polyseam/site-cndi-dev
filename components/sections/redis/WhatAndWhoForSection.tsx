@@ -2,11 +2,10 @@ import InfoCard from "components/InfoCard.tsx";
 
 export default function RedisWhoAndWhatForSection() {
   return (
-    <section class="bg-[var(--mid_purp)] bg-gradient-to-b from-[var(--mid_purp)] to-[var(--dark-purp)]">
-      <div class="w-layout-blockcontainer container-1462 w-container">
+    <section>
+      <div class="mx-auto max-w-screen-lg p-16">
         <div
-          id="w-node-_00701ea6-7f63-616b-6522-dae43b4b5ad4-02e921a5"
-          class="w-layout-layout wf-layout-layout"
+          class="grid grid-rows-[auto] grid-cols-[1fr_1fr] gap-5"
         >
           <InfoCard
             heading={`What is Redis`}

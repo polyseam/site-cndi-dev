@@ -1,17 +1,17 @@
 export default function CNDIFeaturesSection() {
   return (
     <section class="home_section_features">
-      <div class="w-layout-blockcontainer container-1465 w-container">
+      <div class="w-layout-blockcontainer container-1465 mx-auto max-w-screen-lg">
         <div>
           <h1 class="heading-68">CNDI Features</h1>
         </div>
         <div
           id="w-node-_8be5b367-0839-82c1-6d47-90ccd47724b9-f6848bac"
-          class="w-layout-layout quick-stack-8 wf-layout-layout"
+          class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-8 wf-layout-layout"
         >
           <div
             id="w-node-fa5e983e-8f3d-199e-09ff-e74f4e0f87a3-f6848bac"
-            class="w-layout-cell cell-12"
+            class="flex-col justify-start items-start flex cell-12"
           >
             <h1 class="heading-77">
               Turnkey Kubernetes Infrastructure and Applications
@@ -24,7 +24,7 @@ export default function CNDIFeaturesSection() {
           </div>
           <div
             id="w-node-c1ea3035-e75d-da13-c681-5a7d6bc97c89-f6848bac"
-            class="w-layout-cell cell-11"
+            class="flex-col justify-start items-start flex cell-11"
           >
             <img
               src="/images/content/features/turnkey_k8s.png"
@@ -38,7 +38,7 @@ export default function CNDIFeaturesSection() {
           </div>
           <div
             id="w-node-_01378b78-48bf-e98b-9709-8521212517e0-f6848bac"
-            class="w-layout-cell cell-13"
+            class="flex-col justify-start items-start flex cell-13"
           >
             <img
               src="/images/content/features/complete_framework.png"
@@ -51,7 +51,7 @@ export default function CNDIFeaturesSection() {
           </div>
           <div
             id="w-node-c058d9d6-dd48-457f-1551-92a1af61d17c-f6848bac"
-            class="w-layout-cell cell-19"
+            class="flex-col justify-start items-start flex cell-19"
           >
             <h1 class="heading-77">Complete Framework</h1>
             <p class="paragraph-29">
@@ -63,7 +63,7 @@ export default function CNDIFeaturesSection() {
           </div>
           <div
             id="w-node-b412e367-cbdb-4dac-69bf-49a7e1cf6dd9-f6848bac"
-            class="w-layout-cell"
+            class="flex-col justify-start items-start flex"
           >
             <h1 class="heading-77">
               Template-Driven
@@ -78,7 +78,7 @@ export default function CNDIFeaturesSection() {
           </div>
           <div
             id="w-node-_348c7f0e-47c2-bfbc-e9c7-8d8187618034-f6848bac"
-            class="w-layout-cell"
+            class="flex-col justify-start items-start flex"
           >
             <a href="/templates">
               <img

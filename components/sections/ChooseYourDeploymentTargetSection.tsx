@@ -4,7 +4,7 @@ export default function ChooseYourDeploymentTargetSection(props: {
   const { templateName } = props;
   return (
     <section class="template_section_choose">
-      <div class="w-layout-blockcontainer container-1471 w-container">
+      <div class="w-layout-blockcontainer container-1471 mx-auto max-w-screen-lg">
         <h1 class="heading-80">Choose your deployment Target Below</h1>
         <div class="div-block-81-copy"></div>
         <div class="div-block-85">

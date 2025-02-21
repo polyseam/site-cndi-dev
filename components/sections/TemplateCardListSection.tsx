@@ -11,7 +11,7 @@ export default function TemplateCardListSection({ pageVersion, url }: Props) {
     <section id="section_templates_cards" class="section_template_cards">
       <div
         id="cndi-templates"
-        class="w-layout-blockcontainer container-1472 w-container"
+        class="w-layout-blockcontainer container-1472 mx-auto max-w-screen-lg"
       >
         <div class="div-block-86">
           <h1 class="heading-61">CNDI Templates</h1>
