@@ -9,14 +9,16 @@ export default function TemplateCardList() {
       id="w-node-b0548776-59a8-aa1e-3e62-14c7df73e228-a5d56d94"
       class="w-layout-layout quick-stack-11 wf-layout-layout"
     >
-      {KNOWN_TEMPLATES.map(({ name, title, type }, idx) => (
-        <SingleTemplateCard
-          name={name}
-          title={title}
-          type={type}
-          key={`${name}-${idx}`}
-        />
-      ))}
+      {KNOWN_TEMPLATES.filter(({ ga }) => ga).map(
+        ({ name, title, type }, idx) => (
+          <SingleTemplateCard
+            name={name}
+            title={title}
+            type={type}
+            key={`${name}-${idx}`}
+          />
+        )
+      )}
     </div>
   );
 }
