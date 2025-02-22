@@ -1,11 +1,11 @@
 import { PageProps } from "$fresh/server.ts";
-import AirflowWhoAndWhatForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
 import OfficialDeploymentMethod from "components/OfficialDeploymentMethod.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
+import AirflowWhatAndWhoForSection from "components/sections/airflow/WhatAndWhoForSection.tsx";
 
 export default function TemplateAirflowPage(props: PageProps) {
   const templateName = "airflow";
@@ -43,7 +43,7 @@ export default function TemplateAirflowPage(props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <AirflowWhoAndWhatForSection />
+      <AirflowWhatAndWhoForSection />
     </>
   );
 }

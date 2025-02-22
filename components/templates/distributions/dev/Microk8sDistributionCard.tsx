@@ -5,11 +5,11 @@ export default function Microk8sDistributionCard(
   return (
     <div
       id="w-node-aaae3e92-3ac1-84e3-2758-1184f2a6e37d-7050ee97"
-      class="w-layout-layout quick-stack-15 wf-layout-layout"
+      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-15 wf-layout-layout"
     >
       <div
         id="w-node-aaae3e92-3ac1-84e3-2758-1184f2a6e37f-7050ee97"
-        class="w-layout-cell cell-17"
+        class="flex-col justify-start items-start flex cell-17"
       >
         <div class="div-block-97">
           <h1 class="heading-90">Dev</h1>

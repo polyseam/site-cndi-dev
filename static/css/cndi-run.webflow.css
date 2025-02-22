@@ -1,6 +1,5 @@
 :root {
   --dark-purp: #180f1e;
-  --mid_purp: #251f2a00;
   --primary-purp: #7c6991;
   --button_hover: #7c69913b;
   --softgrey: #333;
@@ -15,21 +14,6 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-}
-
-.w-layout-layout {
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
-  grid-auto-columns: 1fr;
-  justify-content: center;
-  padding: 20px;
-}
-
-.w-layout-cell {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
 }
 
 .w-embed-youtubevideo {
@@ -1045,7 +1029,7 @@ a:hover {
 
 .home_section_what_is_cndi {
   background-color: #251f2a00;
-  background-image: linear-gradient(180deg, var(--mid_purp), #5a4a643d);
+  background-image: linear-gradient(180deg, var(--transparent), #5a4a643d);
   height: auto;
   padding-top: 100px;
 }
@@ -1090,7 +1074,7 @@ a:hover {
 }
 
 .section_connect_with_us {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   height: auto;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -1131,14 +1115,14 @@ a:hover {
 }
 
 .section_cndi_cards {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   padding-top: 0;
   padding-bottom: 100px;
 }
 
 .cndi_card_cell {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   text-align: left;
   border: 1px gray;
   border-radius: 10px;
@@ -1213,7 +1197,7 @@ a:hover {
 }
 
 .link_target {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   border: 1px solid #0000;
   border-radius: 5px;
   justify-content: center;
@@ -1332,7 +1316,7 @@ a:hover {
 
 .section-28 {
   background-color: #251f2a00;
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
   height: auto;
   padding-top: 0;
   padding-bottom: 0;
@@ -1561,8 +1545,8 @@ a:hover {
 }
 
 .section_whatis_airflow_aws {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .heading-62 {
@@ -1594,7 +1578,7 @@ a:hover {
 
 .template_card {
   border: 1px solid var(--stroke);
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -1624,8 +1608,8 @@ a:hover {
 }
 
 .section-31 {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
   padding-top: 100px;
   padding-bottom: 0;
 }
@@ -1688,7 +1672,7 @@ a:hover {
 }
 
 .home_section_features {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   background-image: linear-gradient(#2d2231, #0000);
   padding-top: 100px;
   padding-bottom: 100px;
@@ -1828,7 +1812,7 @@ a:hover {
 }
 
 .section_cards_airflow_gcp {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .tab_container_content {
@@ -1964,7 +1948,7 @@ a:hover {
 }
 
 .section_whatis_airflow_other {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
 }
 
 .paragraph-36 {
@@ -1988,7 +1972,7 @@ a:hover {
 }
 
 .section_3_points {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -2005,7 +1989,7 @@ a:hover {
 }
 
 .section_cloudservice_postgres {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .hero_section_kafka_aws {
@@ -2014,7 +1998,7 @@ a:hover {
 }
 
 .section_whatis_kafka {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
 }
 
 .hero_section_kafka_gcp {
@@ -2061,7 +2045,7 @@ a:hover {
 }
 
 .home_section_demovid {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   background-image: linear-gradient(#271c2e, #fff0);
   padding-top: 0;
   padding-bottom: 0;
@@ -2131,7 +2115,7 @@ a:hover {
 
 .section_whatis {
   background-color: var(--dark-purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .hero_section_templates {
@@ -2143,23 +2127,6 @@ a:hover {
   justify-content: center;
   margin-top: 20px;
   display: flex;
-}
-
-.div-block-81-copy {
-  background-color: var(--stroke);
-  width: 940px;
-  height: 1px;
-  margin-top: 10px;
-}
-
-.heading-80 {
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.container-1471 {
-  padding-top: 100px;
-  padding-bottom: 0;
 }
 
 .target_div {
@@ -2194,24 +2161,6 @@ a:hover {
   display: flex;
 }
 
-.link-block-8 {
-  border: 1px solid #fff;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  margin-left: 15px;
-  margin-right: 15px;
-  text-decoration: none;
-  transition: all .35s;
-  display: flex;
-}
-
-.link-block-8:hover {
-  background-color: var(--button_hover);
-  box-shadow: 0 0 6px 0 var(--primary-purp);
-}
 
 .container-1472 {
   flex-direction: column;
@@ -2230,7 +2179,7 @@ a:hover {
 }
 
 .templatecard {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   border: 1px #000;
   border-radius: 10px;
   align-items: flex-start;
@@ -2362,8 +2311,8 @@ a:hover {
 }
 
 .section_whatis_airflow {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .container-1474 {
@@ -2375,7 +2324,7 @@ a:hover {
 
 .solutions_section_hero {
   background-color: #f5f7fa00;
-  background-image: linear-gradient(to bottom, var(--dark-purp) 62%, var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp) 62%, var(--transparent));
   border: 1px #000;
   padding: 100px 30px 0;
 }
@@ -2431,7 +2380,7 @@ a:hover {
 }
 
 .solutions_section_cards {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -2536,12 +2485,12 @@ a:hover {
 }
 
 .section_template_cards {
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .solutions_whatis_section {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   display: block;
 }
 
@@ -2582,8 +2531,8 @@ a:hover {
 }
 
 .hero-heading-right {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   border: 1px #000;
   padding: 80px 30px;
   position: static;
@@ -2659,7 +2608,7 @@ a:hover {
 }
 
 .section-39 {
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .container-1479 {
@@ -2675,10 +2624,6 @@ a:hover {
   max-width: 1080px;
   padding-top: 100px;
   padding-bottom: 0;
-}
-
-.section_cloudservice_airflow, .template_section_choose {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
 }
 
 .quick-stack-11 {
@@ -3011,7 +2956,7 @@ a:hover {
 }
 
 .section_3_points_postgres {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3042,7 +2987,7 @@ a:hover {
 
 .solutions_hero_section_sre {
   background-color: #f5f7fa00;
-  background-image: linear-gradient(to bottom, var(--dark-purp) 62%, var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp) 62%, var(--transparent));
   border: 1px #000;
   padding: 100px 30px 0;
 }
@@ -3073,11 +3018,11 @@ a:hover {
 }
 
 .section_localdev_card {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_3_points_kafka {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3090,7 +3035,7 @@ a:hover {
 }
 
 .section_3_points_mongodb {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3103,7 +3048,7 @@ a:hover {
 }
 
 .section_3_points_mysql {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3116,7 +3061,7 @@ a:hover {
 }
 
 .section_3_points_neo4j {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3129,13 +3074,13 @@ a:hover {
 }
 
 .section-40 {
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
 .section-33_community {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 101px;
   padding-bottom: 101px;
 }
@@ -3147,7 +3092,7 @@ a:hover {
 }
 
 .collection-item-2 {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   border-radius: 9px;
   justify-content: center;
   align-items: center;
@@ -3675,7 +3620,7 @@ a:hover {
 }
 
 .solutions_whatis_section_dataops {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
 }
 
 .link-7, .link-8, .link-9, .link-10, .link-11, .link-12 {
@@ -3746,7 +3691,7 @@ a:hover {
 }
 
 .section_3points_airflow {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3768,18 +3713,18 @@ a:hover {
 
 .section_whatis_postgres {
   background-color: var(--dark-purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .section_3_points_airflow-copy, .section_3points_postgres {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .home_section_cndi_cards {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(180deg, var(--mid_purp), #2c2231);
+  background-color: var(--transparent);
+  background-image: linear-gradient(180deg, var(--transparent), #2c2231);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -3829,8 +3774,8 @@ a:hover {
 }
 
 .section-42 {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -3901,8 +3846,8 @@ a:hover {
 }
 
 .section-43 {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .paragraph-42 {
@@ -3967,34 +3912,34 @@ a:hover {
 }
 
 .section_cloudservice_hop {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_whatis_hop {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .section_3points_hop {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .section_cloudservice_mysql {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_3points_airflow-copy {
-  background-color: var(--mid_purp);
-  background-color: var(--mid_purp);
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
+  background-color: var(--transparent);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .section_3points_mysql {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -4005,8 +3950,8 @@ a:hover {
 }
 
 .section_whatis_mysql {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .hero_section_kafka_aws-copy {
@@ -4015,16 +3960,16 @@ a:hover {
 }
 
 .section_whatis_neo4j {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .section_cloudservice_neo4j {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_3points_neo4j {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -4035,26 +3980,26 @@ a:hover {
 }
 
 .section_cloudservice_airflow-copy {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_whatis_mongodb {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .section_cloudservice_airflow-copy {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_cloudservice_mongodb {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_3points_mongodb {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -4065,7 +4010,7 @@ a:hover {
 }
 
 .section_cloudservice_postgres-copy {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .link-13 {
@@ -4073,7 +4018,7 @@ a:hover {
 }
 
 .cell-15-copy {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   border: 1px #000;
   border-radius: 10px;
   align-items: flex-start;
@@ -4082,19 +4027,19 @@ a:hover {
 }
 
 .solutions_section_cards_rd {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .solutions_whatis_section_opcost {
-  background-color: var(--mid_purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-color: var(--transparent);
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
   display: none;
 }
 
 .headings_section_pe {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 100px;
   padding-bottom: 0;
 }
@@ -4107,11 +4052,11 @@ a:hover {
 }
 
 .section-44 {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_cloudservice_airflow_midpurp {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
 }
 
 .templates_cell_hop {
@@ -4162,22 +4107,22 @@ a:hover {
 }
 
 ._2nd_section_ms_sql {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_3points_ms_sql {
-  background-color: var(--mid_purp);
+  background-color: var(--transparent);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .section_cloudservice_m {
-  background-image: linear-gradient(to bottom, var(--dark-purp), var(--mid_purp));
+  background-image: linear-gradient(to bottom, var(--dark-purp), var(--transparent));
 }
 
 .section_whatis_ms_sql, .section_whatis-copy {
   background-color: var(--dark-purp);
-  background-image: linear-gradient(to bottom, var(--mid_purp), var(--dark-purp));
+  background-image: linear-gradient(to bottom, var(--transparent), var(--dark-purp));
 }
 
 .heading-81-copy {
@@ -4296,13 +4241,6 @@ a:hover {
   list-style-type: disc;
 }
 
-.quick-stack-19 {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  border: 0 solid #654885;
-  border-radius: 11px;
-}
-
 .top-left-cell-self-host-grid {
   background-color: #352a3d;
   border: 2px solid #483a55;
@@ -4313,12 +4251,6 @@ a:hover {
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 25px;
-}
-
-.text-block-76 {
-  color: #f1f1f1;
-  font-size: 28px;
-  font-weight: 700;
 }
 
 .top-mid-cell-self-host-grid {
@@ -4346,12 +4278,6 @@ a:hover {
   padding-left: 25px;
 }
 
-.text-block-76-copy {
-  color: #f1f1f1;
-  font-size: 18px;
-  font-weight: 400;
-}
-
 .paragraph-44 {
   color: #bfbfbf;
   text-align: center;
@@ -4361,20 +4287,16 @@ a:hover {
   font-size: 16px;
 }
 
-.heading-102 {
-  text-align: center;
-}
-
 .paragraph-45 {
   color: #bfbfbf;
 }
 
-.paragraph-46, .paragraph-47, .paragraph-48 {
+.paragraph-46, .paragraph-48 {
   color: #bfbfbf;
   font-size: 16px;
 }
 
-.cell-41, .cell-42, .cell-43, .cell-44 {
+.cell-41, .cell-42 {
   justify-content: center;
   align-items: flex-start;
 }
@@ -4625,7 +4547,7 @@ a:hover {
   }
 
   .section-31 {
-    background-color: var(--mid_purp);
+    background-color: var(--transparent);
   }
 
   .section-33 {
@@ -4663,9 +4585,6 @@ a:hover {
     grid-column-gap: 38px;
   }
 
-  .container-1471 {
-    padding-bottom: 0;
-  }
 
   .container-1472 {
     background-image: none;
@@ -4694,7 +4613,7 @@ a:hover {
   }
 
   .solutions_whatis_section {
-    background-color: var(--mid_purp);
+    background-color: var(--transparent);
   }
 
   .section-39 {
@@ -4783,7 +4702,7 @@ a:hover {
   }
 
   .solutions_whatis_section_dataops {
-    background-color: var(--mid_purp);
+    background-color: var(--transparent);
   }
 
   .text-block-74 {
@@ -4804,7 +4723,7 @@ a:hover {
   }
 
   .solutions_whatis_section_opcost {
-    background-color: var(--mid_purp);
+    background-color: var(--transparent);
   }
 
   .templates_cell_hop {
@@ -5320,12 +5239,6 @@ a:hover {
     width: 400px;
   }
 
-  .container-1471 {
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-  }
-
   .div-block-85 {
     margin-left: auto;
     margin-right: auto;
@@ -5795,10 +5708,6 @@ a:hover {
     max-width: 70%;
   }
 
-  .heading-80 {
-    padding-left: 41px;
-    padding-right: 41px;
-  }
 
   .div-block-85 {
     grid-column-gap: 16px;
@@ -6396,10 +6305,6 @@ a:hover {
     line-height: 1.25;
   }
 
-  .container-1471 {
-    padding-top: 60px;
-  }
-
   .container-1473 {
     padding-left: 20px;
     padding-right: 20px;
@@ -6690,11 +6595,6 @@ a:hover {
     text-align: left;
   }
 
-  .heading-102 {
-    text-align: left;
-    padding-left: 59px;
-  }
-
   .cell-41 {
     justify-content: center;
     align-items: center;
@@ -6713,7 +6613,7 @@ a:hover {
     height: 40px;
   }
 
-  .cell-53, .cell-54 {
+  .cell-54 {
     justify-content: center;
     align-items: center;
   }
@@ -6728,10 +6628,6 @@ a:hover {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-#w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71f9fe-f6848bac {
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr;
-}
 
 #w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa17-f6848bac {
   grid-template-rows: auto auto auto auto auto auto auto auto;

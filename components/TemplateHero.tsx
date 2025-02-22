@@ -40,11 +40,11 @@ export default function TemplateHero(props: Props) {
   return (
     <div
       id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd4-00a367a8"
-      class="w-layout-layout quick-stack-6 wf-layout-layout"
+      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-6 wf-layout-layout"
     >
       <div
         id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd5-00a367a8"
-        class="w-layout-cell cell-8"
+        class="flex-col justify-start items-start flex cell-8"
       >
         {heading}
         {subheading}
@@ -53,7 +53,7 @@ export default function TemplateHero(props: Props) {
       </div>
       <div
         id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852ace1-00a367a8"
-        class="w-layout-cell cell-4"
+        class="flex-col justify-start items-start flex cell-4"
       >
         <img
           src={props.heroImgSrc}

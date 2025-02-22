@@ -77,7 +77,7 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
 
       <div className="py-8" />
-      <div class="w-container">
+      <div class="mx-auto max-w-screen-lg">
         <div class="div-block-62">
           <div class="div-block-61">
             <div class="text-block-44">

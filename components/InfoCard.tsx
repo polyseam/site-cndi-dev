@@ -13,7 +13,7 @@ export default function InfoCard(props: Props) {
   const { children, heading, cta } = props;
 
   return (
-    <div class="w-layout-cell templates_cell">
+    <div class="flex-col justify-start items-start flex templates_cell">
       <h1 class="heading-63">{heading}</h1>
       <p class="paragraph-28">{children}</p>
       {cta
@@ -21,7 +21,7 @@ export default function InfoCard(props: Props) {
           <a
             href={cta.link}
             target="_blank"
-            class="link_block_view_project w-inline-block"
+            class="link_block_view_project max-w-full inline-block"
           >
             <div class="text-block-73">{cta.text}</div>
             <img
@@ -33,7 +33,7 @@ export default function InfoCard(props: Props) {
             />
           </a>
         )
-        : <div class="link_block_view_project w-inline-block" />}
+        : <div class="link_block_view_project max-w-full inline-block" />}
     </div>
   );
 }

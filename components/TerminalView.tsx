@@ -1,13 +1,23 @@
+const GreenCircle = () => (
+  <div class={`bg-[#009942] w-[15px] h-[15px] ml-0 mr-[5px] rounded-full`}>
+  </div>
+);
+const YellowCircle = () => (
+  <div class={`bg-[#b1a800] w-[15px] h-[15px] ml-0 mr-[5px] rounded-full`}>
+  </div>
+);
+const RedCircle = () => (
+  <div class={`bg-[#970003] w-[15px] h-[15px] ml-0 mr-[5px] rounded-full`}>
+  </div>
+);
+
 export default function TerminalView({ src }: { src: string }) {
   return (
-    <div
-      id="w-node-ce3dd129-1223-04ec-e0e7-fd45f6fec78a-f6848bac"
-      class="div-block-99"
-    >
-      <div class="div-block-101">
-        <div class="div-block-100"></div>
-        <div class="div-block-100-copy"></div>
-        <div class="x"></div>
+    <div class="border bg-[#161616] rounded-md border-[#ffffff24] flex flex-col">
+      <div class="flex mt-4 mb-0 mx-4">
+        <GreenCircle />
+        <YellowCircle />
+        <RedCircle />
       </div>
       <img
         src={src}

@@ -1,0 +1,17 @@
+import { ComponentChild } from "preact";
+
+type Props = {
+  children: [ComponentChild, ComponentChild];
+};
+
+export default function WhatAndWhoForSection({ children }: Props) {
+  return (
+    <section>
+      <div class="mx-auto max-w-screen-lg p-16">
+        <div class="grid grid-cols lg:grid-cols-2 gap-5">
+          {children}
+        </div>
+      </div>
+    </section>
+  );
+}

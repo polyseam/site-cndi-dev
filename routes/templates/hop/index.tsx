@@ -1,5 +1,5 @@
 import { PageProps } from "$fresh/server.ts";
-import HopWhoAndWhatForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
+import HopWhatAndWhoForSection from "components/sections/hop/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
@@ -34,7 +34,7 @@ export default function TemplateHopPage(_props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <HopWhoAndWhatForSection />
+      <HopWhatAndWhoForSection />
     </>
   );
 }

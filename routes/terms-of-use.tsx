@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div class="container-1264 w-container">
+    <div class="container-1264 mx-auto max-w-screen-lg">
       <p class="paragraph-26">
         <span>
           <strong class="bold-text-5">

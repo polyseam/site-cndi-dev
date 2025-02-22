@@ -36,14 +36,14 @@ export default function TemplatesPage(props: PageProps) {
       </Head>
       <div>
         <section class="section-29">
-          <div class="w-layout-blockcontainer container-14691 w-container">
+          <div class="w-layout-blockcontainer container-14691 mx-auto max-w-screen-lg">
             <div
               id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dc-a5d56d94"
-              class="w-layout-layout wf-layout-layout"
+              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 wf-layout-layout"
             >
               <div
                 id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dd-a5d56d94"
-                class="w-layout-cell cell-20"
+                class="flex-col justify-start items-start flex cell-20"
               >
                 <h1 class="heading-59">
                   CNDI Deployment
@@ -57,7 +57,7 @@ export default function TemplatesPage(props: PageProps) {
               </div>
               <div
                 id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0de-a5d56d94"
-                class="w-layout-cell cell-21"
+                class="flex-col justify-start items-start flex cell-21"
               >
                 <div class="cli_gif_templates">
                   <div class="div-block-101">
@@ -78,7 +78,7 @@ export default function TemplatesPage(props: PageProps) {
           </div>
         </section>
         <section class="section-28">
-          <div class="w-layout-blockcontainer container-1458 w-container">
+          <div class="w-layout-blockcontainer container-1458 mx-auto max-w-screen-lg">
             <h1 class="heading-60">What are CNDI Deployment Templates?</h1>
             <div class="text-block-57">
               CNDI Templates are fill-in-the-blanks style blueprints that define
@@ -103,7 +103,7 @@ export default function TemplatesPage(props: PageProps) {
         </section>
         <TemplateCardListSection pageVersion={pageVersion} url={props.url} />
         <section id="supported-deployments" class="supported-deployments p-5">
-          <div class="w-layout-blockcontainer container-14698 w-container">
+          <div class="w-layout-blockcontainer container-14698 mx-auto max-w-screen-lg">
             <h1 class="heading-101">Supported Deployment Targets</h1>
             <p class="paragraph-43">
               CNDI supports cloud deployments to all three major vendors - AWS,
@@ -116,11 +116,11 @@ export default function TemplatesPage(props: PageProps) {
             </p>
             <div
               id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d445-a5d56d94"
-              class="w-layout-layout quick-stack-18 wf-layout-layout"
+              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-18 wf-layout-layout"
             >
               <div
                 id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d446-a5d56d94"
-                class="w-layout-cell cell-36"
+                class="flex-col justify-start items-start flex cell-36"
               >
                 <img
                   src="/images/provider-icons/aws.png"
@@ -133,13 +133,13 @@ export default function TemplatesPage(props: PageProps) {
               </div>
               <div
                 id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d447-a5d56d94"
-                class="w-layout-cell cell-35"
+                class="flex-col justify-start items-start flex cell-35"
               >
                 <div class="div-block-104"></div>
               </div>
               <div
                 id="w-node-_5148367d-70d4-4857-3696-788abd2ee4a2-a5d56d94"
-                class="w-layout-cell cell-37"
+                class="flex-col justify-start items-start flex cell-37"
               >
                 <img
                   src="/images/provider-icons/gcp.webp"
@@ -150,13 +150,13 @@ export default function TemplatesPage(props: PageProps) {
               </div>
               <div
                 id="w-node-_43b19b2c-b658-382a-437d-1eab77f93ac3-a5d56d94"
-                class="w-layout-cell cell-35"
+                class="flex-col justify-start items-start flex cell-35"
               >
                 <div class="div-block-104"></div>
               </div>
               <div
                 id="w-node-d4a437b5-1f25-2513-2d78-62d1f3ea7136-a5d56d94"
-                class="w-layout-cell cell-38"
+                class="flex-col justify-start items-start flex cell-38"
               >
                 <img
                   src="/images/provider-icons/azure.png"
@@ -169,13 +169,13 @@ export default function TemplatesPage(props: PageProps) {
               </div>
               <div
                 id="w-node-e40b6f01-39e7-2733-45df-9e36d0b94b3f-a5d56d94"
-                class="w-layout-cell cell-39"
+                class="flex-col justify-start items-start flex cell-39"
               >
                 <div class="div-block-104"></div>
               </div>
               <div
                 id="w-node-_60ee67e0-6689-2177-34a7-820bcc3eff8b-a5d56d94"
-                class="w-layout-cell cell-40"
+                class="flex-col justify-start items-start flex cell-40"
               >
                 <img
                   src="/images/provider-icons/dev.png"

@@ -5,11 +5,11 @@ export default function AKSDistributionCard({ title }: Props) {
   return (
     <div
       id="w-node-ce65e8b9-bfe9-719f-71cd-f780a1d9c5e8-caa312c4"
-      class="w-layout-layout quick-stack-12 wf-layout-layout"
+      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-12 wf-layout-layout"
     >
       <div
         id="w-node-ce65e8b9-bfe9-719f-71cd-f780a1d9c5ea-caa312c4"
-        class="w-layout-cell cell_ec2-eks"
+        class="flex-col justify-start items-start flex cell_ec2-eks"
       >
         <h1 class="heading-74">AKS (Azure Kubernetes Service)</h1>
         <p class="paragraph-34">

@@ -10,9 +10,7 @@ export default function WhySelfHostCopy() {
           better option for your needs.
         </p>
       </div>
-      <div
-        class="grid grid-cols-[1fr_1fr] grid-rows-[auto_auto_auto] gap-y-8 gap-x-5 auto-cols-[1fr] justify-center p-5"
-      >
+      <div class="grid grid-cols-[1fr_1fr] grid-rows-[auto_auto_auto] gap-y-8 gap-x-5 auto-cols-[1fr] justify-center p-5">
         <div class="flex-col justify-start items-start flex">
           <h1>
             Managed <br />

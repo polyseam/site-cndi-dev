@@ -8,11 +8,8 @@ type Props = {
 
 export default function TemplateCardListSection({ pageVersion, url }: Props) {
   return (
-    <section id="section_templates_cards" class="section_template_cards">
-      <div
-        id="cndi-templates"
-        class="w-layout-blockcontainer container-1472 mx-auto max-w-screen-lg"
-      >
+    <section class="m-10 p-10">
+      <div class="mx-auto max-w-screen-lg">
         <div class="div-block-86">
           <h1 class="heading-61">CNDI Templates</h1>
           <div class="text-block-62">

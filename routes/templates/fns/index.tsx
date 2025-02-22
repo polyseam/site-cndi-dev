@@ -1,11 +1,10 @@
 import { PageProps } from "$fresh/server.ts";
-import FnsWhoAndWhatForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
+import FnsWhatAndWhoForSection from "components/sections/fns/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
 import TemplateHero, { Heading, Subheading } from "components/TemplateHero.tsx";
 import TemplateHead from "components/TemplateHead.tsx";
-
 export default function TemplateFnsPage(_props: PageProps) {
   const templateName = "fns";
   const title = "Functions";
@@ -30,7 +29,7 @@ export default function TemplateFnsPage(_props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <FnsWhoAndWhatForSection />
+      <FnsWhatAndWhoForSection />
     </>
   );
 }

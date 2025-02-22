@@ -18,7 +18,7 @@ export default function WhatIsCNDISection() {
           <div class="div-block-91">
             <a
               href="/templates#supported-deployments"
-              class="link-block-15 w-inline-block"
+              class="link-block-15 max-w-full inline-block"
             >
               <img
                 src="/images/provider-icons/aws.png"
@@ -34,7 +34,7 @@ export default function WhatIsCNDISection() {
             <a
               href="/templates#supported-deployments"
               target="_blank"
-              class="link-block-15 w-inline-block"
+              class="link-block-15 max-w-full inline-block"
             >
               <img
                 src="/images/provider-icons/gcp.webp"
@@ -48,7 +48,7 @@ export default function WhatIsCNDISection() {
             <a
               href="/templates#supported-deployments"
               target="_blank"
-              class="link-block-15 w-inline-block"
+              class="link-block-15 max-w-full inline-block"
             >
               <img
                 src="/images/provider-icons/azure.png"
@@ -63,7 +63,7 @@ export default function WhatIsCNDISection() {
           <div class="div-block-91">
             <a
               href="/templates#supported-deployments"
-              class="link-block-15 w-inline-block"
+              class="link-block-15 max-w-full inline-block"
             >
               <img
                 src="/images/provider-icons/dev.png"

@@ -13,10 +13,13 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
   return (
     <div
       id="w-node-d10f1168-2d44-eee5-cfdd-68bde82636ba-a5d56d94"
-      class="w-layout-cell templatecard"
+      class="flex flex-col justify-start items-start templatecard h-[300px]"
     >
-      <div class="div-block-87">
-        <a href={`/templates/${name}`} class="link-block-9 w-inline-block">
+      <div class="div-block-87 h-[160px]">
+        <a
+          href={`/templates/${name}`}
+          class="link-block-9 max-w-full inline-block"
+        >
           <img
             src={`/images/template-icons/${name}/logo.png`}
             loading="lazy"
@@ -35,20 +38,21 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
           <div class="text-block-66">{type || "Miscellaneous"}</div>
         </div>
       </div>
-      <div class="div-block-96">
+      <div class="div-block-96 h-[140px]">
         <div class="text-block-69">Choose your Deployment Target:</div>
+
         <div>
           <div
             id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fe7-a5d56d94"
-            class="w-layout-layout template_deploy_targets wf-layout-layout"
+            class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 template_deploy_targets wf-layout-layout"
           >
             <div
               id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fe8-a5d56d94"
-              class="w-layout-cell cell_target"
+              class="flex-col justify-start items-start flex cell_target"
             >
               <a
                 href={`templates/${name}/aws`}
-                class="link_target w-inline-block"
+                class="link_target max-w-full inline-block"
               >
                 <img
                   src="/images/provider-icons/aws.png"
@@ -63,11 +67,11 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
             </div>
             <div
               id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16feb-a5d56d94"
-              class="w-layout-cell cell_target"
+              class="flex-col justify-start items-start flex cell_target"
             >
               <a
                 href={`templates/${name}/gcp`}
-                class="link_target w-inline-block"
+                class="link_target max-w-full inline-block"
               >
                 <img
                   src="/images/provider-icons/gcp.webp"
@@ -79,11 +83,11 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
             </div>
             <div
               id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fee-a5d56d94"
-              class="w-layout-cell cell_target"
+              class="flex-col justify-start items-start flex cell_target"
             >
               <a
                 href={`templates/${name}/azure`}
-                class="link_target w-inline-block"
+                class="link_target max-w-full inline-block"
               >
                 <img
                   src="/images/provider-icons/azure.png"
@@ -97,9 +101,12 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
             </div>
             <div
               id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16ff1-a5d56d94"
-              class="w-layout-cell cell_target"
+              class="flex-col justify-start items-start flex cell_target"
             >
-              <a href={`templates/${name}`} class="link_target w-inline-block">
+              <a
+                href={`templates/${name}`}
+                class="link_target max-w-full inline-block"
+              >
                 <div class="text-block-58">+</div>
               </a>
             </div>

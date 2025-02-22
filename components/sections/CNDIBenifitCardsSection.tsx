@@ -1,7 +1,7 @@
 import { ComponentChild } from "preact";
 
 const Title = ({ children }: { children: ComponentChild }) => (
-  <div class="homecard_top">
+  <div class="h-[128px] p-5 rounded rounded-t-lg text-2xl">
     <div>
       <h1 class="cndi_card_heading">{children}</h1>
       <div class="div-block-84"></div>
@@ -10,8 +10,8 @@ const Title = ({ children }: { children: ComponentChild }) => (
 );
 
 const Description = ({ children }: { children: ComponentChild }) => (
-  <div class="home_cards_div">
-    <div class="cndi_card_text">{children}</div>
+  <div class="bg-[#322b38] w-auto h-[128px] p-5 text-bff rounded-b-lg text-base">
+    <div>{children}</div>
   </div>
 );
 
@@ -20,10 +20,7 @@ type BenefitCardProps = {
 };
 
 const BenefitCard = (props: BenefitCardProps) => (
-  <div
-    id="w-node-d24c5821-8291-5d15-b148-5b87d5c1b58e-f6848bac"
-    class="flex-col justify-start items-start flex cndi_card_cell"
-  >
+  <div class="h-[256px] rounded-lg shadow-lg border border-[#322b38]">
     {props.children[0]}
     {props.children[1]}
   </div>
@@ -32,12 +29,9 @@ const BenefitCard = (props: BenefitCardProps) => (
 export default function UseInteractiveCNDITemplatesSection() {
   // More than 6 cards is noise
   return (
-    <section class="home_section_cndi_cards">
-      <div class="w-layout-blockcontainer container-1474 mx-auto max-w-screen-lg">
-        <div
-          id="w-node-_8da0fe8c-da81-a70f-efc5-7077e1b079f9-f6848bac"
-          class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-16 wf-layout-layout"
-        >
+    <section>
+      <div class="flex-col items-center mx-auto max-w-screen-lg">
+        <div class="p-5 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around">
           <BenefitCard>
             <Title>Infrastructure as Code and GitOps</Title>
             <Description>
