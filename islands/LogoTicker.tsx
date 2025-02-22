@@ -72,9 +72,11 @@ export default function LogoTicker(props: LogoTickerProps) {
   const duration = (containerWidth / 2) / speed;
 
   return (
-    <div className="w-full overflow-hidden bg-background carousel-container">
+    <div
+      ref={containerRef}
+      className="w-full overflow-hidden bg-background carousel-container"
+    >
       <div
-        ref={containerRef}
         className="flex items-center"
         style={{
           animation: `scroll${
