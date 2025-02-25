@@ -98,12 +98,12 @@
   }
 }
 
-body {
+/* body {
   color: #333;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 20px;
-}
+} */
 
 h1 {
   color: #fff;
@@ -1037,6 +1037,7 @@ a:hover {
 .heading-27 {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 36px;
   font-size: 36px;
   box-shadow: 0 2px 5px #0003;
 }
@@ -2329,7 +2330,7 @@ a:hover {
   padding: 100px 30px 0;
 }
 
-.container {
+/* .container {
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -2337,7 +2338,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-}
+} */
 
 .hero-wrapper {
   justify-content: space-between;
@@ -5248,10 +5249,10 @@ a:hover {
     padding-left: 50px;
     padding-right: 50px;
   }
-
+/* 
   .container {
     max-width: 728px;
-  }
+  } */
 
   .hero-wrapper {
     flex-direction: column;
@@ -7938,6 +7939,7 @@ a:hover {
   }
 }
 
+/* no weird void column shit here */
 @media screen and (max-width: 991px) {
   #w-node-_278051a2-1495-6037-4a17-b5871d195bcd-f6848bac {
     grid-template-rows: auto;

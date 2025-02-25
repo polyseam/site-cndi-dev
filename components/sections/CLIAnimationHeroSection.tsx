@@ -1,4 +1,5 @@
 import TerminalView from "components/TerminalView.tsx";
+import { StandardSection } from "components/Section.tsx";
 
 const HeroCopy = () => (
   <div class="flex flex-col mx-10 text-bff items-center lg:items-start">
@@ -32,13 +33,13 @@ const Jumbotron = () => (
 
 export default function CLIAnimationHeroSection() {
   return (
-    <section class="h-auto py-10">
+    <StandardSection>
       <div class="block mx-auto max-w-screen-lg">
         <div class="flex flex-col justify-between lg:flex-row">
           <HeroCopy />
           <Jumbotron />
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

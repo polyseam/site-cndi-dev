@@ -11,7 +11,9 @@ const RedCircle = () => (
   </div>
 );
 
-export default function TerminalView({ src }: { src: string }) {
+export default function TerminalView(
+  { src, width = 490 }: { src: string; width?: number },
+) {
   return (
     <div class="border bg-[#161616] rounded-md border-[#ffffff24] flex flex-col">
       <div class="flex mt-4 mb-0 mx-4">
@@ -22,9 +24,8 @@ export default function TerminalView({ src }: { src: string }) {
       <img
         src={src}
         loading="lazy"
-        width="490"
-        alt="CNDI Git"
-        class="image-47"
+        width={width}
+        alt="animated interactive setup using 'cndi create' command"
       />
     </div>
   );

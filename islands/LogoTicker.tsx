@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { ComponentChildren, toChildArray } from "preact";
 
+import { FullWidthSection } from "components/Section.tsx";
+
 interface LogoTickerProps {
   children: ComponentChildren;
   speed?: number;
@@ -69,35 +71,37 @@ export default function LogoTicker(props: LogoTickerProps) {
     return () => observer.disconnect();
   }, []);
 
-  const duration = (containerWidth / 2) / speed;
+  const duration = containerWidth / 2 / speed;
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full overflow-hidden bg-background carousel-container"
-    >
+    <FullWidthSection>
       <div
-        className="flex items-center"
-        style={{
-          animation: `scroll${
-            direction === "left" ? "Left" : "Right"
-          } ${duration}s linear infinite`,
-          animationPlayState: isVisible ? "running" : "paused",
-          willChange: "transform",
-        }}
+        ref={containerRef}
+        className="flex overflow-hidden bg-midpurp items-center h-[15vh] sm:h-[20vh]"
       >
-        {children.map((child, index) => (
-          <div key={index} className="flex-shrink-0 mx-4">
-            {child}
-          </div>
-        ))}
-        {children.map((child, index) => (
-          <div key={`duplicate-${index}`} className="flex-shrink-0 mx-4">
-            {child}
-          </div>
-        ))}
+        <div
+          className="flex items-center"
+          style={{
+            animation: `scroll${
+              direction === "left" ? "Left" : "Right"
+            } ${duration}s linear infinite`,
+            animationPlayState: isVisible ? "running" : "paused",
+            willChange: "transform",
+          }}
+        >
+          {children.map((child, index) => (
+            <div key={index} className="flex-shrink-0">
+              {child}
+            </div>
+          ))}
+          {children.map((child, index) => (
+            <div key={`duplicate-${index}`} className="flex-shrink-0">
+              {child}
+            </div>
+          ))}
+        </div>
+        <style jsx>{keyframes}</style>
       </div>
-      <style jsx>{keyframes}</style>
-    </div>
+    </FullWidthSection>
   );
 }

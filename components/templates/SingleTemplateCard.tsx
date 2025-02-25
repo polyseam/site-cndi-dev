@@ -35,7 +35,9 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
               {title}
             </a>
           </h1>
-          <div class="text-block-66">{type || "Miscellaneous"}</div>
+          <div class="text-white text-xs rounded-md whitespace-nowrap border border-stroke flex-col flex-end justify-center my-0 py-1 px-2">
+            {type || "Miscellaneous"}
+          </div>
         </div>
       </div>
       <div class="div-block-96 h-[140px]">

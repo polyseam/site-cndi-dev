@@ -1,3 +1,4 @@
+import { StandardSection } from "components/Section.tsx";
 type TargetSquareProps = {
   provider: string;
   template: string;
@@ -29,12 +30,12 @@ export default function ChooseYourDeploymentTargetSection(props: {
 }) {
   const { templateName } = props;
   return (
-    <section>
+    <StandardSection>
       <div class="flex flex-col items-center pb-0 pt-16 mx-auto max-w-screen-lg">
         <h1 class="px-10 capitalize text-center">
           Choose your deployment Target Below
         </h1>
-        <div class="w-2/3 h-[1px] bg-[var(--stroke)] mt-[10px] mx-8" />
+        <div class="w-2/3 h-[1px] bg-stroke] mt-[10px] mx-8" />
         <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 pt-5">
           <TargetSquare provider="aws" template={templateName} />
           <TargetSquare provider="gcp" template={templateName} logoext="webp" />
@@ -42,6 +43,6 @@ export default function ChooseYourDeploymentTargetSection(props: {
           <TargetSquare provider="dev" template={templateName} />
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

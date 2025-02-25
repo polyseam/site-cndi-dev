@@ -14,10 +14,10 @@ export default function AKSDistributionCard({ title }: Props) {
         <h1 class="heading-74">AKS (Azure Kubernetes Service)</h1>
         <p class="paragraph-34">
           AKS is Microsoft Azure’s official managed Kubernetes Service. Running
-          your {title}{" "}
-          cluster on AKS enables deep integration with Active Directory. With
-          automation of control plane operations, upgrades, and patches AKS is
-          the most popular way to run Kubernetes on Azure.
+          your{" "}
+          {title}&nbsp; cluster on AKS enables deep integration with Active
+          Directory. With automation of control plane operations, upgrades, and
+          patches AKS is the most popular way to run Kubernetes on Azure.
         </p>
       </div>
     </div>

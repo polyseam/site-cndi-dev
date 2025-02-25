@@ -1,10 +1,11 @@
+import { StandardSection } from "components/Section.tsx";
 type ThreePointsProps = {
   statements: [string, string, string];
 };
 
 export default function ThreePoints(props: ThreePointsProps) {
   return (
-    <section class="section_3points_airflow">
+    <StandardSection>
       <div class="w-layout-blockcontainer container_3points mx-auto max-w-screen-lg">
         <div class="_3point_wrapper">
           {props.statements.map((statement, index) => (
@@ -20,6 +21,6 @@ export default function ThreePoints(props: ThreePointsProps) {
           ))}
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

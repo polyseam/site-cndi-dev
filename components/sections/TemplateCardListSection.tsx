@@ -1,3 +1,4 @@
+import { StandardSection } from "components/Section.tsx";
 import TemplateCardList from "components/templates/TemplateCardList.tsx";
 import LinkOut from "islands/LinkOut.tsx";
 
@@ -8,7 +9,7 @@ type Props = {
 
 export default function TemplateCardListSection({ pageVersion, url }: Props) {
   return (
-    <section class="m-10 p-10">
+    <StandardSection>
       <div class="mx-auto max-w-screen-lg">
         <div class="div-block-86">
           <h1 class="heading-61">CNDI Templates</h1>
@@ -30,6 +31,6 @@ export default function TemplateCardListSection({ pageVersion, url }: Props) {
         <div class="div-block-81"></div>
         <TemplateCardList />
       </div>
-    </section>
+    </StandardSection>
   );
 }

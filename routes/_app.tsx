@@ -56,7 +56,7 @@ export default function App({ Component, url }: PageProps) {
           )
           : <meta name="devmode"></meta>}
       </head>
-      <body class="body wf-17859gj wf-vl64f">
+      <body class="bg-darkpurp m-0 p-0 overflow-x-hidden">
         <Nav url={url} />
         <Component />
         <Footer url={url} />

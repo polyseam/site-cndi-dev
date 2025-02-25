@@ -1,5 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
+import { StandardSection } from "components/Section.tsx";
 import TemplateCardListSection from "components/sections/TemplateCardListSection.tsx";
 import { SitemapHints } from "../../Sitemap.ts";
 
@@ -35,7 +36,7 @@ export default function TemplatesPage(props: PageProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <div>
-        <section class="section-29">
+        <StandardSection>
           <div class="w-layout-blockcontainer container-14691 mx-auto max-w-screen-lg">
             <div
               id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dc-a5d56d94"
@@ -76,8 +77,8 @@ export default function TemplatesPage(props: PageProps) {
               </div>
             </div>
           </div>
-        </section>
-        <section class="section-28">
+        </StandardSection>
+        <StandardSection>
           <div class="w-layout-blockcontainer container-1458 mx-auto max-w-screen-lg">
             <h1 class="heading-60">What are CNDI Deployment Templates?</h1>
             <div class="text-block-57">
@@ -100,9 +101,9 @@ export default function TemplatesPage(props: PageProps) {
               class="image-48"
             />
           </div>
-        </section>
+        </StandardSection>
         <TemplateCardListSection pageVersion={pageVersion} url={props.url} />
-        <section id="supported-deployments" class="supported-deployments p-5">
+        <StandardSection>
           <div class="w-layout-blockcontainer container-14698 mx-auto max-w-screen-lg">
             <h1 class="heading-101">Supported Deployment Targets</h1>
             <p class="paragraph-43">
@@ -186,7 +187,7 @@ export default function TemplatesPage(props: PageProps) {
               </div>
             </div>
           </div>
-        </section>
+        </StandardSection>
       </div>
     </>
   );

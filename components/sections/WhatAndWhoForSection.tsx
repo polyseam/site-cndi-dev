@@ -1,3 +1,4 @@
+import { StandardSection } from "components/Section.tsx";
 import { ComponentChild } from "preact";
 
 type Props = {
@@ -6,12 +7,12 @@ type Props = {
 
 export default function WhatAndWhoForSection({ children }: Props) {
   return (
-    <section>
+    <StandardSection>
       <div class="mx-auto max-w-screen-lg p-16">
         <div class="grid grid-cols lg:grid-cols-2 gap-5">
           {children}
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

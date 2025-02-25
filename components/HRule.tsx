@@ -2,27 +2,6 @@ type Props = {
   topText: string;
 };
 
-// .div-block-80 {
-//     border: 1px none var(--stroke);
-//     border-radius: 5px;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: flex-start;
-//     margin-top: 0;
-//     padding: 0;
-//     display: flex;
-//   }
-
-// background-color: var(--stroke);
-// width: 1040px;
-// height: 1px;
-// margin-top: 10px;
-
-// border-radius: 5px;
-// margin-top: 0;
-// margin-bottom: 0;
-// padding: 5px 10px;
-
 export default function HRule(props: Props) {
   const { topText } = props;
 
@@ -41,7 +20,7 @@ export default function HRule(props: Props) {
             </div>
           </div>
         </div>
-        <div class="bg-[var(--stroke)] w-full h-px mt-2"></div>
+        <div class="bg-stroke w-full h-px mt-2"></div>
       </div>
     </>
   );

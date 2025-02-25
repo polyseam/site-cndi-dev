@@ -1,4 +1,5 @@
 import { ComponentChild } from "preact";
+import { StandardSection } from "components/Section.tsx";
 
 const Title = ({ children }: { children: ComponentChild }) => (
   <div class="h-[128px] p-5 rounded rounded-t-lg text-2xl">
@@ -29,7 +30,7 @@ const BenefitCard = (props: BenefitCardProps) => (
 export default function UseInteractiveCNDITemplatesSection() {
   // More than 6 cards is noise
   return (
-    <section>
+    <StandardSection>
       <div class="flex-col items-center mx-auto max-w-screen-lg">
         <div class="p-5 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around">
           <BenefitCard>
@@ -76,6 +77,6 @@ export default function UseInteractiveCNDITemplatesSection() {
           </BenefitCard>
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

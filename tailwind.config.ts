@@ -13,6 +13,7 @@ export default {
         midpurp: "#483a55",
         softgrey: "#333",
         bff: "#bfbfbf",
+        stroke: "#414141",
       },
       keyframes: {
         wiggle: {

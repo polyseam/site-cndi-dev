@@ -13,11 +13,12 @@ export default function EKSDistributionCard({ title }: Props) {
       >
         <h1 class="heading-74">EKS (Amazon Elastic Kubernetes Service)</h1>
         <p class="paragraph-34">
-          Simplify {title}{" "}
-          cluster management with a fully managed Kubernetes service that
-          reduces operational complexity and offers AWS-integrated security
-          features. EKS is the most popular way to run Kubernetes on AWS and it
-          takes care of control plane operations, upgrades, and patches.
+          Simplify{" "}
+          {title}&nbsp; cluster management with a fully managed Kubernetes
+          service that reduces operational complexity and offers AWS-integrated
+          security features. EKS is the most popular way to run Kubernetes on
+          AWS and it takes care of control plane operations, upgrades, and
+          patches.
         </p>
       </div>
     </div>

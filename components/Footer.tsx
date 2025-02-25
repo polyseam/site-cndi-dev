@@ -1,4 +1,5 @@
 import LinkOut from "islands/LinkOut.tsx";
+import { FullWidthSection } from "components/Section.tsx";
 
 type FooterProps = {
   url: URL;
@@ -9,7 +10,7 @@ export default function Footer(props: FooterProps) {
   const utm_source = props.url.toString();
   return (
     <>
-      <section class="grid grid-cols-1 my-12">
+      <FullWidthSection>
         <div class="w-full mx-auto relative">
           <div class="flex justify-between items-center flex-col sm:justify-around sm:flex-row">
             <div class="flex my-8">
@@ -115,7 +116,7 @@ export default function Footer(props: FooterProps) {
             Polyseam
           </a>
         </div>
-      </section>
+      </FullWidthSection>
     </>
   );
 }
