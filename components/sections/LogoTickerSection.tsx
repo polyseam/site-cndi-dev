@@ -74,7 +74,7 @@ export default function LogoTickerSection() {
             <img
               height="50"
               style={{ maxHeight: "50px" }}
-              class="logo-img"
+              class="max-w-none transition-opacity[.3s] hover:opacity-50 h-[40px]"
               src={`${logo.imgSrc}?height=50&width=100`}
               alt={logo.imgAlt}
             />

@@ -77,7 +77,7 @@ export default function LogoTicker(props: LogoTickerProps) {
     <FullWidthSection>
       <div
         ref={containerRef}
-        className="flex overflow-hidden bg-midpurp items-center h-[15vh] sm:h-[20vh]"
+        className="flex bg-midpurp items-center h-[15vh] sm:h-[20vh] overflow-hidden"
       >
         <div
           className="flex items-center"
