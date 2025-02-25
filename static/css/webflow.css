@@ -5,26 +5,6 @@
   font-style: normal;
 }
 
-/* * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-} */
-
-/* html {
-  height: 100%;
-} */
-
-/* body {
-  margin: 0;
-  min-height: 100%;
-  background-color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333;
-} */
-
 .w-button {
   display: inline-block;
   padding: 9px 15px;
@@ -124,74 +104,6 @@ input.w-button {
   }
 }
 
-/**
- * ## Note
- * Safari (on both iOS and OS X) does not handle viewport units (vh, vw) well.
- * For example percentage units do not work on descendants of elements that
- * have any dimensions expressed in viewport units. It also doesn’t handle them at
- * all in `calc()`.
- */
-
-/**
- * Wrapper around all lightbox elements
- *
- * 1. Since the lightbox can receive focus, IE also gives it an outline.
- * 2. Fixes flickering on Chrome when a transition is in progress
- *    underneath the lightbox.
- */
-
-/**
- * Neat trick to bind the rubberband effect to our canvas instead of the whole
- * document on iOS. It also prevents a bug that causes the document underneath to scroll.
- */
-
-/* .w-lightbox-content */
-
-/*
- * 1. Remove default margin set by user-agent on the <figure> element.
- */
-
-/**
- * IE adds image dimensions as width and height attributes on the IMG tag,
- * but we need both width and height to be set to auto to enable scaling.
- */
-
-/**
- * 1. Reset if style is set by user on "All Images"
- */
-
-/*
- * Without specifying the with and height inside the SVG, all versions of IE render the icon too small.
- * The bug does not seem to manifest itself if the elements are tall enough such as the above arrows.
- * (http://stackoverflow.com/questions/16092114/background-size-differs-in-internet-explorer)
- */
-
-/**
- * 1. All IE versions add extra space at the bottom without this.
- */
-
-/*
- * 1. We use content-box to avoid having to do `width: calc(10vh + 2vw)`
- *    which doesn’t work in Safari anyway.
- * 2. Chrome renders images pixelated when switching to GPU. Making sure
- *    the parent is also rendered on the GPU (by setting translate3d for
- *    example) fixes this behavior.
- */
-
-/*
- * Spinner
- *
- * Absolute pixel values are used to avoid rounding errors that would cause
- * the white spinning element to be misaligned with the track.
- */
-
-/*
- * Utility classes
- */
-
-@media (min-width: 768px) {
-  /* .w-lightbox-content */
-}
 
 @keyframes spin {
   0% {
