@@ -3,7 +3,7 @@ import TerminalView from "components/TerminalView.tsx";
 
 const UseTemplatesCopy = () => (
   <div class="flex flex-col items-center md:items-start">
-    <h1>Interactive Configuration</h1>
+    <div class="text-3xl">Interactive Configuration</div>
     <div class="text-bff text-base">
       Easily deploy any application in our Template library to a supported cloud
       destination in minutes. Templates are a CNDI concept, and they can be

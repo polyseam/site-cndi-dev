@@ -6,17 +6,20 @@ type ThreePointsProps = {
 export default function ThreePoints(props: ThreePointsProps) {
   return (
     <StandardSection>
-      <div class="w-layout-blockcontainer container_3points mx-auto max-w-screen-lg">
-        <div class="_3point_wrapper">
+      <div class="flex flex-col items-center justify-center">
+        <div>
           {props.statements.map((statement, index) => (
-            <div class="div-block-83" key={"threeStatementsI" + index}>
+            <div
+              class="flex justify-start items-center my-5"
+              key={"3p" + index}
+            >
               <img
                 src="/images/system/checkmark_circle.png"
                 loading="lazy"
                 width="33"
-                alt=""
+                alt="affirmative checkmark"
               />
-              <h1 class="heading-76">{statement}</h1>
+              <h1 class="ml-5 text-3xl">{statement}</h1>
             </div>
           ))}
         </div>

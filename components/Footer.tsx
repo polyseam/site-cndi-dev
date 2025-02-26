@@ -89,14 +89,14 @@ export default function Footer(props: FooterProps) {
               <div class="flex flex-col items-center justify-center sm:justify-start sm:items-start">
                 <div class="text-lightpurp uppercase">About</div>
                 <a
-                  href="https://cndi.dev/terms-of-use"
+                  href="/terms-of-use"
                   target="_blank"
                   class="text-white my-2"
                 >
                   Terms of Use
                 </a>
                 <a
-                  href="https://cndi.dev/privacy-policy"
+                  href="/privacy-policy"
                   target="_blank"
                   class="text-white my-2"
                 >

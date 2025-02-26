@@ -40,7 +40,7 @@ export default function TemplatesPage(props: PageProps) {
           <div class="w-layout-blockcontainer container-14691 mx-auto max-w-screen-lg">
             <div
               id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dc-a5d56d94"
-              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 wf-layout-layout"
+              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 grid"
             >
               <div
                 id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dd-a5d56d94"
@@ -117,7 +117,7 @@ export default function TemplatesPage(props: PageProps) {
             </p>
             <div
               id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d445-a5d56d94"
-              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-18 wf-layout-layout"
+              class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-18 grid"
             >
               <div
                 id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d446-a5d56d94"

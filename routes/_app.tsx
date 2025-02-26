@@ -21,7 +21,6 @@ export default function App({ Component, url }: PageProps) {
         <meta property="og:type" content="website" />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link href="/css/webflow.css" rel="stylesheet" type="text/css" />
         <link
           href="/css/cndi-run.webflow.css"
           rel="stylesheet"
@@ -46,6 +45,11 @@ export default function App({ Component, url }: PageProps) {
           rel="shortcut icon"
           type="image/x-icon"
         />
+        <style>
+          {`html,body {
+  box-sizing: border-box;
+}`}
+        </style>
         <link href="/images/webclip.png" rel="apple-touch-icon"></link>
         {!devMode
           ? (

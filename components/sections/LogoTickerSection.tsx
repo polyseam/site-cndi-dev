@@ -70,7 +70,10 @@ export default function LogoTickerSection() {
     <FullWidthSection>
       <LogoTicker>
         {logos.map((logo) => (
-          <a href={logo.href} className="object-contain w-auto h-12 p-32">
+          <a
+            href={logo.href}
+            className="object-contain w-auto h-[50px] px-[100px]"
+          >
             <img
               height="50"
               style={{ maxHeight: "50px" }}

@@ -6,7 +6,7 @@ export default function DistributionCardSection(props: {
 }) {
   return (
     <StandardSection>
-      {props.children}
+      <div class="mx-auto max-w-screen-lg">{props.children}</div>
     </StandardSection>
   );
 }

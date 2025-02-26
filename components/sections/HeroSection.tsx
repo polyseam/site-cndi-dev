@@ -8,7 +8,7 @@ export default function HeroSection({
 }) {
   return (
     <StandardSection>
-      <div class="w-layout-blockcontainer px-10 m-w-[1080px] mx-auto max-w-screen-lg">
+      <div class="px-10 m-w-[1080px] mx-auto max-w-screen-lg">
         {children}
       </div>
     </StandardSection>

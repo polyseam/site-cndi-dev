@@ -40,7 +40,7 @@ export default function TemplateHero(props: Props) {
   return (
     <div
       id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd4-00a367a8"
-      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-6 wf-layout-layout"
+      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-6 grid"
     >
       <div
         id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd5-00a367a8"

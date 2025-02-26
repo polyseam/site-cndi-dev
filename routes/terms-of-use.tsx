@@ -1,9 +1,9 @@
 export default function PrivacyPolicy() {
   return (
-    <div class="container-1264 mx-auto max-w-screen-lg">
-      <p class="paragraph-26">
+    <div class="mx-auto max-w-screen-lg">
+      <p class="text-[#afafaf]">
         <span>
-          <strong class="bold-text-5">
+          <strong class="bold">
             POLYSEAM DATA CORP. WEBSITE TERMS OF USE
             <br />
           </strong>
@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         LAST UPDATED: September 19th, 2022
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           1. OVERVIEW
           <br />
         </strong>
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
         and any other rules, guidelines, or policies posted on the Website.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           2. SERVICES AVAILABLE ON THE WEBSITE
           <br />
         </strong>
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
         or that they are suitable for your specific purposes.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           3. OWNERSHIP OF YOUR FILES
           <br />
         </strong>
@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
         Content trends.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           4. TERMINATION
           <br />
         </strong>
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
         of the Website.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           5. LIMITATION OF LIABILITY
           <br />
         </strong>
@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
         this paragraph, or such part thereof, shall be inapplicable.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           6. INDEMNIFICATION
           <br />
         </strong>
@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
         these Terms of Use or any other policy posted on the Website.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           7. SECURITY BREACHES
           <br />
         </strong>
@@ -160,7 +160,7 @@ export default function PrivacyPolicy() {
         or any unauthorized access to your account however arising.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           8. WARRANTIES AND REPRESENTATIONS
           <br />
         </strong>
@@ -173,7 +173,7 @@ export default function PrivacyPolicy() {
         particular purpose as they relate to the Website.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           9. COMPLIANCE WITH LAWS
           <br />
         </strong>
@@ -209,7 +209,7 @@ export default function PrivacyPolicy() {
         Use.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           10. AGE RESTRICTIONS
           <br />
         </strong>
@@ -220,7 +220,7 @@ export default function PrivacyPolicy() {
         Website.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           11. GOVERNING LAW AND DISPUTE RESOLUTION
           <br />
         </strong>
@@ -248,7 +248,7 @@ export default function PrivacyPolicy() {
         court having jurisdiction.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           12. WAIVER OF CLASS ACTION
           <br />
         </strong>
@@ -268,7 +268,7 @@ export default function PrivacyPolicy() {
         waiver of class action lawsuits is unenforceable at law.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           13. GENERAL TERMS
           <br />
         </strong>
@@ -366,7 +366,7 @@ export default function PrivacyPolicy() {
         with respect to the subject matter of these Terms of Use.
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           14. QUESTIONS ON THESE TERMS OF USE
           <br />
         </strong>
@@ -378,7 +378,7 @@ export default function PrivacyPolicy() {
         info@polyseam.io
         <br />
         <br />
-        <strong class="privacy-heading">
+        <strong class="text-white text-lg">
           15. CONFIRMATION OF AGREEMENT TO TERMS OF USE
           <br />
         </strong>

@@ -1,10 +1,10 @@
-import"./chunk-GI7LLYGM.js";import{a as s,b as c,c as f}from"./chunk-APUOKIQF.js";import{a as e}from"./chunk-VXQGIN4V.js";import{f as d}from"./chunk-VLNPATEH.js";import"./chunk-ONOOT4BC.js";function m({children:i}){return e("section",{class:"m-0 p-0",children:i})}function S(i){let h=i?.speed||50,u=i?.direction||"left",l=d(i.children),[o,p]=s(0),r=f(null),[v,y]=s(!0),[C,b]=s("");c(()=>{let t=()=>{r.current&&p(r.current.scrollWidth)},n=new ResizeObserver(t);return r.current&&n.observe(r.current),()=>n.disconnect()},[]),c(()=>{if(o>0){let t=`
+import"./chunk-GI7LLYGM.js";import{a as s,b as c,c as d}from"./chunk-APUOKIQF.js";import{a as e}from"./chunk-VXQGIN4V.js";import{f as a}from"./chunk-VLNPATEH.js";import"./chunk-ONOOT4BC.js";function f({children:o}){return e("section",{class:"m-0 p-0",children:o})}function S(o){let m=o?.speed||50,u=o?.direction||"left",h=a(o.children),[i,p]=s(0),t=d(null),[v,y]=s(!0),[C,b]=s("");c(()=>{let n=()=>{t.current&&p(t.current.scrollWidth)},r=new ResizeObserver(n);return t.current&&r.observe(t.current),()=>r.disconnect()},[]),c(()=>{if(i>0){let n=`
         @keyframes scrollLeft {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-${o/2}px); }
+          100% { transform: translateX(-${i/2}px); }
         }
         @keyframes scrollRight {
-          0% { transform: translateX(-${o/2}px); }
+          0% { transform: translateX(-${i/2}px); }
           100% { transform: translateX(0); }
         }
-      `;b(t)}},[o]),c(()=>{let t={root:null,rootMargin:"0px",threshold:0},n=k=>{k.forEach(x=>{y(x.isIntersecting)})},a=new IntersectionObserver(n,t);return r.current&&a.observe(r.current),()=>a.disconnect()},[]);let g=o/2/h;return e(m,{children:e("div",{ref:r,className:"flex overflow-hidden bg-midpurp items-center h-[15vh] sm:h-[20vh]",children:[e("div",{className:"flex items-center",style:{animation:`scroll${u==="left"?"Left":"Right"} ${g}s linear infinite`,animationPlayState:v?"running":"paused",willChange:"transform"},children:[l.map((t,n)=>e("div",{className:"flex-shrink-0",children:t},n)),l.map((t,n)=>e("div",{className:"flex-shrink-0",children:t},`duplicate-${n}`))]}),e("style",{jsx:!0,children:C})]})})}export{S as default};
+      `;b(n)}},[i]),c(()=>{let n={root:null,rootMargin:"0px",threshold:0},r=x=>{x.forEach(k=>{y(k.isIntersecting)})},l=new IntersectionObserver(r,n);return t.current&&l.observe(t.current),()=>l.disconnect()},[]);let g=i/2/m;return e(f,{children:e("div",{ref:t,className:"flex bg-midpurp overflow-hidden h-[20vh]",children:[e("div",{className:"flex flex-col justify-center",style:{animation:`scroll${u==="left"?"Left":"Right"} ${g}s linear infinite`,animationPlayState:v?"running":"paused",willChange:"transform"},children:h.map((n,r)=>e("div",{className:"flex",children:n},r))}),e("style",{jsx:!0,children:C})]})})}export{S as default};

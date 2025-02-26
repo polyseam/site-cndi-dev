@@ -77,10 +77,10 @@ export default function LogoTicker(props: LogoTickerProps) {
     <FullWidthSection>
       <div
         ref={containerRef}
-        className="flex bg-midpurp items-center h-[15vh] sm:h-[20vh] overflow-hidden"
+        className="flex bg-midpurp overflow-hidden h-[20vh]"
       >
         <div
-          className="flex items-center"
+          className="flex flex-col justify-center"
           style={{
             animation: `scroll${
               direction === "left" ? "Left" : "Right"
@@ -90,12 +90,7 @@ export default function LogoTicker(props: LogoTickerProps) {
           }}
         >
           {children.map((child, index) => (
-            <div key={index} className="flex-shrink-0">
-              {child}
-            </div>
-          ))}
-          {children.map((child, index) => (
-            <div key={`duplicate-${index}`} className="flex-shrink-0">
+            <div key={index} className="flex">
               {child}
             </div>
           ))}

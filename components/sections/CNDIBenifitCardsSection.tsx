@@ -21,7 +21,7 @@ type BenefitCardProps = {
 };
 
 const BenefitCard = (props: BenefitCardProps) => (
-  <div class="h-[256px] rounded-lg shadow-lg border border-[#322b38]">
+  <div class="max-w-80 h-[256px] rounded-lg shadow-lg border border-[#322b38]">
     {props.children[0]}
     {props.children[1]}
   </div>
@@ -32,7 +32,7 @@ export default function UseInteractiveCNDITemplatesSection() {
   return (
     <StandardSection>
       <div class="flex-col items-center mx-auto max-w-screen-lg">
-        <div class="p-5 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around">
+        <div class="flex flex-wrap gap-6 justify-center">
           <BenefitCard>
             <Title>Infrastructure as Code and GitOps</Title>
             <Description>
@@ -65,7 +65,7 @@ export default function UseInteractiveCNDITemplatesSection() {
             <Title>Uncompromised Self-Hosting</Title>
             <Description>
               Deploy workloads across any cloud or on-prem infrastructure. Get
-              all the scalability and flexibility you need without constraints.
+              the scalability and flexibility you need without constraints.
             </Description>
           </BenefitCard>
           <BenefitCard>

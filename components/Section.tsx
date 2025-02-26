@@ -11,5 +11,5 @@ export function StandardSection({
 }: {
   children: ComponentChildren;
 }) {
-  return <section class="m-4 p-4 sm:m-8 sm:p-8">{children}</section>;
+  return <section class="m-4 p-4 sm:m-8 sm:p-8 max-w-full">{children}</section>;
 }

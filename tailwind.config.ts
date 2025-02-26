@@ -14,6 +14,7 @@ export default {
         softgrey: "#333",
         bff: "#bfbfbf",
         stroke: "#414141",
+        mutedpurp: "#322b38",
       },
       keyframes: {
         wiggle: {

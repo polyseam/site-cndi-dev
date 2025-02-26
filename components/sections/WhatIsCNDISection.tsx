@@ -28,7 +28,7 @@ export default function WhatIsCNDISection() {
     <StandardSection>
       <div class="items-center mx-auto max-w-screen-lg">
         <div class="w-full">
-          <h1 class="text-center">
+          <h1 class="text-center text-4xl">
             What is <span class="text-lightpurp">CNDI?</span>
           </h1>
           <div class="text-center mt-10 text-base text-bff">

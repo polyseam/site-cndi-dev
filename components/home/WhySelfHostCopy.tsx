@@ -2,7 +2,9 @@ export default function WhySelfHostCopy() {
   return (
     <div class="mb-16 mx-auto max-w-screen-md text-base text-bff">
       <div>
-        <h1 class="text-center">Why Self-Host Infrastructure?</h1>
+        <h1 class="text-center text-4xl bold text-white">
+          Why Self-Host Infrastructure?
+        </h1>
         <p class="text-left mb-16 px-16">
           When it comes to deploying your applications, choosing between
           self-hosting and PaaS options can significantly impact your control,
@@ -10,9 +12,9 @@ export default function WhySelfHostCopy() {
           better option for your needs.
         </p>
       </div>
-      <div class="grid grid-cols-[1fr_1fr] grid-rows-[auto_auto_auto] gap-y-8 gap-x-5 auto-cols-[1fr] justify-center p-5">
+      <div class="grid grid-cols-[1fr_1fr] grid-rows-[auto_auto_auto] gap-y-10 gap-x-5 auto-cols-[1fr] justify-center p-5">
         <div class="flex-col justify-start items-start flex">
-          <h1>
+          <h1 class="text-white text-3xl bold">
             Managed <br />
             from Git
           </h1>
@@ -43,9 +45,7 @@ export default function WhySelfHostCopy() {
           />
         </div>
         <div class="flex-col justify-start items-start flex">
-          <h1>
-            <strong>Cluster Customization</strong>
-          </h1>
+          <h1 class="text-white text-3xl bold">Cluster Customization</h1>
           <p>
             Self-Host your cluster using CNDI and gain full control over your
             application deployment. No features gated behind paywalls, and you
@@ -55,9 +55,7 @@ export default function WhySelfHostCopy() {
           </p>
         </div>
         <div class="flex-col justify-start items-start flex">
-          <h1>
-            <strong>Operational Cost</strong>
-          </h1>
+          <h1 class="text-white text-3xl bold">Operational Cost</h1>
           <p>
             CNDI Self-Hosting is a low cost alternative to the recurring
             expenses and hidden fees associated with PaaS. Avoid confusing price
