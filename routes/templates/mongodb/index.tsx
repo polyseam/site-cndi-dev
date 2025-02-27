@@ -15,7 +15,7 @@ export default function TemplateMongoDBPage(_props: PageProps) {
     <>
       <TemplateHead templateTitle={title} templateName={templateName} />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/constellation.png`}
           heroImgAlt="MongoDB Logo alongside Azure, GCP, and AWS Logos"

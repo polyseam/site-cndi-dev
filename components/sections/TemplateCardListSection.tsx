@@ -13,7 +13,7 @@ export default function TemplateCardListSection({ pageVersion, url }: Props) {
       <div class="flex flex-col items-center">
         <h1 class="text-3xl mb-3">CNDI Templates</h1>
         <div class="text-bff">
-          Make a request for new template&nbsp;
+          Make a request for new Template&nbsp;
           <LinkOut
             pathname="/ghi"
             utm_content="site_cndidev_templates_request_new_template"
@@ -26,7 +26,7 @@ export default function TemplateCardListSection({ pageVersion, url }: Props) {
           </LinkOut>
         </div>
         <div class="bg-stroke h-[1px] my-3 w-4/5 self-center" />
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center mt-8">
           <TemplateCardList />
         </div>
       </div>

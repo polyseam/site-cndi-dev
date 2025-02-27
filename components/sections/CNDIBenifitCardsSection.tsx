@@ -1,11 +1,13 @@
 import { ComponentChild } from "preact";
 import { StandardSection } from "components/Section.tsx";
 
+const DecorativeLine = () => <div class="h-px mt-3 w-14 bg-white" />;
+
 const Title = ({ children }: { children: ComponentChild }) => (
   <div class="h-[128px] p-5 rounded rounded-t-lg text-2xl">
     <div>
-      <h1 class="cndi_card_heading">{children}</h1>
-      <div class="div-block-84"></div>
+      <h1 class="text-white mt-1 mb-0 px-0 text-xl">{children}</h1>
+      <DecorativeLine />
     </div>
   </div>
 );

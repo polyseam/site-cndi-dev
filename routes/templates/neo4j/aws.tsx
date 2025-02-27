@@ -31,7 +31,7 @@ export default function TemplateNeo4jAWSPage(_props: PageProps) {
         provider="AWS"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
           heroImgAlt="Neo4j and AWS Connection Online"

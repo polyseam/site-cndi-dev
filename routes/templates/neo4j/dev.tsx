@@ -31,7 +31,7 @@ export default function TemplateNeo4jDevPage(_props: PageProps) {
         provider="Dev"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
           heroImgAlt="Neo4j and Laptop Connection Online"

@@ -4,6 +4,7 @@ type Props = {
   title: string;
   videoId: string;
 };
+
 export default function YoutubeVideoDemoEmbedSection(props: Props) {
   return (
     <FullWidthSection>

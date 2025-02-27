@@ -15,6 +15,11 @@ export default {
         bff: "#bfbfbf",
         stroke: "#414141",
         mutedpurp: "#322b38",
+        terminalgrey: "#161616",
+        terminalborder: "#ffffff24",
+        trafficgreen: "#009942",
+        trafficred: "#970003",
+        trafficyellow: "#b1a800",
       },
       keyframes: {
         wiggle: {

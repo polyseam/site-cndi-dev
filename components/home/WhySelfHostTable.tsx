@@ -15,7 +15,7 @@ const CircleCheck = () => (
       loading="lazy"
       width="40"
       sizes="40px"
-      alt=""
+      alt="green checkmark"
       srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
     />
   </div>
@@ -27,9 +27,7 @@ const CircleX = () => (
       src="/images/system/x_circle_red.png"
       loading="lazy"
       width="34"
-      sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-      alt=""
-      srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
+      alt="red x"
     />
   </div>
 );

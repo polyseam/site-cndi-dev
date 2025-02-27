@@ -17,7 +17,7 @@ export default function ThreePoints(props: ThreePointsProps) {
                 src="/images/system/checkmark_circle.png"
                 loading="lazy"
                 width="33"
-                alt="affirmative checkmark"
+                alt="checkmark"
               />
               <h1 class="ml-5 text-3xl">{statement}</h1>
             </div>

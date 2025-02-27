@@ -1,4 +1,5 @@
 import { StandardSection } from "components/Section.tsx";
+import { H2, P } from "elements";
 
 type DeploymentTargetProvider = "aws" | "gcp" | "azure" | "dev";
 type DeploymentSquareProps = {
@@ -27,17 +28,17 @@ export default function WhatIsCNDISection() {
   return (
     <StandardSection>
       <div class="items-center mx-auto max-w-screen-lg">
-        <div class="w-full">
-          <h1 class="text-center text-4xl">
+        <div class="w-full text-center">
+          <H2>
             What is <span class="text-lightpurp">CNDI?</span>
-          </h1>
-          <div class="text-center mt-10 text-base text-bff">
+          </H2>
+          <P>
             The CNDI framework makes it easy to self-host open-source
             distributed systems with GitOps and Infrastructure as Code. Deploy
             production grade application clusters in any environment, and
             improve them over time using the Git workflow that developers use
             every day.
-          </div>
+          </P>
         </div>
         <div class="flex flex-col items-center mt-10">
           <div class="grid grid-cols-4 grid-rows-1 gap-1 place-items-center place-content-around">

@@ -16,6 +16,7 @@ export default function Nav(props: NavProps) {
         >
           <img
             src="/images/logo/cndi_by_polyseam.png"
+            alt="CNDI by Polyseam Logo"
             loading="lazy"
             width="125"
           />

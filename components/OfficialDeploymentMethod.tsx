@@ -13,22 +13,22 @@ export default function OfficialDeploymentMethod(props: Props) {
   const { contentVersion, templateName, title, utm_source, utm_id, pathname } =
     props;
   return (
-    <div class="div-block-82 my-8">
+    <div class="justify-center flex flex-row items-center px-0 lg:justify-start">
       <img
         src={`/images/template-icons/${templateName}/logo.png`}
         loading="lazy"
         width="25"
         sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, (max-width: 1919px) 25px, 1vw"
         alt={`${title} Logo`}
-        class="image-51"
+        class="mr-5"
       />
-      <div class="text-block-68">
+      <div>
         <LinkOut
           utm_source={utm_source}
           pathname={pathname}
           utm_content={`${templateName}_official_deployment_method`}
           utm_id={utm_id}
-          className="link-4"
+          className="text-sm text-white underline hover:text-bff"
           contentVersion={contentVersion}
         >
           Official {title} Deployment Method

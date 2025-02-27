@@ -32,7 +32,7 @@ export default function TemplateHopGCPPage(_props: PageProps) {
         provider="GCP"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
           heroImgAlt="Hop and GCP Connection Online"

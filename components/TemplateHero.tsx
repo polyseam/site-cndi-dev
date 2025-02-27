@@ -1,5 +1,6 @@
 import { ComponentChild, JSX } from "preact";
-
+import ShyHero from "components/ShyHero.tsx";
+import { H1, P } from "elements";
 type Props = {
   officialDeploymentMethod?: ComponentChild;
   ctaComponent?: JSX.Element;
@@ -10,11 +11,13 @@ type Props = {
 };
 
 export const Heading = ({ children }: { children: ComponentChild }) => (
-  <h1 class="heading_template">{children}</h1>
+  <H1>{children}</H1>
 );
 
 export const Subheading = ({ children }: { children: ComponentChild }) => (
-  <div class="subheading_template">{children}</div>
+  <div class="lg:pr-8">
+    <P size="lg">{children}</P>
+  </div>
 );
 
 export const CallToAction = (props: {
@@ -23,10 +26,10 @@ export const CallToAction = (props: {
   const button = props.children[0];
   const cliSnippet = props.children[1];
   return (
-    <div class="flex flex-col space-y-0 sm:space-y-0 sm:flex-row sm:items-center">
+    <div class="flex flex-col space-y-0 lg:flex-row lg:items-center lg:pr-8">
       <div>{button}</div>
       <span class="p-3 text-purple-200">or</span>
-      <div class="inline-flex">{cliSnippet}</div>
+      <div class="inline-flex self-center text-nowrap">{cliSnippet}</div>
     </div>
   );
 };
@@ -38,32 +41,23 @@ export default function TemplateHero(props: Props) {
   const ctaComponent = props.children[2];
 
   return (
-    <div
-      id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd4-00a367a8"
-      class="gap-y-5 gap-x-5 auto-cols-[1fr] justify-center p-5 quick-stack-6 grid"
-    >
-      <div
-        id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852acd5-00a367a8"
-        class="flex-col justify-start items-start flex cell-8"
-      >
-        {heading}
-        {subheading}
-        {officialDeploymentMethod}
-        {ctaComponent}
-      </div>
-      <div
-        id="w-node-_27cf9244-9e94-0f1b-85fa-d7eb3852ace1-00a367a8"
-        class="flex-col justify-start items-start flex cell-4"
-      >
-        <img
-          src={props.heroImgSrc}
-          alt={props.heroImgAlt}
-          loading="lazy"
-          width="823"
-          class="image-63"
-          sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 91vw, 823px"
-        />
-      </div>
+    <div class="pt-8">
+      <ShyHero>
+        <div class="flex flex-col">
+          {heading}
+          {subheading}
+          {officialDeploymentMethod}
+          {ctaComponent}
+        </div>
+        <div>
+          <img
+            src={props.heroImgSrc}
+            alt={props.heroImgAlt}
+            loading="lazy"
+            class="max-w-[400px]"
+          />
+        </div>
+      </ShyHero>
     </div>
   );
 }

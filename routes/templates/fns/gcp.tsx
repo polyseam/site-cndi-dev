@@ -33,7 +33,7 @@ export default function TemplateFnsGCPPage(_props: PageProps) {
         provider="GCP"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
           heroImgAlt="Fns and GCP Connection Online"

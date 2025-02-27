@@ -21,19 +21,19 @@ export default function InfoCard(props: Props) {
           <a
             href={cta.link}
             target="_blank"
-            class="link_block_view_project max-w-full inline-block"
+            class="flex items-center no-underline mt-8 max-w-full"
           >
-            <div class="text-block-73">{cta.text}</div>
+            <div class="text-white no-underline">{cta.text}</div>
             <img
               src="/images/system/link_out_icon.png"
               loading="lazy"
               width="16"
               alt="outbound link icon"
-              class="image-58"
+              class="ml-2"
             />
           </a>
         )
-        : <div class="link_block_view_project max-w-full inline-block" />}
+        : <div class="max-w-full inline-block" />}
     </div>
   );
 }

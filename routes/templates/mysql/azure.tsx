@@ -31,7 +31,7 @@ export default function TemplateMySQLAzurePage(_props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="MySQL and Azure Connection Online"

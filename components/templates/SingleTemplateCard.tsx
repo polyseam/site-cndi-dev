@@ -1,27 +1,6 @@
 import { capitalize } from "utils";
 
-const DEPLOYMENT_TARGET_PROVIDERS = [
-  {
-    name: "aws",
-    title: "Amazon Web Services",
-    imgSrc: "/images/provider-icons/aws.png",
-  },
-  {
-    name: "gcp",
-    title: "Google Cloud Platform",
-    imgSrc: "/images/provider-icons/gcp.webp",
-  },
-  {
-    name: "azure",
-    title: "Microsoft Azure",
-    imgSrc: "/images/provider-icons/azure.png",
-  },
-  {
-    name: "dev",
-    title: "Local Development",
-    imgSrc: "/images/provider-icons/dev.png",
-  },
-] as const;
+import { DEPLOYMENT_TARGET_PROVIDERS } from "app-data";
 
 type SingleTemplateCardProps = {
   name: string;
@@ -45,7 +24,7 @@ type CardTitleProps = {
 };
 
 const CardTitle = ({ children, name }: CardTitleProps) => (
-  <h1 class="text-3xl pb-2 text-nowrap">
+  <h1 class="text-3xl pb-2 text-nowrap filter hover:brightness-75">
     <a href={`templates/${name}`}>{children}</a>
   </h1>
 );
@@ -56,16 +35,16 @@ type CardLogoProps = {
 };
 
 const CardLogo = ({ name, title }: CardLogoProps) => (
-  <div class="flex h-20 w-20 justify-center items-center bg-mutedpurp rounded-lg border border-transparent hover:border-white hover:cursor-pointer">
-    <a href={`/templates/${name}`}>
+  <a href={`/templates/${name}`}>
+    <div class="flex h-20 w-20 justify-center items-center bg-mutedpurp rounded-lg border border-transparent hover:border-white">
       <img
         src={`/images/template-icons/${name}/logo.png`}
         loading="lazy"
         class="max-w-10"
         alt={`${title} Logo`}
       />
-    </a>
-  </div>
+    </div>
+  </a>
 );
 
 type CardTopShelfProps = {

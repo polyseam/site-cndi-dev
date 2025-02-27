@@ -31,7 +31,7 @@ export default function TemplateFnsAWSPage(_props: PageProps) {
         provider="AWS"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
           heroImgAlt="Fns and AWS Connection Online"

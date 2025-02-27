@@ -31,7 +31,7 @@ export default function TemplateKafkaDevPage(_props: PageProps) {
         provider="Dev"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
           heroImgAlt="Kafka and Laptop Connection Online"
