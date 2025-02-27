@@ -4,6 +4,7 @@ import SourceShower from "islands/SourceShower.tsx";
 import TemplateSelector from "islands/TemplateSelector.tsx";
 import ConfiguratorGizmo from "islands/Configurator/ConfiguratorGizmo.tsx";
 import { type CNDITemplateObject, YAML } from "islands/Configurator/shared.ts";
+import { H3 } from "elements";
 
 const TEMPLATE_IDENTIFIER_BASIC =
   "https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/basic.yaml";
@@ -120,9 +121,8 @@ export default function ConfiguratorPage(
           name="description"
         />
       </Head>
-      <div class="p-4 m-4">
-        <h1>CNDI Configurator</h1>
-
+      <div class="p-4 mx-4 mb-4">
+        <H3>CNDI Configurator</H3>
         {/* show link if templateIdentifier is valid */}
         {templateActive
           ? (
