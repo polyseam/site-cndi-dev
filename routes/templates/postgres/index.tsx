@@ -1,5 +1,5 @@
 import { PageProps } from "$fresh/server.ts";
-import PostgresWhoAndWhatForSection from "components/sections/postgres/WhatAndWhoForSection.tsx";
+import PostgresWhatAndWhoForSection from "components/sections/postgres/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
@@ -15,7 +15,7 @@ export default function TemplatePostgresPage(_props: PageProps) {
     <>
       <TemplateHead templateTitle={title} templateName={templateName} />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/constellation.png`}
           heroImgAlt="Postgres Logo alongside Azure, GCP, and AWS Logos"
@@ -34,7 +34,7 @@ export default function TemplatePostgresPage(_props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <PostgresWhoAndWhatForSection />
+      <PostgresWhatAndWhoForSection />
     </>
   );
 }

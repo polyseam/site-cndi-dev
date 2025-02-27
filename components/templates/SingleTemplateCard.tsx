@@ -1,9 +1,103 @@
 import { capitalize } from "utils";
+
+import { DEPLOYMENT_TARGET_PROVIDERS } from "app-data";
+
 type SingleTemplateCardProps = {
   name: string;
   type: string;
   title?: string;
 };
+
+type PillProps = {
+  children: string;
+};
+
+const Pill = ({ children }: PillProps) => (
+  <span class="text-white text-xs rounded-md whitespace-nowrap border border-stroke my-0 py-1 px-2 flex-start">
+    {children || "Miscellaneous"}
+  </span>
+);
+
+type CardTitleProps = {
+  children: string;
+  name: string;
+};
+
+const CardTitle = ({ children, name }: CardTitleProps) => (
+  <h1 class="text-3xl pb-2 text-nowrap filter hover:brightness-75">
+    <a href={`templates/${name}`}>{children}</a>
+  </h1>
+);
+
+type CardLogoProps = {
+  name: string;
+  title: string;
+};
+
+const CardLogo = ({ name, title }: CardLogoProps) => (
+  <a href={`/templates/${name}`}>
+    <div class="flex h-20 w-20 justify-center items-center bg-mutedpurp rounded-lg border border-transparent hover:border-white">
+      <img
+        src={`/images/template-icons/${name}/logo.png`}
+        loading="lazy"
+        class="max-w-10"
+        alt={`${title} Logo`}
+      />
+    </div>
+  </a>
+);
+
+type CardTopShelfProps = {
+  name: string;
+  title: string;
+  type: string;
+};
+
+const CardTopShelf = ({ name, title, type }: CardTopShelfProps) => (
+  <div class="flex items-center h-[140px] rounded rounded-t-lg px-8">
+    <div class="flex">
+      <CardLogo name={name} title={title} />
+    </div>
+    <div class="p-2" />
+    <div>
+      <CardTitle name={name}>{title}</CardTitle>
+      <Pill>{type}</Pill>
+    </div>
+  </div>
+);
+
+const DeploymentTargetRow = ({ name }: { name: string }) => (
+  <div className="flex flex-row justify-evenly items-center space-x-4">
+    {DEPLOYMENT_TARGET_PROVIDERS.map((provider) => (
+      <div
+        key={provider.name}
+        className="h-10 w-10 p-1 flex flex-col justify-center items-center rounded border border-transparent hover:border-white"
+      >
+        <a href={`templates/${name}/${provider.name}`}>
+          <img
+            src={provider.imgSrc}
+            loading="lazy"
+            width="40"
+            alt={`${provider.title} Logo`}
+          />
+        </a>
+      </div>
+    ))}
+  </div>
+);
+
+const CardBottomShelf = ({ name }: { name: string }) => (
+  <div class="bg-mutedpurp p-4">
+    <div class="flex flex-col rounded-b-lg">
+      <div class="text-bff text-nowrap pb-4">
+        Choose your Deployment Target:
+      </div>
+      <div>
+        <DeploymentTargetRow name={name} />
+      </div>
+    </div>
+  </div>
+);
 
 export default function SingleTemplateCard(props: SingleTemplateCardProps) {
   const name = props.name.toLowerCase();
@@ -11,100 +105,10 @@ export default function SingleTemplateCard(props: SingleTemplateCardProps) {
   const title = props?.title || capitalize(name);
 
   return (
-    <div
-      id="w-node-d10f1168-2d44-eee5-cfdd-68bde82636ba-a5d56d94"
-      class="w-layout-cell templatecard"
-    >
-      <div class="div-block-87">
-        <a href={`/templates/${name}`} class="link-block-9 w-inline-block">
-          <img
-            src={`/images/template-icons/${name}/logo.png`}
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt={`${title} Logo`}
-            // srcset={iconSrcSet} removed because not all exported images have srcsets
-          />
-        </a>
-        <div class="div-block-90">
-          <h1 class="heading-81">
-            <a href={`templates/${name}`} class="link-8">
-              {title}
-            </a>
-          </h1>
-          <div class="text-block-66">{type || "Miscellaneous"}</div>
-        </div>
-      </div>
-      <div class="div-block-96">
-        <div class="text-block-69">Choose your Deployment Target:</div>
-        <div>
-          <div
-            id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fe7-a5d56d94"
-            class="w-layout-layout template_deploy_targets wf-layout-layout"
-          >
-            <div
-              id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fe8-a5d56d94"
-              class="w-layout-cell cell_target"
-            >
-              <a
-                href={`templates/${name}/aws`}
-                class="link_target w-inline-block"
-              >
-                <img
-                  src="/images/provider-icons/aws.png"
-                  loading="lazy"
-                  width="32"
-                  sizes="(max-width: 1439px) 32px, (max-width: 1919px) 2vw, 32px"
-                  alt="Amazon Web Services Logo"
-                  // srcset="/images/provider-icons/aws-p-500.png 500w, /images/provider-icons/aws.png 782w"
-                  class="image-46"
-                />
-              </a>
-            </div>
-            <div
-              id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16feb-a5d56d94"
-              class="w-layout-cell cell_target"
-            >
-              <a
-                href={`templates/${name}/gcp`}
-                class="link_target w-inline-block"
-              >
-                <img
-                  src="/images/provider-icons/gcp.webp"
-                  loading="lazy"
-                  width="32"
-                  alt="GCP Logo"
-                />
-              </a>
-            </div>
-            <div
-              id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16fee-a5d56d94"
-              class="w-layout-cell cell_target"
-            >
-              <a
-                href={`templates/${name}/azure`}
-                class="link_target w-inline-block"
-              >
-                <img
-                  src="/images/provider-icons/azure.png"
-                  loading="lazy"
-                  width="29"
-                  sizes="(max-width: 1439px) 29px, (max-width: 1919px) 2vw, 29px"
-                  alt="Microsoft Azure Logo"
-                  // srcset="/images/provider-icons/azure-p-500.png 500w, /images/provider-icons/azure-p-800.png 800w, /images/provider-icons/azure-p-1080.png 1080w, /images/provider-icons/azure.png 1200w"
-                />
-              </a>
-            </div>
-            <div
-              id="w-node-b2e139f6-6ca5-a82d-5fcf-dd9438b16ff1-a5d56d94"
-              class="w-layout-cell cell_target"
-            >
-              <a href={`templates/${name}`} class="link_target w-inline-block">
-                <div class="text-block-58">+</div>
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="w-96">
+      <div class="shadow rounded-lg border border-stroke">
+        <CardTopShelf name={name} title={title} type={type} />
+        <CardBottomShelf name={name} />
       </div>
     </div>
   );

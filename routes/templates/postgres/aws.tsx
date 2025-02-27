@@ -31,7 +31,7 @@ export default function TemplatePostgresAWSPage(_props: PageProps) {
         provider="AWS"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/aws/connected.png`}
           heroImgAlt="Postgres and AWS Connection Online"

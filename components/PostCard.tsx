@@ -52,7 +52,7 @@ export default function BlogPostCard(props: Props) {
       <div class="m-2 p-2">
         <div class="flex self-stretch text-slate-400">{date}</div>
         <a href={href} class="flex mt-2 line-clamp-3 no-underline h-[3lh]">
-          <div class="self-center">{title}</div>
+          <div class="self-center text-sm">{title}</div>
         </a>
         <AuthorTag authorName={authorName} />
       </div>

@@ -1,253 +1,82 @@
-export default function WhySelfHostCopy() {
+const CRITERIA = [
+  "Quick & Easy Setup",
+  "Run Anywhere",
+  "Managed From Git",
+  "Lowest Possible Cost",
+  "Open-Source",
+  "Fully Featured",
+  "Completely Customizable",
+] as const;
+
+const CircleCheck = () => (
+  <div class="flex flex-col justify-center items-center p-[10px]">
+    <img
+      src="/images/system/checkmark_circle_green.png"
+      loading="lazy"
+      width="40"
+      sizes="40px"
+      alt="green checkmark"
+      srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
+    />
+  </div>
+);
+
+const CircleX = () => (
+  <div class="flex flex-co justify-center items-center p-[10px]">
+    <img
+      src="/images/system/x_circle_red.png"
+      loading="lazy"
+      width="34"
+      alt="red x"
+    />
+  </div>
+);
+
+const Table = () => {
   return (
-    <div class="w-layout-blockcontainer w-container">
-      <div
-        id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa17-f6848bac"
-        class="w-layout-layout quick-stack-19 wf-layout-layout"
-      >
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa18-f6848bac"
-          class="w-layout-cell top-left-cell-self-host-grid"
-        >
-          <div class="text-block-76">Criteria</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa1b-f6848bac"
-          class="w-layout-cell top-mid-cell-self-host-grid"
-        >
-          <div class="text-block-76">Self-Hosting</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa1e-f6848bac"
-          class="w-layout-cell top-right-cell-self-host-grid"
-        >
-          <div class="text-block-76">PaaS</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa21-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Quick &amp; Easy Setup</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa24-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa26-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa28-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Run Anywhere</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2b-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2d-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa2f-f6848bac"
-          class="w-layout-cell self-hosting-grid-cell"
-        >
-          <div class="text-block-76-copy">Managed From Git</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa32-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa34-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa36-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Lowest Possible Cost</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa39-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa3b-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa3d-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Open-Source</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa40-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa42-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa44-f6848bac"
-          class="w-layout-cell cell-52"
-        >
-          <div class="text-block-76-copy">Fully Featured</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa47-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa49-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa4b-f6848bac"
-          class="w-layout-cell cell-52-copy"
-        >
-          <div class="text-block-76-copy">Completely Customizable</div>
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa4e-f6848bac"
-          class="w-layout-cell self-hosting-grid-check"
-        >
-          <img
-            src="/images/system/checkmark_circle_green.png"
-            loading="lazy"
-            width="40"
-            sizes="40px"
-            alt=""
-            srcset="/images/system/checkmark_circle_green-p-500.png 500w, /images/system/checkmark_circle_green-p-800.png 800w, /images/system/checkmark_circle_green.png 1006w"
-          />
-        </div>
-        <div
-          id="w-node-_178dcce2-9dbc-087b-db2d-c9b6eb71fa50-f6848bac"
-          class="w-layout-cell self-hosting-grid-check-copy"
-        >
-          <img
-            src="/images/system/x_circle_red.png"
-            loading="lazy"
-            width="34"
-            sizes="(max-width: 1439px) 34px, (max-width: 1919px) 2vw, 34px"
-            alt=""
-            srcset="/images/system/x_circle_red-p-500.png 500w, /images/system/x_circle_red.png 800w"
-          />
-        </div>
-      </div>
+    <table class="border-separate border-spacing[0] max-w-[800px]">
+      <thead class="text-4xl bold bg-midpurp border border-transparent">
+        <tr>
+          <th class="p-4 rounded-tl-xl border-r border-r-stroke">Criteria</th>
+          <th class="p-4 border-r border-r-stroke">Self-Hosting</th>
+          <th class="p-4 rounded-tr-xl">PaaS</th>
+        </tr>
+      </thead>
+      <tbody>
+        {CRITERIA.map((criteria, idx) => {
+          const isLast = idx === CRITERIA.length - 1;
+          const isFirst = !idx;
+          return (
+            <tr class="bg-transparent border border-midpurp">
+              <td
+                class={isLast
+                  ? "text-xl bold px-8 border border-midpurp rounded-bl-xl"
+                  : "text-xl bold px-8 border border-midpurp"}
+              >
+                {criteria}
+              </td>
+              <td class="border border-midpurp">
+                <CircleCheck />
+              </td>
+              <td
+                class={isLast
+                  ? "border border-midpurp rounded-br-xl"
+                  : "border border-midpurp"}
+              >
+                {isFirst ? <CircleCheck /> : <CircleX />}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
+
+export default function WhySelfHostTable() {
+  return (
+    <div class="flex items-center justify-around">
+      <Table />
     </div>
   );
 }

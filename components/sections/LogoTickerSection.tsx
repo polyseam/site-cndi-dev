@@ -1,4 +1,5 @@
 import LogoTicker from "../../islands/LogoTicker.tsx";
+import { FullWidthSection } from "components/Section.tsx";
 
 type LogoTickerLogo = {
   href: string;
@@ -66,20 +67,23 @@ const logos: LogoTickerLogo[] = [
 
 export default function LogoTickerSection() {
   return (
-    <section>
+    <FullWidthSection>
       <LogoTicker>
         {logos.map((logo) => (
-          <a href={logo.href} className="object-contain w-auto h-12 p-32">
+          <a
+            href={logo.href}
+            className="object-contain w-auto h-[50px] px-[100px]"
+          >
             <img
               height="50"
               style={{ maxHeight: "50px" }}
-              class="logo-img"
+              class="max-w-none transition-opacity[.3s] hover:opacity-50 h-[40px]"
               src={`${logo.imgSrc}?height=50&width=100`}
               alt={logo.imgAlt}
             />
           </a>
         ))}
       </LogoTicker>
-    </section>
+    </FullWidthSection>
   );
 }

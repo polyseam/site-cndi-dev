@@ -33,7 +33,7 @@ export default function TemplateWordpressGCPPage(_props: PageProps) {
         provider="GCP"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
           heroImgAlt="Wordpress and GCP Connection Online"

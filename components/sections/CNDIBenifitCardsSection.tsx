@@ -1,17 +1,20 @@
 import { ComponentChild } from "preact";
+import { StandardSection } from "components/Section.tsx";
+
+const DecorativeLine = () => <div class="h-px mt-3 w-14 bg-white" />;
 
 const Title = ({ children }: { children: ComponentChild }) => (
-  <div class="homecard_top">
+  <div class="h-[128px] p-5 rounded rounded-t-lg text-2xl">
     <div>
-      <h1 class="cndi_card_heading">{children}</h1>
-      <div class="div-block-84"></div>
+      <h1 class="text-white mt-1 mb-0 px-0 text-xl">{children}</h1>
+      <DecorativeLine />
     </div>
   </div>
 );
 
 const Description = ({ children }: { children: ComponentChild }) => (
-  <div class="home_cards_div">
-    <div class="cndi_card_text">{children}</div>
+  <div class="bg-[#322b38] w-auto h-[128px] p-5 text-bff rounded-b-lg text-base">
+    <div>{children}</div>
   </div>
 );
 
@@ -20,10 +23,7 @@ type BenefitCardProps = {
 };
 
 const BenefitCard = (props: BenefitCardProps) => (
-  <div
-    id="w-node-d24c5821-8291-5d15-b148-5b87d5c1b58e-f6848bac"
-    class="w-layout-cell cndi_card_cell"
-  >
+  <div class="max-w-80 h-[256px] rounded-lg shadow-lg border border-[#322b38]">
     {props.children[0]}
     {props.children[1]}
   </div>
@@ -32,12 +32,9 @@ const BenefitCard = (props: BenefitCardProps) => (
 export default function UseInteractiveCNDITemplatesSection() {
   // More than 6 cards is noise
   return (
-    <section class="home_section_cndi_cards">
-      <div class="w-layout-blockcontainer container-1474 w-container">
-        <div
-          id="w-node-_8da0fe8c-da81-a70f-efc5-7077e1b079f9-f6848bac"
-          class="w-layout-layout quick-stack-16 wf-layout-layout"
-        >
+    <StandardSection>
+      <div class="flex-col items-center mx-auto max-w-screen-lg">
+        <div class="flex flex-wrap gap-6 justify-center">
           <BenefitCard>
             <Title>Infrastructure as Code and GitOps</Title>
             <Description>
@@ -70,7 +67,7 @@ export default function UseInteractiveCNDITemplatesSection() {
             <Title>Uncompromised Self-Hosting</Title>
             <Description>
               Deploy workloads across any cloud or on-prem infrastructure. Get
-              all the scalability and flexibility you need without constraints.
+              the scalability and flexibility you need without constraints.
             </Description>
           </BenefitCard>
           <BenefitCard>
@@ -82,6 +79,6 @@ export default function UseInteractiveCNDITemplatesSection() {
           </BenefitCard>
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

@@ -21,13 +21,6 @@ export default function App({ Component, url }: PageProps) {
         <meta property="og:type" content="website" />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
-        <link href="/css/webflow.css" rel="stylesheet" type="text/css" />
-        <link
-          href="/css/cndi-run.webflow.css"
-          rel="stylesheet"
-          type="text/css"
-        />
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link
           href="https://fonts.gstatic.com"
@@ -47,6 +40,11 @@ export default function App({ Component, url }: PageProps) {
           rel="shortcut icon"
           type="image/x-icon"
         />
+        <style>
+          {`html,body {
+  box-sizing: border-box;
+}`}
+        </style>
         <link href="/images/webclip.png" rel="apple-touch-icon"></link>
         {!devMode
           ? (
@@ -57,7 +55,7 @@ export default function App({ Component, url }: PageProps) {
           )
           : <meta name="devmode"></meta>}
       </head>
-      <body class="body wf-17859gj wf-vl64f">
+      <body class="bg-darkpurp m-0 p-0 overflow-x-hidden text-white">
         <Nav url={url} />
         <Component />
         <Footer url={url} />

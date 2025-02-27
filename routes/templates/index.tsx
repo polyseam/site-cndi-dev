@@ -1,12 +1,121 @@
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
+import { StandardSection } from "components/Section.tsx";
 import TemplateCardListSection from "components/sections/TemplateCardListSection.tsx";
 import { SitemapHints } from "../../Sitemap.ts";
+import { DEPLOYMENT_TARGET_PROVIDERS } from "app-data";
+import { H1, H3, P } from "elements";
+import TerminalView from "components/TerminalView.tsx";
+import ResponsiveHero from "components/ResponsiveHero.tsx";
+
+import {
+  Bot as BotIcon,
+  Check as CheckIcon,
+  Rocket as RocketIcon,
+} from "lucide-preact";
+
+// deno-lint-ignore no-explicit-any
+const Check = CheckIcon as any;
+// deno-lint-ignore no-explicit-any
+const Rocket = RocketIcon as any;
+// deno-lint-ignore no-explicit-any
+const Bot = BotIcon as any;
 
 export const sitemapHints: SitemapHints = {
   changefreq: "weekly",
   lastmod: "2024-11-07",
 };
+
+type StepCardProps = {
+  title: string;
+  // deno-lint-ignore no-explicit-any
+  icon: any;
+  description: string;
+  num: number;
+};
+
+const StepCard = ({ title, icon, description, num }: StepCardProps) => {
+  return (
+    <div class="bg-mutedpurp flex flex-col shadow-black shadow-lg text-bff m-8 p-8 rounded-xl">
+      <div class="flex flex-row items-center pb-3">
+        <h1 class="text-2xl bold pr-4">
+          {num}. {title}
+        </h1>
+        <div class="text-2xl bold">{icon}</div>
+      </div>
+      <p class="text-xl pl-6">{description}</p>
+    </div>
+  );
+};
+
+const GetStartedSteps = () => {
+  return (
+    <div>
+      <StepCard
+        title="Select a Template"
+        icon={<Check color="green" />}
+        description="Browse and choose from our collection of pre-built Templates below"
+        num={1}
+      />
+      <StepCard
+        title="Follow the Prompts"
+        icon={<Bot color="#7c6991" />}
+        description="Answer a few questions to generate your custom repository"
+        num={2}
+      />
+      <StepCard
+        title="Push to Git"
+        icon={<Rocket color="#0080FF" />}
+        description="Commit your code and wait for your cluster to come online"
+        num={3}
+      />
+    </div>
+  );
+};
+
+const VerticalBar = () => <div class="bg-white w-[1px] h-[100px]" />;
+
+const SupportedDeploymentTargets = () => {
+  return (
+    <div class="flex justify-around">
+      {DEPLOYMENT_TARGET_PROVIDERS.map((provider, idx) => {
+        const insertBar = idx !== DEPLOYMENT_TARGET_PROVIDERS.length - 1;
+        return (
+          <>
+            <div class="flex flex-row items-center">
+              <img
+                src={provider.imgSrc}
+                alt={`${provider.title} Logo`}
+                class="max-w-20"
+              />
+            </div>
+            <div>{insertBar ? <VerticalBar /> : null}</div>
+          </>
+        );
+      })}
+    </div>
+  );
+};
+
+const CopyPane = () => (
+  <div class="pr-8">
+    <H1>
+      CNDI Deployment
+      <br />
+      Templates
+    </H1>
+    <P>
+      Deploy infrastructure and data applications to the <br />
+      cloud by filling out one easy Template.
+    </P>
+  </div>
+);
+
+const VisualPane = () => (
+  <div class="min-w-[490px]">
+    <TerminalView src="/images/vhs-animations/cndi-create.gif" />
+  </div>
+);
 
 export default function TemplatesPage(props: PageProps) {
   const pageTitle = "Templates | CNDI";
@@ -35,77 +144,36 @@ export default function TemplatesPage(props: PageProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <div>
-        <section class="section-29">
-          <div class="w-layout-blockcontainer container-14691 w-container">
-            <div
-              id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dc-a5d56d94"
-              class="w-layout-layout wf-layout-layout"
-            >
-              <div
-                id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0dd-a5d56d94"
-                class="w-layout-cell cell-20"
-              >
-                <h1 class="heading-59">
-                  CNDI Deployment
-                  <br />
-                  Templates
-                </h1>
-                <div class="text-block-56">
-                  Deploy infrastructure and data applications to the <br />
-                  cloud by filling out one easy template.
-                </div>
-              </div>
-              <div
-                id="w-node-_17bc0eca-4dea-51d8-5c0e-0950303fe0de-a5d56d94"
-                class="w-layout-cell cell-21"
-              >
-                <div class="cli_gif_templates">
-                  <div class="div-block-101">
-                    <div class="div-block-100"></div>
-                    <div class="div-block-100-copy"></div>
-                    <div class="x"></div>
-                  </div>
-                  <img
-                    src="/images/vhs-animations/cndi-create.gif"
-                    loading="lazy"
-                    width="727"
-                    alt="CNDI Templates Gif"
-                    class="image-49"
-                  />
-                </div>
-              </div>
-            </div>
+        <StandardSection>
+          <div class="mx-auto max-w-screen-lg">
+            <ResponsiveHero>
+              <CopyPane />
+              <VisualPane />
+            </ResponsiveHero>
           </div>
-        </section>
-        <section class="section-28">
-          <div class="w-layout-blockcontainer container-1458 w-container">
-            <h1 class="heading-60">What are CNDI Deployment Templates?</h1>
-            <div class="text-block-57">
+        </StandardSection>
+        <StandardSection>
+          <div class="mx-auto max-w-screen-lg flex flex-col justify-center items-center text-center">
+            <H3>What are CNDI Deployment Templates?</H3>
+            <P size="lg">
               CNDI Templates are fill-in-the-blanks style blueprints that define
-              an entire stack for a cloud-native application or service. These
-              templates serve as a starting point for deploying components
-              consistently, reliably, and efficiently. CNDI Templates combine
-              GitOps application and cluster configuration with Infrastructure
-              as Code. You select a Template for your new service and CNDI will
-              provide the cluster and the repo to manage it from. You can even
-              create your own Templates to accelerate your team!
-            </div>
-            <img
-              src="/images/content/templates/workflow.png"
-              loading="lazy"
-              width="741"
-              sizes="(max-width: 479px) 100vw, (max-width: 767px) 85vw, (max-width: 991px) 688px, 741px"
-              alt=""
-              srcset="/images/content/templates/workflow-p-500.png 500w, /images/content/templates/workflow-p-800.png 800w, /images/content/templates/workflow-p-1080.png 1080w, /images/content/templates/workflow.png 1480w"
-              class="image-48"
-            />
+              an entire stack for a cloud-native application or service. CNDI
+              Templates combine GitOps application and cluster configuration
+              with Infrastructure-as-Code, so you can manage your entire stack
+              form one repo!
+            </P>
+            <div class="bg-stroke h-[1px] my-3 w-4/5 self-center" />
           </div>
-        </section>
+          <div class="mx-auto max-w-screen-lg flex flex-col justify-center items-center text-2xl">
+            <H3>Getting Started with Templates</H3>
+            <GetStartedSteps />
+          </div>
+        </StandardSection>
         <TemplateCardListSection pageVersion={pageVersion} url={props.url} />
-        <section id="supported-deployments" class="supported-deployments p-5">
-          <div class="w-layout-blockcontainer container-14698 w-container">
-            <h1 class="heading-101">Supported Deployment Targets</h1>
-            <p class="paragraph-43">
+        <StandardSection>
+          <div class="mx-auto max-w-screen-lg text-center">
+            <H1>Supported Deployment Targets</H1>
+            <P>
               CNDI supports cloud deployments to all three major vendors - AWS,
               Azure, and Google Cloud. You can also make deployments with CNDI
               to your local dev environment to test workflows before production.
@@ -113,80 +181,10 @@ export default function TemplatesPage(props: PageProps) {
               deploying your applications to these cloud environments is
               streamlined and efficient, ensuring compatibility and reliability
               across platforms.
-            </p>
-            <div
-              id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d445-a5d56d94"
-              class="w-layout-layout quick-stack-18 wf-layout-layout"
-            >
-              <div
-                id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d446-a5d56d94"
-                class="w-layout-cell cell-36"
-              >
-                <img
-                  src="/images/provider-icons/aws.png"
-                  loading="lazy"
-                  width="75"
-                  sizes="75px"
-                  alt="Amazon Web Services Logo"
-                  // srcset="/images/AWS-2-p-500.png 500w, images/AWS-2.png 782w"
-                />
-              </div>
-              <div
-                id="w-node-a4f6043d-ad6c-ceea-17c2-afca7ae0d447-a5d56d94"
-                class="w-layout-cell cell-35"
-              >
-                <div class="div-block-104"></div>
-              </div>
-              <div
-                id="w-node-_5148367d-70d4-4857-3696-788abd2ee4a2-a5d56d94"
-                class="w-layout-cell cell-37"
-              >
-                <img
-                  src="/images/provider-icons/gcp.webp"
-                  loading="lazy"
-                  width="75"
-                  alt="GCP Logo"
-                />
-              </div>
-              <div
-                id="w-node-_43b19b2c-b658-382a-437d-1eab77f93ac3-a5d56d94"
-                class="w-layout-cell cell-35"
-              >
-                <div class="div-block-104"></div>
-              </div>
-              <div
-                id="w-node-d4a437b5-1f25-2513-2d78-62d1f3ea7136-a5d56d94"
-                class="w-layout-cell cell-38"
-              >
-                <img
-                  src="/images/provider-icons/azure.png"
-                  loading="lazy"
-                  width="75"
-                  sizes="75px"
-                  alt="Microsoft Azure Logo"
-                  // srcset="/images/provider-icons/azure-p-500.png 500w, /images/provider-icons/azure-p-800.png 800w, /images/provider-icons/azure-p-1080.png 1080w, /images/provider-icons/azure.png 1200w"
-                />
-              </div>
-              <div
-                id="w-node-e40b6f01-39e7-2733-45df-9e36d0b94b3f-a5d56d94"
-                class="w-layout-cell cell-39"
-              >
-                <div class="div-block-104"></div>
-              </div>
-              <div
-                id="w-node-_60ee67e0-6689-2177-34a7-820bcc3eff8b-a5d56d94"
-                class="w-layout-cell cell-40"
-              >
-                <img
-                  src="/images/provider-icons/dev.png"
-                  loading="lazy"
-                  width="75"
-                  alt=""
-                />
-              </div>
-            </div>
+            </P>
+            <SupportedDeploymentTargets />
           </div>
-        </section>
+        </StandardSection>
       </div>
     </>
   );

@@ -31,7 +31,7 @@ export default function TemplateNeo4jDevPage(_props: PageProps) {
         provider="Dev"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
           heroImgAlt="Neo4j and Laptop Connection Online"
@@ -62,11 +62,10 @@ export default function TemplateNeo4jDevPage(_props: PageProps) {
       </Neo4jOnDevSection>
       <DistributionCardSection>
         <Microk8sDistributionCard>
-          Deploying {title}
-          on your local development environment is easy with CNDI's intuitive
-          workflow. CNDI leverages Multipass to provide a seamless experience
-          similar to deploying in the cloud, right on your Mac, Linux, or
-          Windows machine.
+          Deploying&nbsp;{title}&nbsp;on your local development environment is
+          easy with CNDI's intuitive workflow. CNDI leverages Multipass to
+          provide a seamless experience similar to deploying in the cloud, right
+          on your Mac, Linux, or Windows machine.
         </Microk8sDistributionCard>
       </DistributionCardSection>
       <ThreePoints

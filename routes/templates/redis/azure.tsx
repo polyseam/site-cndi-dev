@@ -31,7 +31,7 @@ export default function TemplateRedisAzurePage(_props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="Redis and Azure Connection Online"

@@ -31,7 +31,7 @@ export default function TemplateKafkaAzurePage(_props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="Kafka and Azure Connection Online"

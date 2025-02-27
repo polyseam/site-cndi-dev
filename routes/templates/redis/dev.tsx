@@ -48,7 +48,7 @@ export default function TemplateRedisDevPage(_props: PageProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
           heroImgAlt="Redis and Laptop Connection Online"

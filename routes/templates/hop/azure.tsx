@@ -31,7 +31,7 @@ export default function TemplateHopAzurePage(_props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="Hop and Azure Connection Online"

@@ -31,7 +31,7 @@ export default function TemplatePostgresAzurePage(_props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="Postgres and Azure Connection Online"

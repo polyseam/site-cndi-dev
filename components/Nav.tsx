@@ -8,7 +8,7 @@ export default function Nav(props: NavProps) {
   const navVersion = "v2.0.0";
   const utm_source = props.url.toString();
   return (
-    <div class="flex justify-between m-8 text-[16px]">
+    <div class="flex justify-between text-base p-4">
       <div>
         <a
           href="/"
@@ -16,6 +16,7 @@ export default function Nav(props: NavProps) {
         >
           <img
             src="/images/logo/cndi_by_polyseam.png"
+            alt="CNDI by Polyseam Logo"
             loading="lazy"
             width="125"
           />

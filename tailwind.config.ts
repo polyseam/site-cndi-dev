@@ -9,7 +9,17 @@ export default {
       colors: {
         darkpurp: "#180f1e",
         lightpurp: "#7c6991",
+        hoverpurp: "#7c69913b",
+        midpurp: "#483a55",
         softgrey: "#333",
+        bff: "#bfbfbf",
+        stroke: "#414141",
+        mutedpurp: "#322b38",
+        terminalgrey: "#161616",
+        terminalborder: "#ffffff24",
+        trafficgreen: "#009942",
+        trafficred: "#970003",
+        trafficyellow: "#b1a800",
       },
       keyframes: {
         wiggle: {

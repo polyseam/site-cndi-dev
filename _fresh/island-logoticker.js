@@ -1,10 +1,10 @@
-import"./chunk-GI7LLYGM.js";import{a as i,b as o,c as f}from"./chunk-APUOKIQF.js";import{a as n}from"./chunk-VXQGIN4V.js";import{f as d}from"./chunk-VLNPATEH.js";import"./chunk-ONOOT4BC.js";function C(c){let m=c?.speed||50,u=c?.direction||"left",a=d(c.children),[s,h]=i(0),r=f(null),[v,p]=i(!0),[y,b]=i("");o(()=>{let e=()=>{r.current&&h(r.current.scrollWidth)},t=new ResizeObserver(e);return r.current&&t.observe(r.current),()=>t.disconnect()},[]),o(()=>{if(s>0){let e=`
+import"./chunk-GI7LLYGM.js";import{a as s,b as c,c as d}from"./chunk-APUOKIQF.js";import{a as e}from"./chunk-VXQGIN4V.js";import{f as a}from"./chunk-VLNPATEH.js";import"./chunk-ONOOT4BC.js";function f({children:o}){return e("section",{class:"m-0 p-0",children:o})}function S(o){let m=o?.speed||50,u=o?.direction||"left",h=a(o.children),[i,p]=s(0),t=d(null),[v,y]=s(!0),[C,b]=s("");c(()=>{let n=()=>{t.current&&p(t.current.scrollWidth)},r=new ResizeObserver(n);return t.current&&r.observe(t.current),()=>r.disconnect()},[]),c(()=>{if(i>0){let n=`
         @keyframes scrollLeft {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-${s/2}px); }
+          100% { transform: translateX(-${i/2}px); }
         }
         @keyframes scrollRight {
-          0% { transform: translateX(-${s/2}px); }
+          0% { transform: translateX(-${i/2}px); }
           100% { transform: translateX(0); }
         }
-      `;b(e)}},[s]),o(()=>{let e={root:null,rootMargin:"0px",threshold:0},t=k=>{k.forEach(x=>{p(x.isIntersecting)})},l=new IntersectionObserver(t,e);return r.current&&l.observe(r.current),()=>l.disconnect()},[]);let g=s/2/m;return n("div",{className:"w-full overflow-hidden bg-background carousel-container",children:[n("div",{ref:r,className:"flex items-center",style:{animation:`scroll${u==="left"?"Left":"Right"} ${g}s linear infinite`,animationPlayState:v?"running":"paused",willChange:"transform"},children:[a.map((e,t)=>n("div",{className:"flex-shrink-0 mx-4",children:e},t)),a.map((e,t)=>n("div",{className:"flex-shrink-0 mx-4",children:e},`duplicate-${t}`))]}),n("style",{jsx:!0,children:y})]})}export{C as default};
+      `;b(n)}},[i]),c(()=>{let n={root:null,rootMargin:"0px",threshold:0},r=x=>{x.forEach(k=>{y(k.isIntersecting)})},l=new IntersectionObserver(r,n);return t.current&&l.observe(t.current),()=>l.disconnect()},[]);let g=i/2/m;return e(f,{children:e("div",{ref:t,className:"flex bg-midpurp overflow-hidden h-[20vh]",children:[e("div",{className:"flex flex-col justify-center",style:{animation:`scroll${u==="left"?"Left":"Right"} ${g}s linear infinite`,animationPlayState:v?"running":"paused",willChange:"transform"},children:h.map((n,r)=>e("div",{className:"flex",children:n},r))}),e("style",{jsx:!0,children:C})]})})}export{S as default};

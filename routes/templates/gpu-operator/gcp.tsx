@@ -33,7 +33,7 @@ export default function TemplateGPUOperatorGCPPage(_props: PageProps) {
         provider="GCP"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
           heroImgAlt="GPU Operator and GCP Connection Online"

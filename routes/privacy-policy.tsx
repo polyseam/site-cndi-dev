@@ -1,9 +1,9 @@
 export default function PrivacyPolicy() {
   return (
     <div>
-      <div class="container-1264 w-container">
-        <p class="paragraph-27">
-          <strong class="bold-text-4">
+      <div class="mx-auto max-w-screen-lg">
+        <p class="text-[#afafaf]">
+          <strong class="bold text-lg">
             POLYSEAM DATA CORP. PRIVACY POLICY
             <br />
           </strong>
@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
           LAST UPDATED: September 19th, 2022
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             1. OVERVIEW
             <br />
           </strong>
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
           accessing or entering any information on the Website.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             2. INFORMATION ABOUT USERS WE COLLECT AND STORE
             <br />
           </strong>
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
           identifying information to any third party.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             3. UPLOADING PERSONAL INFORMATION
             <br />
           </strong>
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
           the Website.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             4. ADDITIONAL DATA COLLECTED
             <br />
           </strong>
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
           Website.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             5. COOKIES
             <br />
           </strong>
@@ -162,7 +162,7 @@ export default function PrivacyPolicy() {
           info@polyseam.io.
           <br />
           <br />
-          <strong class="privacy-heading">6. REMARKETING</strong>
+          <strong class="text-white text-lg">6. REMARKETING</strong>
           <br />
           ‍<br />
           We may engage in &quot;remarketing&quot; activities using third-party
@@ -176,7 +176,7 @@ export default function PrivacyPolicy() {
           information to third-parties for the purpose of remarketing.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             7. PERMITTED USES OF DATA
             <br />
           </strong>
@@ -198,7 +198,7 @@ export default function PrivacyPolicy() {
           to improving the Website.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             8. LEGAL BASIS FOR PROCESSING PERSONAL IDENTIFYING INFORMATION
             <br />
           </strong>
@@ -221,7 +221,7 @@ export default function PrivacyPolicy() {
           - for payment processing purposes.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             9. ACCESSING, CORRECTING &amp; DELETING YOUR PERSONAL INFORMATION
             <br />
           </strong>
@@ -258,7 +258,7 @@ export default function PrivacyPolicy() {
           laws.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             10. KEEPING YOUR DATA SECURE
             <br />
           </strong>
@@ -291,7 +291,7 @@ export default function PrivacyPolicy() {
           proceeding to use the Website.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             11. SECURITY BREACHES
             <br />
           </strong>
@@ -303,7 +303,7 @@ export default function PrivacyPolicy() {
           breach.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             12. THIRD-PARTY APPLICATIONS
             <br />
           </strong>
@@ -334,7 +334,7 @@ export default function PrivacyPolicy() {
           provide directly to these applications.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             13. USE OF WEBSITE BY MINORS
             <br />
           </strong>
@@ -352,7 +352,7 @@ export default function PrivacyPolicy() {
           information will be immediately deleted without notice.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             14. DISCLOSURE OF PERSONAL INFORMATION
             <br />
           </strong>
@@ -391,7 +391,7 @@ export default function PrivacyPolicy() {
           purposes of fraud protection and credit risk reduction.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             15. AMENDING THIS POLICY
             <br />
           </strong>
@@ -404,7 +404,7 @@ export default function PrivacyPolicy() {
           use of the Website will be deemed acceptance of any amended Policy.
           <br />
           <br />
-          <strong class="privacy-heading">
+          <strong class="text-white text-lg">
             16. CONTACT US
             <br />
           </strong>

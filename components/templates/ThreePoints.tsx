@@ -1,25 +1,29 @@
+import { StandardSection } from "components/Section.tsx";
 type ThreePointsProps = {
   statements: [string, string, string];
 };
 
 export default function ThreePoints(props: ThreePointsProps) {
   return (
-    <section class="section_3points_airflow">
-      <div class="w-layout-blockcontainer container_3points w-container">
-        <div class="_3point_wrapper">
+    <StandardSection>
+      <div class="flex flex-col items-center justify-center">
+        <div>
           {props.statements.map((statement, index) => (
-            <div class="div-block-83" key={"threeStatementsI" + index}>
+            <div
+              class="flex justify-start items-center my-5"
+              key={"3p" + index}
+            >
               <img
                 src="/images/system/checkmark_circle.png"
                 loading="lazy"
                 width="33"
-                alt=""
+                alt="checkmark"
               />
-              <h1 class="heading-76">{statement}</h1>
+              <h1 class="ml-5 text-3xl">{statement}</h1>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

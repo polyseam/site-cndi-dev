@@ -1,5 +1,5 @@
 import { PageProps } from "$fresh/server.ts";
-import GPUOperatorWhoAndWhatForSection from "components/sections/gpu-operator/WhatAndWhoForSection.tsx";
+import GPUOperatorWhatAndWhoForSection from "components/sections/gpu-operator/WhatAndWhoForSection.tsx";
 import ChooseYourDeploymentTargetSection from "components/sections/ChooseYourDeploymentTargetSection.tsx";
 import HeroSection from "components/sections/HeroSection.tsx";
 import HRule from "components/HRule.tsx";
@@ -15,7 +15,7 @@ export default function TemplateGPUOperatorPage(_props: PageProps) {
     <>
       <TemplateHead templateTitle={title} templateName={templateName} />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/constellation.png`}
           heroImgAlt="GPU Operator Logo alongside Azure, GCP, and AWS Logos"
@@ -30,7 +30,7 @@ export default function TemplateGPUOperatorPage(_props: PageProps) {
         </TemplateHero>
       </HeroSection>
       <ChooseYourDeploymentTargetSection templateName={templateName} />
-      <GPUOperatorWhoAndWhatForSection />
+      <GPUOperatorWhatAndWhoForSection />
     </>
   );
 }

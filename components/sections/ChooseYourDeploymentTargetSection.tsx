@@ -1,63 +1,48 @@
+import { StandardSection } from "components/Section.tsx";
+type TargetSquareProps = {
+  provider: string;
+  template: string;
+  logoext?: string;
+};
+
+const TargetSquare = ({
+  provider,
+  template,
+  logoext = "png",
+}: TargetSquareProps) => {
+  return (
+    <a
+      href={`/templates/${template}/${provider}`}
+      class="flex border border-white rounded-md max-w-full w-[100px] h-[100px] mx-4 no-underline [transition:all_.35s] items-center justify-center hover:shadow-[0_0_6px_0_lightpurp] hover:bg-hoverpurp"
+    >
+      <img
+        src={`/images/provider-icons/${provider}.${logoext}`}
+        loading="lazy"
+        width="50"
+        alt={`${provider} Logo`}
+      />
+    </a>
+  );
+};
+
 export default function ChooseYourDeploymentTargetSection(props: {
   templateName: string;
 }) {
   const { templateName } = props;
   return (
-    <section class="template_section_choose">
-      <div class="w-layout-blockcontainer container-1471 w-container">
-        <h1 class="heading-80">Choose your deployment Target Below</h1>
-        <div class="div-block-81-copy"></div>
-        <div class="div-block-85">
-          <a
-            href={`/templates/${templateName}/aws`}
-            class="link-block-8 w-inline-block"
-          >
-            <img
-              src="/images/provider-icons/aws.png"
-              loading="lazy"
-              width="49"
-              sizes="(max-width: 1439px) 49px, (max-width: 1919px) 3vw, 49px"
-              alt="Amazon Web Services Logo"
-              // srcset="../images/AWS-2-p-500.png 500w, ../images/AWS-2.png 782w"
-            />
-          </a>
-          <a
-            href={`/templates/${templateName}/gcp`}
-            class="link-block-8 w-inline-block"
-          >
-            <img
-              src="/images/provider-icons/gcp.webp"
-              loading="lazy"
-              width="49"
-              alt="GCP Logo"
-            />
-          </a>
-          <a
-            href={`/templates/${templateName}/azure`}
-            class="link-block-8 w-inline-block"
-          >
-            <img
-              src="/images/provider-icons/azure.png"
-              loading="lazy"
-              width="49"
-              sizes="(max-width: 1439px) 49px, (max-width: 1919px) 3vw, 49px"
-              alt="Microsoft Azure Logo"
-              // srcset="../images/Microsoft_Azure.svg-p-500.png 500w, ../images/Microsoft_Azure.svg-p-800.png 800w, ../images/Microsoft_Azure.svg-p-1080.png 1080w, ../images/Microsoft_Azure.svg.png 1200w"
-            />
-          </a>
-          <a
-            href={`/templates/${templateName}/dev`}
-            class="link-block-8 w-inline-block"
-          >
-            <img
-              src="/images/provider-icons/dev.png"
-              loading="lazy"
-              width="51"
-              alt=""
-            />
-          </a>
+    <StandardSection>
+      <div class="flex flex-col items-center pb-0 pt-16 mx-auto max-w-screen-lg">
+        <h1 class="px-10 capitalize text-center">
+          Choose your deployment Target Below
+        </h1>
+        <div class="w-2/3 h-[1px] bg-stroke] mt-[10px] mx-8" />
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 pt-5">
+          <TargetSquare provider="aws" template={templateName} />
+          <TargetSquare provider="gcp" template={templateName} logoext="webp" />
+          <TargetSquare provider="azure" template={templateName} />
+          <TargetSquare provider="dev" template={templateName} />
         </div>
       </div>
-    </section>
+    </StandardSection>
   );
 }

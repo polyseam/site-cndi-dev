@@ -1,4 +1,5 @@
 import LinkOut from "islands/LinkOut.tsx";
+import { FullWidthSection } from "components/Section.tsx";
 
 type FooterProps = {
   url: URL;
@@ -9,7 +10,7 @@ export default function Footer(props: FooterProps) {
   const utm_source = props.url.toString();
   return (
     <>
-      <section class="grid grid-cols-1 my-12">
+      <FullWidthSection>
         <div class="w-full mx-auto relative">
           <div class="flex justify-between items-center flex-col sm:justify-around sm:flex-row">
             <div class="flex my-8">
@@ -24,9 +25,7 @@ export default function Footer(props: FooterProps) {
                   src="/images/logo/polyseam.png"
                   loading="lazy"
                   width="211"
-                  sizes="(max-width: 479px) 100vw, 211px"
                   alt="Polyseam Logo"
-                  srcset="/images/logo/polyseam-p-500.png 500w, /images/logo/polyseam-p-800.png 800w, /images/logo/polyseam-p-1080.png 1080w, /images/logo/polyseam-p-1600.png 1600w, /images/logo/polyseam-p-2000.png 2000w, /images/logo/polyseam-p-2600.png 2600w, /images/logo/polyseam-p-3200.png 3200w"
                 />
               </LinkOut>
             </div>
@@ -88,14 +87,14 @@ export default function Footer(props: FooterProps) {
               <div class="flex flex-col items-center justify-center sm:justify-start sm:items-start">
                 <div class="text-lightpurp uppercase">About</div>
                 <a
-                  href="https://cndi.dev/terms-of-use"
+                  href="/terms-of-use"
                   target="_blank"
                   class="text-white my-2"
                 >
                   Terms of Use
                 </a>
                 <a
-                  href="https://cndi.dev/privacy-policy"
+                  href="/privacy-policy"
                   target="_blank"
                   class="text-white my-2"
                 >
@@ -115,7 +114,7 @@ export default function Footer(props: FooterProps) {
             Polyseam
           </a>
         </div>
-      </section>
+      </FullWidthSection>
     </>
   );
 }

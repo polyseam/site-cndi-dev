@@ -33,7 +33,7 @@ export default function TemplateAirflowAzurePage(props: PageProps) {
         provider="Azure"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/azure/connected.png`}
           heroImgAlt="Airflow and Azure Connection Online"

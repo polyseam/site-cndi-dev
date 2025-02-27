@@ -31,7 +31,7 @@ export default function TemplateMySQLDevPage(_props: PageProps) {
         provider="Dev"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/dev/connected.png`}
           heroImgAlt="MySQL and Laptop Connection Online"

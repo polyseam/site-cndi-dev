@@ -3,6 +3,8 @@ import { Handlers } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPost, Post } from "./index.tsx";
 import { CSS, render } from "@deno/gfm";
+import { H2 } from "elements";
+import { StandardSection } from "components/Section.tsx";
 
 import "prismjs/components/prism-yaml.js";
 import "prismjs/components/prism-bash.js";
@@ -75,45 +77,46 @@ export default function PostPage(props: PageProps<Post>) {
         <meta name="twitter:description" content={post.description} />
         <meta name="twitter:image" content={ogImgSrc} />
       </Head>
-
-      <div className="py-8" />
-      <div class="w-container">
-        <div class="div-block-62">
-          <div class="div-block-61">
-            <div class="text-block-44">
-              {new Date(post.publishedAt).toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+      <StandardSection>
+        <div class="mx-auto max-w-screen-lg">
+          <div class="bg-[#251f2a] rounded-2xl w-3/4 mx-auto px-8 pt-4 pb-10 shadow-black shadow-2xl">
+            <div class="text-center">
+              <div class="mt-3 text-slate-500">
+                {new Date(post.publishedAt).toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </div>
+            </div>
+            <div class="text-center">
+              <H2>{post.title}</H2>
+            </div>
+            <div class="flex flex-row items-center justify-center">
+              <div class="bg-bff rounded-full w-8">
+                <img
+                  loading="lazy"
+                  alt={`${post.authorName} headshot`}
+                  src={post.authorImgSrc}
+                  class="object-cover justify-center rounded-full"
+                />
+              </div>
+              <div class="px-4 text-slate-500">{post.authorName}</div>
             </div>
           </div>
-          <h1 class="heading-53">{post.title}</h1>
-          <div class="div-block-60">
-            <div class="f-avatar-small">
-              <img
-                loading="lazy"
-                alt={`${post.authorName} headshot`}
-                src={post.authorImgSrc}
-                sizes="(max-width: 1439px) 32px, (max-width: 1919px) 2vw, 32px"
-                class="f-avatar-image"
-              />
-            </div>
-            <div class="text-block-43">{post.authorName}</div>
+          <div class="m-8">
+            <main
+              data-color-mode="dark"
+              data-dark-theme="dark"
+              class="markdown-body"
+              // deno-lint-ignore react-no-danger
+              dangerouslySetInnerHTML={{
+                __html,
+              }}
+            />
           </div>
         </div>
-        <div class="m-8">
-          <main
-            data-color-mode="dark"
-            data-dark-theme="dark"
-            class="markdown-body"
-            // deno-lint-ignore react-no-danger
-            dangerouslySetInnerHTML={{
-              __html,
-            }}
-          />
-        </div>
-      </div>
+      </StandardSection>
     </>
   );
 }

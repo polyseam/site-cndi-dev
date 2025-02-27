@@ -31,7 +31,7 @@ export default function TemplateKafkaGCPPage(_props: PageProps) {
         provider="GCP"
       />
       <HeroSection>
-        <HRule topText={type} />
+        <HRule pillContent={type} />
         <TemplateHero
           heroImgSrc={`/images/template-icons/${templateName}/gcp/connected.png`}
           heroImgAlt="Kafka and GCP Connection Online"
