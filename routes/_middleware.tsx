@@ -11,5 +11,10 @@ export async function handler(req: Request, ctx: FreshContext) {
       headers: { Location },
     });
   }
-  return await ctx.next();
+  const resp = await ctx.next();
+  const contentType = resp.headers.get("Content-Type") || "";
+  if (contentType.startsWith("text/html")) {
+    resp.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+  }
+  return resp;
 }
