@@ -11,7 +11,7 @@ const AuthorTag = (props: { authorName: string }) => {
       .replace(" ", "_")
   }.png`;
   return (
-    <div class="mt-2 inline-block align-middle">
+    <div class="mt-1 align-middle flex flex-row items-center">
       <img
         class="h-8 w-8 rounded-full mr-2 bg-slate-100"
         src={authorPortraitSrc}
