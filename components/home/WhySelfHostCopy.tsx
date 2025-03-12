@@ -2,7 +2,7 @@ import { H2, H3, P } from "elements";
 
 export default function WhySelfHostCopy() {
   return (
-    <div class="mb-16 mx-auto max-w-screen-md text-base text-bff">
+    <div class="mb-16 max-w-screen-md text-base text-bff mx-auto px-8">
       <div class="text-center">
         <H2>Why Self-Host Infrastructure?</H2>
         <P>
@@ -24,14 +24,14 @@ export default function WhySelfHostCopy() {
             the Git workflow your engineering team uses already.
           </P>
         </div>
-        <div class="flex-col justify-start items-start flex">
+        <div class="flex-col justify-center items-center flex">
           <img
             src="/images/content/self-hosting/managed_from_git.png"
             loading="lazy"
             width="308"
           />
         </div>
-        <div class="flex-col justify-start items-start flex">
+        <div class="flex-col justify-center items-center flex">
           <img
             src="/images/content/self-hosting/cluster_customization.png"
             loading="lazy"
@@ -57,7 +57,7 @@ export default function WhySelfHostCopy() {
             spending.
           </P>
         </div>
-        <div class="flex-col justify-start items-start flex">
+        <div class="flex-col justify-center items-center flex">
           <img
             src="/images/content/self-hosting/operational_cost.png"
             loading="lazy"

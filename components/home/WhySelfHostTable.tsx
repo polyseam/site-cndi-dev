@@ -22,11 +22,11 @@ const CircleCheck = () => (
 );
 
 const CircleX = () => (
-  <div class="flex flex-co justify-center items-center p-[10px]">
+  <div class="flex flex-col justify-center items-center p-[10px] m-[5px]">
     <img
       src="/images/system/x_circle_red.png"
       loading="lazy"
-      width="34"
+      width="30"
       alt="red x"
     />
   </div>
@@ -34,8 +34,8 @@ const CircleX = () => (
 
 const Table = () => {
   return (
-    <table class="border-separate border-spacing[0] max-w-[800px]">
-      <thead class="text-4xl bold bg-midpurp border border-transparent">
+    <table class="min-w-full border-separate border-spacing-0">
+      <thead class="text-lg md:text-4xl font-bold bg-midpurp border border-transparent">
         <tr>
           <th class="p-4 rounded-tl-xl border-r border-r-stroke">Criteria</th>
           <th class="p-4 border-r border-r-stroke">Self-Hosting</th>
@@ -45,13 +45,13 @@ const Table = () => {
       <tbody>
         {CRITERIA.map((criteria, idx) => {
           const isLast = idx === CRITERIA.length - 1;
-          const isFirst = !idx;
+          const isFirst = idx === 0;
           return (
-            <tr class="bg-transparent border border-midpurp">
+            <tr key={criteria} class="bg-transparent border border-midpurp">
               <td
                 class={isLast
-                  ? "text-xl bold px-8 border border-midpurp rounded-bl-xl"
-                  : "text-xl bold px-8 border border-midpurp"}
+                  ? "px-4 text-md md:text-xl md:px-8 font-bold  border border-midpurp rounded-bl-xl"
+                  : "px-4 text-md md:text-xl md:px-8 font-bold  border border-midpurp"}
               >
                 {criteria}
               </td>
