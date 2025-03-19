@@ -90,7 +90,7 @@ cndi create --template kafka
 You can also point to a local file or a remote URL:
 
 ```cndi
-cndi create -t https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/basic.yaml
+cndi create -t https://raw.githubusercontent.com/polyseam/cndi/main/templates/basic.yaml
 ```
 
 When you run `cndi create -t airflow` for example, you'll be prompted for some

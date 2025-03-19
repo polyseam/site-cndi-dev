@@ -5,9 +5,8 @@ import TemplateSelector from "islands/TemplateSelector.tsx";
 import ConfiguratorGizmo from "islands/Configurator/ConfiguratorGizmo.tsx";
 import { type CNDITemplateObject, YAML } from "islands/Configurator/shared.ts";
 import { H3 } from "elements";
-
-const TEMPLATE_IDENTIFIER_BASIC =
-  "https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/basic.yaml";
+import { KNOWN_TEMPLATES } from "@cndi/known-templates";
+import { STATUS_CODE } from "@std/http";
 
 type CNDITemplateData = { template: CNDITemplateObject };
 type CNDITemplateDataError = { error: { message: string; code: number } };
@@ -29,14 +28,33 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
   // The server will simply fail to parse it, but maybe it could be exploited?
   async GET(req, ctx) {
     const requestUrl = new URL(req.url);
-    const templateIdentifier = requestUrl.searchParams.get("t");
+
+    const templateIdentifier = decodeURIComponent(
+      requestUrl.searchParams.get("t") || "",
+    );
+
+    // no template query parameter
     if (!templateIdentifier) {
-      return new Response("", {
-        status: 301,
-        headers: { Location: `?t=${TEMPLATE_IDENTIFIER_BASIC}` },
+      // "basic" Template is the default configurator Template
+      const defaultTemplateIdentifier = KNOWN_TEMPLATES.find(
+        ({ name }) => name === "basic",
+      )!.url; // assume that "basic" is always in KNOWN_TEMPLATES
+
+      // update URL with default template: ?t=...
+      requestUrl.searchParams.set("t", defaultTemplateIdentifier);
+
+      return new Response(null, {
+        // redirect to default template, avoid caching
+        status: STATUS_CODE.TemporaryRedirect,
+        headers: {
+          Location: requestUrl.toString(),
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
       });
     }
+
     let templateIdentifierURL: URL;
+
     try {
       templateIdentifierURL = new URL(templateIdentifier);
     } catch {
@@ -127,7 +145,9 @@ export default function ConfiguratorPage(
         {templateActive
           ? (
             <a
-              class={`font-mono text-sm${templateError ? " text-red-400" : ""}`}
+              class={`font-mono text-[clamp(4px,1.9vw,12px)] sm:text-xs md:text-sm ${
+                templateError ? " text-red-400" : ""
+              }`}
               href={templateIdentifier}
             >
               {templateIdentifier}
