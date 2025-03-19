@@ -7,8 +7,8 @@ type Template = {
   name: string; // name as presented to user
 };
 
-const templates: Template[] = [
-  ...KNOWN_TEMPLATES.filter(({ ga }) => ga).map(
+const templates: Template[] = [ // if the template is generally available, or if it's the basic template, show it
+  ...KNOWN_TEMPLATES.filter(({ ga, name }) => ga || name === "basic").map(
     ({ name }) => ({
       name,
     }),
@@ -59,16 +59,8 @@ const TemplateLinks = () => {
           : false;
 
         return isActive
-          ? (
-            <ActiveTemplateLink
-              name={name}
-            />
-          )
-          : (
-            <InactiveTemplateLink
-              name={name}
-            />
-          );
+          ? <ActiveTemplateLink name={name} />
+          : <InactiveTemplateLink name={name} />;
       })}
     </div>
   );
