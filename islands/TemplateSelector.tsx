@@ -7,10 +7,19 @@ type Template = {
   name: string; // name as presented to user
 };
 
+<<<<<<< HEAD
 const templates: Template[] = [
   ...KNOWN_TEMPLATES.filter(({ ga }) => ga).map(({ name }) => ({
     name,
   })),
+=======
+const templates: Template[] = [ // if the template is generally available, or if it's the basic template, show it
+  ...KNOWN_TEMPLATES.filter(({ ga, name }) => ga || name === "basic").map(
+    ({ name }) => ({
+      name,
+    }),
+  ),
+>>>>>>> 51147c1d5278f14bdbe17635ee6012805560445b
 ];
 
 const InactiveTemplateLink = ({ name }: Template) => (
