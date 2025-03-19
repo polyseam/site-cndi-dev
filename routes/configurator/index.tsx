@@ -29,7 +29,9 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
   async GET(req, ctx) {
     const requestUrl = new URL(req.url);
 
-    const templateIdentifier = requestUrl.searchParams.get("t");
+    const templateIdentifier = decodeURIComponent(
+      requestUrl.searchParams.get("t") || "",
+    );
 
     // no template query parameter
     if (!templateIdentifier) {
