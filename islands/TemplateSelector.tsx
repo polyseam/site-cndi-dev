@@ -7,18 +7,22 @@ type Template = {
   name: string; // name as presented to user
 };
 
-const templates: Template[] = [ // if the template is generally available, or if it's the basic template, show it
-  ...KNOWN_TEMPLATES.filter(({ ga, name }) => ga || name === "basic").map(
+const templates: Template[] =
+  // if the template is generally available, or if it's the basic template, show it
+  KNOWN_TEMPLATES.filter(({ ga, name }) => ga || name === "basic").map(
     ({ name }) => ({
       name,
     }),
-  ),
-];
+  );
 
 const InactiveTemplateLink = ({ name }: Template) => (
   <a
     class="text-purple-200"
-    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`}
+    href={`?t=${
+      encodeURIComponent(
+        `https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`,
+      )
+    }`}
   >
     <button
       type="button"
@@ -32,7 +36,11 @@ const InactiveTemplateLink = ({ name }: Template) => (
 const ActiveTemplateLink = ({ name }: Template) => {
   return (
     <a
-      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`}
+      href={`?t=${
+        encodeURIComponent(
+          `https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`,
+        )
+      }`}
     >
       <button
         type="button"
@@ -53,14 +61,14 @@ const TemplateLinks = () => {
   }
   return (
     <div class="pl-1 flex-col">
-      {templates.map(({ name }) => {
+      {templates.map(({ name }, i) => {
         const isActive = templateParam
           ? abbreviateTemplateIdentifier(templateParam) === name
           : false;
 
         return isActive
-          ? <ActiveTemplateLink name={name} />
-          : <InactiveTemplateLink name={name} />;
+          ? <ActiveTemplateLink key={i} name={name} />
+          : <InactiveTemplateLink key={i} name={name} />;
       })}
     </div>
   );
@@ -115,7 +123,11 @@ export default function TemplateSelector() {
                   }, 500);
                   return;
                 }
-                location.href = `?t=${templateIdentifier.value}`;
+                location.href = `?t=${
+                  encodeURIComponent(
+                    templateIdentifier.value,
+                  )
+                }`;
               }
             }}
           />
@@ -123,7 +135,7 @@ export default function TemplateSelector() {
         {isValidTemplateIdentifier.value
           ? (
             <div class="text-cyan-400 mt-2 underline">
-              <a href={`?t=${templateIdentifier.value}`}>
+              <a href={`?t=${encodeURIComponent(templateIdentifier.value)}`}>
                 cndi.dev/configurator?t={templateIdentifier.value}
               </a>
             </div>
