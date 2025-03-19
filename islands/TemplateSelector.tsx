@@ -18,7 +18,7 @@ const templates: Template[] = [
 const InactiveTemplateLink = ({ name }: Template) => (
   <a
     class="text-purple-200"
-    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${name}.yaml`}
+    href={`?t=https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`}
   >
     <button
       type="button"
@@ -32,7 +32,7 @@ const InactiveTemplateLink = ({ name }: Template) => (
 const ActiveTemplateLink = ({ name }: Template) => {
   return (
     <a
-      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${name}.yaml`}
+      href={`?t=https://raw.githubusercontent.com/polyseam/cndi/main/templates/${name}.yaml`}
     >
       <button
         type="button"

@@ -166,8 +166,9 @@ export const YAML = {
     }
   },
 };
+
 export const POLYSEAM_TEMPLATE_REGEX =
-  /^https:\/\/raw\.githubusercontent\.com\/polyseam\/cndi\/refs\/heads\/main\/templates\/([^/]+)\.yaml$/;
+  /^https:\/\/raw\.githubusercontent\.com\/polyseam\/cndi\/main\/templates\/([^/]+)\.yaml$/;
 
 export function abbreviateTemplateIdentifier(longIdentifier: string): string {
   const matches = longIdentifier.match(POLYSEAM_TEMPLATE_REGEX);

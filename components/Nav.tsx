@@ -25,7 +25,7 @@ export default function Nav(props: NavProps) {
       <nav role="navigation" class="my-4">
         <div class="grid grid-flow-row gap-4 sm:grid-flow-col">
           <a
-            href="/configurator"
+            href="/configurator?nav=1" // unused query parameter for permanent redirect cache busting purposes
             className="inline-block p-2 align-top position-relative text-align-left no-underline"
           >
             Configurator

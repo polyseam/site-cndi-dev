@@ -4,7 +4,7 @@ type Props = {
 
 export const GetStartedWithConfiguratorButton = ({ templateName }: Props) => (
   <a
-    href={`/configurator?t=https://raw.githubusercontent.com/polyseam/cndi/refs/heads/main/templates/${templateName}.yaml`}
+    href={`/configurator?t=https://raw.githubusercontent.com/polyseam/cndi/main/templates/${templateName}.yaml`}
   >
     <button
       type="button"
