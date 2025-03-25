@@ -3,6 +3,10 @@ import { extract } from "$std/front_matter/any.ts";
 import * as path from "$std/path/mod.ts";
 
 import type { PostAttrs } from "./routes/blog/index.tsx";
+import {
+  KNOWN_TEMPLATES,
+  POLYSEAM_TEMPLATE_DIRECTORY_URL,
+} from "@cndi/known-templates";
 
 interface GetLocListForHeadlessCMSOptions {
   filenameParam: string;
@@ -31,11 +35,30 @@ interface SitemapEntry extends SitemapHints {
   loc: string;
 }
 
+// the configurator contains a list of all Templates which have /templates/ webpages and "basic" which does not
+const isInConfigurator = (
+  t: typeof KNOWN_TEMPLATES[number],
+) => (t.ga || t.name === "basic");
+
+const configuratorPages = KNOWN_TEMPLATES.filter(isInConfigurator).map(
+  ({ name }) => {
+    const templateIdentifier = encodeURIComponent(
+      `${POLYSEAM_TEMPLATE_DIRECTORY_URL}/${name}.yaml`,
+    );
+    const loc = `https://cndi.dev/configurator?t=${templateIdentifier}`;
+    return {
+      loc,
+    };
+  },
+);
+
 // this is required because the llms.txt route has no default export
 // but we want it to be included in the sitemap anyway
-const HARDCODED_ENTRIES: Array<SitemapEntry> = [{
-  loc: "https://cndi.dev/llms.txt",
-}];
+const HARDCODED_ENTRIES: Array<SitemapEntry> = [
+  {
+    loc: "https://cndi.dev/llms.txt",
+  },
+];
 
 const time = {
   isLessThanAMonthOld(dateString: string): boolean {
@@ -173,6 +196,7 @@ export const SitemapPlugin = (
       }
 
       entries.push(...HARDCODED_ENTRIES);
+      entries.push(...configuratorPages);
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

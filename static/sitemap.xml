@@ -80,4 +80,17 @@
 <url><loc>https://cndi.dev/templates/wordpress</loc></url>
 <url><loc>https://cndi.dev/terms-of-use</loc></url>
 <url><loc>https://cndi.dev/llms.txt</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fbasic.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fairflow.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fpostgres.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fkafka.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fwordpress.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fgpu-operator.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Ffns.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fneo4j.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fmssqlserver.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fmongodb.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fredis.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fhop.yaml</loc></url>
+<url><loc>https://cndi.dev/configurator?t=https%3A%2F%2Fraw.githubusercontent.com%2Fpolyseam%2Fcndi%2Fmain%2Ftemplates%2Fmysql.yaml</loc></url>
 </urlset>
