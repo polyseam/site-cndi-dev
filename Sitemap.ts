@@ -35,7 +35,12 @@ interface SitemapEntry extends SitemapHints {
   loc: string;
 }
 
-const configuratorPages = KNOWN_TEMPLATES.filter((t) => (t.ga)).map(
+// the configurator contains a list of all Templates which have /templates/ webpages and "basic" which does not
+const isInConfigurator = (
+  t: typeof KNOWN_TEMPLATES[number],
+) => (t.ga || t.name === "basic");
+
+const configuratorPages = KNOWN_TEMPLATES.filter(isInConfigurator).map(
   ({ name }) => {
     const templateIdentifier = encodeURIComponent(
       `${POLYSEAM_TEMPLATE_DIRECTORY_URL}/${name}.yaml`,
