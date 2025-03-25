@@ -65,7 +65,7 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
           error: { message: "Template Identifier must be a URL", code: 400 },
         },
         {
-          status: 400,
+          status: STATUS_CODE.BadRequest,
         },
       );
     }
@@ -79,11 +79,11 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
           error: {
             message:
               "Template Identifier URL protocol must be 'http' or 'https'",
-            code: 400,
+            code: STATUS_CODE.BadRequest,
           },
         },
         {
-          status: 400,
+          status: STATUS_CODE.BadRequest,
         },
       );
     }
@@ -100,11 +100,11 @@ export const handler: Handlers<CNDITemplateData | CNDITemplateDataError> = {
           {
             error: {
               message: "Template is not a valid CNDI Template",
-              code: 400,
+              code: STATUS_CODE.BadRequest,
             },
           },
           {
-            status: 400,
+            status: STATUS_CODE.BadRequest,
           },
         );
       }

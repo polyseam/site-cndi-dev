@@ -1,4 +1,5 @@
 import { FreshContext } from "$fresh/server.ts";
+import { STATUS_CODE } from "@std/http/status";
 
 export async function handler(req: Request, ctx: FreshContext) {
   const url = new URL(req.url);
@@ -7,7 +8,7 @@ export async function handler(req: Request, ctx: FreshContext) {
 
     const Location = url.toString();
     return new Response("", {
-      status: 301,
+      status: STATUS_CODE.MovedPermanently,
       headers: { Location },
     });
   }
