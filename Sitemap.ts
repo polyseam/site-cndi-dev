@@ -52,7 +52,7 @@ const configuratorPages = KNOWN_TEMPLATES.filter((t) => (t.ga)).map(
 const HARDCODED_ENTRIES: Array<SitemapEntry> = [
   {
     loc: "https://cndi.dev/llms.txt",
-  }
+  },
 ];
 
 const time = {

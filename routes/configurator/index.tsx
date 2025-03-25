@@ -125,7 +125,7 @@ export default function ConfiguratorPage(
 
   const templateActive = !!templateObject && !!templateIdentifier;
 
-  const _t = encodeURIComponent(templateIdentifier ?? '')
+  const t = encodeURIComponent(templateIdentifier ?? "");
 
   return (
     <>
@@ -133,9 +133,8 @@ export default function ConfiguratorPage(
         <title>CNDI Configurator</title>
         <link
           rel="canonical"
-          href={`https://cndi.dev/configurator?t=${templateIdentifier}`}
+          href={`https://cndi.dev/configurator?t=${t}`}
         />
-
         <meta
           content="Initialize CNDI Projects from the Browser."
           name="description"
@@ -150,7 +149,7 @@ export default function ConfiguratorPage(
               class={`font-mono text-[clamp(4px,1.9vw,12px)] sm:text-xs md:text-sm ${
                 templateError ? " text-red-400" : ""
               }`}
-              href={templateIdentifier}
+              href={t}
             >
               {templateIdentifier}
             </a>
