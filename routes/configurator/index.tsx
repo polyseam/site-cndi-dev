@@ -125,6 +125,8 @@ export default function ConfiguratorPage(
 
   const templateActive = !!templateObject && !!templateIdentifier;
 
+  const _t = encodeURIComponent(templateIdentifier ?? '')
+
   return (
     <>
       <Head>
