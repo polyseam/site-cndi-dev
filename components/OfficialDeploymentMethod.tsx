@@ -13,7 +13,7 @@ export default function OfficialDeploymentMethod(props: Props) {
   const { contentVersion, templateName, title, utm_source, utm_id, pathname } =
     props;
   return (
-    <div class="justify-center flex flex-row items-center px-0 lg:justify-start">
+    <div class="justify-center flex flex-row items-center px-0 lg:justify-start pb-4">
       <img
         src={`/images/template-icons/${templateName}/logo.png`}
         loading="lazy"
