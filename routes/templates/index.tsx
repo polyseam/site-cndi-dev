@@ -160,7 +160,7 @@ export default function TemplatesPage(props: PageProps) {
               an entire stack for a cloud-native application or service. CNDI
               Templates combine GitOps application and cluster configuration
               with Infrastructure-as-Code, so you can manage your entire stack
-              form one repo!
+              from one repo!
             </P>
             <div class="bg-stroke h-[1px] my-3 w-4/5 self-center" />
           </div>
