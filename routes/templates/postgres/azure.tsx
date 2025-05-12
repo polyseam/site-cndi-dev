@@ -46,10 +46,10 @@ export default function TemplatePostgresAzurePage(_props: PageProps) {
             Easily Deploy {title} on Microsoft Azure using CNDI.
           </Subheading>
           <CallToAction>
-            <GetStartedWithConfiguratorButton templateName="cnpg" />
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
-              templateName="cnpg"
+              templateName={templateName}
             />
           </CallToAction>
         </TemplateHero>

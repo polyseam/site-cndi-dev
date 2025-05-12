@@ -48,10 +48,10 @@ export default function TemplatePostgresAWSPage(_props: PageProps) {
             Services (AWS) using CNDI.
           </Subheading>
           <CallToAction>
-            <GetStartedWithConfiguratorButton templateName="cnpg" />
+            <GetStartedWithConfiguratorButton templateName={templateName} />
             <CNDICreateCLISnippet
               deploymentTargetLabel={deploymentTargetLabel}
-              templateName="cnpg"
+              templateName={templateName}
             />
           </CallToAction>
         </TemplateHero>
